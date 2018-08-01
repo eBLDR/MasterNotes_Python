@@ -15,7 +15,7 @@ source <NEW_VENV_DIRECTORY>/bin/activate
 # Deactivate virtualenv
 # deactivate
 
-# pip upgrade and setuptools (upgrading to last version of pip)
+# pip upgrade and setuptools (upgrading to last version of pip and setuptools)
 pip install --no-cache-dir --upgrade pip setuptools
 
 # pip install required modules/packages (if <file_name.txt> (commonly named requirements.txt) is already existing)

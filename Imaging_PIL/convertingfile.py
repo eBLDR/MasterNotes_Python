@@ -15,6 +15,7 @@ print(im2.mode)
 im3 = im2.convert('L')  # change to grey scale color mode
 print(im3.mode)
 
+# im3.save('saturn2.gif', 'GIF')
 """ Converting to grey scale is the only way I've found to convert
 .png to .gif and respect the transparent background. """
 im3.save('saturn2.gif', transparency=0)  # save to .gif with transparent background
