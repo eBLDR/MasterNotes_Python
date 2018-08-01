@@ -1,0 +1,22 @@
+<!-- HTML template that uses Jinja2 -->
+<html>
+    <head>
+        <!-- Conditional syntax, same behaviour as Python -->
+        {% if title %}
+        <!-- Placeholders {{ title }} -->
+        <title>{{ title }} - Demo Flask App</title>
+        {% else %}
+        <title>Demo Flask App</title>
+        {% endif %}
+    </head>
+    <body>
+        <!-- Menu -->
+        <div>Flask App:
+            <a href="/index">Home</a>
+            <a href="/redirect">Redirect Me</a>
+        </div>
+        <hr>
+        <!-- Jinja2 offers template inheritance -->
+        {% block content %}{% endblock %}
+    </body>
+</html>

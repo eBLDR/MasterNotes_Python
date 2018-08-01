@@ -1,0 +1,32 @@
+
+There are two types of files: plain text, such as .txt and .py. Can be considered as a string type.
+And binary files, which are all the rest (images, pdf, executables, etc).
+
+t  - (default) text mode
+b  - binary mode
+
++  - open a disk file for updating (reading and writing)
+
+r - reading - open for reading only, the file pointer is placed at the beginning of the file
+r+ - reading and writing (cannot truncate a file)
+
+w - writing - open for writing, truncating the file first (overwrites previous data), this mode will create the file if it doesn't exist
+w+ - writing and reading (can truncate a file)
+
+a  - appending - appends data the end of the file, the file pointer is at the end of the file, will create a blank file if file not found
+a+ - appending and reading
+
+x - exclusive creation - open for exclusive creation, failing if the file already exists (Python 3)
+
+rb - reading a binary file, the file pointer is placed at the beginning of the file
+rb+ - reading or writing a binary file
+
+wb+ - writing a binary file
+
+ab+ - opens a file for both appending and reading in binary, the file pointer is at the end of the file if the file exists, the file opens in the append mode.
+
+
+default mode is 'rt' (text reading)
+
+
+

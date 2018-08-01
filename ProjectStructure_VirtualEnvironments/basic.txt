@@ -1,0 +1,4 @@
+A virtual environment allow us to install modules and packages only for the environment, and not globally.
+virtualenv creates a copy of python binary file, and a copy of pip, found in:
+my_virtual_env/bin/python -> it redirects to the python exe of the installed version
+my_virtual_env/bin/pip

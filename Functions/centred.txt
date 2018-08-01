@@ -1,0 +1,6 @@
+                      Twelve 
+                   in binary is 
+                       1100 
+              or 0000 1100 in 1 byte 
+                    or C in hex 
+ it can-sep-also take-sep-several number of-sep-arguments-sep-

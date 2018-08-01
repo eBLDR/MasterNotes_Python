@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+<!-- the block content will be displayed below the content found in the file where it's extending from -->
+<!-- when rendering this html, will be embedded inside base.html -->
+
+{% block content %}
+
+    <!-- Control structure, same behaviour as Python -->
+    <!-- Dictionaries' values are access using a dot followed by key name -->
+    <h1>Hello, {{ user.username }}!</h1>
+    <p>/name to see Hello name</p>
+    <p>/hello?name=myName&age=myAge to send parameters to get method</p>
+    <p>/echo to see method sent</p>
+    <p>/message to post data</p>
+    <p>/response to retrieve data</p>
+    <p>/secrets requires authorization</p>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+
+{% endblock %}

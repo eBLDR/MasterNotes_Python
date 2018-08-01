@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/bldr/Programming/Python Master Notes/ExceptionHandling/tracebackmodule.py", line 6, in <module>
+    raise Exception("This is an error msg.")
+Exception: This is an error msg.

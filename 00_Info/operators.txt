@@ -1,0 +1,69 @@
+
+ARITHMETIC OPERATORS
+	return number
+
++	addition
+-	substraction
+*	multiplication
+/	division
+//	floor division (ignoring decimals)
+%	remainder of the division
+**	exponent
+
+====================
+
+COMPARISION - COMPARATORS
+	return True or False
+
+>	greater than
+<	less than
+==	equal to
+!=	not equal to
+>=	greater than or equal to
+<=	less than or equal to
+
+====================
+
+LOGICAL OPERATORS
+	return True or False
+
+and	True if both are True
+or	True if either is True
+not	opposite of the operand
+
+====================
+
+BITWISE OPERATORS
+	return a number, works bit by bit
+
+&	AND
+|	OR
+^	XOR
+>>	left shift
+<<	right shift
+~	NOT (inverted bits)
+
+====================
+
+VARIABLE ASSIGNMENT
+	assign values to a variable
+	augmented assigment, assigns after operating over itself
+
+=
++=	-=	*=	/=	//=	%=	**=
+&=	|=	^=	>>=	<<=
+
+====================
+
+SPECIAL OPERATORS
+
+- IDENTITTY
+
+is	True if operands are identical
+is not	True if operands are not identical
+
+- MEMBERSHIP
+
+in	True if value/variable is found in the sequence
+not in	True if value/variable is not found in the sequence
+

@@ -1,0 +1,14 @@
+
+MODE:
+
+1 (1-bit pixels, black and white, stored with one pixel per byte)
+L (8-bit pixels, grey scale) - integer from 0 to 255
+P (8-bit pixels, mapped to any other mode using a colour palette)
+RGB (3x8-bit pixels, true colour) - three item tuple with integers from 0 to 255 - Reb Green Blue
+RGBA (4x8-bit pixels, true colour with transparency mask*) - four item tuple with int 0 to 255 - RGB Alpha
+CMYK (4x8-bit pixels, colour separation) - Cyan Magenta Yellow Black
+YCbCr (3x8-bit pixels, colour video format)
+I (32-bit signed integer pixels)
+F (32-bit floating point pixels)
+
+*A mask is an Image object where the alpha value is significant, but the red, green, and blue values are ignored

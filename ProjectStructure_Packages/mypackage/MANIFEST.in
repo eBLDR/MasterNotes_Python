@@ -1,0 +1,3 @@
+include README.md
+
+# By default only .py files will be included in our package when uploading to PyPi, in this file, we can specify non .py files to be included too.

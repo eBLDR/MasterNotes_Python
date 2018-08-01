@@ -1,0 +1,1 @@
+This msg called using print() goes directly to file, it uses stdout.

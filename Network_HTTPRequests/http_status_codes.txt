@@ -1,0 +1,36 @@
+COMMON HTTP STATUS CODES
+
+1xx Informational Responses
+
+100 - Continue
+
+
+2xx Success
+
+200 - OK
+201 - Created
+202 - Accepted
+204 - No content
+
+
+3xx Redirection
+
+302 - Found
+
+
+4xx Client Errors
+
+400 - Bad request
+
+403 - Forbidden
+
+404 - Not found
+
+405 - Method not allowed
+
+
+5xx Server Errors
+
+500 - Internal Server Error
+
+502 - Bad Gateway
