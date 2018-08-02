@@ -49,7 +49,7 @@ thread_1.start()
 # passing arguments to the thread's target function
 my_args = ['Siamese Cat', 'Goldfish', 'Blue Jeans Frog']
 thread_2 = threading.Thread(target=print_, args=my_args, kwargs={'sep': ' & '})
-# args must be type iterable, if we wish to pass one single int, use (int,)
+# args must be type iterable, if we wish to pass one single object, use (obj,)
 thread_2.start()
 
 thread_3 = threading.Thread(target=computing)

@@ -8,7 +8,7 @@ Server, a system that uses sockets to receive incoming connections and provide t
 """
 import socket
 
-HOST = ''  # Symbolic name meaning all available interface
+HOST = ''  # Symbolic name meaning all available interface, it could be any IP
 PORT = 8888  # Arbitrary non-privileged port
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
