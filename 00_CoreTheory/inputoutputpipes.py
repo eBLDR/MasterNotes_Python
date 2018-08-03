@@ -1,5 +1,5 @@
 """
-There is 1 inputs pipe in Python:
+There is 1 input pipe in Python:
 - Standard input - is used for all interactive input (including calls to input())
 
 There are 2 output pipes in Python:
@@ -12,7 +12,6 @@ sys.stdout and sys.stderr are file-like objects with write-only methods
 """
 
 import sys
-
 
 # Reading from standard input
 print('Type something:')
