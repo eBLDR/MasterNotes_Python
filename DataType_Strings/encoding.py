@@ -43,3 +43,7 @@ my_str = 'I want to be encoded'
 enc_str = my_str.encode('utf-16')  # Returns a byte string
 
 print(enc_str)
+
+# Decoding
+dec_str = enc_str.decode('utf-16')
+print(dec_str)

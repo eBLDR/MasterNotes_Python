@@ -6,7 +6,7 @@ causing the threads to trip over each other.
 Creating a new Thread object, make sure its target function uses only local variables in that function.
 
 If its necessary to manipulate the same variable from different threads (or displaying in the
-scree), we can use a 'lock' object.
+screen), we can use a 'lock' object.
 """
 
 import threading
