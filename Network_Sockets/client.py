@@ -36,8 +36,23 @@ except socket.gaierror:
 port = 80  # Port 80 is the default port for HTTP
 # Port 443 is the default port for HTTPS
 
-# socket.connect((@ip_address, @port_number))
-my_socket.connect((remote_ip, port))  # Is a good idea to implement a timeout, or it might hang forever if port/ip is wrong
+my_socket.settimeout(3)  # Timeout (sec) before blocking socket operations, otherwise it may hang if it cannot connect
+
+try:
+    # socket.connect((@ip_address, @port_number))
+    my_socket.connect((remote_ip, port))
+
+    # Display the address where the socket is currently connected from
+    print('Socket from address: {}'.format(my_socket.getsockname()))
+
+    # A pipe is connecting socket.getsockname() to socket.getpeername()
+
+    # Display the address where the socket is currently connected to - socket endpoint
+    print('Is connected to address: {}'.format(my_socket.getpeername()))
+
+except socket.error:
+    print('Timeout exceeded, cannot connect to remote host.')
+    raise
 
 print('Socket connected to {} on IP {} on port {}.'.format(host, remote_ip, port))
 

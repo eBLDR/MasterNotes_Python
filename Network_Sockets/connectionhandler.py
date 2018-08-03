@@ -12,11 +12,13 @@ def client_thread(conn, addr):
     while True:
         # Communication between client and server
         data = conn.recv(1024)
+        if not data:
+            # Received 0 bytes, connection on the other side has closed
+            break
         reply = b'ECHO...' + data
         print('Server has received msg: {} from {}, server is echoing it.'.format(data, addr))
         conn.sendall(reply)
-        if data == b'EXIT\r\n':
-            break
+
     # Close connection when all tasks are done
     conn.close()
     print('Client {} has disconnected.'.format(addr))
