@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-# Seesion object
+# Session object
 from sqlalchemy.orm import sessionmaker
 # Table sctructures
 from declarative import Address, Base, Person

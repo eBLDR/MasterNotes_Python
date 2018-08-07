@@ -7,7 +7,7 @@ import mysql.connector
 
 DB_NAME = 'UsersDb'
 
-# Using database creating at creatingdb.py
+# Using database created at creatingdb.py
 cnx = mysql.connector.connect(user='bldr', password='free',
                               host='127.0.0.1',
                               database='{}'.format(DB_NAME))

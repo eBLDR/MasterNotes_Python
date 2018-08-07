@@ -40,5 +40,6 @@ def index():
 
 if __name__ == '__main__':
     # debug mode to trace possible errors
-    # port can also be manually defined
-    app.run(debug=True, port=5000)
+    # host and port can also be manually defined, by default host is
+    # localhost and port is 5000 (127.0.0.1:5000)
+    app.run(debug=True, host='127.0.0.1', port=5000)
