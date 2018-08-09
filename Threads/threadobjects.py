@@ -24,6 +24,17 @@ my_timer.join()
 
 print("=" * 20)
 
+# PERIODIC TASK
+def periodic_task():
+    print('\t', time.ctime())
+    # Just before dying, the current thread invokes another thread with a call
+    # to the same function once the timer is finished
+    threading.Timer(2, periodic_task).start()
+
+periodic_task()
+
+print("=" * 20)
+
 # BARRIER OBJECTS - threads will wait for each other to be released
 # @parties (int type) - number of threads to be blocked before releasing them
 # @timeout (seconds) - time after which a BrokenBarrierError will be raised
@@ -31,7 +42,7 @@ my_barrier = threading.Barrier(2, timeout=10)
 
 
 def server():
-    time.sleep(3)
+    time.sleep(5)
     print('Server active.')
     # wait() call sends one thread to the barrier - parties += 1
     # and wait for the barrier to have the number of specified parties before being released
@@ -40,7 +51,7 @@ def server():
 
 def client():
     print('Client active.')
-    print('Waiting for server...')
+    print('Waiting at the barrier for server...')
     my_barrier.wait()
     print('Connection established.')
 
@@ -53,7 +64,7 @@ client_thread.start()
 
 time.sleep(1)
 # return the number of threads currently waiting in the barrier
-print(my_barrier.n_waiting)
+print('Threads waiting in the barrier:', my_barrier.n_waiting)
 
 """
 abort() method - puts the barrier into a broken state.
