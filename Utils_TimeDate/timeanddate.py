@@ -11,9 +11,13 @@ print("\nUSING TIME\n")
 # TIMES
 print(time.localtime())     # local time - no @ will display current time, if @timestamp, will display accordingly
 print(time.time())          # epoch timestamp - seconds until now since the start of the epoch
+
 # strftime stands for string format time, method that print the time in a nicer way
 print('The epoch of this system started at ' + time.strftime('%c', time.gmtime(0)))
 print(time.gmtime())
+
+# Convert a time expressed in seconds since the epoch to a string representing local time
+print(time.ctime())
 
 print('=' * 30)
 
