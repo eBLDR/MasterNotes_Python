@@ -9,15 +9,17 @@ logging module, for controlled print() and more
 """
 import logging
 
-# setting configuration, level can set the levels we want to enable (itself and above)
+# Setting configuration, @filename is usually by convention filename.log
+# @level can set the levels we want to enable (itself and above)
 # i.e.: level=logging.ERROR will only show error and critical
-# format can be anything we wish
-logging.basicConfig(level=logging.DEBUG,
-                    format='\t%(asctime)s - %(levelname)s - %(message)s')
+# @format can be anything we wish, using existing attributes
+logging.basicConfig(filename='my_log.log',
+                    level=logging.DEBUG,
+                    format='%(asctime)s - %(filename)s - %(process)d - %(processName)s - '\
+                    '%(threadName)s - %(levelname)s - %(message)s')
 
-# logging can also save log into a file instead of printing in the screen
-# logging.basicConfig(filename='myLog.txt', level=logging.DEBUG, format='%(message)s')
-# filename is usually by convention filename.log
+# logging can also be print onto the screen instead of writing to file,
+# just don't pass any argument for @filename
 
 # debug(msg) will print the msg
 logging.debug('Start of program')
