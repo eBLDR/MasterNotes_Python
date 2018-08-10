@@ -9,7 +9,7 @@ def counter(n, name):
     print('Counter {} - End.'.format(name))
 
 
-# storing threads in a control list
+# Storing threads in a control list
 my_threads = []
 
 for x in range(1, 4):
@@ -21,7 +21,7 @@ for x in range(1, 4):
     # starting the thread
     counting_thread.start()
 
-# waiting for all threads to end
+# Waiting for all threads to end
 for thread in my_threads:
     # active_count() returns the number of threads currently alive (including the main thread)
     print('Number of threads alive: {}'.format(threading.active_count()))
@@ -54,8 +54,9 @@ print('\n', "=" * 30, '\n')
 
 # Daemonic threads
 daemon_test = threading.Thread(target=counter, args=(3, 'daemon'), daemon=False)  # Change to True to see difference
-# The entire Python program exits when only daemon threads are left - it waits for all the
-# non-daemonic threads to terminate
+# The entire Python program exits only when daemonic threads are left - it waits for all the
+# non-daemonic threads to terminate. In other words, if 'end of file' is reached and only daemonic threads
+# are left, the main thread will kill them all and finish the execution.
 
 daemon_test.start()
 
