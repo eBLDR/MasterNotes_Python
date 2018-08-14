@@ -35,5 +35,5 @@ print(a_list)
 a_list.sort()
 print(a_list)
 
-# copy() - makes a shallow (independent) copy with different id
+# copy() - makes a deep (independent) copy with different id
 a_copy = a_list.copy()
