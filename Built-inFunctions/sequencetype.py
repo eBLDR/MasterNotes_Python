@@ -92,7 +92,7 @@ print('all():', all(tuple_sample))
 
 print('=' * 20)
 
-# join() - for joining list/tuple into a string
+# join(seq) - for joining list/tuple into a string
 str_from_list = "-|-".join(list_sample[:2])  # 'delimiter'.join(list/tuple) - sequence must be made of str
 print(str_from_list)
 
@@ -105,7 +105,15 @@ print(string_sample.split(","))         # breaks using a given character
 
 print('=' * 20)
 
-# enumerate() - return an enumerate object, iterable, a tuple containing a count (from start which
+# zip(seq1, seq2) - returns a zip iterable object, it's a list containing pairs of tuples correspoding
+# to the same indices of the two sequences, len is equal to the minimum len of both
+zip_tuple = zip(string_sample, list_sample)
+for i in zip_tuple:
+    print(i)
+
+print('=' * 20)
+
+# enumerate(seq) - return an enumerate object, iterable, a tuple containing a count (from start which
 # defaults to 0) and the values obtained from iterating over the sequence
 for i,j in enumerate(list_sample, start=1):
     print(i, j)
