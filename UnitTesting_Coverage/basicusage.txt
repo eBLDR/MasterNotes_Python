@@ -1,0 +1,24 @@
+# Using coverage.py
+
+To gather data, use run command (will by default measure all code, unless Python Standard Library):
+
+$ coverage run <filename.py> arg1 arg2 ...
+
+...Program's output...
+
+To display the results, use report command:
+
+$ coverage report
+-m flag will display lines' number not used
+
+Creating a HTML/XML template for more detailed information, will create a folder with all the necessary files:
+
+$ coverage html
+$ coverage xml
+
+Excluding lines - any line with a comment of “# pragma: no cover” is excluded. If that line introduces a clause, for example, an if clause, or a function or class definition, then the entire clause is also excluded.
+
+Branch coverage measurement, will be more strict thant the normal coverage, counting strictly each line read as covered (instead of counting the whole clause as covered, i.e.: if/elif/else - normal coverage will count all the lines as covered if only one statement is actually executed).
+
+$ coverage run --branch <filename.py> arg1 ...
+
