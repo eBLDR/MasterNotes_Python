@@ -1,7 +1,6 @@
 """
 When dealing with paths, ./file mean current directory, ../file means parent directory.
 """
-
 import os
 
 # os.system(command) - will run the command in the terminal
@@ -36,7 +35,7 @@ print('HOME is ', os.getenv('HOME', 'Not found'))
 current_path = os.getcwd()
 print("Current path is: {}".format(current_path))
 
-# we can change the cwd with chdir() method
+# We can change the cwd with chdir() method
 os.chdir('CommandTest')
 print("Changed to: {}".format(os.getcwd()))
 
@@ -67,11 +66,16 @@ print("Base name: " + os.path.basename(my_path))    # name of file or current fo
 
 print("=" * 20)
 
-# to get a list of separated directories from path
+# To get a list of separated directories from path
 print(os.path.sep)  # a variable equal to the separator used in the current OS
 print(my_path.split(os.path.sep))
 
-# checking path validity
+print("=" * 20)
+
+# Separting extension
+print(os.path.splitext(my_path))
+
+# Checking path validity
 """
 os.path.exists(path) - return True if file or folder exists
 os.path.isfile(path) - return True if path argument exists and is a file
@@ -102,10 +106,10 @@ for path, directories, files in os.walk("./"):
 
 print("=" * 20)
 
-# to get the size of a file
+# To get the size of a file
 print("Size of hello.txt in bytes: ", os.path.getsize(my_path))
 
-# getting the size of all the contents in a folder
+# Getting the size of all the contents in a folder
 totalsize = 0
 for filename in os.listdir('./'):
     totalsize += os.path.getsize(filename)
@@ -114,7 +118,7 @@ for filename in os.listdir('./'):
 print("Total size of (bytes) of cwd is :", totalsize)
 
 # makedirs('path', exist_ok=False) - creates directory/ies
-# if directory already exists, will raise an error, unless we set exist_ok=True
+# If directory already exists, will raise an error, unless we set exist_ok=True
 # it uses mkdir(), method that can only create one directory at the time
 try:
     os.makedirs('./03/ABC')  # can create full path at once
