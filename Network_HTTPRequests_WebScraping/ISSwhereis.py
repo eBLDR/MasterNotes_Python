@@ -59,7 +59,7 @@ screen.bgpic('map2.png')
 iss = turtle.Turtle()
 iss.hideturtle()
 iss.shape('circle')
-iss.color('yellow')
+iss.color('red')
 iss.turtlesize(0.4)
 iss.penup()
 
