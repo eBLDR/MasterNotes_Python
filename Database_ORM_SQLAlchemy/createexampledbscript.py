@@ -13,7 +13,6 @@ c.execute('''
            post_code varchar(250) NOT NULL, person_id INTEGER NOT NULL,
            FOREIGN KEY(person_id) REFERENCES person(id))
           ''')
- 
 c.execute('''
           INSERT INTO person VALUES(1, 'me')
           ''')

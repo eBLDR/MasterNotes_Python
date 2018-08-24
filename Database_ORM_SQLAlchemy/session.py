@@ -16,7 +16,7 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 # Equivalence to SQL INSERT clause
-new_person = Person(name='new person')
+new_person = Person(name='new person')  # Using the table created in declarative.py
 # Inserting a record using the table structure - add()
 session.add(new_person)
 session.commit()
@@ -34,12 +34,14 @@ print('=' * 30)
 # Equivalence to SQL SELECT clause
 # all() will fetch all records
 all_data = session.query(Person).all()
-print(all_data)  # Returns a list with all the records
+print(all_data)  # Returns a list with all the records, a list of Person type
 
 # first() ill return the first record
 person = session.query(Person).first()
 print(person)
 print(person.id, person.name)  # Field can be accessed by name
+# person is an object from Person class, we can access our custom methods
+print(person.to_dictionary())
 
 print('=' * 30)
 
