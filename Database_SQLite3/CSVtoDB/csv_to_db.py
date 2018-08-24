@@ -1,5 +1,4 @@
 #! /usr/bin/python3
-
 """
 Reading a file and, if file is CSV, importing the data in
 a relational database using SQLite3, in which the column's names
@@ -7,15 +6,8 @@ correspond to the first record (header) found in the CSV file.
 
 Run from terminal - command line:
 
-ex01.py <absolute_path> - reads the file at <absolute_path> and extracts data if the file is CSV
-
+csv_to_db.py <absolute_path> - reads the file at <absolute_path> and extracts data if the file is CSV.
 """
-
-
-# Type the absolute path of the file here -- TESTING/DEBUGGING ONLY, leave blank otherwise
-ABSOLUTE_PATH = ""
-
-
 import sys
 import os
 import csv
@@ -23,21 +15,14 @@ import sqlite3
 
 
 def script_usage():
-
     """
     Displays program's usage from command line.
     
     """
-    
-    print("""
-Usage:
-
-    ex01.py <absolute_path> - reads the file and extracts data if the file is CSV
-    """)
+    print('Usage:\n\tcsv_to_db.py <absolute_path> - reads the file and extracts data if the file is CSV')
 
 
 def read_file(path):
-
     """
     Opens and reads a file, if the file has '.csv' format extension,
     data will be extracted.
@@ -46,9 +31,7 @@ def read_file(path):
 
     return: data -- a list type object containing the records extracted from the file,
     only if file is CSV format.
-    
     """
-    
     try:
         with open(path) as file:
 
@@ -63,17 +46,15 @@ def read_file(path):
                 
                 readCSV = csv.reader(file, delimiter=',')
 
-                print("Extracting records from {}...".format(file_name))  # Control print
+                print('Extracting records from {}...'.format(file_name))  # Control print
                 
                 # Extracting and storing the data from the file on a list
                 data = [record for record in readCSV]
 
                 # Control print
-                print("Extraction completed.\n\t- Records extracted: {}"
-                      .format(readCSV.line_num - 1))
+                print('Extraction completed.\n\t- Records extracted: {}'.format(readCSV.line_num - 1))
 
-                # Creating a database using the records previously extracted
-                create_db(file_name, data)
+                return file_name, data
 
             # If the file is not CSV - read normally
             else:
@@ -83,28 +64,25 @@ def read_file(path):
     except FileNotFoundError:
         # In case the file doesn't exist
         print("File Not Found.")
+        sys.exit(1)
 
 
 def create_db(file_name, data):
-
     """
     Creates the database and fills it with the records from the data.
 
     @file_name: name of the database file.
     @data: list type storing the records.
-    
     """
-
-    # Stripping the extension to get the name only
-    db_name = file_name.rstrip('csv')
-    # Stripping of the '.' on its own to avoid accidentally stripping
+    # Stripping the extension to get the name only,
+    # stripping of the '.' on its own to avoid accidentally stripping
     # possible matching characters with the sequence '.csv'
-    db_name = db_name.rstrip('.')
+    db_name = file_name.rstrip('csv').rstrip('.')
     
     # Opening/creating database file object
     db = sqlite3.connect('{}.sqlite'.format(db_name))
 
-    print("\nInserting records to {}.sqlite...".format(db_name))
+    print('\nInserting records to {}.sqlite...'.format(db_name))
 
     # Counter of added records, control only
     r = 0
@@ -121,49 +99,46 @@ def create_db(file_name, data):
             db.execute("DROP TABLE IF EXISTS {}".format(db_name))
             
             # Creating table
-            db.execute("CREATE TABLE {} (id INTEGER PRIMARY KEY, {})".format(db_name,
-                            ", ".join(["%s TEXT" % column for column in record])))
+            db.execute("CREATE TABLE {} (id INTEGER PRIMARY KEY, {})"
+                       .format(db_name, ", ".join(["%s TEXT" % column for column in record])))
 
             # Storing the names of the fields for future insertions
             fields = ", ".join([field for field in record])
 
         # Inserting records into the database
         else:
-            db.execute("INSERT INTO {} ({}) VALUES ({})".format(db_name, fields,
-                            ", ".join([repr(column) for column in record])))
+            db.execute("INSERT INTO {} ({}) VALUES ({})"
+                       .format(db_name, fields, ", ".join([repr(column) for column in record])))
 
             r += 1  # Updating the counter
-
-    # Control print
-    print("Insertion completed.\n\t- Records added: {}".format(r))
+            
+    print('Insertion completed.\n\t- Records added: {}'.format(r))  # Control print
 
     # Commiting changes and closing database file
     db.commit()
     db.close()
 
+
+def main(path):
+    # Read the file and extract data
+    file_name, data = read_file(path)
+
+    if data:
+        # Creating a database using the records previously extracted
+        create_db(file_name, data)
+
     
 if __name__ == '__main__':
+    # Type the path of the file here -- TESTING/DEBUGGING ONLY, leave blank otherwise
+    PATH = ''
 
     # -- GETTING THE PATH --
-    
-    file_path = ""
-    
-    # When running from terminal
-    if len(sys.argv) == 2:
-        file_path = sys.argv[1]
+    file_path = file_path = sys.argv[1] if len(sys.argv) == 2 else PATH if PATH else ''
 
-    # When running from editor -- FOR TESTING ONLY
-    elif ABSOLUTE_PATH:
-        file_path = ABSOLUTE_PATH
+    # -- RUNNING --
+    if file_path:
+        main(file_path)
 
     else:
         script_usage()
-
-
-    # -- RUNNING --
-    
-    if file_path:
-        read_file(file_path)
-
-    else:
-        print("No path provided.")
+        print('No path provided.')
