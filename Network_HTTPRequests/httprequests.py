@@ -77,12 +77,12 @@ print(r2.keys())
 
 print("=" * 30)
 
-# POST method - the end point is receiving the data
+# POST method - the end point is receiving the data, @data will send binary data
 r3 = requests.post('http://httpbin.org/post', data = {'key':'value'})
 print(r3.status_code)
 
-# Posting JSON
-r4 = requests.post('http://httpbin.org/post', json=payload)  # will be encoded automatically
+# Posting JSON, @json will send json data, it will be converted into json automatically
+r4 = requests.post('http://httpbin.org/post', json=payload)
 print(r4.status_code)
 
 # PUT method
