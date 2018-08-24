@@ -46,6 +46,15 @@ class Asimov(db.Model):
 
         
 # -- ENDPOINTS --
+"""
+Since all requests are performed on the same url, one endpoint would be enough:
+@app.route('/', methods=['GET', 'POST', 'PUT', 'DELETE'])
+def ...
+    if request.method == 'GET':
+        ...
+
+But I prefer (for the sake of the notes) to keep the in separate functions.
+"""
 
 # Create record
 @app.route("/", methods=["POST"])
@@ -61,45 +70,41 @@ def add_entry():
     return jsonify(new_entry.to_dictionary())
 
 
-# Read all records
+# Read records
 @app.route("/", methods=["GET"])
-def read_all_entries():
+def read_entry():
     """
-    Displays all records found in the database.
+    Displays records found in the database.
     """
-    all_entries = Asimov.query.all()
+    if 'id' in request.args:
+        # Display one record found in the db, id matching field
+        entry = Asimov.query.get(request.args['id'])
 
-    for i in all_entries:
-        i.to_dictionary()
+        return jsonify(entry.to_dictionary())
+    
+    else:
+        # Display all
+        all_entries = Asimov.query.all()
 
-    # Populating data
-    data = {'books': []}
-    for book in all_entries:
-        data['books'].append(book.to_dictionary())
+        for i in all_entries:
+            i.to_dictionary()
 
-    return jsonify(data)
+        # Populating data
+        data = {'books': []}
+        for book in all_entries:
+            data['books'].append(book.to_dictionary())
 
-
-# Read record by id
-@app.route("/id<id>", methods=["GET"])
-def read_entry(id):
-    """
-    Displays one record found in the database.
-    @id: matching field to display record.
-    """
-    entry = Asimov.query.get(id)
-
-    return jsonify(entry.to_dictionary())
+        return jsonify(data)
 
 
 # Update record by id
-@app.route("/<id>", methods=["PUT"])
-def update_entry(id):
+@app.route("/", methods=["PUT"])
+def update_entry():
     """
     Updates one record found in the database.
     @id: matching field to update record.
     """
-    entry = Asimov.query.get(id)
+    entry = Asimov.query.get(request.json['id'])
 
     # Updating data
     entry.title = request.json['title']
@@ -111,13 +116,13 @@ def update_entry(id):
 
 
 # Delete record by id
-@app.route("/<id>", methods=["DELETE"])
-def delete_entry(id):
+@app.route("/", methods=["DELETE"])
+def delete_entry():
     """
     Deletes one record found in the database.
     @id: matching field to delete record.
     """
-    entry = Asimov.query.get(id)
+    entry = Asimov.query.get(request.args['id'])
 
     db.session.delete(entry)
     db.session.commit()
