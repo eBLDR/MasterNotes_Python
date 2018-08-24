@@ -1,10 +1,3 @@
-"""
-RESTful API
-API - Application Programming Interface
-REST - Representation State Transfer
-RESTful - refers to web services implementing REST architecture
-"""
-
 from flask import Flask
 
 # reqparse module for parsing arguments
