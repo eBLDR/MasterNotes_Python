@@ -25,3 +25,20 @@ print('\tWaiting for the process to be terminated')
 calcProc.wait()
 
 print('Launched process terminated with exit code: {}'.format(calcProc.poll()))
+
+"""
+It is possible to pass command line arguments to processes launched with Popen().
+To do so, pass a list as the sole argument, the first str in the list will be the executable filename
+of the program to be launched; all the subsequent str will be the command line arguments,
+in fact, this list will be the value of sys.argv.
+"""
+
+# Opening the file with the corresponding program
+text = subprocess.Popen(['gedit', 'sample.txt'])
+
+# Opening files with the default application
+# Programs in charge of searching for default application corresponding to file's extension
+# Windows - 'start'
+# OS X - 'open'
+# Ubuntu Linux - 'see'
+# subprocess.Popen(['see', 'sample.txt'])  # , shell=True) - needed only in Windows
