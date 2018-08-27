@@ -86,7 +86,7 @@ os.path.isdir(path) - return True if path argument exists and is a directory
 
 print("=" * 20)
 
-# os.listdir(path) - will generate the directories/files in the directory path
+# os.listdir(path=working_directory) - will generate the directories/files in the directory path
 for item in os.listdir(absolute_path):
     print(item)
 
