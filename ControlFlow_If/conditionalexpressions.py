@@ -20,3 +20,12 @@ print('=' * 20)
 for x in range(1, 31):
     fizzbuzz = "fizz buzz" if x % 15 == 0 else 'fizz' if x % 3 == 0 else 'buzz' if x % 5 == 0 else str(x)
     print(fizzbuzz)
+
+print('=' * 20)
+
+# Conditional expressions can also operate with methods
+a = []
+b = []
+c = input('Add to A or B? ').upper()
+a.append(1) if c == 'A' else b.append(1)
+print(a, b)
