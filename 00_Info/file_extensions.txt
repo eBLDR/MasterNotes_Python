@@ -1,0 +1,4 @@
+.py 	- Python script, executed by default, opens a terminal.
+.pyw 	- run the script without invoking the console window
+.pyc 	- cached bytecode files produced by CPython, Stackless Python or Unladen Swallow
+
