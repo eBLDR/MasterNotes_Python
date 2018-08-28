@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+
+Line 1 is also called 'shebang', it tells the os which interpreter should be called to execute the script.
+
+Equivalent format is:
+
+#!/usr/bin/env python3
+
+Crossed Platforms:
+
+- Windows, the shebang line is  #! python3
+- OS X, the shebang line is     #! /usr/bin/env python3
+- Linux, the shebang line is    #! /usr/bin/python3 (or OS X)
+- Virtual environments          #! /myvenv/bin/python
+
+
+Line 2 is the encoding used on the file, utf-8 is the most common, and the default value, it must be always on the first two lines.
+
+Equivalent format is:
+
+# encoding: utf-8
+
