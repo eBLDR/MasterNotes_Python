@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-The above line is the encoding used on the file, utf-8 is the most common,
-and the default value, it must be always on the first line (or after the shebang line).
+The above line is the encoding magic line (see magiclines.txt).
 """
-
 # ASCII (American Standard Code for Information Interchange) Character Encoding - direct equivalent of utf-8
 # all the characters of the string are saved in binary
 print('\nASCII')
