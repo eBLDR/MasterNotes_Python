@@ -54,7 +54,7 @@ print('=' * 30)
 
 # one(), if only one record is expected
 address = session.query(Address).filter(Address.person == person).one()
-print(address.post_code)
+print(address.to_dictionary())
 
 # When using filters, many expressions can be combined usng or_ and_ SQLAlchemy keywords
 from sqlalchemy import or_

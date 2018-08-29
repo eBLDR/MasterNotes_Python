@@ -32,6 +32,10 @@ class CustomBase(Base):
 # Creating the table structure
 class Person(CustomBase):
     __tablename__ = 'person'  # Name of the table in database
+    
+    # Here we define columns for the table address, the name of the attribute
+    # must match the table's column name
+    # Notice that each column is also a normal Python instance attribute
 
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
@@ -39,9 +43,7 @@ class Person(CustomBase):
 
 class Address(CustomBase):
     __tablename__ = 'address'
-    
-    # Here we define columns for the table address
-    # Notice that each column is also a normal Python instance attribute
+
     id = Column(Integer, primary_key=True)
     street_name = Column(String(250))
     street_number = Column(String(250))
