@@ -30,7 +30,7 @@ print(what)  # this will print None, since print() does not return anything
 print('=' * 20)
 
 
-# function annotations (or type hints), provides info about the type of the parameter expected (are optional)
+# Function annotations (or type hints), provides info about the type of the parameter expected (are optional)
 # it can also be a customized class
 def get_char(prompt: str) -> str:  # -> return Type - hint about the type returned
     """
@@ -40,8 +40,8 @@ def get_char(prompt: str) -> str:  # -> return Type - hint about the type return
     """
     while True:
         c = input(prompt)
-        return c  # return includes the break, works for both while and for loops
-
+        return c  # return will send the variable/s specified, it also stops the execution of the function
+        # return  # return can also be typed alone, it will break the function and return None
 
 char = get_char('Type something: ')
 print(char)
