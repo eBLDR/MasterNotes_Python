@@ -1,4 +1,5 @@
-# More compact, usually works together with comprehensions
+# More compact, usually works together with comprehensions.
+# It's also called 'ternary operator'
 
 x = 12
 
