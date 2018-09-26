@@ -40,6 +40,11 @@ print(all_data)  # Returns a list with all the records, a list of Person type
 person = session.query(Person).first()
 print(person)
 print(person.id, person.name)  # Field can be accessed by name
+
+# Equivalence to SQL UPDATE clause
+person.name = 'New Updated Name'  # Updating the attr
+session.commit()
+
 # person is an object from Person class, we can access our custom methods
 print(person.to_dictionary())
 
