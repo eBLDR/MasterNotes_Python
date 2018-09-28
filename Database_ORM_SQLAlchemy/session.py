@@ -10,11 +10,32 @@ engine = create_engine('sqlite:///example.db', echo=True)
 Base.metadata.bind = engine
 
 # Creating a db session class
-DBSession = sessionmaker(bind=engine)
+DBSession = sessionmaker(bind=engine)  # By default @autoflush=True
 
 # Instantiating a session
 session = DBSession()
 
+query = "SELECT * FROM Person"
+
+# SQL statements can be executed as string queries
+buff = session.execute(query, params=None)
+
+print(type(buff))  # It's a generator
+
+for row in buff:
+    print(row.id, row)
+
+print('=' * 30)
+
+# Parameters can be passed using
+result = session.execute("SELECT * FROM Person WHERE id=:param", {"param":5})
+
+for row in result:
+    print(row.id, row.name)
+
+print('=' * 30)
+
+"""
 # Equivalence to SQL INSERT clause
 new_person = Person(name='new person')  # Using the table created in declarative.py
 # Inserting a record using the table structure - add()
@@ -25,6 +46,8 @@ session.commit()
 new_address = Address(post_code='00000', person=new_person)
 session.add(new_address)
 session.commit()
+
+# If we want to add a collection of objects, use session.add_all(@seq) function
 
 # Roll back also possible
 # session.rollback()
@@ -70,3 +93,4 @@ print('=' * 30)
 
 # Equivalence to SQL DELETE clause
 session.query(Address).filter(Address.post_code == '00000').delete()
+"""
