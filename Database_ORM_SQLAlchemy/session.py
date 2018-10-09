@@ -35,11 +35,11 @@ for row in result:
 
 print('=' * 30)
 
-"""
 # Equivalence to SQL INSERT clause
 new_person = Person(name='new person')  # Using the table created in declarative.py
 # Inserting a record using the table structure - add()
 session.add(new_person)
+# commit() will save the transaction - it will call flush(), which send SQL statements to db
 session.commit()
  
 # Insert an Address in the address table
@@ -80,7 +80,7 @@ for i in result:
 
 print('=' * 30)
 
-# one(), if only one record is expected
+# one(), if only one record is expected - if more than one record is found, it will raise an error
 address = session.query(Address).filter(Address.person == person).one()
 print(address.to_dictionary())
 
@@ -91,6 +91,7 @@ print(address.post_code)
 
 print('=' * 30)
 
-# Equivalence to SQL DELETE clause
-session.query(Address).filter(Address.post_code == '00000').delete()
-"""
+# Equivalence to SQL DELETE clause - will delete all the matching records
+session.query(Person).filter(Person.name == 'new person').delete()
+# session.commit()
+
