@@ -25,8 +25,7 @@ print('=' * 30)
 input('Enter to start counting')
 startTime = time.time()
 
-for i in range(2
-               ):
+for i in range(2):
     print('Tick . . .')
     # sleep function sets the code in standby for @seconds
     time.sleep(1)
@@ -60,11 +59,15 @@ import datetime
 
 print("\nUSING DATETIME\n")
 
-now = datetime.datetime.now()  # returns information about time at the moment of execution
+now = datetime.datetime.now()  # Returns information the local time at the moment of execution
 print(now)
 print(type(now))
 
-# specific calls
+print(datetime.datetime.utcnow())  # utc time
+
+print(datetime.date.today())  # Only today's date
+
+# Specific calls
 print('Year:', now.year)
 print('Month:', now.month)
 print('Day:', now.day)
@@ -72,7 +75,7 @@ print('Hour:', now.hour)
 print('Minute:', now.minute)
 print('Second:', now.second)
 
-# using strftime() to convert datetime into str and personalize the format
+# Using strftime() to convert datetime into str and personalize the format
 datetime_to_str = now.strftime('%I:%M %p')
 print(datetime_to_str)
 print(type(datetime_to_str))
@@ -98,25 +101,27 @@ Datetime strftime directive
 %% - Literal '%' character
 """
 
-# converting str into datetime object
+# Converting str into datetime object
 oct_21 = datetime.datetime.strptime('October 21, 2015', '%B %d, %Y')
 print(oct_21)
 print(type(oct_21))
 
 print('=' * 30)
 
-# we can create date specific datetime objects
+# We can create date specific datetime objects
 newyear2016 = datetime.datetime(2016, 1, 1, 0, 0, 0)  # @(y, m, d, h, m, s)
 print(newyear2016 < now)
 
-# also from a timestamp
+print(newyear2016.timestamp())  # Seconds since epoch
+
+# Also from a timestamp
 random_epoch = 10000
 random_time = datetime.datetime.fromtimestamp(random_epoch)
 print(random_time)
 
 print('=' * 30)
 
-# using timedelta data type - it's  duration of time rather than a moment in time
+# Using timedelta data type - it's  duration of time rather than a moment in time
 delta = datetime.timedelta(weeks=0, days=11, hours=10, minutes=5, seconds=12, milliseconds=0, microseconds=1)
 # there are no month and year argument because they don't have the same length throughout the calendar
 
