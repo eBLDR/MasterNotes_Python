@@ -8,7 +8,7 @@ any number, but we need to specify the number of bytes that corresponds
 to each number.
 """
 # 'b' mode for binary, followed by 'r' or 'w'
-with open('binary', 'bw') as binFile:  # 'binary' isn't .txt
+with open('binary', 'bw') as binFile:  # 'binary' has no extension
     for i in range(17):  # range must be in (0, 256)
         binFile.write(bytes([i]))  # function bytes() converts to kind of hex
     # equivalent to

@@ -64,3 +64,36 @@
  9 times 4 is 36
 10 times 4 is 40
 --------------------
+ 1 times 2 is 2
+ 2 times 2 is 4
+ 3 times 2 is 6
+ 4 times 2 is 8
+ 5 times 2 is 10
+ 6 times 2 is 12
+ 7 times 2 is 14
+ 8 times 2 is 16
+ 9 times 2 is 18
+10 times 2 is 20
+--------------------
+ 1 times 3 is 3
+ 2 times 3 is 6
+ 3 times 3 is 9
+ 4 times 3 is 12
+ 5 times 3 is 15
+ 6 times 3 is 18
+ 7 times 3 is 21
+ 8 times 3 is 24
+ 9 times 3 is 27
+10 times 3 is 30
+--------------------
+ 1 times 4 is 4
+ 2 times 4 is 8
+ 3 times 4 is 12
+ 4 times 4 is 16
+ 5 times 4 is 20
+ 6 times 4 is 24
+ 7 times 4 is 28
+ 8 times 4 is 32
+ 9 times 4 is 36
+10 times 4 is 40
+--------------------

@@ -6,10 +6,10 @@ cats = [{'name': 'Nanu', 'color': 'orange'},
 
 print(str(cats))
 
-with open('myCats.py', 'w') as catFile:
+with open('generatedpyfile.py', 'w') as catFile:
     catFile.write('cats = ' + str(cats) + '\n')
 
-import myCats
+import generatedpyfile
 
-pet_name = myCats.cats[0]['name']
+pet_name = generatedpyfile.cats[0]['name']
 print(pet_name)
