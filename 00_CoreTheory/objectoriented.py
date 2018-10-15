@@ -18,59 +18,55 @@ When creating an object, 3 things are happening:
 3. It inserts the reference from the variable name to the object (this is the = symbol task).
 """
 
-z = 1  # variable name/reference name assigned/referenced to an object
-print("z = 1, z is the reference name, pointing to the corresponding object")
-print("object which z is referring to has type:", type(z))    # type
-print("object which z is referring to has value:", z)         # value
-print("object which z is referring to has identity:", id(z))  # identity
+z = 1  # Variable name/reference name assigned/referenced to an object
+print('z = 1, z is the reference name, pointing to the corresponding object')
+print('object which z is referring to has type:', type(z))    # type
+print('object which z is referring to has value:', z)         # value
+print('object which z is referring to has identity:', id(z))  # identity
 
 print("=" * 20)
 
 # OBJECT INHERITANCE
 
 x = object()  # object() is the super class where objects inherit from in Python
-print(x, "x is type:", type(x))
+print(x, 'x is type:', type(x))
 
 y = x.__str__()  # Every object has this method for printing representation
 
-# equivalent to
+# Equivalent to
 print(x)  # calling the __str__ method
 
 print(y, type(y))
 
-print("=" * 20)
+print('=' * 20)
 
-# operator + and method __add__ refer to the same builtin code, they are equivalents
+# Operator + and method __add__ refer to the same builtin code, they are equivalents
 print(z + b)
 print(z.__add__(2))  # a, even declared as int, it's an object, and it has methods
 
-print("=" * 20)
+print('=' * 20)
 
 
 # CLASS INHERITANCE
-
 class MyClass:
     pass
 
 
 c = MyClass()
-print("c is type:", type(c))
+print('c is type:', type(c))
 
-print("=" * 20)
+print('=' * 20)
 
-# type METACLASS
-# object is a class that inherits from its metaclass: type
-print("type of object is", type(object))
+# Type METACLASS
+# Object is a class that inherits from its metaclass: type
+print('type of object is', type(object))
 
-print("MyClass is type:", type(MyClass))
+print('MyClass is type:', type(MyClass))
 
-print("int/float/list... are type:", type(int))  # absolutely all types of variables
+print('int/float/list... are type:', type(int))  # Absolutely all types of variables
 
-print("type is type", type(type))  # circular reference, type instantiates itself
+print('type is type', type(type))  # Circular reference, type instantiates itself
 
 # SUMMARY: all objects inherit from object() class, and all classes (including object()) inherit
 # from type() metaclass
 
-# Creating an object is much faster using literal syntax
-a = set([1, 2, 3])
-a = {1, 2, 3}  # literal syntax

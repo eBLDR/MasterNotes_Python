@@ -8,3 +8,10 @@ They consist of one or more CLAUSES, where a clause consist of a header and a bl
 Each clause header starts with a keyword, ends with a colon,
 and the code is on the same indentation level.
 """
+
+# Creating a variable
+v = 'Hello World'
+
+# Printing the variable
+print(v)
+
