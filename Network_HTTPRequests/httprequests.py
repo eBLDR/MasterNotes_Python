@@ -33,33 +33,37 @@ print(type(response))
 print(response)  # <Response [status_code]>
 
 # Code
-print("Status code:", response.status_code)
+print('Status code:', response.status_code)
 
 # If status code is 4xx or 5xx (client or server errors), next method will raise an error
 response.raise_for_status()
 
 # Encoding used
-print("Encoding:", response.encoding)  # it can be changed to any encoding needed
+print('Encoding:', response.encoding)  # it can be changed to any encoding needed
 
 # Data as str
 print(response.text[:100])
 
-print("=" * 30)
+print('=' * 30)
 
 # Passing parameters in URLs
 payload = {'key1': 'value1', 'key2': 'value2'}
 r = requests.get('http://httpbin.org/get', params=payload)
 
 # To return the URL - notice the parameters construction
-print("URL:", r.url)
+print('URL:', r.url)
 
 # Headers containt the type of the response's content
-print("content-type:", r.headers['content-type'])
+print('content-type:', r.headers['content-type'])
+
 """
-Common headers are:
+Common content-type headers are:
 text/plain for plain text
 application/json for json
 application/octet-stream for binary
+
+Headers can be sent in a GET request using:
+r = requests.get(url, headers=headers)
 """
 
 print(type(r.content))
@@ -75,7 +79,7 @@ r2 = r2.json()
 print(r2)  # dictionary
 print(r2.keys())
 
-print("=" * 30)
+print('=' * 30)
 
 # POST method - the end point is receiving the data, @data will send binary data
 r3 = requests.post('http://httpbin.org/post', data = {'key':'value'})
@@ -100,3 +104,4 @@ print(r3.status_code)
 # OPTIONS method
 r3 = requests.options('http://httpbin.org/get')
 print(r3.status_code)
+
