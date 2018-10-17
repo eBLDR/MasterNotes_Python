@@ -51,7 +51,14 @@ def upload_temp():
 
 @app.route('/uploader', methods=['POST'])
 def upload_file():
-    file = request.files['file']
+    file = request.files['file']  # Keyword name will depen on the application that making the request
+
+    # To get the filename
+    print(file.filename)
+
+    # To get the size of the file
+    print(file.content_length)
+    
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
