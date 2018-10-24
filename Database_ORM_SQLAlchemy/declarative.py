@@ -33,12 +33,21 @@ class CustomBase(Base):
 class Person(CustomBase):
     __tablename__ = 'person'  # Name of the table in database
     
-    # Here we define columns for the table address, the name of the attribute
+    # Here we define columns for the table, the name of the attribute
     # must match the table's column name
     # Notice that each column is also a normal Python instance attribute
 
+    """ Column can take severl arguments:
+    @primary_key=False, if True marks the column as primary key
+    @nullable=True, if False it won't accept NULL value
+    @index=False, if True indicates that the column is indexed
+    @default=NULL, if <value> value will be taken as a default value
+    @unique=False, if True indicates that the column contains a unique constraint
+    """
+
     id = Column(Integer, primary_key=True)
-    name = Column(String(250), nullable=False)
+    # String can take @encoding as argument, if not specified, it will take the schema's default
+    name = Column(String(250, u'utf8_unicode_ci'), nullable=False)
 
 
 class Address(CustomBase):
