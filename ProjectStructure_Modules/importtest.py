@@ -21,40 +21,40 @@ from math import pi, sqrt, pow
 import random
 """
 
-import sampleimported  # to import the whole module
+import sampleimported  # To import the whole module
 
-# if we wish to change the name to reference to the module
+# If we wish to change the name to reference to the module
 # import sampleimported as si
 
-# the next statement will import all (*) from the file, except for the methods that start with underscore (_),
+# The next statement will import all (*) from the file, except for the methods that start with underscore (_),
 # this is not advised because all the names become part of our namespace and can cause problems with duplicates
 # from sampleimported import *
 
 # If the file is not in the same folder, we can specify the path using . as tree structure
 import subfolder.subsampleimported
 
-# we can import specific objects
+# We can import specific objects
 from sampleimported import superKey
 
 # __name__ is an attribute of the file
 print('I am ' + __name__)
 print('and I\'m importing ' + sampleimported.__name__)
 
-print("My attributes are:")
-print(dir(sampleimported))  # to show all the data/method attributes in the module
+print('My attributes are:')
+print(dir(sampleimported))  # To show all the data/method attributes in the module
 
-# calling a function inside the imported module, module.method()
+# Calling a function inside the imported module, module.method()
 sampleimported.hi()
 
-# calling a variable inside the imported modul
+# Calling a variable inside the imported module
 print(sampleimported.key)
 
-print(superKey)     # it's part of the namespace of this module
-                    # there is no need to specify the module where it comes from
+# It's now part of the namespace of this module - no need to specify the module
+print(superKey)
 
 print('=' * 20)
 
-# show global variables in this module, notice superKey from the imported module!!!
+# Show global variables in this module, notice superKey from the imported module!!!
 g = sorted(globals())
 print('globals() are:')
 for x in g:
@@ -71,3 +71,4 @@ print('=' * 20)
 # vars() can take a dict as an argument
 print('vars().keys() are:')
 print(vars().keys())
+

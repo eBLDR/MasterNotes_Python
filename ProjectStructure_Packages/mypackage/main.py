@@ -11,3 +11,9 @@ from mypackage.demomodule import demo2
 demomodule.demo()
 
 demo2()
+
+# Importing a nested packaged
+from mypackage.settings import local
+
+print(local.SECRET_VAR)
+
