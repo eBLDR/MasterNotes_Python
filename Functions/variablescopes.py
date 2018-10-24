@@ -23,6 +23,8 @@ G, Global (module) — Names assigned at the top-level of a module file, or by e
 within the file.
 B, Built-in (Python) — Names preassigned in the built-in names module : open,range,SyntaxError,...
 """
+
+
 def add_to_local(number):
     # number is a local variable
     number += 1
@@ -47,7 +49,7 @@ def add_to_global():
 
 
 print('number is:', number)
-print('Calling add_to_gloal()...')
+print('Calling add_to_global()...')
 add_to_global()
 print('number is:', number)
 
@@ -70,3 +72,4 @@ def add_to_nonlocal():
 
 
 add_to_nonlocal()
+
