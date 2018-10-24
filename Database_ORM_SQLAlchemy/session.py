@@ -7,7 +7,7 @@ from declarative import Address, Base, Person
 engine = create_engine('sqlite:///example.db', echo=True)
 
 # Bind the data to the engine
-Base.metadata.bind = engine
+# Base.metadata.bind = engine
 
 # Creating a db session class
 DBSession = sessionmaker(bind=engine)  # By default @autoflush=True
