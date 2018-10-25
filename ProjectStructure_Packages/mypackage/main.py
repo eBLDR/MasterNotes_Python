@@ -1,6 +1,9 @@
 """
 Because mypackage has a __init__.py file, all the data inside
 the folder can be treated as if it was a single module.
+
+__init__.py file will be the first one to be executed when importing any
+module inside the package.
 """
 # Importing the whole module
 from mypackage import demomodule
