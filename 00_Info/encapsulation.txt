@@ -1,0 +1,20 @@
+Encapsulation techniques - underscore naming usage:
+
+' _item ' - Object names (variables, attributes, methods...) starting with a single underscore, are supposed to be
+NON-PUBLIC, although nothing stops us to access it. NON-PUBLIC means that the object should not be used outside
+of the class where it's declared. And are not imported when importing a module.
+
+' __item ' - Object names starting with 2 underscores (and NOT finishing with 2 underscores) (Aka dunderscore or dunder)
+results in name mangling; are supposed to be private. They can only be called from inside the class itself.
+Mangling is a Python technique that renames the original item if we try to edit it, and creates a new one using the
+original name with the new value. Are imported.
+Example: __mangled is declared inside __init__, we try to edit it instance.__mangled = 1, Python will automatically
+rename __mangled to _className.__mangled, and its value will remain unchanged. Will also create a new variable called
+__mangled, and its value will be the new one.
+
+' __item__ '  - Is a convention to minimize conflicts in case one wishes to use a similar name for another function,
+have no effect.
+
+'to_', 'from_', 'id_' - By convention, add one underscore at the end if the name is a keyword.
+
+'_' - If there is any need to declare a throwaway value, we can name the variable as '_'  (i.e.: _ = placeholder).

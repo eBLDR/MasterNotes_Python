@@ -1,23 +1,6 @@
-"""
-Getters & setters for private data attributes.
-
-Encapsulation techniques - underscore naming usage:
-
-' _item ' Object names (variables, attributes, methods...) starting with a single underscore, are supposed to be
-NON-PUBLIC, although nothing stops us to access it. NON-PUBLIC means that the object should not be used outside
-of the class where it's declared. And are not imported when importing a module.
-
-' __item ' Object names starting with 2 underscores (and NOT finishing with 2 underscores) (Aka dunderscore or dunder)
-results in name mangling; are supposed to be private. They can only be called from inside the class itself.
-Mangling is a Python technique that renames the original item if we try to edit it, and creates a new one using the
-original name with the new value. Are imported.
-Example: __mangled is declared inside __init__, we try to edit it instance.__mangled = 1, Python will automatically
-rename __mangled to _className.__mangled, and its value will remain unchanged. Will also create a new variable called
-__mangled, and its value will be the new one.
-
-' __item__ '  is a convention to minimize conflicts in case one wishes to use a similar name for another function,
-have no effect.
-"""
+# Getters & setters for private data attributes.
+# Using encapsulation for mangling and private attributes.
+# See encapsulation.txt
 
 
 class Player:
@@ -27,7 +10,7 @@ class Player:
         self._lives = 3  # _attribute to show that it should be private
         self._level = 1
         self._score = 0
-        self.__mangle = None  # just for the example of name mangling
+        self.__mangle = None  # Just for the example of name mangling
 
     # Getter, a method that returns the value of an attribute
     def _get_lives(self):  # _ to show that it's private and these methods should'nt be used
@@ -79,13 +62,13 @@ class Player:
 
 bldr = Player('BLDR')
 
-print(bldr)         # calling the __str__ method
+print(bldr)         # Calling the __str__ method
 
-print(bldr.name)    # printing specific data attribute
-print(bldr.lives)   # since 'lives' is a property of the object, trying to call the attribute like this
-                    # causes the getter method to be called
+print(bldr.name)    # Printing specific data attribute
+print(bldr.lives)   # Since 'lives' is a property of the object, trying to call the attribute like this
+                    # Causes the getter method to be called
 
-bldr.lives = 5      # and this, calls the setter method
+bldr.lives = 5      # And this, calls the setter method
 print(bldr)
 
 bldr.level += 3
@@ -94,13 +77,14 @@ print(bldr)
 bldr.level -= 1
 print(bldr)
 
-bldr.score = 500    # setter method, property created using decorators
+bldr.score = 500    # Setter method, property created using decorators
 print(bldr)
 
-# mangling
-bldr.__mangle = 30    # trying to edit a mangled attribute
+# Mangling
+bldr.__mangle = 30    # Trying to edit a mangled attribute
 print(bldr.__mangle)
-print(bldr.__dict__)   # here we can see mangling working, _Player_mangle attribute has been created
+print(bldr.__dict__)   # Here we can see mangling working, _Player_mangle attribute has been created
 
 # trying to call a private method from outside will raise an error
 # bldr.__private()
+

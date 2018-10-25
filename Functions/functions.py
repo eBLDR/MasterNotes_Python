@@ -11,27 +11,28 @@ Care of the type of the variable.
 
 def test_function():
     """
-    Documentation goes here.
+    Documentation goes here - also called 'function signature'.
+    pep257 talk about the style of docstrings.
     """
-    # pass  # a command that does nothing :)
+    # pass  # A command that does nothing
 
     print('I\'m a useless function')
 
 
-print(test_function.__name__)  # to print the name of the function, str
+print(test_function.__name__)  # To print the name of the function, str
 
-# call the function
+# Call the function
 test_function()
-print(test_function())  # to see what's returned
+print(test_function())  # To see the returned value
 
-what = print("A")
-print(what)  # this will print None, since print() does not return anything
+what = print('A')
+print(what)  # This will print None, since print() does not return anything
 
 print('=' * 20)
 
 
 # Function annotations (or type hints), provides info about the type of the parameter expected (are optional)
-# it can also be a customized class
+# It can also be a customized class
 def get_char(prompt: str) -> str:  # -> return Type - hint about the type returned
     """
     Ask to the user to input a character/s using specific prompt.
@@ -40,8 +41,8 @@ def get_char(prompt: str) -> str:  # -> return Type - hint about the type return
     """
     while True:
         c = input(prompt)
-        return c  # return will send the variable/s specified, it also stops the execution of the function
-        # return  # return can also be typed alone, it will break the function and return None
+        return c  # Return will send the variable/s specified, it also stops the execution of the function
+        # return  # Return can also be typed alone, it will break the function and return None
 
 char = get_char('Type something: ')
 print(char)
@@ -50,11 +51,11 @@ print('=' * 20)
 
 
 # *args can take any number of arguments, passed to the function in a tuple
-# keyword parameters (or named parameters) (i.e.: key_word_par = None)
+# Keyword parameters (or named parameters) (i.e.: key_word_par = None)
 def centre_text(*texts, sep_char=' ', end_char='\n', file=None):  # named parameters are set to default
-    text = ""
+    text = ''
     for arg in texts:
-        text += str(arg) + sep_char  # list comprehension method is more efficient, but for now we stick to this
+        text += str(arg) + sep_char
     left_margin = (50 - len(text)) // 2
     print(" " * left_margin, text, end=end_char, file=file)
 
@@ -73,10 +74,11 @@ def happy_text(*texts, sep=' :) '):
     text = ''
     for arg in texts:
         text += str(arg) + sep
-    return text  # will return whatever type/variable
+    return text  # Will return whatever type/variable
 
 
-print(happy_text('I', 'am', 'damn', 'happy', sep=' :( '))  # we can specify the named parameters, if not, they are set
-# to default
+print(happy_text('I', 'am', 'damn', 'happy', sep=' :( '))  # We can specify the named parameters, if not, they are set
+# To default
 happy1 = happy_text('Assigning', 'returned', 'values')
 print(happy1)
+

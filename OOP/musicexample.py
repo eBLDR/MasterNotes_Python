@@ -1,10 +1,9 @@
-# document strings (docstring) sample
-# pep257 talk about the style of docstrings
 # CIRCULAR REFERENCES happen when we call C class from B class, B class from A class, and A class from C class
 # may arise problems easily
 
 
 class Song:
+    # Document strings (docstring) sample
     """Class to represent a song
 
     Attributes:
