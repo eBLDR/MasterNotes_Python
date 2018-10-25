@@ -1,4 +1,6 @@
 # Keywords in Python 3.7
+# Some of the keywords are syntactic sugar for built-in functions
+# i.e.: import calls __import__()
 
 >>> import keyword
 >>> keyword.kwlist
