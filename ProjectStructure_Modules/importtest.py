@@ -5,13 +5,10 @@ in that namespace.
 USING UNDERSCORES
 Python does NOT have private or hidden objects.
 _whatever, by convention, means that the object should be protected, so not to be used
-outside of the file where it exists.
-
-to_ or from_ (convention) - add one underscore at the end if the word is a keyword.
+outside of the file where it exists, so when importing file, Python will NOT import
+variables with a name starting with '_'.
 
 __object__ this should never be touched.
-
-If there is any need to declare a throwaway value, we can name the variable as _  (i.e.: _ = junk).
 
 Note: is totally fine to import multiple modules in a single line, like so:
 import time, math, random
@@ -24,14 +21,11 @@ import random
 import sampleimported  # To import the whole module
 
 # If we wish to change the name to reference to the module
-# import sampleimported as si
+# import sampleimported as <new_name>
 
 # The next statement will import all (*) from the file, except for the methods that start with underscore (_),
 # this is not advised because all the names become part of our namespace and can cause problems with duplicates
 # from sampleimported import *
-
-# If the file is not in the same folder, we can specify the path using . as tree structure
-import subfolder.subsampleimported
 
 # We can import specific objects
 from sampleimported import superKey
@@ -39,6 +33,8 @@ from sampleimported import superKey
 # __name__ is an attribute of the file
 print('I am ' + __name__)
 print('and I\'m importing ' + sampleimported.__name__)
+
+print(type(sampleimported))
 
 print('My attributes are:')
 print(dir(sampleimported))  # To show all the data/method attributes in the module
@@ -71,4 +67,11 @@ print('=' * 20)
 # vars() can take a dict as an argument
 print('vars().keys() are:')
 print(vars().keys())
+
+print('=' * 20)
+
+# If the file is not in the same folder, we can specify the path using . as tree structure
+import subfolder.subsampleimported
+
+print(subfolder.subsampleimported.subkey)
 
