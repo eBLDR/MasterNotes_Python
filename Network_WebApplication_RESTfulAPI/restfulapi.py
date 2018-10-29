@@ -53,7 +53,7 @@ def ...
     if request.method == 'GET':
         ...
 
-But I prefer (for the sake of the notes) to keep the in separate functions.
+But I prefer (for the sake of the notes) to keep them in separate functions.
 """
 
 # Create record
@@ -132,3 +132,4 @@ def delete_entry():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5002)
+
