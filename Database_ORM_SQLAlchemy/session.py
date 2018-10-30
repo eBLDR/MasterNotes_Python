@@ -136,6 +136,11 @@ from sqlalchemy import or_
 address = session.query(Address).filter(or_(Address.person == person, Address.post_code == '00000')).first()
 print(address.post_code)
 
+"""
+The object returned by session.query also have the methods filter_by(), order_by(), group_by(),
+with the same behaviour as the equivalent SQL statements.
+"""
+
 print('=' * 30)
 
 # UPDATE OBJECTS
