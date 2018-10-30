@@ -153,8 +153,11 @@ print('=' * 30)
 
 # Equivalence to SQL DELETE clause - will delete all the matching records
 session.query(Person).filter(Person.name == 'new person').delete()
-# session.commit()
 
+# Will the delelte the @sqlalchemy_object
+session.delete(address)
+
+# session.commit()
 session.close()
 
 """
