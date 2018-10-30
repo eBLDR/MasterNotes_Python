@@ -7,7 +7,6 @@ Session object states:
 - Persistent: an instance that has been persisted to the database - commit()
 - Detached: an instance that has been persisted to the database but not included in any sessions - close() after commit()
 """
-
 from sqlalchemy import create_engine
 # Session object
 from sqlalchemy.orm import sessionmaker
@@ -49,7 +48,7 @@ session.close()
 print('=' * 30)
 
 # CREATE OBJECTS
-from sqlalchemy import inspect # To inspect the object states
+from sqlalchemy import inspect  # To inspect the object states
 
 session = DBSession()
 
@@ -116,17 +115,7 @@ print(all_data)  # Returns a list with all the records, a list of Person type
 person = session.query(Person).first()
 print(person)
 print(person.id, person.name)  # Field can be accessed by name
-
-# UPDATE OBJECTS
-
-# Equivalence to SQL UPDATE clause
-person.name = 'New Updated Name'  # Updating the attr
-session.commit()
-
-# person is an object from Person class, we can access our custom methods
-print(person.to_dictionary())
-
-print('=' * 30)
+id_ = person.id  # To update record later
 
 # Using filters - filter(condition), equivalent to SQL WHERE clause
 result = session.query(Address).filter(Address.person == person).all()
@@ -146,6 +135,28 @@ except:
 from sqlalchemy import or_
 address = session.query(Address).filter(or_(Address.person == person, Address.post_code == '00000')).first()
 print(address.post_code)
+
+print('=' * 30)
+
+# UPDATE OBJECTS
+
+# Equivalence to SQL UPDATE clause
+person.name = 'New Updated Name'  # Updating the attr
+session.commit()
+
+person_buff = session.query(Person).filter(Person.id == id_)
+print(person_buff.first().name)
+
+# update(@key_newvalue_dict)
+person_buff.update({'name': 'New Better Updated Name'})
+session.commit()
+
+person_buff = session.query(Person).filter(Person.id == id_)
+person = person_buff.first()
+print(person.name)
+
+# person is an object from Person class, we can access our custom methods
+print(person.to_dictionary())
 
 print('=' * 30)
 
