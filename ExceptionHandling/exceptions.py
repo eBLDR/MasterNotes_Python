@@ -48,3 +48,4 @@ finally:  # finally is executed regardless an exception was raised or not, even 
     print('The finally clause always executes')
 
 print('Program terminating')
+
