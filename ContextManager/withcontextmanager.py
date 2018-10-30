@@ -22,7 +22,7 @@ with open('example.txt', 'a') as myResource:
 
 # Customized managers
 class File:
-    # Reduntant class, does exactly the same as the example above, but we could
+    # Redundant class, does exactly the same as the example above, but we can
     # add here extra functionality
 
     def __init__(self, filename, mode):
@@ -69,7 +69,8 @@ with File('example2.txt', 'a') as file:
     file.connection.write('more and more and more\n')
     
     # Forcing error
-    #raise NameError  # Comment this line to see different behaviour
+    #raise NameError  # Comment/Uncomment this line to see different behaviour
  
     # Extra functionality - if no errors were raised
     file.success = True  # Last line
+
