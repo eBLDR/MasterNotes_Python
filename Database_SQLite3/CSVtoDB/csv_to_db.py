@@ -114,7 +114,7 @@ def create_db(file_name, data):
             
     print('Insertion completed.\n\t- Records added: {}'.format(r))  # Control print
 
-    # Commiting changes and closing database file
+    # Committing changes and closing database file
     db.commit()
     db.close()
 
