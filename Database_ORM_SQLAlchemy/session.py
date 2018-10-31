@@ -107,15 +107,18 @@ print('=' * 30)
 # QUERY OBJECTS
 
 # Equivalence to SQL SELECT clause
-# all() will fetch all records
+buff = session.query(Person)  # Returns the SQL statement query
+print(buff, type(buff))
+
+# all() will fetch and return all records
 all_data = session.query(Person).all()
 print(all_data)  # Returns a list with all the records, a list of Person type
 
-# first() ill return the first record
+# first() will fetch and return the first record
 person = session.query(Person).first()
-print(person)
-print(person.id, person.name)  # Field can be accessed by name
-id_ = person.id  # To update record later
+print(person, type(person))
+print(person.id, person.name)  # Fields can be accessed by name
+id_ = person.id  # To update the record later
 
 # Using filters - filter(condition), equivalent to SQL WHERE clause
 result = session.query(Address).filter(Address.person == person).all()
