@@ -1,11 +1,12 @@
 """
-Both *args and *kwargs must be the only or the last of the parameters of their type. Example:
+Both *args and **kwargs must be the only or the last of the parameters of their type. Example:
 def blabla(word, *args, keyW=None, keyX=False, **kwargs):
-In this case, *args and **kwargs will absorb all the remaining arguments/key word arguments.
+In this case, *args and **kwargs will absorb all the remaining positional arguments/key word
+arguments respectively.
 """
 
 # print has a *args (see builtins.py)
-print("Hello", "planet", "Earth")
+print('Hello', 'planet', 'Earth')
 
 
 # *args can get any number of positional arguments
@@ -14,8 +15,8 @@ print("Hello", "planet", "Earth")
 def average(*args):
     # *tuple is an UNPACKED tuple
     print(type(args))
-    print("args is {}: ".format(args))
-    print("*args is: ", *args)
+    print('args is {}: '.format(args))
+    print('*args is: ', *args)
     mean = 0
 
     # To use the arguments, we iterate over args (unpacking)
@@ -27,7 +28,7 @@ def average(*args):
 
 print(average(1, 2, 3, 4))
 
-print("=" * 30)
+print('=' * 30)
 
 
 # kwargs, key word arguments
@@ -51,12 +52,12 @@ def child(n, **mykwargs):
 print('Calling child()...')
 child(5, name='myName')
 
-print("=" * 30)
+print('=' * 30)
 
 
 # def print_backwards(*args, file=None): turns into:
 def print_backwards(*args, **kwargs):
-    print("kwargs is {}: ".format(kwargs))
+    print('kwargs is {}: '.format(kwargs))
 
     # The next line is to avoid a potential kwarg duplicate
     kwargs.pop('end', None)  # Since it's a dictionary we are free to manipulate it
@@ -67,4 +68,5 @@ def print_backwards(*args, **kwargs):
 
 
 with open('backwards.txt', 'w') as backwards:
-    print_backwards("hello", "planet", "earth", "take", "me", "to", "your", "leader", end=' ', file=backwards)
+    print_backwards('hello', 'planet', 'earth', 'take', 'me', 'to', 'your', 'leader', end=' ', file=backwards)
+
