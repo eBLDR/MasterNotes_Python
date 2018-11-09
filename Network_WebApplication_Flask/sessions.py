@@ -8,9 +8,12 @@ from flask import Flask, session, redirect, url_for, request
 app = Flask(__name__)
 app.secret_key = 'secret key'  # Setting the password
 
+print(type(session))
+
 
 @app.route('/')
 def index():
+    print(session)
     if 'username' in session:
         username = session['username']
         return 'Logged in as ' + username + '<br>' + \
