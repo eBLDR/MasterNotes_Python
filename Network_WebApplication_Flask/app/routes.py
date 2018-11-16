@@ -18,6 +18,7 @@ from app import app
 from app.authorization import *
 
 
+# Different endpoints can ping to the same function
 @app.route('/')
 @app.route('/index')
 def index():
@@ -38,14 +39,14 @@ def index():
 
 
 # <argument> can be used to send arguments to the function's parameters
-# in this case we use _ as a placeholder for any combination after /
-# it takes least priority, /index will call index() first
+# A placeholder can be used to control any url combination
+# Arguments take the least priority, e.g.: /index will call index() first
 # to avoid ambiguation, converters can be used (it's string by default):
 # <int:id>, <float:id>, <path:id>
-@app.route('/<int:num>')
+@app.route('/<num>')
 def number(num):
 
-    return "This is " + str(num)
+    return 'This is ' + str(num)
 
 
 # flask's redirect function redirects to desired URL
