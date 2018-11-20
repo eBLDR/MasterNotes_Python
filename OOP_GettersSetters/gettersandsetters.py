@@ -13,7 +13,7 @@ class Player:
         self.__mangle = None  # Just for the example of name mangling
 
     # Getter, a method that returns the value of an attribute
-    def _get_lives(self):  # _ to show that it's private and these methods should'nt be used
+    def _get_lives(self):  # _ to show that it's private and these methods shouldn't be used
         print('I\'m a Getter for _lives')
         return self._lives
 
@@ -42,11 +42,11 @@ class Player:
     level = property(_get_level, _set_level)
 
     # Another syntax for properties, using decorators; it has the same use and result
-    @property           # Decorator, this creates the property and access the getter method
-    def score(self):    # It's at the same time the name of the property and the getter method
+    @property  # Decorator, this creates the property and access the getter method
+    def score(self):  # It's at the same time the name of the property and the getter method
         return self._score
 
-    @score.setter       # This decorator assigns the setter method to the specified property
+    @score.setter  # This decorator assigns the setter method to the specified property
     def score(self, score):
         self._score = score
 
@@ -62,13 +62,14 @@ class Player:
 
 bldr = Player('BLDR')
 
-print(bldr)         # Calling the __str__ method
+print(bldr)  # Calling the __str__ method
 
-print(bldr.name)    # Printing specific data attribute
-print(bldr.lives)   # Since 'lives' is a property of the object, trying to call the attribute like this
-                    # Causes the getter method to be called
+print(bldr.name)  # Printing specific data attribute
+# Since 'lives' is a property of the object, trying to call the attribute like this
+# causes the getter method to be called
+print(bldr.lives)
 
-bldr.lives = 5      # And this, calls the setter method
+bldr.lives = 5  # And this, calls the setter method
 print(bldr)
 
 bldr.level += 3
@@ -81,9 +82,9 @@ bldr.score = 500    # Setter method, property created using decorators
 print(bldr)
 
 # Mangling
-bldr.__mangle = 30    # Trying to edit a mangled attribute
+bldr.__mangle = 30  # Trying to edit a mangled attribute
 print(bldr.__mangle)
-print(bldr.__dict__)   # Here we can see mangling working, _Player_mangle attribute has been created
+print(bldr.__dict__)  # Here we can see mangling working, _Player_mangle attribute has been created
 
 # trying to call a private method from outside will raise an error
 # bldr.__private()
