@@ -8,60 +8,62 @@ FPS = 30
 fpsClock = pygame.time.Clock()  # clock object
 
 DISPLAY_SURF = pygame.display.set_mode((400, 300), 0, 32)
-pygame.display.set_caption("Cat Animation")
+pygame.display.set_caption('Cat Animation')
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 
-catImg = pygame.image.load('MakingGames/makinggames_src/cat.png')  # creates another surface object
+catImg = pygame.image.load('catanimation_src/cat.png')  # creates another surface object
 catx = 10
 caty = 10
 direction = 'right'
 
-fontObj = pygame.font.Font('freesansbold.ttf', 32)      # creates a font object
+fontObj = pygame.font.Font('freesansbold.ttf', 32)  # creates a font object
 # creates a surface with text - (@text, @anti-aliasing, @font color, @background color)
 textSurfaceObj = fontObj.render('Epic Cat', True, RED)  # , WHITE)
-textRectObj = textSurfaceObj.get_rect()                 # text rectangle, will be automatically adjusted to long text
-textRectObj.center = (200, 150)                         # reposition of text rectangle
+textRectObj = textSurfaceObj.get_rect()  # text rectangle, will be automatically adjusted to long text
+textRectObj.center = (200, 150)  # reposition of text rectangle
 
+"""
 # background music
-pygame.mixer.music.load('MakingGames/makinggames_src/tetrisc.mid')
+pygame.mixer.music.load('catanimation_src/tetrisc.mid')
 # start play bg music; @time of loop (-1 = infinity); @second from beginning
 pygame.mixer.music.play(-1, 0.0)
 
 # creates sound object
-soundObj = pygame.mixer.Sound('MakingGames/makinggames_src/badswap.wav')
+soundObj = pygame.mixer.Sound('catanimation_src/badswap.wav')
+"""
 
 while True:
     DISPLAY_SURF.fill(BLACK)
     if direction == 'right':
         catx += 5
         if catx == 280:
-            soundObj.play() # plays sound object
+            # soundObj.play()  # plays sound object
             direction = 'down'
     elif direction == 'down':
         caty += 5
         if caty == 220:
-            soundObj.play()
+            # soundObj.play()
             direction = 'left'
     elif direction == 'left':
         catx -= 5
         if catx == 10:
-            soundObj.play()
+            # soundObj.play()
             direction = 'up'
     elif direction == 'up':
         caty -= 5
         if caty == 10:
-            #soundObj.play()
+            # soundObj.play()
             direction = 'right'
 
-    DISPLAY_SURF.blit(catImg, (catx, caty)) # paste the surface object to main surface
+    DISPLAY_SURF.blit(catImg, (catx, caty))  # paste the surface object to main surface
     DISPLAY_SURF.blit(textSurfaceObj, textRectObj)
     
     for event in pygame.event.get():
         if event.type == QUIT:
-            pygame.mixer.music.stop()
+            # pygame.mixer.music.stop()
             pygame.quit()
             sys.exit()
 
