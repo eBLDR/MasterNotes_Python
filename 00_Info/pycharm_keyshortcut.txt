@@ -18,6 +18,7 @@ Alt + Up/Down		- go to previous/next method
 Ctrl + F/R		- find/replace
 F3/Shift + F3		- find next/previous
 Ctrl + Shift + F	- find in path
+Ctrl + Shift + N	- find file
 Double Shift		- search everywhere
 
 Alt + Click		- multiple line editing
