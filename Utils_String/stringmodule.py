@@ -1,32 +1,31 @@
-""" Using the string.py module for ASCII characters. """
-
+# Using the string.py module for ASCII characters
 import string
 
-# all the ascii letter including both lowercase and uppercase
+# All the ascii letter including both lowercase and uppercase
 ascii_all = string.ascii_letters
 
-# only the lowercase ascii letters
+# Only the lowercase ascii letters
 ascii_lower = string.ascii_lowercase
 
-# only the uppercase ascii letters
+# Only the uppercase ascii letters
 ascii_upper = string.ascii_uppercase
 
-# the decimal digits
+# Decimal digits
 digits = string.digits
 
-# hexadecimal digits
+# Hexadecimal digits
 hex_digits = string.hexdigits
 
-# octal digits
+# Octal digits
 oct_digits = string.octdigits
 
-# punctuation characters
+# Punctuation characters
 punctuation = string.punctuation
 
-# whitespace, includes space, tab, return, linefeed, form feed, vertical tab
+# Whitespace - includes space, tab, return, linefeed, form feed, vertical tab
 whitespace = string.whitespace
 
-# all the printable characters, combination of digits, ascii_letters, punctuation and whitespace
+# All the printable characters, combination of digits, ascii_letters, punctuation and whitespace
 all_chars = string.printable
 
 print(ascii_lower)
