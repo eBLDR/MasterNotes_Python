@@ -1,4 +1,3 @@
-
 pip (Pip Installs Packages) is a package management system used to install and manage software packages written in Python, it's included in
 Python 3.4 and later (pip3 linked to name pip). It downloads the packages from PyPI.
 

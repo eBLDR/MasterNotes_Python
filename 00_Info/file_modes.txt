@@ -1,4 +1,3 @@
-
 There are two types of files: plain text, such as .txt and .py. Can be considered as a string type.
 And binary files, which are all the rest (images, pdf, executables, etc).
 
