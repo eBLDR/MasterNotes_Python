@@ -14,4 +14,3 @@ v = 'Hello World'
 
 # Printing the variable
 print(v)
-

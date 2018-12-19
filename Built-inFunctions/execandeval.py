@@ -17,8 +17,8 @@ print(z)
 # useful to create a set of variables with numbered names
 list_of_var = []
 for i in range(5):
-    exec("var{0} = {0}".format(i))
-    exec("list_of_var.append(var{})".format(i))
+    exec('var{0} = {0}'.format(i))
+    exec('list_of_var.append(var{})'.format(i))
 
 print(list_of_var)
 print(var4)  # even the warning, var4 exists

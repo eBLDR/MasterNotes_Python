@@ -1,9 +1,9 @@
 # functions that work with sequence/iterable type data (str, list, tuple, range...)
 
-string_sample = 'I am a sample, yes'            # immutable
-list_sample = ['A', 'ch', 12, True, 'X', 36]    # mutable
-tuple_sample = 4, 12, 0, 100, 1                 # immutable
-set_sample = {1, 5, 45, 55}                     # mutable, not indexed
+string_sample = 'I am a sample, yes'  # immutable
+list_sample = ['A', 'ch', 12, True, 'X', 36]  # mutable
+tuple_sample = 4, 12, 0, 100, 1  # immutable
+set_sample = {1, 5, 45, 55}  # mutable, not indexed
 
 # in keyword - membership - returns True or False to the question: is value-x in seq?
 print(5 in tuple_sample)
@@ -13,8 +13,8 @@ print('z' not in string_sample)
 print('=' * 20)
 
 # indexes
-print(list_sample[1])       # index must be in range
-print(tuple_sample[-1])     # negative indexes also work
+print(list_sample[1])  # index must be in range
+print(tuple_sample[-1])  # negative indexes also work
 print(string_sample[-5])
 
 print('=' * 20)
@@ -99,9 +99,9 @@ print(str_from_list)
 print('=' * 20)
 
 # split() - opposite to join, split method will split the string into a list of strings
-split_string = string_sample.split()    # breaks every word, all feed characters (\t, ,\n...) are the default delimiters
-print(split_string)                     # it's now a list made of strings
-print(string_sample.split(","))         # breaks using a given character
+split_string = string_sample.split()  # breaks every word, all feed characters (\t, ,\n...) are the default delimiters
+print(split_string)  # it's now a list made of strings
+print(string_sample.split(","))  # breaks using a given character
 
 print('=' * 20)
 
@@ -115,7 +115,7 @@ print('=' * 20)
 
 # enumerate(seq) - return an enumerate object, iterable, a tuple containing a count (from start which
 # defaults to 0) and the values obtained from iterating over the sequence
-for i,j in enumerate(list_sample, start=1):
+for i, j in enumerate(list_sample, start=1):
     print(i, j)
 
 # direct conversion to list/tuple/dict...

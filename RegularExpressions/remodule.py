@@ -1,7 +1,7 @@
 # Regular expression - re module guide
 import re
 
-# create a 'regex' object that contains the pattern to be searched for
+# Create a 'regex' object that contains the pattern to be searched for
 # in the example, we will find phone numbers like 455-455-2535
 phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')  # using raw string to avoid typing many \ to escape \
 print(phone_num_regex)
@@ -18,7 +18,7 @@ if match_object:
     # group() method returns the whole match as str
     print('Phone number found: ' + match_object.group())
 
-print("=" * 30)
+print('=' * 30)
 
 # Creating groups with ()
 phone_num_regex2 = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
@@ -49,7 +49,7 @@ msg2 = 'The adventures of Batman'
 print(bat_regex.search(msg).group())
 print(bat_regex.search(msg2).group())
 
-print("=" * 30)
+print('=' * 30)
 
 # using * to match zero or more
 banana_regex = re.compile(r'ba(na)*')  # will match 'ba' also
@@ -59,7 +59,7 @@ print(banana_regex.search('I like bananana').group())
 banana_regex = re.compile(r'ba(na)+')  # will match 'bana', but not 'ba'
 print(banana_regex.search('I like bananana').group())
 
-print("=" * 30)
+print('=' * 30)
 
 # curly braces for range repetition
 greedy_laugh_regex = re.compile(r'(Ha){3,5}')  # {min=0, max=infinite}, {,5} and {4,} also possible
@@ -70,7 +70,7 @@ print(greedy_laugh_regex.search('HaHaHaHa').group())
 non_greedy_laugh_regex = re.compile(r'(Ha){3,5}?')  # place a ? after the closing curly brackets for non-greedy
 print(non_greedy_laugh_regex.search('HaHaHaHa').group())
 
-print("=" * 30)
+print('=' * 30)
 
 # findall() method will return the str of every match found
 mo = phone_num_regex.findall(msg_num)  # phoneNumRegex has no groups
@@ -79,7 +79,7 @@ print(mo)  # it's a list of str
 mo2 = phone_num_regex2.findall(msg_num)  # phoneNumRegex2 has groups
 print(mo2)  # in this case, it's a list of tuples
 
-print("=" * 30)
+print('=' * 30)
 
 # character classes can be mixed
 band_regex = re.compile(r'\d+ \w+')  # 1+ digit followed by space followed by 1+ letter/digit/_
@@ -99,7 +99,7 @@ digits_and_letters_class = r'[a-zA-Z0-9]'
 consonant_regex = re.compile(r'[^aeiouAEIOU]')  # all but excluding the ones in class
 print(consonant_regex.findall(msg))
 
-print("=" * 30)
+print('=' * 30)
 
 # ^ to indicate string must start with the pattern
 begins_with_hello = re.compile(r'^Hello')
@@ -113,7 +113,7 @@ print(ends_with_number.search('Your number is 24').group())
 whole_string_is_num = re.compile(r'^\d+$')
 print(whole_string_is_num.search('12246302').group())
 
-print("=" * 30)
+print('=' * 30)
 
 # wildcard '.' to match everything but not newline
 at_regex = re.compile(r'.at')
@@ -137,13 +137,13 @@ print(non_greedy_regex.search(msg).group())
 # DOTALL makes . match also newline
 new_line_regex = re.compile('.*', re.DOTALL)  # this matches absolutely everything
 
-print("=" * 30)
+print('=' * 30)
 
 # case-insensitive matching, re.IGNORECASE = re.I
 robocop = re.compile(r'robocop', re.I)
 print(robocop.search('RoBOcop is...').group())
 
-print("=" * 30)
+print('=' * 30)
 
 # substituting strings, .sub(newText, file)
 secret_msg = 'Agent BLDR killed Agent Coka!'

@@ -39,4 +39,3 @@ print('=' * 20)
 print('issubclass(Mack, Mock):', issubclass(Mack, Mock))
 # Can take a tuple of classes
 print('issubclass(Mack, (dict, Mock)):', issubclass(Mack, (dict, Mock)))
-

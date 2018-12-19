@@ -18,14 +18,14 @@ print(add(3, 4))
 
 # map(@function, @sequence) - map() applies the @func to all the elements in the @seq
 # @seq can be any iterable (list, tuple, range...) returns an iterator
-C = [39.2, 36.5, 37.0, 38.1, 40.3]          # a list with degrees Celsius
-F = list(map(lambda x: x * 9/5 + 32, C))    # creating a list with degrees Fahrenheit
+C = [39.2, 36.5, 37.0, 38.1, 40.3]  # a list with degrees Celsius
+F = list(map(lambda x: x * 9 / 5 + 32, C))  # creating a list with degrees Fahrenheit
 print(F)
 
 
 # equivalence creating a function and using list comprehension
 def converter(n):
-    return n * 9/5 + 32
+    return n * 9 / 5 + 32
 
 
 F_comp = [converter(x) for x in C]

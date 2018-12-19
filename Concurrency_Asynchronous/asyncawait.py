@@ -17,7 +17,7 @@ from random import randint
 async def my_coroutine(id_):
     process_time = randint(1, 5)
     print('Coroutine {} - Working for {} seconds...'.format(id_, process_time))
-
+    
     # await - suspends the execution of coroutine on an awaitable object
     # It can only be used inside a coroutine function (async def ...)
     await asyncio.sleep(process_time)
@@ -56,7 +56,6 @@ async def main():
 # Running a function from the event loop
 loop.run_until_complete(main())
 
-
 print('=' * 20)
 input('Now let\'s run multiple times the same function... <enter>')
 
@@ -65,7 +64,7 @@ async def main_multiple():
     tasks = []
     for i in range(1, 8):
         tasks.append(asyncio.create_task(my_coroutine(i)))
-
+    
     value = await asyncio.gather(*tasks)  # Running multiple tasks - in a sequence
     print('All tasks finished, value is:', value)
 
