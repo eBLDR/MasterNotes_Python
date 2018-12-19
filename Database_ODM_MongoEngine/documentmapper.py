@@ -1,7 +1,6 @@
 """
 ODM - Object Document Mapper
 Roughly equivalent to SQL ORM.
-
 """
 import datetime
 from mongoengine import *
@@ -24,7 +23,7 @@ class Post(Document):
 
 # Saving a document - If the document already exists in the database,
 # then all of the changes will be made on the atomic level to the existing
-# document. If it doesn’t exist, however, then it will be created.
+# document. If it does not exist, however, then it will be created.
 post_1 = Post(
     title='Sample Post',
     content='Some engaging content',
@@ -57,7 +56,7 @@ print('=' * 20)
 class Book(Document):
     title = StringField()
     published = BooleanField()
-
+    
     # queryset_manager return all documents of the collection
     @queryset_manager
     def live_posts(clazz, queryset):
@@ -71,11 +70,10 @@ class Author(Document):
 
 
 class Book(Document):
-    # Establishing the refence - @class_name
+    # Establishing the reference - @class_name
     author = ReferenceField(Author)
 
 
 doc = Book.objects.first()
 if doc:
     print(doc.author.name)
-

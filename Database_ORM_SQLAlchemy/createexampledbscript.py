@@ -1,7 +1,8 @@
 # Creating db for the examples
 import sqlite3
+
 conn = sqlite3.connect('example.db')
- 
+
 c = conn.cursor()
 c.execute('''
           CREATE TABLE person
@@ -19,6 +20,6 @@ c.execute('''
 c.execute('''
           INSERT INTO address VALUES(1, 'my street', '1', '00000', 1)
           ''')
- 
+
 conn.commit()
 conn.close()

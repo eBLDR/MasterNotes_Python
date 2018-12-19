@@ -20,9 +20,7 @@ None:\t\t{1}
 []:\t\t{4}
 ():\t\t{5}
 {{}}:\t\t{6}
-set():\t\t{8}""".format(bool(f), bool(n), bool(v),
-                        bool(s), bool(l), bool(t),
-                        bool(d), bool(f2), bool(st)))
+set():\t\t{8}""".format(bool(f), bool(n), bool(v), bool(s), bool(l), bool(t), bool(d), bool(f2), bool(st)))
 
 print("=" * 25)
 

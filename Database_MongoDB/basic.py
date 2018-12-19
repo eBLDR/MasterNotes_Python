@@ -3,7 +3,6 @@ MongoDB is a NoSQL database that works on a server.
 It stores data (documents) in JSON like format.
 Before running the python script, Mongo server must be running.
 """
-
 from pymongo import MongoClient
 
 # Establishing connection
@@ -67,11 +66,10 @@ print('=' * 20)
 bills_post = posts.find_one({'author': 'Bill'})
 print(bills_post)
 
-# Retrives all matching documents
-scotts_posts = posts.find({'author': 'Scott'})
-print(scotts_posts)
+# Retrieves all matching documents
+scott_posts = posts.find({'author': 'Scott'})
+print(scott_posts)
 
 # It's a cursor object - iterable
-for post in scotts_posts:
+for post in scott_posts:
     print(post)
-

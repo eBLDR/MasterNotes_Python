@@ -2,13 +2,13 @@ import sqlite3
 import pytz
 import datetime
 
-db = sqlite3.connect("accounts.sqlite")
-db.execute("DROP TABLE IF EXISTS accounts")
-db.execute("DROP TABLE IF EXISTS history")
-# db.execute("DELETE FROM accounts")  # to clear the table
-db.execute("CREATE TABLE IF NOT EXISTS accounts (name TEXT PRIMARY KEY NOT NULL, balance REAL NOT NULL)")
-db.execute("CREATE TABLE IF NOT EXISTS history (time TIMESTAMP NOT NULL,"
-           "account TEXT NOT NULL, amount REAL NOT NULL, PRIMARY KEY (time, account))")
+db = sqlite3.connect('accounts.sqlite')
+db.execute('DROP TABLE IF EXISTS accounts')
+db.execute('DROP TABLE IF EXISTS history')
+# db.execute('DELETE FROM accounts')  # to clear the table
+db.execute('CREATE TABLE IF NOT EXISTS accounts (name TEXT PRIMARY KEY NOT NULL, balance REAL NOT NULL)')
+db.execute('CREATE TABLE IF NOT EXISTS history (time TIMESTAMP NOT NULL,'
+           'account TEXT NOT NULL, amount REAL NOT NULL, PRIMARY KEY (time, account))')
 
 
 class Account(object):
@@ -19,7 +19,7 @@ class Account(object):
         return pytz.utc.localize(datetime.datetime.utcnow())
 
     def __init__(self, name: str, opening_balance: float = 0.0):
-        cursor = db.execute("SELECT name, balance FROM accounts WHERE (name = ?)", (name,))
+        cursor = db.execute('SELECT name, balance FROM accounts WHERE (name = ?)', (name,))
         row = cursor.fetchone()
 
         if row:

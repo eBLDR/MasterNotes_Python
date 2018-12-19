@@ -12,7 +12,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 # Table sctructures
 from declarative import Address, Base, Person
- 
+
 engine = create_engine('sqlite:///example.db', echo=False)
 
 # Bind the data to the engine
@@ -24,7 +24,7 @@ DBSession = sessionmaker(bind=engine)  # By default @autoflush=True
 # Instantiating a session
 session = DBSession()
 
-query = "SELECT * FROM Person"
+query = 'SELECT * FROM Person'
 
 # SQL statements can be executed as string queries
 buff = session.execute(query, params=None)
@@ -37,7 +37,7 @@ for row in buff:
 print('=' * 30)
 
 # Parameters can be passed using
-result = session.execute("SELECT * FROM Person WHERE id=:param", {"param":5})
+result = session.execute('SELECT * FROM Person WHERE id=:param', {'param': 5})
 
 for row in result:
     print(row.id, row.name)
@@ -84,12 +84,12 @@ print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(ins.
 print('=' * 20)
 
 session = DBSession()
- 
+
 # Insert an Address in the address table
 new_address = Address(post_code='00000', person=new_person)
 session.add(new_address)
 
-# Id is not assigned until commited to db
+# Id is not assigned until committed to db
 print(new_address.id)
 
 session.commit()
@@ -136,6 +136,7 @@ except:
 
 # When using filters, many expressions can be combined usng or_ and_ SQLAlchemy keywords
 from sqlalchemy import or_
+
 address = session.query(Address).filter(or_(Address.person == person, Address.post_code == '00000')).first()
 print(address.post_code)
 
@@ -178,7 +179,7 @@ print('=' * 30)
 # Equivalence to SQL DELETE clause - will delete all the matching records
 session.query(Person).filter(Person.name == 'new person').delete()
 
-# Will the delelte the @sqlalchemy_object
+# Will the delete the @sqlalchemy_object
 session.delete(address)
 
 # session.commit()
