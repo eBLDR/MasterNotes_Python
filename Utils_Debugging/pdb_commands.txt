@@ -1,4 +1,7 @@
+In the CLI keep pressing ENTER to repeat previous cmd
+
 CMD     DESCRIPTION
+
 a       Print the argument list of the current function.
 p	    Print the value of an expression.
 pp  	Pretty-print the value of an expression.
@@ -18,7 +21,7 @@ h pdb	Show the full pdb documentation.
 q	    Quit the debugger and exit.
 
 
-# Use of Breakpoints
+Use of Breakpoints
 
 b filename:line_number
 b filename.function_name
