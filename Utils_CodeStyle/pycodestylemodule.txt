@@ -1,0 +1,5 @@
+pycodestyle module parses a .py file and outputs a report of the guide style violations.
+
+Usage, run from terminal:
+pycodestyle <module_name>
+

@@ -1,0 +1,22 @@
+autopep8 module uses pycodestyle to modify any possible code style violations.
+
+Usage, from terminal:
+
+autopep8 <file_name>
+Will output the modified code directly to console for review.
+
+Flags:
+
+--diff, -d: print the diff for the fixed source.
+
+--in-place, -i: will make changes to files in place.
+
+--aggressive, -a: will enable non-whitespace changes (by default are not enabled), multiple -a result in more aggressive changes.
+
+--recursive, -r: run recursively over directories; must be used with --in-place or --diff.
+
+--select=<error_1>,...,<error_n>: specify only a subset of the fixes, i.e.: --select=E1,W1
+
+--ignore=<error_1>,...,<error_n>: ignores the specified errors.
+
+--list-fixes: shows a list of codes for fixes.
