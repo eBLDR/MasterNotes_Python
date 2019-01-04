@@ -44,12 +44,12 @@ for i in range(3):
 
 # Redirecting print()'s output - stdout to file
 
-saveout = sys.stdout  # Saving the default value in case we wish to reuse it later
-log_file = open('outputpipes.log', 'w')  # Openning file
+save_out = sys.stdout  # Saving the default value in case we wish to reuse it later
+log_file = open('outputpipes.log', 'w')  # Opening file
 sys.stdout = log_file  # Assigning stdout to log file
 print('This msg called using print() goes directly to file, it uses stdout.')
 log_file.close()
-sys.stdout = saveout  # Going back to default config
+sys.stdout = save_out  # Going back to default config
 
 # Redirecting print()'s output - stderr to file
 log_file = open('outputpipes.log', 'a')

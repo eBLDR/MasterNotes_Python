@@ -1,5 +1,6 @@
 """
-Long comment
+Multi-line comment
+
 '\' is the scape character, followed by control character
 \n - new line
 \t - tab
@@ -7,71 +8,72 @@ Long comment
 \r - carriage return
 """
 
+# Single-line comment
+
 text = 'Hello World'
 print(text)
 
-# nice comment
+# One line
+print('One'
+      'line')
 
-# new line
-splitString = "Split\nstring"
-splitString2 = """Split
-super
+formatted_string = """Split
+   super
+ formatted
 string"""
-print(splitString)
-print(splitString2)
 
-# tabs
-tabbedString = "1\t2\t3\t4\t5"
-print(tabbedString)
+print(formatted_string)
 
-# scape characters
-anotherString = "He said \"No, please\""
-print(anotherString)
+print('=' * 20)
 
-# backspace
-moreString = 'Delete\b my last e'
-print(moreString)
+# Scape character will take the next character and try to use an existing command, if exists
+# In this case, will ignore the ' closing string
+another_string = 'He said \'No, please\''
+print(another_string)
+
+# If we want to see the backslash
+backslash_string = 'backslash \\followed by text'
+print(backslash_string)
+
+# New line
+split_string = 'Split\nstring'
+print(split_string)
+
+# Tab
+tabbed_string = "1\t2\t3\t4\t5"
+print(tabbed_string)
+
+# Backspace
+more_string = 'Delete\b my last e'
+print(more_string)
 
 # r\ is a carriage return, returns to the left side and overwrites previous text
-randomString = 'Remove half \rof me'
-print(randomString)
+random_string = 'Remove half \rof me'
+print(random_string)
 
-extraString = "I don't \vknow what \ais \fthis."
+extra_string = 'I don\'t \vknow what \ais \fthis.'
 # \v is a vertical tab
 # \f is a formfeed
 # \a is a bell
-print(extraString)
+print(extra_string)
 
-strangeString = "this " \
-                "goes in " \
-                "one line"
-print(strangeString)
+strange_string = 'this ' \
+                 'goes in ' \
+                 'one line'
+print(strange_string)
 
-upTo = 10
-for i in range(0, upTo + 1):
-    if i < upTo:
+up_to = 10
+for i in range(0, up_to + 1):
+    if i < up_to:
         print(i, end=' - ')
     else:
         print(i)
 
 print('=' * 20)
 
-a_string = 'this is\na string split\t\tand tabbed'
-print(a_string)
-
-# raw string literals, scape characters have no effect
+# Raw string literals, scape characters have no effect
 raw_string = r'this is\na string split\t\tand tabbed'
 print(raw_string)
 
-print('=' * 20)
-
-# scape character will take the next character and try to use an existing command, if exists
-backslash_string = 'backslash \followed by text'
-print(backslash_string)
-
-# if we want to see the backslash
-backslash_string2 = 'backslash \\followed by text'
-print(backslash_string2)
-
-# raw literal string cannot end with a backslash
+# Raw literal string cannot end with a backslash
 # error_string = r'this string ends with\'
