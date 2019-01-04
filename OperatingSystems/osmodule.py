@@ -18,16 +18,7 @@ print('os.getpid(): {}'.format(os.getpid()))
 # os.getppid() - returns the parent's process' id
 print('os.getppid(): {}'.format(os.getppid()))
 
-# === ENVIRONMENT VARIABLES ===
-"""
-Are variables declared in the os, it's a dictionary like.
-In Linux, we can see them with the command, 'export' in the terminal.
-Are useful for avoiding having to write passwords on the scripts.
-We can add them using a bash script, they will be erased after restart.
-Or using os.environ['NEW_KEY'] = 'NEW_VALUE' in Python, they will be erased after killing the process.
-In editors (like Pycharm), it's also possible to add them to the project's configuration.
-"""
-print('HOME is ', os.getenv('HOME', 'Not found'))
+print("=" * 20)
 
 # === PATHS ===
 
