@@ -12,7 +12,7 @@ import requests
 
 def script_usage():
     # Program's usage
-    print('Usage:\n\trestfulapirequeststest.py <url> -' \
+    print('Usage:\n\trestfulapirequeststest.py <url> -'
           ' will run the test script on the API found in the <url>.')
 
 
@@ -20,7 +20,7 @@ def display_event(method, success, res):
     msg = 'OK' if success else 'FAILED'
     if success:
         text = res.text if str(res.status_code) == '200' else 'Database error.'
-        print('{} request {}, at url: {}, status: {}, response: {}'.format(method, msg, res.url, res.status_code, text))    
+        print('{} request {}, at url: {}, status: {}, response: {}'.format(method, msg, res.url, res.status_code, text))
     else:
         print('{} request {}, error: {}'.format(method, msg, res))
 
@@ -59,7 +59,7 @@ def request_delete(url, id_):
     try:
         payload = {'id': id_}
         response = requests.delete(url, params=payload)
-    
+
         display_event('DELETE', 1, response)
 
     except Exception as e:
@@ -108,7 +108,7 @@ def run_test(url):
 
 
 if __name__ == '__main__':
-    
+
     if len(sys.argv) == 2:
         URL = sys.argv[1]
 

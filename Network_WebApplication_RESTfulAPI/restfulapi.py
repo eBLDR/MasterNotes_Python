@@ -1,5 +1,4 @@
 #! /usr/bin/python3
-
 """
 A RESTful API is an application program interface (API) that uses HTTP requests
 to GET, PUT, POST and DELETE data.
@@ -44,7 +43,7 @@ class Asimov(db.Model):
             tmp[i.name] = getattr(self, i.name)
         return tmp
 
-        
+
 # -- ENDPOINTS --
 """
 Since all requests are performed on the same url, one endpoint would be enough:
@@ -56,14 +55,15 @@ def ...
 But I prefer (for the sake of the notes) to keep them in separate functions.
 """
 
+
 # Create record
-@app.route("/", methods=["POST"])
+@app.route('/', methods=['POST'])
 def add_entry():
     """
     Add new record to database.
     """
     new_entry = Asimov(request.json['title'], request.json['year'])
-    
+
     db.session.add(new_entry)
     db.session.commit()
 
@@ -71,7 +71,7 @@ def add_entry():
 
 
 # Read records
-@app.route("/", methods=["GET"])
+@app.route('/', methods=['GET'])
 def read_entry():
     """
     Displays records found in the database.
@@ -81,7 +81,7 @@ def read_entry():
         entry = Asimov.query.get(request.args['id'])
 
         return jsonify(entry.to_dictionary())
-    
+
     else:
         # Display all
         all_entries = Asimov.query.all()
@@ -98,7 +98,7 @@ def read_entry():
 
 
 # Update record by id
-@app.route("/", methods=["PUT"])
+@app.route('/', methods=['PUT'])
 def update_entry():
     """
     Updates one record found in the database.
@@ -111,12 +111,12 @@ def update_entry():
     entry.year = request.json['year']
 
     db.session.commit()
-    
+
     return jsonify(entry.to_dictionary())
 
 
 # Delete record by id
-@app.route("/", methods=["DELETE"])
+@app.route('/', methods=['DELETE'])
 def delete_entry():
     """
     Deletes one record found in the database.
@@ -132,4 +132,3 @@ def delete_entry():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5002)
-
