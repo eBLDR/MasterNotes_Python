@@ -2,6 +2,9 @@
 When importing a file, a new namespace is created, and everything in that file is executed
 in that namespace.
 
+Importing only ever loads a module once. Any imports of the same module from different
+files after that simply add it to the current namespace.
+
 USING UNDERSCORES
 Python does NOT have private or hidden objects.
 _whatever, by convention, means that the object should be protected, so not to be used
