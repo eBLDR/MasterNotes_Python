@@ -1,4 +1,4 @@
-# Extract from `man python3`
+# Extract from `python3 -h` in python v3.7
 
 COMMAND LINE OPTIONS
 
@@ -64,4 +64,13 @@ COMMAND LINE OPTIONS
               Set implementation specific option.
 
        -x     Skip the first line of the source.  This is intended for a DOS specific hack only.  Warning: the line numbers in error messages will be off by one!
+
+       --check-hash-based-pycs always|default|never
+              control how Python invalidates hash-based .pyc files
+
+       file   program read from script file
+
+       -      program read from stdin (default; interactive mode if a tty)
+
+       arg ...arguments passed to program in sys.argv[1:]
 
