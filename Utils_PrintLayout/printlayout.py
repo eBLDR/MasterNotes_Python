@@ -17,12 +17,23 @@ print(text)
 print('One'
       'line')
 
+# Use triple quotation will respect the format as typed
 formatted_string = """Split
    super
  formatted
 string"""
 
 print(formatted_string)
+
+snek = """\
+    --..,_                     _,.--.
+       `'.'.                .'`__ o  `;__.
+          '.'.            .'.'`  '---'`  `
+            '.`'--....--'`.'
+              `'--....--'`
+"""
+
+print(snek)
 
 print('=' * 20)
 
