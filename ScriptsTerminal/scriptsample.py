@@ -1,5 +1,4 @@
 #! /usr/bin/python3
-
 """
 The first line is the 'shebang' line (see magiclines.txt).
 
@@ -12,11 +11,13 @@ chmod +x nameoffile.py
 """
 import sys
 
-print("Hi, I am {}".format(sys.argv[0]))
+module_name = sys.argv[0]
+print('Hi, I am {}'.format(module_name))
 
 try:
-    print("Mode: {}".format(sys.argv[1]))
+    print('Mode: {}'.format(sys.argv[1]))
 except IndexError:
-    print("No mode specified.")
+    print('ERROR - No mode specified.\nUsage:\n{} <mode>'.format(module_name))
 
 sys.exit(12)
+
