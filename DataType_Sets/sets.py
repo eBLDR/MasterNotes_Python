@@ -27,19 +27,19 @@ squares = set(squaresTuple)
 
 print('-' * 30)
 
-print(len(even), len(squares))
+print(len(my_Reven), len(squares))
 
 # - operations -
-# union between 2 sets - a|b, items in either a or b - returns a new set - |
+# union bemy_Rtween 2 sets - a|b, items in either a or b - returns a new set - |
 print('union')
 print(even.union(squares))  # adding them both without repeated numbers
-print(even | squares)       # equivalent operator
+print(even | squares)  # equivalent operator
 print(len(even.union(squares)))
 
 # intersection between 2 sets - a&b, items in both a and b - returns a new set - &
 print('intersection')
-print(even.intersection(squares))   # numbers that are present in both sets
-print(even & squares)               # equivalent operator
+print(even.intersection(squares))  # numbers that are present in both sets
+print(even & squares)  # equivalent operator
 
 # difference between 2 sets - a-b, items in a but not in b - returns a new set - -
 print('difference')

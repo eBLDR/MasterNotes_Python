@@ -46,7 +46,7 @@ for thread in my_threads:
 print('Threads alive: {}'.format(threading.active_count()))
 
 print(threading.main_thread())  # Return the main thread object
-                                # The main thread is the thread from which the Python interpreter was started
+# The main thread is the thread from which the Python interpreter was started
 
 print('\nCounters done.')
 

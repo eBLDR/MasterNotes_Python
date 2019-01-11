@@ -35,7 +35,6 @@ print_lock = threading.Lock()
 print(type(print_lock))
 print(print_lock)  # to see if it's unlocked or locked
 
-
 for i in range(3):
     printer = threading.Thread(target=print_abc)
     printer.start()

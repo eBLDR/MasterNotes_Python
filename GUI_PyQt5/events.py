@@ -14,19 +14,18 @@ from PyQt5.QtCore import Qt
 
 
 class Example(QWidget):
-    
+
     def __init__(self):
         super().__init__()
-        
-        self.initUI()
-        
-        
-    def initUI(self):
+
+        self.init_ui()
+
+    def init_ui(self):
         # Layout
         grid = QGridLayout()
         self.setLayout(grid)
 
-        # Number LCD displayer
+        # Number LCD display
         lcd = QLCDNumber(self)
         # Slide bar
         sld = QSlider(Qt.Horizontal, self)
@@ -36,20 +35,19 @@ class Example(QWidget):
 
         grid.addWidget(lcd, 0, 0)
         grid.addWidget(sld, 1, 0)
-        
+
         self.setGeometry(300, 300, 250, 150)
         self.setWindowTitle('Events - Signal and slot')
         self.show()
 
-    def keyPressEvent(self, e):
+    def key_press_event(self, e):
         # Reimplementing event handler
-        if e.key() == Qy.Key_Escape:
+        if e.key() == Qt.Key_Escape:
             # Managing the event Escape key pressed
             self.close()
-        
-        
+
+
 if __name__ == '__main__':
-    
     app = QApplication(sys.argv)
     ex = Example()
     sys.exit(app.exec_())

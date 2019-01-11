@@ -18,7 +18,7 @@ for i in range(W):
         image.putpixel((i, j), random_color())
 
 # saving image
-image.save("randomcoloring.jpeg", "jpeg")
+image.save('randomcoloring.jpeg', 'jpeg')
 
 print(image)
 print(type(image))

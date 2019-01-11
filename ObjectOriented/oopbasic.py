@@ -40,7 +40,7 @@ class Kettle:  # By convention, start with capital letter and use camel case
         return 'I\'m an instance from class {}!'.format(Kettle.__name__)
 
     # def __doc__(self):
-        # Will override the docstring specified on the class, if desired.
+    # Will override the docstring specified on the class, if desired.
 
     def to_dict(self):
         # Returns a dictionary of the attributes and stored values, so it's not necessary to access a protected method from outside

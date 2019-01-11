@@ -61,6 +61,6 @@ class AssertionMethods(unittest.TestCase):
     assertWarnsRegex(warn, fun, *args, **kwds)
     """
 
-    
+
 if __name__ == '__main__':
     unittest.main()

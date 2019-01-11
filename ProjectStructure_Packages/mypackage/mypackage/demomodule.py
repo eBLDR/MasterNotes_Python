@@ -7,4 +7,3 @@ def demo2():
 
 
 print('I\'m a print in mod:', __name__, 'and pkg:', __package__)
-

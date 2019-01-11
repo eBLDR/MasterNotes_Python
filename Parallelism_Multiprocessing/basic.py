@@ -24,7 +24,7 @@ if __name__ == '__main__':
         # Creating a process, target is the function to be triggered, args is arguments (tuple)
         proc = Process(target=square, args=(n,), name='P-{}'.format(str(index)))
         # Passing a specific @name
-        
+
         processes.append(proc)
 
         # Daemon process - parent process will finish when ONLY non-daemon processes are alive

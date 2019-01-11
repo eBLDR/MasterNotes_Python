@@ -15,8 +15,8 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 
 catImg = pygame.image.load('catanimation_src/cat.png')  # creates another surface object
-catx = 10
-caty = 10
+cat_x = 10
+cat_y = 10
 direction = 'right'
 
 fontObj = pygame.font.Font('freesansbold.ttf', 32)  # creates a font object
@@ -38,29 +38,29 @@ soundObj = pygame.mixer.Sound('catanimation_src/badswap.wav')
 while True:
     DISPLAY_SURF.fill(BLACK)
     if direction == 'right':
-        catx += 5
-        if catx == 280:
+        cat_x += 5
+        if cat_x == 280:
             # soundObj.play()  # plays sound object
             direction = 'down'
     elif direction == 'down':
-        caty += 5
-        if caty == 220:
+        cat_y += 5
+        if cat_y == 220:
             # soundObj.play()
             direction = 'left'
     elif direction == 'left':
-        catx -= 5
-        if catx == 10:
+        cat_x -= 5
+        if cat_x == 10:
             # soundObj.play()
             direction = 'up'
     elif direction == 'up':
-        caty -= 5
-        if caty == 10:
+        cat_y -= 5
+        if cat_y == 10:
             # soundObj.play()
             direction = 'right'
 
-    DISPLAY_SURF.blit(catImg, (catx, caty))  # paste the surface object to main surface
+    DISPLAY_SURF.blit(catImg, (cat_x, cat_y))  # paste the surface object to main surface
     DISPLAY_SURF.blit(textSurfaceObj, textRectObj)
-    
+
     for event in pygame.event.get():
         if event.type == QUIT:
             # pygame.mixer.music.stop()
@@ -68,8 +68,7 @@ while True:
             sys.exit()
 
     pygame.display.update()
-    fpsClock.tick(FPS) # calculates time pause needed based on last call of this method
-    # for accomplish asigned frames per second
+    fpsClock.tick(FPS)  # calculates time pause needed based on last call of this method
+    # for accomplish assigned frames per second
     # in this case (FPS = 30), each loop runs for at least 33.3ms, that means the
-    # program will stop for the rest of time, waitting to accomplish 33.3ms per loop
-    
+    # program will stop for the rest of time, waiting to accomplish 33.3ms per loop

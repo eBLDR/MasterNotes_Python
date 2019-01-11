@@ -2,28 +2,29 @@ import sys
 import random
 from PyQt4 import QtGui
 
-def has_fet_click(): #funci\u00f3 a realitzar en fer click
-    print("Hola! Has fet Click!")
 
-def aleatori(): #funci\u00f3 a realitzar en fer click
-    global boto2
-    boto2.setText(str(random.randint(0,100)))
+def clicked():
+    print('Hello! You clicked me!')
 
-#aqu\u00ed comen\u00e7a el programa amb interf\u00edcie gr\u00e0fica
 
-app = QtGui.QApplication(sys.argv)  #1: creem objecte aplicaci\u00f3
+def random_number():
+    global button_2
+    button_2.setText(str(random.randint(0, 100)))
 
-finestra = QtGui.QWidget()          #2: creem objecte finestra
-finestra.setWindowTitle('Finestra')
 
-boto1 = QtGui.QPushButton('Boto 1', finestra) #3: creem objecte de control: un boto
-boto1.move(50, 50)
-boto1.clicked.connect(has_fet_click) #4: definim l'event que aten el click de boto
+app = QtGui.QApplication(sys.argv)
 
-boto2 = QtGui.QPushButton('Boto 2', finestra) #5: altres objectes de control
-boto2.move(150, 150)
-boto2.clicked.connect(aleatori)
+screen = QtGui.QWidget()
+screen.setWindowTitle('Screen')
 
-finestra.show()         #6: mostrem finestra
+button_1 = QtGui.QPushButton('Btn 1', screen)
+button_1.move(50, 50)
+button_1.clicked.connect(clicked)
 
-sys.exit(app.exec_())   #7: deixem programa a l'espera de que tanquem finstra
+button_2 = QtGui.QPushButton('Btn 2', screen)
+button_2.move(150, 150)
+button_2.clicked.connect(random_number)
+
+screen.show()
+
+sys.exit(app.exec_())

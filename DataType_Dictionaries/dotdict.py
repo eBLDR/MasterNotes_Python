@@ -23,4 +23,3 @@ print('a.x:', a.x)
 
 a.z = -1
 print('a.z = 1\na.z:', a.z)
-

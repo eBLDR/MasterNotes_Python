@@ -13,9 +13,9 @@ print(hashed_md5)
 
 # Will digest the object
 digested_hash = hashed_md5.hexdigest()
-print("md5 hashed:", digested_hash)  # It's type str
+print('md5 hashed:', digested_hash)  # It's type str
 
-print("sha1 hashed:", hashlib.sha1(password).hexdigest())
+print('sha1 hashed:', hashlib.sha1(password).hexdigest())
 
 # Adding multiple strings
 m = hashlib.md5()  # Creating the object

@@ -25,8 +25,8 @@ def requires_auth(f):
     @wraps(f)
     def decorated(*args, **kwargs):
         auth = request.authorization  # It's a dictionary like
-                                      # {'username': '', 'password': ''}
-        if not auth: 
+        # {'username': '', 'password': ''}
+        if not auth:
             return authenticate()
 
         elif not check_auth(auth.username, auth.password):

@@ -6,11 +6,11 @@ will make it easy to paste it to an email, word processor, or some other softwar
 
 import pyperclip
 
-input("Copy some text to clipboard . . .")
+input('Copy some text to clipboard . . .')
 
 print(pyperclip.paste())
 
-pyperclip.copy("COPY ME")   # copies text to clipboard
+pyperclip.copy('COPY ME')  # copies text to clipboard
 pasted = pyperclip.paste()  # pastes text from clipboard
 
 print(pasted)

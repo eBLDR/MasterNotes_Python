@@ -25,7 +25,7 @@ YELLOW = (255, 255, 0)
 
 screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)
 fpsClock = pygame.time.Clock()
-pygame.display.set_caption("Game")
+pygame.display.set_caption('Game')
 
 
 def blit():
@@ -44,10 +44,10 @@ def main():
         for event in pygame.event.get():
             if event.type == QUIT:
                 exit_game()
- 
+
             elif event.type == MOUSEBUTTONUP and event.button == MOUSE_LEFT:
                 mouse_x, mouse_y = event.pos
-                
+
         blit()
         pygame.display.update()
         fpsClock.tick(FPS)

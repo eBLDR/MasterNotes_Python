@@ -22,7 +22,8 @@ if input('Cancel timer [y/n] ? ').lower() == 'y':
 # to wait executing main code until this thread is terminated
 my_timer.join()
 
-print("=" * 20)
+print('=' * 20)
+
 
 # PERIODIC TASK
 def periodic_task():
@@ -31,9 +32,10 @@ def periodic_task():
     # to the same function once the timer is finished
     threading.Timer(2, periodic_task).start()
 
+
 periodic_task()
 
-print("=" * 20)
+print('=' * 20)
 
 # BARRIER OBJECTS - threads will wait for each other to be released
 # @parties (int type) - number of threads to be blocked before releasing them

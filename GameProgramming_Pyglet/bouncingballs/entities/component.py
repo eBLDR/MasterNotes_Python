@@ -1,8 +1,8 @@
 import abc
- 
- 
+
+
 class Component(metaclass=abc.ABCMeta):
- 
+
     def __init__(self, **kwargs):
         """
         Constructs Component object given passed kwargs.
@@ -36,5 +36,5 @@ class Component(metaclass=abc.ABCMeta):
     def center_image(image):
         """ Images are drawn by default from their lower left corner.
         This function will change the anchor point to its center. """
-        image.anchor_x = image.widht/2
-        image.anchor_y = image.height/2
+        image.anchor_x = image.widht / 2
+        image.anchor_y = image.height / 2

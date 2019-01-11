@@ -17,7 +17,7 @@ class Account:
         self.balance = balance
         self.transaction_list = [(Account._current_time(), balance)]
         print('Account created for ' + self.name)
-        self.show_balance()     # will call function when initialise
+        self.show_balance()  # will call function when initialise
 
     def deposit(self, amount):
         if amount > 0:

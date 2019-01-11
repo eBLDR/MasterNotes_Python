@@ -1,7 +1,8 @@
 import inheritance as enemies
 
-
 """ Creating a gang of enemies """
+
+
 class Gang(object):
 
     def __init__(self):
@@ -22,7 +23,7 @@ class Gang(object):
         # attribute, returns None in case the attribute doesn't exists
 
         print(take_damage_method)
-        
+
         # callable checks if the attribute is a method (so it's callable) rather than data
         if callable(take_damage_method):
             self.gang.append(enemy)

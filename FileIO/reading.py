@@ -11,7 +11,7 @@ print(sonnet_content)
 
 sonnet.close()  # Always closing the file at the end of use
 
-print("=" * 30)
+print('=' * 30)
 
 sonnet = open('./reading_sample.txt', 'r')
 
@@ -50,7 +50,7 @@ with open('reading_sample.txt', 'r') as sonnet:
     lines = sonnet.readlines()  # This will return a list of strings, corresponding to each line
 print(lines)
 
-print("=" * 30)
+print('=' * 30)
 
 # Saving the whole file as a single string
 with open('reading_sample.txt', 'r') as sonnet:

@@ -7,6 +7,7 @@ CRUD - Create, Read, Update, Delete operations
 """
 
 import sqlite3
+
 # in Python, there is no need to add ; at the end of the SQL statements
 
 # Create a database in RAM
@@ -24,13 +25,13 @@ cursor = db.cursor()
 cursor.execute("DROP TABLE contacts")
 cursor.execute("""CREATE TABLE IF NOT EXISTS contacts (id INTEGER PRIMARY KEY,
                   name TEXT NOT NULL, phone INTEGER, email TEXT)""")
-                  # FOREIGN KEY(column_name_in_new_table) REFERENCES table(column_name)
+# FOREIGN KEY(column_name_in_new_table) REFERENCES table(column_name)
 # IF NOT EXISTS will create the table only if it doesn't exists
 # PRIMARY KEY provides and autoincrementing integer number, it's unique
 # NOT NULL will not accept null values in that column
 # FOREIGN KEY / REFERENCES will link the new column in the new table to the values on another table's column
 
-#cursor.execute("DELETE FROM contacts")  # to clear the table every time, otherwise the INSERT will duplicate on each run
+# cursor.execute("DELETE FROM contacts")  # to clear the table every time, otherwise the INSERT will duplicate on each run
 
 # CREATE - insert records
 cursor.execute("INSERT INTO contacts (name, phone, email) VALUES ('BLDR', 666666666, 'ed@bldr.cat')")

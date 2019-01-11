@@ -8,7 +8,7 @@ from time import sleep
 
 def test_request(arg=None):
     """ Any http request. """
-    time.sleep(2)
+    sleep(2)
     return arg
 
 
@@ -33,14 +33,14 @@ class Timeout:
         raise Timeout.Timeout()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     # Run block of code with different timeouts
     try:
         with Timeout(3):
-            print(test_request("Request 1"))
+            print(test_request('Request 1'))
 
         with Timeout(1):
-            print(test_request("Request 2"))
+            print(test_request('Request 2'))
 
     except Timeout.Timeout:
-        print("Timeout!")
+        print('Timeout!')

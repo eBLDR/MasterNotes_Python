@@ -20,19 +20,19 @@ Base = declarative_base()
 # A custom declarative base can be declared, if we wish to
 class CustomBase(Base):
     __abstract__ = True
-    
+
     def to_dictionary(self):
         # This method populates a dictionary with the attributes : values
         tmp = {}
         for i in self.__table__.columns:
             tmp[i.name] = getattr(self, i.name)
         return tmp
-    
+
 
 # Creating the table structure
 class Person(CustomBase):
     __tablename__ = 'person'  # Name of the table in database
-    
+
     # Here we define columns for the table, the name of the attribute
     # must match the table's column name
     # Notice that each column is also a normal Python instance attribute

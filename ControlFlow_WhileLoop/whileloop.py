@@ -2,7 +2,7 @@ i = 0
 while i < 10:  # while needs a condition
     print('i is now {}'.format(i))
     i += 1
-    
+
     # continue statements is executed here at the background, condition is reassessed
 # when the condition is not satisfied anymore, the while ends
 

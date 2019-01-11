@@ -18,4 +18,3 @@ def get_int(prompt):
 
 
 user_number = get_int('Give me a number:\n')
-

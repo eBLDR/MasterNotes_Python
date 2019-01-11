@@ -5,6 +5,6 @@ with open('appending_tables.txt', 'a') as tablesFile:
         for j in range(1, 11):
             # Redirecting the output of print() to the file
             print('{1:>2} times {0} is {2}'.format(i, j, i * j), file=tablesFile)
-        print("-" * 20, file=tablesFile)
+        print('-' * 20, file=tablesFile)
 
 print('Done.')

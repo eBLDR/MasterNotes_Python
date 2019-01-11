@@ -7,6 +7,7 @@ selenium needs the driver corresponding to the desired browser in use to be inst
 """
 
 from selenium import webdriver
+
 # Specific driver import
 # from selenium.webdriver import Chrome
 
@@ -18,7 +19,7 @@ try:
     # Sends http get method to the URL - directs the browser
     browser.get('https://www.python.org/')
     print(browser.current_url)
-    
+
 except Exception:
     print('Invalid URL.')
 
@@ -109,6 +110,7 @@ PAGE_UP, PAGE_DOWN, F1, ..., F12, ... and more.
 """
 # Module containing the keys
 from selenium.webdriver.common.keys import Keys
+
 try:
     # To send keys, the best place is the general web page, using <html> tag
     html_elem = browser.find_element_by_tag_name('html')

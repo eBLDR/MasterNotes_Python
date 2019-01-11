@@ -20,10 +20,10 @@ with open('binary', 'br') as binFile:
 
 print('-' * 20)
 
-a = 65534       # FF FE, it uses 2 bytes (16 bits)
-b = 65535       # FF FF
-c = 65536       # 00 01 00 00, it uses 4B (32 bits), the # of B used is even
-x = 2998302     # 02 2D C0 1E
+a = 65534  # FF FE, it uses 2 bytes (16 bits)
+b = 65535  # FF FF
+c = 65536  # 00 01 00 00, it uses 4B (32 bits), the # of B used is even
+x = 2998302  # 02 2D C0 1E
 
 with open('binary2', 'bw') as binFile2:
     binFile2.write(a.to_bytes(2, 'big'))  # 2 is the length of the number in bytes

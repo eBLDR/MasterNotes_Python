@@ -14,9 +14,11 @@ app.register_blueprint(api)
 
 # Class import
 from flask import Blueprint
+from flask import request
 
 # Instance - @api_name, @name_of_package, @url_prefix
 api = Blueprint('my_api', __name__, url_prefix='/api')
+
 
 # The api can be treated now like a normal flask app
 # Sample route

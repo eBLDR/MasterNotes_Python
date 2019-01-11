@@ -17,7 +17,7 @@ label = tkinter.Label(mainWindow, text='TkInter Grid Demo')
 label.grid(row=0, column=0, columnspan=3)  # columnspan to set how many rows/columns is going to expand
 
 # configuring rows and columns
-# weight is the ratio that increases compared to each other when the screen is resized
+# weight is the ratio that increases compared to each other when the screen is resize
 mainWindow.columnconfigure(0, weight=100)
 mainWindow.columnconfigure(1, weight=1)  # scroll bar doesn't need to grow nor shrink
 mainWindow.columnconfigure(2, weight=1000)
@@ -100,10 +100,6 @@ okButton = tkinter.Button(mainWindow, text='OK')
 cancelButton = tkinter.Button(mainWindow, text='Cancel', command=mainWindow.destroy)
 okButton.grid(row=4, column=3, sticky='e')
 cancelButton.grid(row=4, column=4, sticky='w')
-
-
-
-
 
 mainWindow.mainloop()
 

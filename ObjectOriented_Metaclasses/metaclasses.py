@@ -21,7 +21,6 @@ print(Bar.__name__, Bar.__bases__, Bar.__dict__)
 
 print()
 
-
 # Adding inheritance, data attributes and methods
 Bar = type(
     'Bar',
@@ -32,6 +31,7 @@ Bar = type(
 print(Bar.__name__, Bar.__bases__, Bar.__dict__)
 
 print()
+
 
 # Methods can also be assigned using a defined function
 def f(obj):
@@ -57,10 +57,12 @@ z.attr_val()
 
 print()
 
+
 def new(cls):
     x = object.__new__(cls)
     x.attr = 101
     return x
+
 
 Bar.__new__ = new  # Overriding __new__ method
 y = Bar()
@@ -69,6 +71,7 @@ print(y.attr)
 # type.__new__ = new will raise an Error, python does not allow modification of type metaclass
 
 print()
+
 
 # Creating own's metaclass
 class Meta(type):

@@ -19,13 +19,13 @@ response = requests.get(url).json()
 # .json() is actually converting json-formatted data to a python value from the response.text object
 # we could do it manually with json.loads(response.text) from json module
 
-print(response)         # it's a dictionary
+print(response)  # it's a dictionary
 print(response.keys())  # to get the keys
 
 print('=' * 20)
 
 # showing data
-print("\nPeople in Space: {}\n".format(response['number']))
+print('\nPeople in Space: {}\n'.format(response['number']))
 
 for human in response['people']:
-    print("{} in {}".format(human['name'], human['craft']))
+    print('{} in {}'.format(human['name'], human['craft']))

@@ -1,7 +1,4 @@
-"""
-math module.
-"""
-
+# math module
 import math
 
 # Factorial
@@ -9,19 +6,19 @@ print(math.factorial(5))
 
 # --- CONSTANTS ---
 # euler number
-print("e =", math.e)
+print('e =', math.e)
 
 # pi number
-print("pi =", math.pi)
+print('pi =', math.pi)
 
 # tau number = 2pi
 # print(math.tau)  # new in version 3.6
 
 # floating-point positive infinity - use -math.inf for negative infinity
-print(math.inf)     # equivalent to float('inf')
+print(math.inf)  # equivalent to float('inf')
 
 # floating-point 'not a number' (NaN)
-print(math.nan)     # equivalent to float('nan')
+print(math.nan)  # equivalent to float('nan')
 
 # --- ROUNDING ---
 # Rounding down
@@ -35,8 +32,8 @@ print(math.ceil(4.05))
 print(math.sqrt(144))
 
 # To the power of - equivalent to 2**5
-print(math.pow(2, 5))   # returns float
-print(2 ** 5)           # returns int
+print(math.pow(2, 5))  # returns float
+print(2 ** 5)  # returns int
 
 # e**x
 print(math.exp(2))

@@ -11,7 +11,6 @@ class MyABC(metaclass=abc.ABCMETA):
     def __init__(self):
         pass
 
-
     @abc.abstractmethod
     def my_abstract_method(self):
         """ Using this decorator requires that the class’s metaclass is ABCMeta

@@ -19,4 +19,3 @@ demo2()
 from mypackage.settings import local
 
 print(local.SECRET_VAR)
-

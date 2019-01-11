@@ -22,7 +22,6 @@ from app.authorization import *
 @app.route('/')
 @app.route('/index')
 def index():
-
     user = {'username': 'BLDR'}  # mock user - for testing
 
     posts = [
@@ -41,18 +40,16 @@ def index():
 # <argument> can be used to send arguments to the function's parameters
 # A placeholder can be used to control any url combination
 # Arguments take the least priority, e.g.: /index will call index() first
-# to avoid ambiguation, converters can be used (it's string by default):
+# to avoid confusion, converters can be used (it's string by default):
 # <int:id>, <float:id>, <path:id>
 @app.route('/<num>')
 def number(num):
-
     return 'This is ' + str(num)
 
 
 # flask's redirect function redirects to desired URL
 @app.route('/redirect')
 def redirect_():
-
     # url_for will return a str containing the URL bound to the function passed
     return redirect(url_for('index'))
 
@@ -63,7 +60,7 @@ def redirect_():
 # Get parameter
 @app.route('/hello')
 def api_hello():
-    # Send get paremeters using /hello?name=myName&age=myAge
+    # Send get parameters using /hello?name=myName&age=myAge
     if 'name' in request.args and 'age' in request.args:
         return 'Hello ' + request.args['name'] + ', your age is ' + request.args['age']
     else:
@@ -82,7 +79,7 @@ def api_message():
     """
     The client sends data to the server.
     """
-    
+
     if request.headers['Content-Type'] == 'text/plain':
         # Data sent is stored in request.data
         return 'Text message: ' + request.data
@@ -93,22 +90,22 @@ def api_message():
 
 
 # ----- RESPONSES -----
-@app.route('/response', methods = ['GET'])
+@app.route('/response', methods=['GET'])
 def api_response():
     """
     The server sends back data to the client.
     """
-    
+
     data = {
-        'hello'  : 'world',
-        'number' : 12
+        'hello': 'world',
+        'number': 12
     }
 
     js = json.dumps(data)
     # (@data, @status_code (200 by default), @data_type)
     resp = Response(js, status=200, mimetype='application/json')
 
-    # Using jsnify to simplify syntax, returns exactly the same
+    # Using jsonify to simplify syntax, returns exactly the same
     # from flask import jsonify
     # resp = jsonify(data)
     # resp.status_code = 200
@@ -121,8 +118,8 @@ def api_response():
 @app.errorhandler(404)  # 404 not found error
 def not_found(error=None):
     message = {
-            'status': 404,
-            'message': 'Not Found: ' + request.url,
+        'status': 404,
+        'message': 'Not Found: ' + request.url,
     }  # request.url return a string of the request's url
     from flask import jsonify
     resp = jsonify(message)

@@ -41,7 +41,7 @@ print(y, type(y))
 print('=' * 20)
 
 # Operator + and method __add__ refer to the same builtin code, they are equivalents
-print(z + b)
+print(z + 2)
 print(z.__add__(2))  # a, even declared as int, it's an object, and it has methods
 
 print('=' * 20)

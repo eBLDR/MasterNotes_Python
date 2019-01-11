@@ -6,7 +6,7 @@ print(sys.copyright)  # Shows the copyright.
 
 print(sys.version)  # Shows the python version being used to run the script.
 
-print(sys.prefix)  # Shows the python insatallation path being used to run the script.
+print(sys.prefix)  # Shows the python installation path being used to run the script.
 
 print(sys.flags)  # Exposes the status of command line flags.
 

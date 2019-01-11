@@ -1,10 +1,10 @@
-# HHTP Basic Auth for web services that requires authentication
+# HTTP Basic Auth for web services that requires authentication
 
 import requests
 from requests.auth import HTTPBasicAuth
 
 user_name = 'ebldr'
-user_password = 'freedrive01'
+user_password = '##########'
 
 url = 'https://api.github.com/user'
 

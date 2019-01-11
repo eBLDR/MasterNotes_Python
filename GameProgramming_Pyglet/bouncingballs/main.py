@@ -27,7 +27,7 @@ def on_draw():
     window.clear()
 
     # Label object, @anchor_x/y is the center point
-    level_label = pyglet.text.Label(text="Balls in Game: {}".format(len(ball_objects)), x=10, y=10)  # , anchor_x='center')
+    level_label = pyglet.text.Label(text='Balls in Game: {}'.format(len(ball_objects)), x=10, y=10)  # , anchor_x='center')
     level_label.draw()
 
     for ball in ball_objects:

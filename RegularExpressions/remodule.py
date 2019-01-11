@@ -156,7 +156,7 @@ secret_name_regex2 = re.compile(r'Agent (\w)\w*')  # creating a group containing
 print(secret_name_regex2.sub(r'\1*+-#', secret_msg))  # \1 for the group and desired text
 
 # making life easier for complex patterns, re.VERBOSE ignores whitespaces and comments
-phone_regex = re.compile(r'''(     # triple quotes for multiline string
+phone_regex = re.compile(r'''(    # triple quotes for multi line string
     (\d{3}|\(\d{3}\))?            # area code
     (\s|-|\.)?                    # separator
     \d{3}                         # first 3 digits

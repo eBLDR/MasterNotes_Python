@@ -11,7 +11,7 @@ from multiprocessing import Pool
 def costly_function(z):
     r = 0
     for k in range(1, 30000):
-        r += z ** (1 / 2**k)
+        r += z ** (1 / 2 ** k)
     return r
 
 
@@ -20,11 +20,10 @@ if __name__ == '__main__':
 
     # For performance example
     for workers in range(1, 6):
-
         # Pool is context manage, @processes = number of workers
         with Pool(processes=workers) as pool:
             start_time = time()
-            
+
             # apply_async(f, (args,)) - evaluates f(arg) asynchronously in a single process
             # result is to be yield, not yet computed!
             result = pool.apply_async(costly_function, (2,))  # Result object

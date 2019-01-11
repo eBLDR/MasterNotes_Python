@@ -20,7 +20,7 @@ abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 
 # shuffle(seq) will randomize the order of a sequence
 print(abc)
-print("Shuffling . . .")
+print('Shuffling . . .')
 random.shuffle(abc)
 print(abc)
 

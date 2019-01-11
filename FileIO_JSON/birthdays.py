@@ -18,29 +18,29 @@ def add_entry():
     birthdays[name] = date
     with open('birthdaysdata.json', 'w') as file:  # opening in write mode
         json.dump(birthdays, file)  # saving the new dictionary into a file, overriding the existing one
-    print("{} added successfully".format(name))
+    print('{} added successfully'.format(name))
 
 
 def find_date():
     name = input('Who\'s birthday you want to know? ').capitalize()
     date = birthdays.get(name, False)
     if date:
-        print("{} was born on {}.".format(name, date))
+        print('{} was born on {}.'.format(name, date))
     else:
-        print("{} is not in the list.".format(name))
+        print('{} is not in the list.'.format(name))
 
 
 def list_entries():
-    print("Current entries in dictionary:")
+    print('Current entries in dictionary:')
     if birthdays:
         for name in birthdays.keys():
             print(name.ljust(15), ':', birthdays[name])
     else:
-        print("It's empty")
+        print('It\'s empty')
 
 
 while True:
-    what_next = input("\nAdd, Find, Entries or Quit\n").lower()
+    what_next = input('\nAdd, Find, Entries or Quit\n').lower()
     if what_next == 'quit':
         print('Bye')
         break

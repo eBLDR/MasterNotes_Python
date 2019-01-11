@@ -11,7 +11,7 @@ print(expr)
 menu = [['eggs', 'bacon'], ['eggs', 'bread'], ['bread', 'bacon'], ['bread']]
 for ingredients in menu:
     print(ingredients, 'Contains meat' if 'bacon' in ingredients else 'Contains eggs' if 'eggs' in ingredients else 'Boring dish')
-    
+
 # The order is important, the first True condition will be the one to be executed
 # Notice that the last else clause will always be executed if none of the previous conditions is True
 

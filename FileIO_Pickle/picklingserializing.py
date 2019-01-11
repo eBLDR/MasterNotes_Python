@@ -12,12 +12,12 @@ even = list(range(0, 10, 2))
 odd = list(range(1, 10, 2))
 
 # 'wb' writing binary mode
-with open('a7x.pickle', 'wb') as a7xFile:
-    pickle.dump(a7x, a7xFile)  # .dump() for writing the file
+with open('a7x.pickle', 'wb') as a7x_file:
+    pickle.dump(a7x, a7x_file)  # .dump() for writing the file
     # @1 is the variable, @2 is the file where is going to be written
-    pickle.dump(even, a7xFile, protocol=0)
-    pickle.dump(odd, a7xFile, protocol=pickle.DEFAULT_PROTOCOL)  # is possible to set different protocols on each code
-    pickle.dump(1224, a7xFile, protocol=pickle.HIGHEST_PROTOCOL)  # is also possible to write values in the spot
+    pickle.dump(even, a7x_file, protocol=0)
+    pickle.dump(odd, a7x_file, protocol=pickle.DEFAULT_PROTOCOL)  # is possible to set different protocols on each code
+    pickle.dump(1224, a7x_file, protocol=pickle.HIGHEST_PROTOCOL)  # is also possible to write values in the spot
 """
 PROTOCOLS 5 @ the moment of writing
 PROTOCOL 0, first version, easiest human readable
@@ -27,15 +27,15 @@ PROTOCOL 3, is the default, in version 3 of python, data pickled using python 3.
 PROTOCOL 4, came with python version 3.4
 """
 # reading binary mode
-with open('a7x.pickle', 'rb') as a7xFile:
-    newA7x = pickle.load(a7xFile)  # reads the file and stores it into a variable
-    evenList = pickle.load(a7xFile)
-    oddList = pickle.load(a7xFile)
-    x = pickle.load(a7xFile)
+with open('a7x.pickle', 'rb') as a7x_file:
+    new_a7x = pickle.load(a7x_file)  # reads the file and stores it into a variable
+    even_list = pickle.load(a7x_file)
+    odd_list = pickle.load(a7x_file)
+    x = pickle.load(a7x_file)
 
-print(newA7x)
-print(evenList)
-print(oddList)
+print(new_a7x)
+print(even_list)
+print(odd_list)
 print(x)
 
 # loads() method, different code has to be typed depending on the os used

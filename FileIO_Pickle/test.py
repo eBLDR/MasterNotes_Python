@@ -1,6 +1,6 @@
 import pickle
 
-""" Converting to/from byte-stream """
+# Converting to/from byte-stream
 
 x = 144
 x_serial = pickle.dumps(x)  # converts into hex

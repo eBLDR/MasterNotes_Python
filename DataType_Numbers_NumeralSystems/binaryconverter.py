@@ -4,9 +4,9 @@ for power in range(maxPower, -1, -1):  # backwards iteration
     powers.append(2 ** power)
 
 print(powers)
-x = int(input("Enter a number (< {}): ".format(2**maxPower)))
+x = int(input('Enter a number (< {}): '.format(2 ** maxPower)))
 
-b = ""
+b = ''
 
 for power in powers:
     bit = x // power

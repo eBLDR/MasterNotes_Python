@@ -33,4 +33,3 @@ print(locals())
 
 # hash() - return the hash value of the object (if it has one)
 print(hash(a))
-

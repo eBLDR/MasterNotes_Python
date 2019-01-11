@@ -18,13 +18,13 @@ def index():
         username = session['username']
         return 'Logged in as ' + username + '<br>' + \
                '<b><a href="/logout">click here to log out</a></b>'
-    
+
     return 'You are not logged in <br><a href="/login"></b>' + \
            'click here to log in</b></a>'
 
 
 # LOG IN
-@app.route('/login', methods = ['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         # Adding a new user to the session

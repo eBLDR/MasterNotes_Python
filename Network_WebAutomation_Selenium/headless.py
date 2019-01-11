@@ -6,7 +6,7 @@ Setting up a headless browser, everything works normally without graphical inter
 def quick_search(brow):
     try:
         brow.get('https://duckduckgo.com')
-        
+
         search_form = brow.find_element_by_id('search_form_input_homepage')
         search_form.send_keys('python')
         search_form.submit()
@@ -14,7 +14,7 @@ def quick_search(brow):
         results = brow.find_elements_by_class_name('result')
 
         return results
-        
+
     except Exception:
         print('Error while parsing the html - Element not found')
 
@@ -23,10 +23,10 @@ def quick_search(brow):
 
 def display_results(r):
     print(type(r), len(r))
-    
+
     for result in r:
-            print(result.text)
-            print('# ' * 20)
+        print(result.text)
+        print('# ' * 20)
 
 
 if __name__ == '__main__':
@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
     self.driver = webdriver.Chrome('chrome/driver/path', chrome_options=options)
     """
-    
+
     res = quick_search(browser)
     display_results(res)
 

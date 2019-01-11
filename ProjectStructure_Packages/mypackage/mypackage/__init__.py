@@ -1,1 +1,1 @@
-print("I'm a print in __init__.py file in", __name__)
+print('I\'m a print in __init__.py file in', __name__)

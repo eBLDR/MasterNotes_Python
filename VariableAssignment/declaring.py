@@ -8,4 +8,3 @@ myVar = 0  # Camel case - nameOfThisTechnique
 # Creating an object is much faster using literal syntax instead of using built-in function
 a = set([1, 2, 3])  # Built-in function
 a = {1, 2, 3}  # Literal syntax - also called "syntactic sugar"
-

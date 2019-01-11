@@ -44,6 +44,7 @@ def get_char(prompt: str) -> str:  # -> return Type - hint about the type return
         return c  # Return will send the variable/s specified, it also stops the execution of the function
         # return  # Return can also be typed alone, it will break the function and return None
 
+
 char = get_char('Type something: ')
 print(char)
 
@@ -81,4 +82,3 @@ print(happy_text('I', 'am', 'damn', 'happy', sep=' :( '))  # We can specify the 
 # To default
 happy1 = happy_text('Assigning', 'returned', 'values')
 print(happy1)
-

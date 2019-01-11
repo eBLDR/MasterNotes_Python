@@ -13,4 +13,3 @@ except Exception:
 
     print(traceback.format_exc())
     print('Traceback info was written to errorInfo.txt.')
-

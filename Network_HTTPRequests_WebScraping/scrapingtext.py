@@ -13,13 +13,12 @@ res = requests.get('https://automatetheboringstuff.com/files/rj.txt')
 # it's important to check the status after calling the get() method
 try:
     res.raise_for_status()  # this method will raise and exception if there was an
-                            # error downloading the file, otherwise will do nothing
-                            # 404 Client Error: Not Found for url: . . .
+    # error downloading the file, otherwise will do nothing
+    # 404 Client Error: Not Found for url: . . .
     print('Status: OK')
 
 except Exception as exc:
     print('There was a problem: {}'.format(exc))
-
 
 print(type(res))  # it's a response object
 
@@ -27,8 +26,8 @@ print(len(res.text))  # text from url saved as str
 print(res.text[:70])
 
 # saving the text on a file
-with open('rjtext.txt', 'wb') as file:      # mode must be 'wb', to write in binary, to maintain the Unicode Encoding
-    for chunk in res.iter_content(10000):   # the argument is the size of the 'chunk' of data on each iteration
+with open('rjtext.txt', 'wb') as file:  # mode must be 'wb', to write in binary, to maintain the Unicode Encoding
+    for chunk in res.iter_content(10000):  # the argument is the size of the 'chunk' of data on each iteration
         file.write(chunk)
 
 print('=' * 50)

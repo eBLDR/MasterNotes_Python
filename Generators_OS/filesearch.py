@@ -10,7 +10,7 @@ def find_albums(root, artist_name):
         # using fnmatch to filter results, will return only the directories with a matching name
         for artist in fnmatch.filter(directories, artist_name):
             subdir = os.path.join(path, artist)
-            # print("subdir is: {}".format(subdir))
+            # print('subdir is: {}'.format(subdir))
             for album_path, albums, _ in os.walk(subdir):
                 for album in albums:
                     yield os.path.join(album_path, album), album
@@ -23,7 +23,7 @@ def find_songs(albums):
             yield song
 
 
-album_list = find_albums("music", "Aerosmith")
+album_list = find_albums('music', 'Aerosmith')
 song_list = find_songs(album_list)  # passing a generator as an argument to another generator
 
 for a in album_list:

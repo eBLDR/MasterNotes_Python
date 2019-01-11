@@ -36,7 +36,7 @@ print('=' * 30)
 def dad(n, name='', mode=''):
     print('This is dad().')
     print('n is: {}; name is: {}; mode is: {}'.format(n, name, mode))
-    
+
 
 def child(n, **mykwargs):
     print('child(), calling dad()...')
@@ -69,4 +69,3 @@ def print_backwards(*args, **kwargs):
 
 with open('backwards.txt', 'w') as backwards:
     print_backwards('hello', 'planet', 'earth', 'take', 'me', 'to', 'your', 'leader', end=' ', file=backwards)
-

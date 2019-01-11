@@ -4,83 +4,85 @@ from PyQt5.QtGui import QIcon
 
 
 class App(QMainWindow):
-    
+
     def __init__(self):
         super().__init__()
-        
-        self.initUI()
-        
-    def initUI(self):
+
+        self.status_bar = None
+        self.toolbar = None
+
+        self.init_ui()
+
+    def init_ui(self):
         # Instantiating the status bar
-        self.statusbar = self.statusBar()
+        self.status_bar = self.statusBar()
         # Displaying a message
-        self.statusbar.showMessage('Ready')
+        self.status_bar.showMessage('Ready')
 
         # Creating the options/actions to be added to the menu
-        # @icon (optional), @name (& indictes key shortcut), @parent_widget
-        exitAct = QAction('&Exit', self)
-        # exitAct = QAction(QIcon('exit.png'), '&Exit', self)
-        exitAct.setShortcut('Ctrl+Q')  # Shortcut to action, if desired
-        exitAct.setStatusTip('Exit application')
-        exitAct.triggered.connect(sys.exit)  # Binding an action
+        # @icon (optional), @name (& indicates key shortcut), @parent_widget
+        exit_act = QAction('&Exit', self)
+        # exit_act = QAction(QIcon('exit.png'), '&Exit', self)
+        exit_act.setShortcut('Ctrl+Q')  # Shortcut to action, if desired
+        exit_act.setStatusTip('Exit application')
+        exit_act.triggered.connect(sys.exit)  # Binding an action
 
-        newAct = QAction('New', self)
+        new_act = QAction('New', self)
 
         # Creating the menu bar
-        menuBar = self.menuBar()
+        menu_bar = self.menuBar()
 
         # Adding a menu to the menu bar, @name
-        fileMenu = menuBar.addMenu('&File')
+        file_menu = menu_bar.addMenu('&File')
 
         # Adding actions to the menu - they are displayed by adding order
-        fileMenu.addAction(newAct)
-        fileMenu.addAction(exitAct)
-        
+        file_menu.addAction(new_act)
+        file_menu.addAction(exit_act)
+
         # Creating a submenu
-        subMenu = QMenu('Import', self)
-        impAct = QAction('Import &me', self)  # New action to be added to menu
-        subMenu.addAction(impAct)
-        fileMenu.addMenu(subMenu)  # Adding submenu to menu
+        sub_menu = QMenu('Import', self)
+        imp_act = QAction('Import &me', self)  # New action to be added to menu
+        sub_menu.addAction(imp_act)
+        file_menu.addMenu(sub_menu)  # Adding submenu to menu
 
         # Checkbox menu - checkable=True
-        viewStatAct = QAction('View statusbar', self, checkable=True)
-        viewStatAct.setStatusTip('View statusbar')
-        viewStatAct.setChecked(True)  # Default value
-        viewStatAct.triggered.connect(self.toggleMenu)  # It's passing a boolean to the function on click
+        view_stat_act = QAction('View status bar', self, checkable=True)
+        view_stat_act.setStatusTip('View status bar')
+        view_stat_act.setChecked(True)  # Default value
+        view_stat_act.triggered.connect(self.toggle_menu)  # It's passing a boolean to the function on click
 
-        viewMenu = menuBar.addMenu('&View')  # New menu on menu bar
-        viewMenu.addAction(viewStatAct)
+        view_menu = menu_bar.addMenu('&View')  # New menu on menu bar
+        view_menu.addAction(view_stat_act)
 
         # Adding a toolbar - it can be moved around the window by dragging it
         self.toolbar = self.addToolBar('Exit')
-        self.toolbar.addAction(exitAct)
-        
-        self.setGeometry(10, 10, 300, 200)        
-        self.setWindowTitle('Message box')    
+        self.toolbar.addAction(exit_act)
+
+        self.setGeometry(10, 10, 300, 200)
+        self.setWindowTitle('Message box')
         self.show()
 
-    def toggleMenu(self, state):
+    def toggle_menu(self, state):
         # State is passed by the menu, boolean
         if state:
-            self.statusbar.show()
+            self.status_bar.show()
         else:
-            self.statusbar.hide()  # To hide status bar
+            self.status_bar.hide()  # To hide status bar
 
     # Context menu, displayed with right click
-    def contextMenuEvent(self, event):
-           cmenu = QMenu(self)
-           
-           newAct = cmenu.addAction("New")
-           opnAct = cmenu.addAction("Open")
-           quitAct = cmenu.addAction("Quit")
-           action = cmenu.exec_(self.mapToGlobal(event.pos()))
-           
-           if action == quitAct:
-               QApplication.close()  # Closes and quits the app
-        
+    def context_menu_event(self, event):
+        c_menu = QMenu(self)
+
+        new_act = c_menu.addAction("New")
+        opn_act = c_menu.addAction("Open")
+        quit_act = c_menu.addAction("Quit")
+        action = c_menu.exec_(self.mapToGlobal(event.pos()))
+
+        if action == quit_act:
+            QApplication.close()  # Closes and quits the app
+
 
 if __name__ == '__main__':
-    
     app = QApplication(sys.argv)
     example = App()
     sys.exit(app.exec_())

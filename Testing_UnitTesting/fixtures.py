@@ -21,6 +21,6 @@ class FixturesTest(unittest.TestCase):
         print('In test()')
         self.assertEqual(self.fixture, range(1, 10))
 
-    
+
 if __name__ == '__main__':
     unittest.main()

@@ -3,7 +3,7 @@ def centre_text(*args, column=80):
     for arg in args:
         text += str(arg) + '-'  # to be able to see the trailing spaces
     left_margin = (column - len(text)) // 2
-    print(" " * left_margin, text)
+    print(' ' * left_margin, text)
 
 
 centre_text('spam and eggs')

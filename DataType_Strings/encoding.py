@@ -29,7 +29,7 @@ b_string = 'this is' + chr(10) + 'a string split' + chr(9) + chr(9) + 'and tabbe
 uni = u"äöü\xe4\xf6\xfc"
 print(uni)
 
-# Bytes object - the string will be saved with it's correspoing encoding values
+# Bytes object - the string will be saved with it's corresponding encoding values
 byte_string = b'I like bytes'
 print(byte_string, type(byte_string))
 

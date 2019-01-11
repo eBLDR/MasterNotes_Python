@@ -2,9 +2,7 @@
 
 
 def spam1():
-
     def spam2():
-
         def spam3():
             z = ' even more spam'
             print('In spam3, locals are {}'.format(locals()))
@@ -23,24 +21,23 @@ def spam1():
 
 print(spam1())
 
-print("=" * 30)
+print('=' * 30)
 
 # they are identical, because we are in the global scope
 print(locals())
 print(globals())
 
-print("=" * 30)
+print('=' * 30)
 
 
 # RETURNING FUNCTIONS
 
 def parent(num):
-
     def first_child():
-        return "Printing from the first_child() function."
+        return 'Printing from the first_child() function.'
 
     def second_child():
-        return "Printing from the second_child() function."
+        return 'Printing from the second_child() function.'
 
     try:
         assert num == 10

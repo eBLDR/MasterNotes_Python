@@ -78,7 +78,7 @@ print(bldr)
 bldr.level -= 1
 print(bldr)
 
-bldr.score = 500    # Setter method, property created using decorators
+bldr.score = 500  # Setter method, property created using decorators
 print(bldr)
 
 # Mangling
@@ -88,4 +88,3 @@ print(bldr.__dict__)  # Here we can see mangling working, _Player_mangle attribu
 
 # trying to call a private method from outside will raise an error
 # bldr.__private()
-

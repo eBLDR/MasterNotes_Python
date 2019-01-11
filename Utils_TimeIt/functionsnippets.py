@@ -22,8 +22,8 @@ result_func = timeit.timeit(odds_func, number=1000)
 result_str = timeit.timeit(odds_str, number=1000)
 
 # there isn't performance difference
-print("In function:\t{} sec".format(result_func))
-print("In string:\t\t{} sec".format(result_str))
+print('In function:\t{} sec'.format(result_func))
+print('In string:\t\t{} sec'.format(result_str))
 
 
 # using arguments in functions
@@ -37,4 +37,4 @@ def factorial(n):
 print()
 # import the desired function in the setup parameter and use the called in the snippet
 if __name__ == '__main__':
-    print(timeit.timeit("x = factorial(100)", setup="from __main__ import factorial", number=1000))
+    print(timeit.timeit('x = factorial(100)', setup='from __main__ import factorial', number=1000))

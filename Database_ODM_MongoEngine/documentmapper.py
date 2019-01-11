@@ -56,7 +56,7 @@ print('=' * 20)
 class Book(Document):
     title = StringField()
     published = BooleanField()
-    
+
     # queryset_manager return all documents of the collection
     @queryset_manager
     def live_posts(clazz, queryset):

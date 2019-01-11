@@ -41,7 +41,7 @@ print(dataset.groupby('class').size())
 
 # UNIVARIATE PLOTS
 # Box and whisker plots
-dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+dataset.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False)
 plt.show()
 
 # Histograms

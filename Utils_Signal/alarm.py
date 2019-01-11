@@ -15,7 +15,7 @@ def handler(*args):
     # Each signal object has 2 attributes, signalnum (int) and frame (frame)
     signal_num = args[0]
     frame = args[1]
-    
+
     print('Signal handler called with signal: {}.'.format(signal_num))
 
     sys.exit()

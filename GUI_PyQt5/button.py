@@ -4,20 +4,19 @@ from PyQt5.QtGui import QFont  # Customized fonts
 
 
 class App(QWidget):
- 
+
     def __init__(self):
         super().__init__()
-        
-        self.initUI()
- 
-    def initUI(self):
 
+        self.init_ui()
+
+    def init_ui(self):
         QToolTip.setFont(QFont('SansSerif', 10))  # Custom font for tooltip, (@font_name, @pixel_size)
 
         # Text accept rich formatting
         self.setToolTip('This is a <b>QWidget</b> widget')  # Setting tooltip for widget
         # Tooltips will be displayed after 1 second of hovering on top of the element
-        
+
         # Button
         btn = QPushButton('Button', self)  # (@name, @parent_widget)
         btn.setToolTip('This is a <b>QPushButton</b> widget')
@@ -34,7 +33,8 @@ class App(QWidget):
     @staticmethod
     def sample_function():
         print('You pushed me!')
- 
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     example = App()

@@ -10,7 +10,7 @@ print(numbers)
 
 numbers.discard(8)  # no error, does nothing
 
-numbers.remove(5)   # removes an existing item, must exist
+numbers.remove(5)  # removes an existing item, must exist
 print(numbers)
 # numbers.remove(7)  # will give an error, useful when Try Except
 

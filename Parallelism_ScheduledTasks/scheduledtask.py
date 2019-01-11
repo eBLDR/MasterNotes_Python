@@ -28,7 +28,7 @@ def print_multiple_times():
     # enterabs(time, priority, action, argument=(), kwargs={})
     # @time must be in seconds from epoch
     scheduler.enterabs(run_at.timestamp(), 1, print_time, argument=('Running at ' + str(run_at),))
-        
+
     # cancel() - to cancel an event that's found in the queue
     # scheduler.cancel(my_event)
 

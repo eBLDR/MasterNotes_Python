@@ -82,7 +82,7 @@ print(r2.keys())
 print('=' * 30)
 
 # POST method - the end point is receiving the data, @data will send binary data
-r3 = requests.post('http://httpbin.org/post', data = {'key':'value'})
+r3 = requests.post('http://httpbin.org/post', data={'key': 'value'})
 print(r3.status_code)
 
 # Posting JSON, @json will send json data, it will be converted into json automatically
@@ -90,7 +90,7 @@ r4 = requests.post('http://httpbin.org/post', json=payload)
 print(r4.status_code)
 
 # PUT method
-r3 = requests.put('http://httpbin.org/put', data = {'key':'value'})
+r3 = requests.put('http://httpbin.org/put', data={'key': 'value'})
 print(r3.status_code)
 
 # DELETE method
@@ -104,4 +104,3 @@ print(r3.status_code)
 # OPTIONS method
 r3 = requests.options('http://httpbin.org/get')
 print(r3.status_code)
-

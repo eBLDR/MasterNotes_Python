@@ -17,4 +17,3 @@ print(os.environ)
 
 # os.getenv() is equivalent to os.environ.get()
 print('HOME is ', os.getenv('HOME', 'Not found'))
-

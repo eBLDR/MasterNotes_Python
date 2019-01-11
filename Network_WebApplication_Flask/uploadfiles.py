@@ -11,7 +11,7 @@ from werkzeug import secure_filename
 
 app = Flask(__name__)
 
-# Set the folder where to updload to file
+# Set the folder where to upload to file
 up_folder = ''  # If empty, will upload the file to the script working directory
 app.config['UPLOAD_FOLDER'] = up_folder
 
@@ -58,7 +58,7 @@ def upload_file():
 
     # To get the size of the file
     print(file.content_length)
-    
+
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
@@ -66,4 +66,4 @@ def upload_file():
 
 
 if __name__ == '__main__':
-   app.run()
+    app.run()

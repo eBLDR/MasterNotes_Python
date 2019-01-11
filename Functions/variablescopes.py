@@ -25,10 +25,10 @@ B, Built-in (Python) — Names preassigned in the built-in names module : open,r
 """
 
 
-def add_to_local(number):
+def add_to_local(num):
     # number is a local variable
-    number += 1
-    print('I am inside add_to_local(), number is:', number)
+    num += 1
+    print('I am inside add_to_local(), number is:', num)
 
 
 number = 0
@@ -59,6 +59,7 @@ print('=' * 20)
 def add_to_nonlocal():
     index = 0
     print('I am inside add_to_nonlocal(), index is:', index)
+
     def adding():
         # nonlocal causes the listed identifiers to refer to previously bound variables
         # in the nearest enclosing scope excluding globals
@@ -67,9 +68,8 @@ def add_to_nonlocal():
         print('I am inside adding() nested inside add_to_nonlocal(), index is:', index)
 
     adding()
-    
+
     print('I am inside add_to_nonlocal(), index is:', index)
 
 
 add_to_nonlocal()
-

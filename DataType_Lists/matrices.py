@@ -4,30 +4,30 @@ print(nested_list)
 print(nested_list[0], nested_list[1][1])  # Use multiple index to refer a specific item
 
 # Create matrix
-l = []
+matrix = []
 n = 3
 
 # Method 1
 for i in range(n):
-    l += [[0] * n]
+    matrix += [[0] * n]
 
-print(l)
+print(matrix)
 
 # Method 2
-l = []
+matrix = []
 for i in range(n):
     row = []
     for j in range(n):
         row.append(0)
-    l.append(row)
+    matrix.append(row)
 
-print(l)
+print(matrix)
 
 # Method 3
-l = []
+matrix = []
 for i in range(n):
-    l.append([])
+    matrix.append([])
     for j in range(n):
-        l[i].append(0)
+        matrix[i].append(0)
 
-print(l)
+print(matrix)

@@ -54,5 +54,4 @@ for i in number:
         cleaned_number += i  # += is the augmented assignment
 
 new_number = int(cleaned_number)
-print("The number is {}".format(new_number))
-
+print('The number is {}'.format(new_number))

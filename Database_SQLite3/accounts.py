@@ -25,40 +25,40 @@ class Account(object):
         if row:
             self.name, self._balance = row
             print(row)
-            print("Retrieved record for {}. ".format(self.name), end='')
+            print('Retrieved record for {}.'.format(self.name), end='')
         else:
             self.name = name
             self._balance = opening_balance
-            cursor.execute("INSERT INTO accounts VALUES(?, ?)", (name, opening_balance))
+            cursor.execute('INSERT INTO accounts VALUES(?, ?)', (name, opening_balance))
             cursor.connection.commit()
-            print("Account created for {}. ".format(self.name), end='')
+            print('Account created for {}.'.format(self.name), end='')
         self.show_balance()
 
     def deposit(self, amount: float) -> float:
         if amount > 0:
             self._save_update(amount)
-            print("{:.2f} deposited".format(amount))
+            print('{:.2f} deposited'.format(amount))
         return self._balance
 
     def withdraw(self, amount: float) -> float:
         if 0 < amount <= self._balance:
             self._save_update(-amount)
-            print("{:.2f} withdrawn.".format(amount))
+            print('{:.2f} withdrawn.'.format(amount))
             return amount
         else:
-            print("The amount must be greater than zero and no more than {:.2f}.".format(self._balance))
+            print('The amount must be greater than zero and no more than {:.2f}.'.format(self._balance))
             return 0.0
 
     def show_balance(self):
-        print("Balance on account {} is {:.2f}".format(self.name, self._balance))
+        print('Balance on account {} is {:.2f}'.format(self.name, self._balance))
 
     def _save_update(self, amount):
         new_balance = self._balance + amount
         withdrawal_time = Account._current_time()
         print(Account._current_time())  # testing
         try:
-            db.execute("UPDATE accounts SET balance = ? WHERE name = ?", (new_balance, self.name))
-            db.execute("INSERT INTO history VALUES(?, ?, ?)", (withdrawal_time, self.name, amount))
+            db.execute('UPDATE accounts SET balance = ? WHERE name = ?', (new_balance, self.name))
+            db.execute('INSERT INTO history VALUES(?, ?, ?)', (withdrawal_time, self.name, amount))
         except sqlite3.Error:
             db.rollback()  # to delete the last update before it's committed
         else:

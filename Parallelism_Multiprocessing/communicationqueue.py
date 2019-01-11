@@ -32,7 +32,7 @@ def consumer(q):
     while True:
         # Get data from the queue
         data = q.get()
-        
+
         print('Data found to be processed: {}'.format(data))
 
         if data is sentinel:
@@ -42,9 +42,9 @@ def consumer(q):
 if __name__ == '__main__':
     # Queue object
     q = Queue()
-    
-    data = [n*5 for n in range(10)]
-    
+
+    data = [n * 5 for n in range(10)]
+
     proc_producer = Process(target=producer, args=(data, q))
     proc_consumer = Process(target=consumer, args=(q,))
     proc_producer.start()
@@ -57,9 +57,9 @@ if __name__ == '__main__':
 
     # Indicate that no more data will be put on this queue by the current process
     q.close()
-    
+
     # Join the background thread, it blocks until the background thread exits
     q.join_thread()
- 
+
     proc_producer.join()
     proc_consumer.join()

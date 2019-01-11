@@ -23,13 +23,13 @@ if __name__ == '__main__':
     parent_conn, child_conn = Pipe()
 
     data_to_be_sent = [42, None, 'hello']
-    
+
     proc = Process(target=f, args=(child_conn, data_to_be_sent))
     proc.start()
 
-    # Receiveng data from the other end of the pipe
+    # Receiving data from the other end of the pipe
     data_received = parent_conn.recv()
-    
+
     print('Process {} received data {}.'.format(os.getpid(), data_received))
-    
+
     proc.join()

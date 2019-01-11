@@ -1,4 +1,5 @@
 import time
+
 # perf_counter is a more precise counter than time(), it's also monotonic,
 # which means that time can only go in one direction
 # perf_counter is actually a second counter that starts as soon the computer is turned on
@@ -18,4 +19,3 @@ cpu_end = time.process_time()
 
 print(cpu_start)
 print(cpu_end)
-

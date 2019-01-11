@@ -134,13 +134,13 @@ try:
 except:
     print('ERROR: one() - More than one record was found.')
 
-# When using filters, many expressions can be combined usng or_ and_ SQLAlchemy keywords
+# When using filters, many expressions can be combined using or_ and_ SQLAlchemy keywords
 from sqlalchemy import or_
 
 address = session.query(Address).filter(or_(Address.person == person, Address.post_code == '00000')).first()
 print(address.post_code)
 
-# filter_by(@dict) - multiple filters at once, dictinary must have column_name as a key and expression as a value
+# filter_by(@dict) - multiple filters at once, dictionary must have column_name as a key and expression as a value
 filters = {'name': 'new person', 'id': 4}
 person = session.query(Person).filter_by(**filters).first()  # Dictionary must be passed unpacked
 print(person.id, person.name)
@@ -161,7 +161,7 @@ session.commit()
 person_buff = session.query(Person).filter(Person.id == id_)
 print(person_buff.first().name)
 
-# update(@key_newvalue_dict)
+# update(@key_new_value_dict)
 person_buff.update({'name': 'New Better Updated Name'})
 session.commit()
 

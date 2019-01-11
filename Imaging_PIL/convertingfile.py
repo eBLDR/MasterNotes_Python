@@ -2,6 +2,7 @@
 .png and .gif support transparency mask, but not .jpeg. """
 
 from PIL import Image
+
 """
 # normal conversion
 im = Image.open('Lenna.jpeg')

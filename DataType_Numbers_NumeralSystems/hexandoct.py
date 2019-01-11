@@ -1,7 +1,7 @@
 # hexadecimal and octal systems
 for i in range(17):
-    print("{0:>2} in hex is {0:>02x}".format(i))  # hexadecimal
-    print("{0:>2} in oct is {0:>02o}".format(i))  # octal
+    print('{0:>2} in hex is {0:>02x}'.format(i))  # hexadecimal
+    print('{0:>2} in oct is {0:>02o}'.format(i))  # octal
 
 # to declare variable
 x = 0x10  # 16 in hex
@@ -12,4 +12,4 @@ print(x, y, z)
 
 print('\t{}\t\t\t{}\t\t\t{}'.format(x, hex(x), oct(x)))
 print(type(x), type(hex(x)))  # type are int, str
-print(x * y, "=", hex(x * y))
+print(x * y, '=', hex(x * y))

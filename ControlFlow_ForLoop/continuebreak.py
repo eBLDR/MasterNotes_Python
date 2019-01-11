@@ -5,7 +5,7 @@ for item in alpha_list:
         continue
         # keyword continue skips the code for that item and jumps to the
         # next item in the iteration
-    
+
     print('I am ' + item)
 
 for item in alpha_list:
@@ -13,7 +13,7 @@ for item in alpha_list:
         print('I am ' + item + ' and I am breaking the loop')
         break
         # keyword break cuts and finishes the for iteration loop
-    
+
     print('I am ' + item)
 
 for item in alpha_list:

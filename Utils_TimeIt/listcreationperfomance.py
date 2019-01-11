@@ -56,11 +56,11 @@ result_comprehension = timeit.timeit(list_comprehension, number=repetitions, set
 
 result_generator = timeit.timeit(list_generator, number=repetitions, setup=setup)
 
-print("List append method:\t{} sec".format(result_append))
-print("List comprehension:\t{} sec".format(result_comprehension))
-print("List generator:\t\t{} sec".format(result_generator))
+print('List append method:\t{} sec'.format(result_append))
+print('List comprehension:\t{} sec'.format(result_comprehension))
+print('List generator:\t\t{} sec'.format(result_generator))
 
 print()
 # repeat() - several runs, repeat=3 by default - returns a list of the times
 repeat_generator = timeit.repeat(list_generator, setup=setup, number=repetitions, repeat=5)
-print("Repeat generator:\t{}".format(repeat_generator))
+print('Repeat generator:\t{}'.format(repeat_generator))

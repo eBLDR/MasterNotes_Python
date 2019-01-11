@@ -34,7 +34,7 @@ login_password = 'pythonpro'
 
 # Login to the server
 smtp_obj.login(login_email_addr, login_password)
-print('Log in...', response) # Response code 235 means 'authentication successful'
+print('Log in...', response)  # Response code 235 means 'authentication successful'
 
 """
 Gmail has an additional security feature for Google accounts called
@@ -43,7 +43,7 @@ Gmail has an additional security feature for Google accounts called
 
 # Sending email
 from_addr = login_email_addr
-to_addr = 'ed.bldr@gmail.com'
+to_addr = '#####@####.##'
 
 # The start of the email body string must begin with 'Subject: \n' for the subject line of the email
 body = 'Subject: !\nHello World from Python Pro!'

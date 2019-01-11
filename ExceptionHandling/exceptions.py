@@ -18,7 +18,7 @@ def factorial(n):
     if n <= 1:
         return 1
     else:
-        return n * factorial(n-1)
+        return n * factorial(n - 1)
 
 
 try:
@@ -48,4 +48,3 @@ finally:  # finally is executed regardless an exception was raised or not, even 
     print('The finally clause always executes')
 
 print('Program terminating')
-

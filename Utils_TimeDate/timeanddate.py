@@ -9,8 +9,8 @@ import time
 print("\nUSING TIME\n")
 
 # TIMES
-print(time.localtime())     # local time - no @ will display current time, if @timestamp, will display accordingly
-print(time.time())          # epoch timestamp - seconds until now since the start of the epoch
+print(time.localtime())  # local time - no @ will display current time, if @timestamp, will display accordingly
+print(time.time())  # epoch timestamp - seconds until now since the start of the epoch
 
 # strftime stands for string format time, method that print the time in a nicer way
 print('The epoch of this system started at ' + time.strftime('%c', time.gmtime(0)))
@@ -57,7 +57,7 @@ print('Local time is ' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
 
 import datetime
 
-print("\nUSING DATETIME\n")
+print('\nUSING DATETIME\n')
 
 now = datetime.datetime.now()  # Returns information the local time at the moment of execution
 print(now)
@@ -109,10 +109,10 @@ print(type(oct_21))
 print('=' * 30)
 
 # We can create date specific datetime objects
-newyear2016 = datetime.datetime(2016, 1, 1, 0, 0, 0)  # @(y, m, d, h, m, s)
-print(newyear2016 < now)
+new_year_2016 = datetime.datetime(2016, 1, 1, 0, 0, 0)  # @(y, m, d, h, m, s)
+print(new_year_2016 < now)
 
-print(newyear2016.timestamp())  # Seconds since epoch
+print(new_year_2016.timestamp())  # Seconds since epoch
 
 # Also from a timestamp
 random_epoch = 10000
@@ -135,8 +135,7 @@ print('=' * 30)
 # pausing until a specific date
 future = datetime.datetime(2020, 1, 1, 0, 0, 0)
 try:
-    print("""We are waiting until {}...
-    Press Ctrl+C for Keyboard Interruption!""".format(future))
+    print('We are waiting until {}...\nPress Ctrl+C for Keyboard Interruption!'.format(future))
     while future > datetime.datetime.now():
         time.sleep(1)
     print('Welcome to the future!')

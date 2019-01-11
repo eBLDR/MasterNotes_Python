@@ -90,14 +90,14 @@ class VampireKing(Vampire):
 if __name__ == '__main__':
     random_monster = Enemy('Basic Enemy', 12, 1)
 
-    print("\n--- TESTING ENEMY SUPER CLASS ---\n")
+    print('\n--- TESTING ENEMY SUPER CLASS ---\n')
 
     print(random_monster)
 
     random_monster.take_damage(4)
     print(random_monster)
 
-    print("\n--- TESTING TROLL SUB CLASS ---\n")
+    print('\n--- TESTING TROLL SUB CLASS ---\n')
 
     ugly_troll = Troll('Ugly')
     print('Ugly Troll - {}'.format(ugly_troll))
@@ -110,7 +110,7 @@ if __name__ == '__main__':
     urg_troll = Troll('Urg', iq=5)
     print(urg_troll)
 
-    print("\n--- TESTING ALIVE IN TROLL SUB CLASS ---\n")
+    print('\n--- TESTING ALIVE IN TROLL SUB CLASS ---\n')
 
     while urg_troll._alive:
         urg_troll.take_damage(5)
@@ -123,11 +123,11 @@ if __name__ == '__main__':
     or set to default if not specified. (See functions.)
     """
 
-    print("\n--- TESTING METHODS IN SUBCLASS ---\n")
+    print('\n--- TESTING METHODS IN SUBCLASS ---\n')
 
     urg_troll.grunt()
 
-    print("\n--- TESTING VAMPIRE SUB CLASS ---\n")
+    print('\n--- TESTING VAMPIRE SUB CLASS ---\n')
 
     vlad = Vampire('Vlad')
     print(vlad)
@@ -135,7 +135,7 @@ if __name__ == '__main__':
         vlad.take_damage(5)
     print(vlad)
 
-    print("\n--- TESTING VAMPIRE KING SUB CLASS ---\n")
+    print('\n--- TESTING VAMPIRE KING SUB CLASS ---\n')
 
     king = VampireKing('King')
     print(king)
@@ -146,7 +146,6 @@ if __name__ == '__main__':
 
     print('\nisinstance() function\n')
     # isinstance(@object, @class or @type or (@class_1, @class_2))
-    # Returns a boolent if @object is instance of @class
+    # Returns a boolean if @object is instance of @class
     print('isinstance(king, VampireKing):', isinstance(king, VampireKing))
     print('isinstance(king, Vampire):', isinstance(king, Vampire))
-    

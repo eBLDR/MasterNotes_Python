@@ -34,8 +34,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
     """
 
     # Waiting and accepting the incoming connection from the client
-    connection, address = server.accept()   # First value returned is the connection/channel (socket object) from the server to the incoming client,
-                                            # the second is the client's address bound to the socket on the client's end
+    connection, address = server.accept()  # First value returned is the connection/channel (socket object) from the server to the incoming client,
+    # the second is the client's address bound to the socket on the client's end
     print('Connected with {}.'.format(address))
 
     # Communicate with the client

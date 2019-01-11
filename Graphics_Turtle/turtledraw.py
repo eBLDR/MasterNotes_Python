@@ -8,13 +8,13 @@ screen = Screen()
 screen.setup(400, 400)
 screen.title('Turtle Draw!')
 
-screenMinX = -screen.window_width() / 2
-screenMinY = -screen.window_height() / 2
-screenMaxX = screen.window_width() / 2
-screenMaxY = screen.window_height() / 2
+screen_min_x = -screen.window_width() / 2
+screen_min_y = -screen.window_height() / 2
+screen_max_x = screen.window_width() / 2
+screen_max_y = screen.window_height() / 2
 
 # to adjust coordinates
-screen.setworldcoordinates(screenMinX, screenMinY, screenMaxX, screenMaxY)
+screen.setworldcoordinates(screen_min_x, screen_min_y, screen_max_x, screen_max_y)
 
 # brush cursor object
 brush_turtle = Turtle()
@@ -25,7 +25,7 @@ brush_turtle.speed(10)
 # Set up event handler to have the brush_turtle draw a line
 # to the point that the user clicks on
 def on_screen_click(x, y):
-    if y < screenMaxY - 40:  # only draw if clicked below color squares
+    if y < screen_max_y - 40:  # only draw if clicked below color squares
         brush_turtle.goto(x, y)
 
 
@@ -33,13 +33,13 @@ screen.onclick(on_screen_click)
 
 
 class ColorPicker(Turtle):
-    def __init__(self, color="red", num=0):
+    def __init__(self, color='red', num=0):
         Turtle.__init__(self)
         self.num = num
         self.color_name = color
         self.speed(0)
-        self.shape("circle")
-        self.color("black", color)  # @pen_color, @fill_color
+        self.shape('circle')
+        self.color('black', color)  # @pen_color, @fill_color
         self.penup()
 
         # hack to register click handler to instance method
@@ -47,13 +47,13 @@ class ColorPicker(Turtle):
         # self.onclick(lambda x, y: self.handle_click(x, y))
 
     def draw(self):
-        self.setx(screenMinX + 110 + self.num * 30)
-        self.sety(screenMaxY - 20)
+        self.setx(screen_min_x + 110 + self.num * 30)
+        self.sety(screen_max_y - 20)
 
     def handle_click(self, x, y):
-        if self.color_name == "#F9F9F9":
+        if self.color_name == '#F9F9F9':
             brush_turtle.penup()
-            brush_turtle.color("black")
+            brush_turtle.color('black')
         else:
             brush_turtle.pendown()
             brush_turtle.color(self.color_name)
@@ -66,11 +66,11 @@ screen.tracer(0)
 ui_turtle = Turtle()
 ui_turtle.ht()
 ui_turtle.penup()
-ui_turtle.goto(screenMinX, screenMaxY - 23)
-ui_turtle.write("TurtleDraw!", align="left", font=("Courier", 10, "bold"))
+ui_turtle.goto(screen_min_x, screen_max_y - 23)
+ui_turtle.write('TurtleDraw!', align='left', font=('Courier', 10, 'bold'))
 
 # Create color choosing squares at the top of screen
-colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "black", "#F9F9F9"]
+colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'black', '#F9F9F9']
 color_pickers = [ColorPicker(color=c, num=i) for i, c in enumerate(colors)]
 for picker in color_pickers:
     picker.draw()

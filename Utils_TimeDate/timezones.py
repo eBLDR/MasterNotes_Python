@@ -26,7 +26,7 @@ There are two datetime objects:
 - Aware, they do contain information about timezones
 """
 
-print("\nUSING DATETIME FOR NAIVE TIME\n")
+print('\nUSING DATETIME FOR NAIVE TIME\n')
 
 import datetime
 
@@ -37,7 +37,7 @@ utc_time = datetime.datetime.utcnow()
 print('Naive local time {}'.format(local_time))
 print('Naive UTC {}'.format(utc_time))
 
-print("\nUSING PYTZ FOR AWARE TIME\n")
+print('\nUSING PYTZ FOR AWARE TIME\n')
 
 import pytz
 

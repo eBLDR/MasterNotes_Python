@@ -6,5 +6,6 @@ for m in dir(__builtins__):  # to show all the built-in methods
     print(m)
 
 import shelve
+
 help(shelve)  # to call documentation file
 help(shelve.open)  # to call specific documentation of one method

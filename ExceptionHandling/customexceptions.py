@@ -1,5 +1,7 @@
 # Create customized exceptions
 # Inherit from basic built-in Exception
+
+
 class MyException(Exception):
 
     # Setting the custom message
@@ -12,4 +14,3 @@ try:
 except Exception as e:
     print(e.args)  # Attribute containing the message (tuple)
     raise
-

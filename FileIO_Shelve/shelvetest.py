@@ -1,4 +1,5 @@
 import shelve
+
 """
 Shelve files work similar to a dictionary, most of the methods for dict will work on a shelve item
 Important to notice, while dictionaries accept any kind of immutable variable as a key,
@@ -30,7 +31,7 @@ with shelve.open('bike') as bike:
     for key in bike:
         print(key)
     # the solution is using del command to delete wrong keys
-    # del bike['enginSize'
+    # del bike['enginSize']
     print(bike['engineSize'])
     print(bike['enginSize'])
 

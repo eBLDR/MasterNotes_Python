@@ -71,13 +71,13 @@ class HtmlDoc(object):
 
     def __init__(self, title=None):
         self._doc_type = DocType()  # COMPOSITION
-        self._head = Head(title)    # COMPOSITION
-        self._body = Body()         # COMPOSITION
+        self._head = Head(title)  # COMPOSITION
+        self._body = Body()  # COMPOSITION
 
     def add_tag(self, name, contents):
         self._body.add_tag(name, contents)  # delegation
 
-    def display(self, file=None):           # delegation again for all the displays
+    def display(self, file=None):  # delegation again for all the displays
         self._doc_type.display(file=file)
         print('<HTML>', file=file)
         self._head.display(file=file)

@@ -7,23 +7,24 @@ A JSON file is both compact and human readable.
 JSON files are interchangeable between different languages.
 JSON can’t store every kind of Python value. It can contain values of only the following data types:
 strings, integers, floats, Booleans, lists, dictionaries, and NoneType.
+JSON strings MUST use ""
 """
 
 import json
 
 # load string method - translates json string to a python value
-stringOfJsonData = '{"name": "Zophie", "isCat": true, "miceCaught": 0, "felineIQ": null}'
-jsonDataAsPythonValue = json.loads(stringOfJsonData)
+string_of_json_data = '{"name": "Zophie", "isCat": true, "miceCaught": 0, "felineIQ": null}'
+json_data_as_python_value = json.loads(string_of_json_data)
 
-print(jsonDataAsPythonValue)
-print(type(jsonDataAsPythonValue))
+print(json_data_as_python_value)
+print(type(json_data_as_python_value))
 
-print("=" * 20)
+print('=' * 20)
 
 # dump string method - translates a python value into a string of json-formatted data
-pythonValue = {'isCat': True, 'miceCaught': 0, 'name': 'Zophie',
-               'felineIQ': None}
-stringOfJsonData2 = json.dumps(pythonValue)
+python_value = {'isCat': True, 'miceCaught': 0, 'name': 'Zophie',
+                'felineIQ': None}
+string_of_json_data2 = json.dumps(python_value)
 
-print(stringOfJsonData2)
-print(type(stringOfJsonData2))
+print(string_of_json_data2)
+print(type(string_of_json_data2))

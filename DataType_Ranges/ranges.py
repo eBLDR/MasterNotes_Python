@@ -26,7 +26,7 @@ print(range(0, 5, 2) == range(0, 6, 2))  # will return True
 print(range(0, 100)[::-2] == range(99, 0, -2))  # slicing a range
 
 o = range(0, 100, 4)
-p = o[::5]  # 4*5 is what is happening
+p = o[::5]  # 4 * 5 is what is happening
 print(p)
 for i in p:
     print(i)

@@ -1,4 +1,4 @@
-# argparse module it's a parser for command-line options, arguments and subcommands
+# argparse module it's a parser for command-line options, arguments and sub commands
 import argparse
 
 # Instance of parses

@@ -1,4 +1,4 @@
-""" What the for is doing each iteration is actually calling the next() function in the iterable object. """
+# The for loop on each iteration is actually calling the next() function in the iterable object.
 
 for i in range(1, 11):
     print('i is now {:2}'.format(i))

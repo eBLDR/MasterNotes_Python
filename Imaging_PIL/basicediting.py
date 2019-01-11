@@ -17,16 +17,15 @@ myImg2.save('transparentImage.png', 'PNG')  # transparency=0 can be used when de
 # to see the RGBA values of a string name color
 print(ImageColor.getcolor('chocolate', 'RGBA'))
 
-
 # to open a image - open(path)
 myImg = Image.open('Lenna.jpeg')
 
 # data attributes
-print('Size is: {}'.format(myImg.size))         # get size - (width, height)
-print('Name is: {}'.format(myImg.filename))     # get filename
-print('Format is: {}'.format(myImg.format))     # get file's extension
-print(myImg.format_description)                 # get expanded file's extension
-print('Color mode is: {}'.format(myImg.mode))   # get color mode
+print('Size is: {}'.format(myImg.size))  # get size - (width, height)
+print('Name is: {}'.format(myImg.filename))  # get filename
+print('Format is: {}'.format(myImg.format))  # get file's extension
+print(myImg.format_description)  # get expanded file's extension
+print('Color mode is: {}'.format(myImg.mode))  # get color mode
 
 print('=' * 20)
 

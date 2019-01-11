@@ -19,7 +19,7 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     url='https://github.com/pypa/example-project',
     packages=setuptools.find_packages(),
-    install_requires=['package_dependecy'],  # List here all the depencies used in the package, if any
+    install_requires=['package_dependency'],  # List here all the dependencies used in the package, if any
     classifiers=(
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
@@ -31,4 +31,3 @@ setuptools.setup(
         ]
     }
 )
-

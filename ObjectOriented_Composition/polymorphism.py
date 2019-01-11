@@ -25,7 +25,8 @@ class Duck(object):
     def __init__(self):
         self._wing = Wing(1.8)  # this is composition
 
-    def quack(self):
+    @staticmethod
+    def quack():
         print('Quack quack')
 
     def fly(self):
@@ -35,10 +36,11 @@ class Duck(object):
 class BlackDuck(Duck):
 
     def __init__(self):
+        super().__init__()
         self._wing = Wing(0.7)
-    
+
     def fly(self):
-        print("Don't u see my black wings?")
+        print('Don\'t u see my black wings?')
         super().fly()
 
 

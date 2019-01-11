@@ -18,7 +18,7 @@ def factorial(n):
     if n <= 1:
         return 1
     else:
-        return n * factorial(n-1)
+        return n * factorial(n - 1)
         # call factorial(n-1), then call factorial(n-2),...,then call factorial(n-(n+1)),
         # then return from the last
 
@@ -29,7 +29,7 @@ def fib(n):
     if n < 2:
         return n
     else:
-        return fib(n-1) + fib(n-2)  # non efficient way, we recalculate n-2 on each recursion
+        return fib(n - 1) + fib(n - 2)  # non efficient way, we recalculate n-2 on each recursion
 
 
 for i in range(13):
