@@ -37,14 +37,17 @@ class Kettle:  # By convention, start with capital letter and use camel case
 
     def __str__(self):
         # Specify what's the output when calling print(class_name)
-        return "I'm an instance from class {}!".format(Kettle.__name__)
+        return 'I\'m an instance from class {}!'.format(Kettle.__name__)
 
     # def __doc__(self):
         # Will override the docstring specified on the class, if desired.
-        
+
+    def to_dict(self):
+        # Returns a dictionary of the attributes and stored values, so it's not necessary to access a protected method from outside
+        return self.__dict__
 
 
-# creating an instance of Kettle class
+# Creating an instance of Kettle class
 kenwood = Kettle('Kenwood', 8.99)
 print(kenwood.make)
 print(kenwood.price)
@@ -52,11 +55,11 @@ print(kenwood.price)
 kenwood.price = 12.75  # reassigning the variable
 print(kenwood.price)
 
-# creating another instance of Kettle
+# Creating another instance of Kettle
 hamilton = Kettle('Hamilton', 14.55)
 
 print('Models: {} = {}, {} = {}'.format(kenwood.make, kenwood.price, hamilton.make, hamilton.price))
-# replacement fields accept data attributes, pass the instance as a parameter
+# Replacement fields accept data attributes, pass the instance as a parameter
 print('Models: {0.make} = {0.price}, {1.make} = {1.price}'.format(kenwood, hamilton))
 
 print('hamilton is on: {}'.format(hamilton.on))
@@ -67,7 +70,7 @@ print('kenwood is on: {}'.format(kenwood.on))
 Kettle.switch_on(kenwood)  # we can also call the method of the class and pass an instance as parameter
 print('kenwood is on: {}'.format(kenwood.on))
 
-# is also possible to create instance variables (new attributes to one specific instance)
+# Is also possible to create instance variables (new attributes to one specific instance)
 kenwood.power = 1.5
 
 print('=' * 30)
@@ -75,13 +78,13 @@ print('=' * 30)
 Kettle.power_source = 'atomic'  # change the class attribute, all the instances are affected
 print(Kettle.power_source)
 
-# it tracks down to the class to replace the data attribute, it's not an attribute of the instance
+# It tracks down to the class to replace the data attribute, it's not an attribute of the instance
 print('hamilton power source: {}'.format(hamilton.power_source))
 
-kenwood.power_source = 'gas'    # by declaring this, new data attribute is created for this specific instance
+kenwood.power_source = 'gas'  # by declaring this, new data attribute is created for this specific instance
 print('kenwood power source: {}'.format(kenwood.power_source))
 
-print('\n', '=' * 30, '\n')
+print('=' * 30)
 
 # Instance's base class
 print('kenwood.__class__ is ', kenwood.__class__)
@@ -89,14 +92,16 @@ print('kenwood.__class__ is ', kenwood.__class__)
 # Class' name
 print('Kettle.__name__ is', Kettle.__name__)
 
-# checking the namespaces
+print('=' * 30)
+
+# Checking the namespaces
 print('Kettle.__dict__ is\n\t', Kettle.__dict__)
 print('kenwood.__dict__ is\n\t', kenwood.__dict__)
-print('hamilton.__dict__ is\n\t', hamilton.__dict__)
+print('hamilton.to_dict() is\n\t', hamilton.to_dict())
 
 print('=' * 30)
 
-# object's representation
+# Object's representation
 print('Kettle.__str__ is\n\t', Kettle.__str__)
 print(kenwood)
 
@@ -106,9 +111,6 @@ print('Kettle.__bases__ is', Kettle.__bases__)
 
 print('=' * 30)
 
-# displaying help and docstrings
-help(Kettle)                      # built-in function
-help(Kettle.__init__)             # docstring for a specific method
-
-print(Kettle.__doc__)             # to print only the docstring of the class
-print(Kettle.switch_on.__doc__)   # to print only the docstring of a method of the class
+# Displaying docstrings
+print(Kettle.__doc__)  # to print only the docstring of the class
+print(Kettle.switch_on.__doc__)  # to print only the docstring of a method of the class

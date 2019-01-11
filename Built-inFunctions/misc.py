@@ -18,7 +18,8 @@ print(a is 3, a is li, li is li2)
 print(repr(dc))
 
 # help() - prints out the help of the object's class
-print(help(s.upper))  # equivalent to help(str.upper) - using data type
+help(str)  # Help for data type
+help(s.upper)  # equivalent to help(str.upper)
 
 # dir() - return the list of names in the current local scope. With an object as argument,
 # return a list of valid attributes for that object
@@ -32,3 +33,4 @@ print(locals())
 
 # hash() - return the hash value of the object (if it has one)
 print(hash(a))
+
