@@ -28,4 +28,3 @@ if len(sys.argv) > 2:
 
 # Stops the program and returns specified code.
 sys.exit(4)
-

@@ -1,5 +1,4 @@
 # argparse module it's a parser for command-line options, arguments and subcommands
-
 import argparse
 
 # Instance of parses
@@ -27,4 +26,3 @@ print('Echo:', args.echo)
 print('Echo_2:', args.echo_2)
 print('Option:', args.option)
 print('Yes:', args.yes)
-
