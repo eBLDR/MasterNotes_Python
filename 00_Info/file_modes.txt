@@ -26,6 +26,3 @@ ab+ - opens a file for both appending and reading in binary, the file pointer is
 
 
 default mode is 'rt' (text reading)
-
-
-
