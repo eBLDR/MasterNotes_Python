@@ -1,6 +1,7 @@
 # Byte-compiled
 __pycache__/
 *.pyc
+*.pyo
 
 # Code editor
 .idea/
