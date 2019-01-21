@@ -10,11 +10,11 @@ parser.add_argument('echo', help='Custom help msg for echo', type=int)
 # @choices=seq - adds a validation of argument
 parser.add_argument('echo_2', help='Custom help msg for echo', choices=['wind', 'fire'])
 
-# Optional arguments - simply add '-' or '--' in front of the arg name
+# Optional arguments - if name starts with '--' or '-', argument is expected
 # The order of arguments does not matter
 parser.add_argument('--option', help='Custom help msg for --option', default=None)
 
-# Multiple names for flag can be used
+# Mode - uses the @action arg, no extra argument is expected
 # @action='store_true' will store the value True to the arg if the flag is used
 parser.add_argument('-y', '--yes', help='Custom help msg for --yes', action='store_true')
 
