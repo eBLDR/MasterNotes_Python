@@ -1,4 +1,4 @@
-# functions that work with sequence/iterable type data (str, list, tuple, range...)
+# Functions that work with sequence/iterable type data (str, list, tuple, range...)
 
 string_sample = 'I am a sample, yes'  # immutable
 list_sample = ['A', 'ch', 12, True, 'X', 36]  # mutable
@@ -12,14 +12,14 @@ print('z' not in string_sample)
 
 print('=' * 20)
 
-# indexes
+# Indexes
 print(list_sample[1])  # index must be in range
 print(tuple_sample[-1])  # negative indexes also work
 print(string_sample[-5])
 
 print('=' * 20)
 
-# slicing technique - breaks the sequence into slice [start:stop:step]
+# Slicing technique - breaks the sequence into slice [start:stop:step]
 print(string_sample[1:12])
 print(list_sample[:5])
 print(tuple_sample[1:300:2])  # the stop number can be out of index, will stop on last
@@ -27,6 +27,10 @@ print(string_sample[::3])
 
 print(string_sample[::-1])  # backwards
 print(tuple_sample[::-2])
+
+# slice object can be created
+my_slice = slice(2, 5, 2)
+print(list_sample[my_slice])
 
 print('=' * 20)
 
