@@ -6,7 +6,7 @@ The Unix epoch is a time reference commonly used in programming:
 
 import time
 
-print("\nUSING TIME\n")
+print('\nUSING TIME MODULE\n')
 
 # TIMES
 print(time.localtime())  # local time - no @ will display current time, if @timestamp, will display accordingly
@@ -57,7 +57,7 @@ print('Local time is ' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
 
 import datetime
 
-print('\nUSING DATETIME\n')
+print('\nUSING DATETIME MODULE\n')
 
 now = datetime.datetime.now()  # Returns information the local time at the moment of execution
 print(now)
@@ -79,6 +79,9 @@ print('Second:', now.second)
 datetime_to_str = now.strftime('%I:%M %p')
 print(datetime_to_str)
 print(type(datetime_to_str))
+
+# Using ISO 8601 standard for time
+print(datetime.datetime.now().isoformat())
 
 """
 Datetime strftime directive
