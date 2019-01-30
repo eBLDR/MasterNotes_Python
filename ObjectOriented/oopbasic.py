@@ -16,7 +16,7 @@ class Kettle:  # By convention, start with capital letter and use camel case
     # i.e.: class Kettle:
     # in Python 2, class Kettle: will refer to the old style class, and class Kettle(object): to the new style
 
-    # Class attribute that all the instances will share
+    # Static variable - class attributes that all the instances will share
     power_source = 'electric'
 
     # Constructor method
@@ -76,7 +76,7 @@ kenwood.power = 1.5
 print('=' * 30)
 
 Kettle.power_source = 'atomic'  # change the class attribute, all the instances are affected
-print(Kettle.power_source)
+print('Static variable "power_source"', Kettle.power_source)
 
 # It tracks down to the class to replace the data attribute, it's not an attribute of the instance
 print('hamilton power source: {}'.format(hamilton.power_source))
