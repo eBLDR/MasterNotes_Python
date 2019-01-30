@@ -7,11 +7,11 @@ import turtle
 window = turtle.Screen()  # initialisation
 window.setup(500, 500, 50, 50)  # the size of the screen (@width, @height, @startX, @startY)
 window.bgcolor('black')  # background color
-# window.colormode(255)         # 2 types: 1 for str color (default), 255 for RGB
-# window.bgcolor(255, 255, 255) # to specify color, argument can also be like '#A7E30E', white by default
-# window.bgpic("file.gif")      # picture on background, must be gif
+# window.colormode(255)  # 2 types: 1 for str color (default), 255 for RGB
+# window.bgcolor(255, 255, 255)  # to specify color, argument can also be like '#A7E30E', white by default
+# window.bgpic("file.gif")  # picture on background, must be gif
 window.title('Turtle Demo')  # screen title
-# window.delay(5)               # in milliseconds - the time interval between two consecutive canvas updates
+# window.delay(5)  # in milliseconds - the time interval between two consecutive canvas updates
 # the longer the drawing delay, the slower the animation
 # will override turtle.speed() settings
 
@@ -34,9 +34,9 @@ atlas.pensize(3)  # setting the thickness
 atlas.shapesize(1, 2)  # resizing shape, perpendicular to orientation: @width stretch, @height stretch
 
 # we can also create customised shapes
-# new_shape_name = 'path_filename.gif'          # file must be .gif
+# new_shape_name = 'path_filename.gif'  # file must be .gif
 # screen_object.register_shape(new_shape_name)  # registering shape
-# turtle_object.shape(new_shape_name)           # assign the shape to the cursor
+# turtle_object.shape(new_shape_name)  # assign the shape to the cursor
 
 
 # DRAWING
@@ -50,7 +50,7 @@ atlas.right(250)  # turns right the @degrees - equivalent to turtle.rt()
 # left() for left turning - equivalent to turtle.lt()
 atlas.dot(10, 'white')  # draws a dot at the position - @size, @color
 atlas.forward(150)
-# atlas.home()          # will send the cursor to (0, 0) with heading of 0 degrees
+# atlas.home()  # will send the cursor to (0, 0) with heading of 0 degrees
 
 atlas.setx(300)  # sending the cursor to a specific x coordinate
 atlas.sety(200)  # sending the cursor to a specific y coordinate
@@ -82,18 +82,23 @@ print(atlas.ycor())  # returns turtle's current y coordinate
 
 # RESETS
 # turtle resetting
-# legend = atlas.clone()    # creates a clone of atlas, with same setting values and position
-# atlas.clear()     # delete the turtle's drawings from screen, does not affect its setting
-# atlas.reset()     # delete the turtle's drawings from screen, returns setting values to default
+# legend = atlas.clone()  # creates a clone of atlas, with same setting values and position
+# atlas.clear()  # delete the turtle's drawings from screen, does not affect its setting
+# atlas.reset()  # delete the turtle's drawings from screen, returns setting values to default
 
 # screen resetting
-# window.clear()    # delete all drawings and all turtles from the screen, and reset it to its initial state -
+# window.clear()  # delete all drawings and all turtles from the screen, and reset it to its initial state -
 # no background, no event bindings and tracing on
-# window.reset()    # reset all turtles to their initial state
+# window.reset()  # reset all turtles to their initial state
 
+
+# Return the TurtleScreen object the turtle is drawing on. TurtleScreen methods can then be called for that object.
+# It can used to save it as a file
+screenshot = atlas.getscreen()
+print(type(screenshot))
 
 # ENDING CLAUSES
-# window.bye()          # closes the window
-# turtle.done()         # at the end, the window will stay until we manually close the screen
+# window.bye()  # closes the window
+# turtle.done()  # at the end, the window will stay until we manually close the screen
 window.exitonclick()  # this will close the screen by clicking on it (anywhere)
 # binds bye() method to screen click event - also calls mainloop() method for event collection
