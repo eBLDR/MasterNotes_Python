@@ -16,7 +16,7 @@ class Kettle:  # By convention, start with capital letter and use camel case
     # i.e.: class Kettle:
     # in Python 2, class Kettle: will refer to the old style class, and class Kettle(object): to the new style
 
-    # Static variable - class attributes that all the instances will share
+    # Class attributes (or static variable) that all the instances will share
     power_source = 'electric'
 
     # Constructor method
