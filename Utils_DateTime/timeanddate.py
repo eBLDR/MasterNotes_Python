@@ -48,9 +48,9 @@ print('Ended at ' + time.strftime('%X', time.localtime(endTime)) + ' local time'
 print('=' * 30)
 
 # DATES
-timeHere = time.localtime()
-print('Year:', timeHere[0])
-print('Month:', timeHere.tm_mon)  # because it's a named tuple, can be called through index or name
+time_here = time.localtime()
+print('Year:', time_here[0])
+print('Month:', time_here.tm_mon)  # because it's a named tuple, can be called through index or name
 
 # strftime allow to set the desired displaying format
 print('Local time is ' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
@@ -113,6 +113,8 @@ print('=' * 30)
 
 # We can create date specific datetime objects
 new_year_2016 = datetime.datetime(2016, 1, 1, 0, 0, 0)  # @(y, m, d, h, m, s)
+
+# Datetime objects can be compared
 print(new_year_2016 < now)
 
 print(new_year_2016.timestamp())  # Seconds since epoch
