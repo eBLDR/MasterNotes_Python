@@ -59,13 +59,13 @@ print('=' * 20)
 
 # Type METACLASS
 # Object is a class that inherits from its metaclass: type
-print('type of object is', type(object))
+print('type of object is:', type(object))
 
 print('MyClass is type:', type(MyClass))
 
 print('int/float/list... are type:', type(int))  # Absolutely all types of variables
 
-print('type is type', type(type))  # Circular reference, type instantiates itself
+print('type is type:', type(type))  # Circular reference, type instantiates itself
 
 # SUMMARY: all objects inherit from object() class, and all classes (including object()) inherit
 # from type() metaclass
