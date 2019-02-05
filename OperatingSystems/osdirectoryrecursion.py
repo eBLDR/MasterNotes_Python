@@ -2,8 +2,8 @@ import os
 
 
 def list_directories(s):
-    def dir_list(d):  # nesting function inside a function
-        nonlocal tab_stop  # is the enclosing scope, but not global
+    def dir_list(d):
+        nonlocal tab_stop
         files_ = os.listdir(d)
         for f in files_:
             current_dir = os.path.join(d, f)

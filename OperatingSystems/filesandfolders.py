@@ -1,4 +1,5 @@
 import os
+import time
 
 # Checking path validity
 """
@@ -26,17 +27,30 @@ for path, directories, files in os.walk('./'):
 
 print('=' * 20)
 
+# File properties
 # To get the size of a file
-print('Size of hello.txt in bytes: ', os.path.getsize(os.path.join(os.getcwd(), 'hello.txt')))
+file_name = 'CommandTest/hello.txt'
+print('Size of {} in bytes: '.format(file_name), os.path.getsize(os.path.join(os.getcwd(), file_name)))
+
+# Getting creation date of file in Windows, last metadata change in Unix
+print('{} was created on'.format(file_name), time.ctime(os.path.getctime(file_name)))
+
+# Getting last modification date of file
+print('{} was last modified on'.format(file_name), time.ctime(os.path.getmtime(file_name)))
+
+# Getting creation date of file in Windows, last metadata change in Unix
+print('{} was last accessed on'.format(file_name), time.ctime(os.path.getatime(file_name)))
 
 # Getting the size of all the contents in a folder
 total_size = 0
 for filename in os.listdir('./'):
     total_size += os.path.getsize(filename)
     print(filename)
-
 print('Total size of (bytes) of cwd is :', total_size)
 
+print('=' * 20)
+
+# File manipulation
 # makedirs('path', exist_ok=False) - creates directory/ies
 # If directory already exists, will raise an error, unless we set exist_ok=True
 # it uses mkdir(), method that can only create one directory at the time
@@ -56,7 +70,6 @@ os.unlink('./{}'.format(file_name))
 os.rmdir('./03/ABC')
 
 # rmdirs() - applied to the same path above, will delete all ABC, 03 and ./, if both empty
-
 print('./03/ABC deleted.')
 
 print('=' * 20)

@@ -14,7 +14,7 @@ class Alpha:
         self.x = x
 
 
-# At the moment of creating the object, the magic method __new__(cls) of Alfa is called,
+# At the moment of creating the object, the magic method __new__(cls) of Alpha is called,
 # __new__ takes the class and the arguments that pass along to __init__.
 # Then, __init__ is called, it is the primary constructor.
 my_alpha = Alpha(1)
@@ -24,17 +24,16 @@ my_alpha = Alpha(1)
 # at the moment of deleting the object.
 
 # The __call__ method turns the instances into callable
-
 class Poly:
 
     def __init__(self, *factors):
         self.factors = factors[::-1]
 
     # Overriding the method
-    def __call__(self, x):
+    def __call__(self, f):
         r = 0
-        for i, factor in enumerate(self.factors):
-            r += factor * x ** i
+        for n, factor in enumerate(self.factors):
+            r += factor * f ** n
 
         return r
 
