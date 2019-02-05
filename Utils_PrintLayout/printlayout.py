@@ -1,14 +1,17 @@
 """
-Multi-line comment
+This is a multi-line comment
 
 '\' is the scape character, followed by control character
-\n - new line
-\t - tab
-\b - backspace
-\r - carriage return
+\a - ASCII bell (BEL)
+\b - ASCII backspace (BS)
+\f - ASCII formfeed (FF)
+\n - ASCII linefeed (LF)
+\r - ASCII carriage return (CR)
+\t - ASCII horizontal tab (TAB)
+\v - ASCII vertical tab (VT)
 """
 
-# Single-line comment
+# This is a single-line comment
 
 text = 'Hello World'
 print(text)
@@ -17,12 +20,11 @@ print(text)
 print('One'
       'line')
 
-# Use triple quotation will respect the format as typed
+# Using triple quotation will respect the format as typed
 formatted_string = """Split
    super
  formatted
 string"""
-
 print(formatted_string)
 
 snek = """\
@@ -32,7 +34,6 @@ snek = """\
             '.`'--....--'`.'
               `'--....--'`
 """
-
 print(snek)
 
 print('=' * 20)
