@@ -10,7 +10,7 @@ w1, w2 = 'OK'  # str type, the number of variables must match the number of char
 print('w1 is {}'.format(w1))
 print('w2 is {}'.format(w2))
 
-l1, l2 = [0, 'L']  # list type, the number of variables must match the number of items
+l1, l2 = [0, 'L']  # sequence type, the number of variables must match the number of items
 print('l1 is {}'.format(l1))
 print('l2 is {}'.format(l2))
 
@@ -18,3 +18,4 @@ print('l2 is {}'.format(l2))
 a2, b2 = b2, a2
 print('a2 is {}'.format(a2))
 print('b2 is {}'.format(b2))
+
