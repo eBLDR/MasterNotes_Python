@@ -53,7 +53,7 @@ print('=' * 20)
 
 # *args can take any number of arguments, passed to the function in a tuple
 # Keyword parameters (or named parameters) (i.e.: key_word_par = None)
-def centre_text(*texts, sep_char=' ', end_char='\n', file=None):  # named parameters are set to default
+def centre_text(*texts, sep_char=' ', end_char='\n', file=None):  # Named parameters are set to default
     text = ''
     for arg in texts:
         text += str(arg) + sep_char
@@ -61,7 +61,7 @@ def centre_text(*texts, sep_char=' ', end_char='\n', file=None):  # named parame
     print(" " * left_margin, text, end=end_char, file=file)
 
 
-# saving to a file
+# Saving to a file
 with open('centred.txt', mode='w') as centredFile:
     centre_text('Twelve', file=centredFile)
     centre_text('in binary is', file=centredFile)
@@ -71,7 +71,8 @@ with open('centred.txt', mode='w') as centredFile:
     centre_text('it can', 'also take', 'several number of', 'arguments', sep_char='-sep-', file=centredFile)
 
 
-def happy_text(*texts, sep=' :) '):
+# Function annotations can also be placed in name arguments
+def happy_text(*texts, sep: str = ' :) '):
     text = ''
     for arg in texts:
         text += str(arg) + sep
