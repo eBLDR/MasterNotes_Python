@@ -26,3 +26,11 @@ print('type.__module__ is:', type.__module__)
 
 # Docstring of class
 print('type.__doc__ is:', type.__doc__)
+
+
+# Annotations of class/method/object
+def f(i: int):
+    return i
+
+
+print('f.__annotations__ is:', f.__annotations__)
