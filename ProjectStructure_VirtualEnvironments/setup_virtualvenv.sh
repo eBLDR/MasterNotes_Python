@@ -6,8 +6,9 @@
 $ rm  -v -rf <OLD_VENV_DIRECTORY>
 
 # Create a new virtualenv
-$ virtualenv -p PYTHON_EXE_ABSOLUTE_PATH <NEW_VENV_DIRECTORY>
-# -p is optional, will take /usr/bin/python, version by default
+$ virtualenv -p PYTHON_EXE_ABSOLUTE_PATH_OR_COMMAND <NEW_VENV_DIRECTORY>
+# -p, --python flag is optional, will take /usr/bin/python, version by default
+
 
 # Activate virtualenv
 $ source <NEW_VENV_DIRECTORY>/bin/activate
