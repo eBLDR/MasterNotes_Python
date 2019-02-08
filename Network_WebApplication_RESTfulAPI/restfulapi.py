@@ -46,7 +46,7 @@ class Asimov(db.Model):
 
 # -- ENDPOINTS --
 """
-Since all requests are performed on the same url, one endpoint would be enough:
+Since all the requests are performed on the same url, one endpoint would be enough:
 @app.route('/', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def ...
     if request.method == 'GET':

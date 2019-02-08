@@ -29,7 +29,8 @@ api = Api(app)
 # API endpoint - inherits from Resource class
 class CreateUser(Resource):
     # POST request
-    def post(self):
+    @staticmethod
+    def post():
         try:
             # Parse the arguments
             parser = reqparse.RequestParser()  # Creating parser - dictionary like
@@ -40,14 +41,14 @@ class CreateUser(Resource):
 
             # Extracting the arguments into variables
             args = parser.parse_args()
-            _userEmail = args['email']
-            _userPassword = args['password']
+            _user_email = args['email']
+            _user_password = args['password']
 
             conn = db.connect()
             cursor = conn.cursor()
 
             # Calling the procedure declared inside the MySQL database
-            cursor.callproc('spCreateUser', (_userEmail, _userPassword))
+            cursor.callproc('spCreateUser', (_user_email, _user_password))
             data = cursor.fetchall()
 
             if len(data) is 0:
@@ -58,18 +59,19 @@ class CreateUser(Resource):
 
             # For testing
             # return {'status': 'success'}
-            # return {'Email': _userEmail, 'Password': _userPassword}
+            # return {'Email': _user_email, 'Password': _user_password}
 
         except Exception as e:
             return {'error': str(e)}
 
     # Testing get method
-    def get(self):
-        return "Hello"
+    @staticmethod
+    def get():
+        return 'Hello'
 
 
-# Hooking up the CreateUser class to the /CreateUser endpoint
-api.add_resource(CreateUser, '/CreateUser')
+# Hooking up the CreateUser class to the /createuser endpoint
+api.add_resource(CreateUser, '/createuser')
 
 if __name__ == '__main__':
     app.run(debug=True)
