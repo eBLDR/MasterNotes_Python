@@ -6,7 +6,7 @@ b_dict = {'A': 0, 'D': 11}
 
 # get(key, None) - to try if the key is in the dictionary, will return value if key exists,
 # print None (by default) if it doesn't
-value = a_dict.get('Z', "Wrong key")
+value = a_dict.get('Z', 'Wrong key')
 print(value)
 
 print('=' * 30)

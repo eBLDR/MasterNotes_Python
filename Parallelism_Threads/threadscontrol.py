@@ -50,7 +50,7 @@ print(threading.main_thread())  # Return the main thread object
 
 print('\nCounters done.')
 
-print('\n', "=" * 30, '\n')
+print('\n', '=' * 30, '\n')
 
 # Daemonic threads
 daemon_test = threading.Thread(target=counter, args=(3, 'daemon'), daemon=False)  # Change to True to see difference
@@ -60,7 +60,7 @@ daemon_test = threading.Thread(target=counter, args=(3, 'daemon'), daemon=False)
 
 daemon_test.start()
 
-print("Is {} a daemonic thread? {}".format(daemon_test.name, daemon_test.daemon))
+print('Is {} a daemonic thread? {}'.format(daemon_test.name, daemon_test.daemon))
 
 if daemon_test.daemon:
     print('I am a demon, so the main thread is not waiting for me.')

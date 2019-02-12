@@ -3,7 +3,7 @@ Two types of files exist:
     - Plain text files
     - Binary files
 """
-# type full path ("C:\User\BLDR\Desktop\...") or relative path using \\
+# type full path ('C:\User\BLDR\Desktop\...') or relative path using \\
 # sometimes we need to use the scape backslash (\\) to avoid unexpected formatting (\n, \t, ...)
 # in UNIX, use / instead, or ./ for parent folder
 

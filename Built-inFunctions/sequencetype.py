@@ -45,7 +45,7 @@ print(k, i, o)
 print('=' * 20)
 
 # len() - tells the number of items in the seq
-print("len is: {}".format(len(string_sample)))
+print('len is: {}'.format(len(string_sample)))
 
 print('=' * 20)
 
@@ -74,7 +74,7 @@ for i in reversed(tuple_sample):
 print('=' * 20)
 
 # count() - to count the number of times a certain object is found in a sequence
-print(string_sample.count("a"))
+print(string_sample.count('a'))
 
 print('=' * 20)
 
@@ -97,7 +97,7 @@ print('all():', all(tuple_sample))
 print('=' * 20)
 
 # join(seq) - for joining list/tuple into a string
-str_from_list = "-|-".join(list_sample[:2])  # 'delimiter'.join(list/tuple) - sequence must be made of str
+str_from_list = '-|-'.join(list_sample[:2])  # 'delimiter'.join(list/tuple) - sequence must be made of str
 print(str_from_list)
 
 print('=' * 20)
@@ -105,7 +105,7 @@ print('=' * 20)
 # split() - opposite to join, split method will split the string into a list of strings
 split_string = string_sample.split()  # breaks every word, all feed characters (\t, ,\n...) are the default delimiters
 print(split_string)  # it's now a list made of strings
-print(string_sample.split(","))  # breaks using a given character
+print(string_sample.split(','))  # breaks using a given character
 
 print('=' * 20)
 

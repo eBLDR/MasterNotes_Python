@@ -2,6 +2,8 @@
 
 # Can contain any character
 s = 'ParRot &8-8*lfj@$sdk'
+
+# Either ' or " can be used
 s2 = 'OPP!'
 
 print(s)

@@ -21,7 +21,7 @@ def decorated():
 
 decorated()
 
-print("=" * 30)
+print('=' * 30)
 
 
 # Full decorator, can add behaviour both before and after decorated function is called
@@ -37,7 +37,7 @@ def my_decorator(some_function):
 
 
 def just_some_function():
-    print("I am just_some_function!")
+    print('I am just_some_function!')
 
 
 just_some_function = my_decorator(just_some_function)
@@ -97,7 +97,7 @@ print(just_some_function_3.__doc__)
 # Passing arguments
 just_some_function_3('1', '2')
 
-print("=" * 30)
+print('=' * 30)
 
 
 def tool(*numbers):

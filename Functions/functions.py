@@ -58,7 +58,7 @@ def centre_text(*texts, sep_char=' ', end_char='\n', file=None):  # Named parame
     for arg in texts:
         text += str(arg) + sep_char
     left_margin = (50 - len(text)) // 2
-    print(" " * left_margin, text, end=end_char, file=file)
+    print(' ' * left_margin, text, end=end_char, file=file)
 
 
 # Saving to a file

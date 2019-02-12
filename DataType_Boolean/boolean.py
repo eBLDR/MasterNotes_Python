@@ -22,7 +22,7 @@ None:\t\t{1}
 {{}}:\t\t{6}
 set():\t\t{8}""".format(bool(f), bool(n), bool(v), bool(s), bool(l), bool(t), bool(d), bool(f2), bool(st)))
 
-print("=" * 25)
+print('=' * 25)
 
 # comparators - assess the value, not the identity (id()) - return a boolean
 a = -1
@@ -47,7 +47,7 @@ print('{} == {} : {}'.format(a, b, a == b))
 print('{} is {} : {}'.format(a, b, a is b))
 print('{} is not {} : {}'.format(a, b, a is not b))
 
-print("=" * 25)
+print('=' * 25)
 
 # OR
 print('- OR -')

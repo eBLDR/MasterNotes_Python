@@ -4,7 +4,7 @@
 x = 12
 
 # Expression must have at least one if and one else
-expr = "Twelve" if x == 12 else "unknown"
+expr = 'Twelve' if x == 12 else 'unknown'
 print(expr)
 
 # Cannot contain any elif, but can have multiple if/else

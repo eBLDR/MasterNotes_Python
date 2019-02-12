@@ -52,7 +52,7 @@ split_string = 'Split\nstring'
 print(split_string)
 
 # Tab
-tabbed_string = "1\t2\t3\t4\t5"
+tabbed_string = '1\t2\t3\t4\t5'
 print(tabbed_string)
 
 # Backspace

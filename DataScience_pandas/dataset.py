@@ -3,12 +3,12 @@ from pandas.plotting import scatter_matrix  # For scatter plot matrix
 
 import matplotlib.pyplot as plt  # For plotting the graphs
 
-# LOAD DATASET
+# LOAD DATA SET
 
 # Path to data file
 file_name = 'iris.data'  # It's a .csv
 # Can also be a url
-# url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+# url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 
 # Field (column) names
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']

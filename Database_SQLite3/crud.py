@@ -59,7 +59,7 @@ for row in cursor:  # cursor is iterable
     print(row)
 
 print(type(row))  # tuple
-print("{} fields/columns found".format(len(row)))
+print('{} fields/columns found'.format(len(row)))
 
 # cursor is now fully retrieved, so
 for row in cursor:
@@ -89,10 +89,10 @@ print(record.fetchone())
 print('=' * 30)
 
 # UPDATE
-newphone = '3113093164'
-userid = 1
-cursor.execute("UPDATE contacts SET phone = ? WHERE id = ?", (newphone, userid))
-cursor.execute("SELECT * FROM contacts WHERE id = ?", (userid,))
+new_phone = '3113093164'
+user_id = 1
+cursor.execute("UPDATE contacts SET phone = ? WHERE id = ?", (new_phone, user_id))
+cursor.execute("SELECT * FROM contacts WHERE id = ?", (user_id,))
 print(cursor.fetchall())
 
 # DELETE

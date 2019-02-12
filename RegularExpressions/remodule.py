@@ -29,7 +29,7 @@ print(mo.group(0))  # 0 is the default value, equivalent to mo.group()
 
 print(mo.groups())  # to retrieve all the groups at once, returns a tuple
 
-print("=" * 30)
+print('=' * 30)
 
 # Using pipe character '|', several expressions positive match
 hero_regex = re.compile(r'Batman|Jason')
@@ -40,7 +40,7 @@ msg = 'Batmobile lost a wheel'
 print(bat_regex.search(msg).group())
 print(bat_regex.search(msg).group(1))
 
-print("=" * 30)
+print('=' * 30)
 
 # using ? for optional matches
 bat_regex = re.compile(r'Bat(wo)?man')

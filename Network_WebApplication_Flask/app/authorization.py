@@ -12,7 +12,7 @@ def check_auth(username, password):
 
 
 def authenticate():
-    message = {'message': "Authenticate, please"}
+    message = {'message': 'Authenticate, please'}
     resp = jsonify(message)
 
     resp.status_code = 401

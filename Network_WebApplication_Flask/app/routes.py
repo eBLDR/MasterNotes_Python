@@ -132,4 +132,4 @@ def not_found(error=None):
 @app.route('/secrets')
 @requires_auth  # Calling function that handles authorizations
 def api_secret():
-    return "Shhh this is top secret spy stuff!"
+    return 'Shhh this is top secret spy stuff!'

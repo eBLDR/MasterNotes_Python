@@ -21,7 +21,7 @@ cursor = db.cursor()
 # cursor can manipulate data, 1 statement at the time
 cursor.execute(update_sql, (new_email, phone))  # using PARAMETER SUBSTITUTION for the placeholder (sanitized method)
 
-sqlInjectionAttack = "UPDATE contacts SET name = 'HACKER';DROP TABLE contacts"  # statements separated by ;
+sql_injection_attack = "UPDATE contacts SET name = 'HACKER';DROP TABLE contacts"  # statements separated by ;
 # cursor.executescript(sqlInjectionAttack)  # this functions can execute MORE than 1 statement at the time
 
 print('{} row/s updated'.format(cursor.rowcount))  # rowcount returns the # of rows that have been modified by cursor
