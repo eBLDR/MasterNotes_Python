@@ -18,7 +18,7 @@ COMPARISION - COMPARATORS
 >	greater than
 <	less than
 ==	equal to
-!=	not equal to
+!=	not equal to (python 2+ could also use <>)
 >=	greater than or equal to
 <=	less than or equal to
 
