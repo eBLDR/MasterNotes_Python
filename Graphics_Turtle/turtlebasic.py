@@ -91,12 +91,6 @@ print(atlas.ycor())  # returns turtle's current y coordinate
 # no background, no event bindings and tracing on
 # window.reset()  # reset all turtles to their initial state
 
-
-# Return the TurtleScreen object the turtle is drawing on. TurtleScreen methods can then be called for that object.
-# It can used to save it as a file
-screenshot = atlas.getscreen()
-print(type(screenshot))
-
 # ENDING CLAUSES
 # window.bye()  # closes the window
 # turtle.done()  # at the end, the window will stay until we manually close the screen
