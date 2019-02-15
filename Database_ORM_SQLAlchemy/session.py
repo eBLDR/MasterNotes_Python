@@ -29,6 +29,7 @@ query = 'SELECT * FROM Person'
 # SQL statements can be executed as string queries
 buff = session.execute(query, params=None)
 
+print(buff)
 print(type(buff))  # It's a generator
 
 for row in buff:
@@ -39,8 +40,9 @@ print('=' * 30)
 # Parameters can be passed using
 result = session.execute('SELECT * FROM Person WHERE id=:param', {'param': 5})
 
-for row in result:
-    print(row.id, row.name)
+print(result)
+
+print(result.next())  # Since it's a generator, next() can be called
 
 # Sessions must always be closed when finished
 session.close()
@@ -102,9 +104,9 @@ print(new_address.id)
 # Roll back also possible
 # session.rollback()
 
-print('=' * 30)
-
 # QUERY OBJECTS
+
+print('QUERIES', '=' * 30)
 
 # Equivalence to SQL SELECT clause
 buff = session.query(Person)  # Returns the SQL statement query
@@ -141,7 +143,7 @@ address = session.query(Address).filter(or_(Address.person == person, Address.po
 print(address.post_code)
 
 # filter_by(@dict) - multiple filters at once, dictionary must have column_name as a key and expression as a value
-filters = {'name': 'new person', 'id': 4}
+filters = {'name': 'new person', 'id': 5}
 person = session.query(Person).filter_by(**filters).first()  # Dictionary must be passed unpacked
 print(person.id, person.name)
 
