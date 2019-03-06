@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-The above line is the encoding magic line (see magiclines.txt).
+The above line is the encoding magic line (see magic_lines.txt).
 """
 # ASCII (American Standard Code for Information Interchange) Character Encoding - direct equivalent of utf-8
 # all the characters of the string are saved in binary

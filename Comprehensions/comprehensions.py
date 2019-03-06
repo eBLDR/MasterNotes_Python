@@ -5,7 +5,7 @@
 
 numbers = [1, 2, 3, 4, 5, 6, 6]
 
-# Control variables in a for loop overwrite any existing variable with the same name
+# Iterator variable in a for loop overwrite any existing variable with the same name
 number = 0
 print('Number is {}'.format(number))
 squares = []
@@ -14,7 +14,7 @@ for number in numbers:
 
 print(squares)
 
-# Control variables in a list comprehension won't
+# Iterator variable in a list comprehension won't
 print('Number is {}'.format(number))
 number = 0
 print('Number is {}'.format(number))

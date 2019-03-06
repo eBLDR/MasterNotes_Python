@@ -1,3 +1,6 @@
+# Indefinite iteration
+
+# i is the "iterator"
 i = 0
 while i < 10:  # while needs a condition
     print('i is now {}'.format(i))

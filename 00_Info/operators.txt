@@ -1,9 +1,8 @@
-
 ARITHMETIC OPERATORS
 	return number
 
 +	addition
--	substraction
+-	subtraction
 *	multiplication
 /	division
 //	floor division (ignoring decimals)
@@ -12,7 +11,7 @@ ARITHMETIC OPERATORS
 
 ====================
 
-COMPARISION - COMPARATORS
+COMPARISION OPERATORS - COMPARATORS
 	return True or False
 
 >	greater than
@@ -47,7 +46,7 @@ BITWISE OPERATORS
 
 VARIABLE ASSIGNMENT
 	assign values to a variable
-	augmented assigment, assigns after operating over itself
+	augmented assignment, assigns after operating over itself
 
 =
 +=	-=	*=	/=	//=	%=	**=
@@ -57,7 +56,7 @@ VARIABLE ASSIGNMENT
 
 SPECIAL OPERATORS
 
-- IDENTITTY
+- IDENTITY
 
 is	True if operands are identical
 is not	True if operands are not identical

@@ -29,22 +29,34 @@ print('a is c: {}'.format(a is c))
 print('=' * 20)
 
 # Mutable objects
-L1 = [0, 1, 2]
-L2 = L1  # shallow copy
-L3 = L1[:]  # deep copy
-print('L1 = {}, L2 = {}, L3 = {}'.format(L1, L2, L3))
-print('id(L1) is {}, id(L2) is {}, id(L3) is {}'.format(id(L1), id(L2), id(L3)))
+l_1 = [0, 1, 2]
+l_2 = l_1  # shallow copy
+l_3 = l_1[:]  # deep copy
+print('L1 = {}, L2 = {}, L3 = {}'.format(l_1, l_2, l_3))
+print('id(L1) is {}, id(L2) is {}, id(L3) is {}'.format(id(l_1), id(l_2), id(l_3)))
 
 # When trying to change the value of the object, the content is change without creating a new object
-L1[0] = -1
-print('L1 = {}, L2 = {}'.format(L1, L2))
-print('id(L1) is {}, id(L2) is {}'.format(id(L1), id(L2)))  # id remains the same
+l_1[0] = -1
+print('L1 = {}, L2 = {}'.format(l_1, l_2))
+print('id(L1) is {}, id(L2) is {}'.format(id(l_1), id(l_2)))  # id remains the same
 
 # is keyword for assessing if variable reference to same object
-print('L1 is L2: {}'.format(L1 is L2))
+print('L1 is L2: {}'.format(l_1 is l_2))
 
 # equivalent to
-print('id(L1) == id(L2): {}'.format(id(L1) == id(L2)))
+print('id(L1) == id(L2): {}'.format(id(l_1) == id(l_2)))
 
-print('L1 is L3: {}'.format(L1 is L3))
-print('id(L1) == id(L3) {}'.format(id(L1) == id(L3)))
+print('L1 is L3: {}'.format(l_1 is l_3))
+print('id(L1) == id(L3) {}'.format(id(l_1) == id(l_3)))
+
+print('=' * 20)
+
+# Use of copy module
+import copy
+
+my_l = [1, 0]
+
+# deepcopy() for a deep copy
+deep_copy_of_my_l = copy.deepcopy(my_l)
+
+print(my_l is deep_copy_of_my_l)
