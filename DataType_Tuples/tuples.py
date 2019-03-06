@@ -1,4 +1,7 @@
-t = 'a', 'b', 'c'  # this is a tuple, enclosing brackets are optional
+t = ('a', 'b', 'c')  # declaring a tuple
+t_2 = 'a', 'b', 'c'  # packing a tuple, enclosing brackets are optional
+
+print(t == t_2)
 
 test = ('abc')
 print(type(test))  # is type str

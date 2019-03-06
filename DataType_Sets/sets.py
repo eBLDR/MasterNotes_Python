@@ -4,30 +4,30 @@ It's hashable, that means that it can contain immutable objects but not mutable.
 Items in set can be of a different type.
 """
 
-farmAnimals = {'sheep', 'cow', 'hen'}  # create a set
-emptySet = set()  # emptySet = {} will create and empty dictionary
+farm_animals = {'sheep', 'cow', 'hen'}  # create a set
+empty_set = set()  # emptySet = {} will create and empty dictionary
 
-print(type(farmAnimals))
+print(type(farm_animals))
 
-print(farmAnimals)  # sets are unordered and the can't contain duplicates
-print(sorted(farmAnimals))  # if we wish to print it sorted, notice that sorted ill return a list!
+print(farm_animals)  # sets are unordered and the can't contain duplicates
+print(sorted(farm_animals))  # if we wish to print it sorted, notice that sorted ill return a list!
 
-for i in farmAnimals:
+for i in farm_animals:
     print(i)
 
-sampleText = 'Python is as powerful as a giant python'
-print(set(sampleText))  # will return a set out of a string, char by char, with no duplicates
+sample_text = 'Python is as powerful as a giant python'
+print(set(sample_text))  # will return a set out of a string, char by char, with no duplicates
 
-wildAnimals = set(['lion', 'tiger', 'panther'])  # creating a set out of a list, a tuple will work also
+wild_animals = set(['lion', 'tiger', 'panther'])  # creating a set out of a list, a tuple will work also
 
 even = set(range(0, 30, 2))  # creating a set out of a range
 
-squaresTuple = (4, 9, 16, 25)
-squares = set(squaresTuple)
+squares_tuple = (4, 9, 16, 25)
+squares = set(squares_tuple)
 
 print('-' * 30)
 
-print(len(my_Reven), len(squares))
+print(len(even), len(squares))
 
 # - operations -
 # union bemy_Rtween 2 sets - a|b, items in either a or b - returns a new set - |

@@ -84,3 +84,12 @@ char2 = 'z'
 s = 'abc'
 print('{} in {}:\t{}'.format(char1, s, char1 in s))
 print('{} in {}:\t{}'.format(char2, s, char2 in s))
+
+print('=' * 25)
+
+first_name = ''
+last_name = 'Me'
+
+# Booleans can also be used for variable assignment
+name = first_name or last_name  # It will take the first non-empty value
+print(name)

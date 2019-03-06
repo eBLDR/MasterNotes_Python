@@ -11,24 +11,24 @@ class Enemy(object):
 
     def __init__(self, name='Enemy', hit_points=0, lives=1):
         """ Constructor class with optional parameters """
-        self._name = name
-        self._hit_points = hit_points
-        self._lives = lives
-        self._alive = True
+        self.name = name
+        self.hit_points = hit_points
+        self.lives = lives
+        self.alive = True
 
     def take_damage(self, damage):
-        remaining_points = self._hit_points - damage
+        remaining_points = self.hit_points - damage
         if remaining_points > 0:
-            self._hit_points = remaining_points
+            self.hit_points = remaining_points
             print('{0._name} took {1} points damage and have {0._hit_points} left'.format(self, damage))
         else:
-            self._lives -= 1
-            if self._lives > 0:
+            self.lives -= 1
+            if self.lives > 0:
                 print('{0._name} lost a live'.format(self))
             else:
                 print('{0._name} is dead'.format(self))
-                self._hit_points = 0
-                self._alive = False
+                self.hit_points = 0
+                self.alive = False
 
     def __str__(self, annex=''):
         return ('Name: {0._name}, Lives: {0._lives}, Hit Points: {0._hit_points}' + annex).format(self)
@@ -52,7 +52,7 @@ class Troll(Enemy):
     def grunt(self):
         print('Me {0._name}. {0._name} stomp you'.format(self))
 
-    def __str__(self):
+    def __str__(self, annex=None):
         annex = ', Iq: {0._iq}'
         return super().__str__(annex)
 
@@ -112,7 +112,7 @@ if __name__ == '__main__':
 
     print('\n--- TESTING ALIVE IN TROLL SUB CLASS ---\n')
 
-    while urg_troll._alive:
+    while urg_troll.alive:
         urg_troll.take_damage(5)
         print(urg_troll)
 
@@ -131,7 +131,7 @@ if __name__ == '__main__':
 
     vlad = Vampire('Vlad')
     print(vlad)
-    while vlad._alive:
+    while vlad.alive:
         vlad.take_damage(5)
     print(vlad)
 

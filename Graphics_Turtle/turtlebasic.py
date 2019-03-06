@@ -59,12 +59,12 @@ atlas.sety(200)  # sending the cursor to a specific y coordinate
 atlas.begin_fill()  # will fill the shape drawn next
 atlas.circle(60, 270)  # draws a circle of @radius, @degrees
 atlas.end_fill()  # fills the shape drawn from last call of begin_fill()
+atlas.setheading(45)  # set the heading angle, 0 is towards right and increases counterclockwise - = to turtle.seth()
 
 # SHOW/HIDE SHAPE
 atlas.hideturtle()  # won't show the cursor on screen, but nothing else is affected
 # atlas.showturtle() to show cursor on screen again
 atlas.home()  # turtle goes to origin (0, 0)
-atlas.setheading(45)  # set the heading angle, 0 is towards right and increases counterclockwise - = to turtle.seth()
 atlas.forward(150)
 
 # WRITING TEXT

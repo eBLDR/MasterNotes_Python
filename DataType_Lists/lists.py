@@ -31,8 +31,9 @@ print(numbers2)
 del numbers[1]  # Deletes specific index from list
 print(numbers)
 
-# Copy lists
-another_even_1 = even  # Dependent, refers to the same ID - pointing to the same memory location
+# Copying lists
+# Dependent, refers to the same ID - pointing to the same memory location
+another_even_1 = even  # This is called "aliasing"
 print('even is {}'.format(even))
 print('another_even_1 is {}'.format(another_even_1))
 print(id(another_even_1))

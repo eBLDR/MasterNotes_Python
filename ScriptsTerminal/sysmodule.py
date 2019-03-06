@@ -1,24 +1,31 @@
 import sys
 
-print(sys.platform)  # String contains a platform identifier.
+# String contains a platform identifier
+print(sys.platform)
 
-print(sys.copyright)  # Shows the copyright.
+# Shows the copyright
+print(sys.copyright)
 
-print(sys.version)  # Shows the python version being used to run the script.
+# Shows the python version being used to run the script
+print(sys.version)
 
-print(sys.prefix)  # Shows the python installation path being used to run the script.
+# Shows the python installation path being used to run the script
+print(sys.prefix)
 
-print(sys.flags)  # Exposes the status of command line flags.
+# Exposes the status of command line flags
+print(sys.flags)
 
-print(sys.path)  # A list of strings that specifies the search path for modules.
+# A list of strings that specifies the search path for modules
+# It includes the working directory, all directories in PYTHONPATH and the default Python's installation directory
+print(sys.path)
 
 print('=' * 30)
 
-# sys.argv() - a list of command line arguments passed to the script, argv[0] is the script name.
-# (it's operating system dependent whether this is a full pathname or not).
-# If the command was executed using the -c command line option to the interpreter, argv[0] is set to the string '-c'.
+# sys.argv() - a list of command line arguments passed to the script, argv[0] is the script name
+# (it's operating system dependent whether this is a full pathname or not)
+# If the command was executed using the -c command line option to the interpreter, argv[0] is set to the string '-c'
 
-name_of_file = sys.argv[0]  # Full path and name of file.
+name_of_file = sys.argv[0]  # Full path and name of file
 
 print(name_of_file)
 

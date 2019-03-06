@@ -4,7 +4,6 @@ def blabla(word, *args, keyW=None, keyX=False, **kwargs):
 In this case, *args and **kwargs will absorb all the remaining positional arguments/key word
 arguments respectively.
 """
-
 # print has a *args (see builtins.py)
 print('Hello', 'planet', 'Earth')
 
@@ -27,6 +26,10 @@ def average(*args):
 
 
 print(average(1, 2, 3, 4))
+
+# Unpacking can also be used when calling functions
+numbers = [1, 2, 3, 4]
+print(average(*numbers))
 
 print('=' * 30)
 
@@ -51,6 +54,10 @@ def child(n, **mykwargs):
 # Named argument passed in call must exist in the top level function
 print('Calling child()...')
 child(5, name='myName')
+
+# Unpacking can also be used when calling functions
+values = {'name': 'myName', 'cool': False}
+print(child(2, **values))
 
 print('=' * 30)
 
