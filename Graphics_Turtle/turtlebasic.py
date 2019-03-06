@@ -38,7 +38,6 @@ atlas.shapesize(1, 2)  # resizing shape, perpendicular to orientation: @width st
 # screen_object.register_shape(new_shape_name)  # registering shape
 # turtle_object.shape(new_shape_name)  # assign the shape to the cursor
 
-
 # DRAWING
 atlas.penup()  # it won't draw on move
 atlas.goto(150, 180)  # send the turtle to (x, y) - (0, 0) is the center of the screen - equivalent to setpos()
@@ -57,7 +56,8 @@ atlas.sety(200)  # sending the cursor to a specific y coordinate
 
 # FILLINGS
 atlas.begin_fill()  # will fill the shape drawn next
-atlas.circle(60, 270)  # draws a circle of @radius, @degrees
+atlas.circle(60, 270)  # draws a circle of @radius, @degrees - it turns counterclockwise
+# If radius is negative, it turns clockwise
 atlas.end_fill()  # fills the shape drawn from last call of begin_fill()
 atlas.setheading(45)  # set the heading angle, 0 is towards right and increases counterclockwise - = to turtle.seth()
 
@@ -72,7 +72,6 @@ atlas.forward(150)
 font_style = ('Console', 40, 'bold')
 atlas.write('TEST!', font=font_style)  # writing function, can take 3 arguments (text, font, align)
 # align can be 'center', 'left, 'right'
-
 
 # RETRIEVING
 print(atlas.position())  # returns turtle's current position (x, y)
