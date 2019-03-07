@@ -49,7 +49,16 @@ print(round(z, 2))
 
 # Data conversion
 i = 5
+
+# Convert to float
 print(float(i))
 
 f = 1.95
+
+# Convert to integer
 print(int(f))  # Deletes the decimal part
+
+# int(@value, @base=10)
+# We can specify the base, by default decimal
+# In this case we use binary, base 2
+print(int('11', 2))
