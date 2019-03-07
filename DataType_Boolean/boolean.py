@@ -4,7 +4,7 @@ AND : True only if all of the conditions are True. """
 # All the following are False
 f = False  # bool
 f2 = not True
-n = None  # noneType
+n = None  # NoneType
 v = 0  # int
 s = ''  # str
 l = []  # list

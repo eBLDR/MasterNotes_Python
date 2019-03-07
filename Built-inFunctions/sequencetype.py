@@ -1,5 +1,4 @@
 # Functions that work with sequence/iterable type data (str, list, tuple, range...)
-
 string_sample = 'I am a sample, yes'  # immutable
 list_sample = ['A', 'ch', 12, True, 'X', 36]  # mutable
 tuple_sample = 4, 12, 0, 100, 1  # immutable
@@ -34,7 +33,7 @@ print(list_sample[my_slice])
 
 print('=' * 20)
 
-# multiple assignment
+# Unpacking - the number of variables declared has to match with the number of item in the sequence
 a, b, c, d, e, f = list_sample
 print(c, e)
 a, b, c, d, e = tuple_sample
@@ -86,17 +85,19 @@ print(list_sample.index(True))
 print('=' * 20)
 
 # any() & all()
-# any(seq) return True if any of the value in the sequence is True, False otherwise
-# it does OR between each item, e.g.: bool(seq[0]) or bool(seq[1]) or ... bool(seq[n])
+# any(@iter) return True if any of the value in the sequence is True, False otherwise
+# it does OR between each item, e.g.: bool(iter[0]) or bool(iter[1]) or ... bool(iter[n])
 print('any():', any(tuple_sample))
 
-# all(seq) return True all the value in the sequence are True, False otherwise
-# it does AND between each item, e.g.: bool(seq[0]) and bool(seq[1]) and ... bool(seq[n])
+# all(@iter) return True all the value in the sequence are True, False otherwise
+# it does AND between each item, e.g.: bool(iter[0]) and bool(iter[1]) and ... bool(iter[n])
 print('all():', all(tuple_sample))
+
+# NOTE: all([]) will return True
 
 print('=' * 20)
 
-# join(seq) - for joining list/tuple into a string
+# join(@iter) - for joining list/tuple into a string
 str_from_list = '-|-'.join(list_sample[:2])  # 'delimiter'.join(list/tuple) - sequence must be made of str
 print(str_from_list)
 
@@ -109,7 +110,7 @@ print(string_sample.split(','))  # breaks using a given character
 
 print('=' * 20)
 
-# zip(seq1, seq2) - returns a zip iterable object, it's a list containing pairs of tuples correspoding
+# zip(@iter1, @iter2) - returns a zip iterable object, it's a list containing pairs of tuples corresponding
 # to the same indices of the two sequences, len is equal to the minimum len of both
 zip_tuple = zip(string_sample, list_sample)
 for i in zip_tuple:
@@ -117,7 +118,7 @@ for i in zip_tuple:
 
 print('=' * 20)
 
-# enumerate(seq) - return an enumerate object, iterable, a tuple containing a count (from start which
+# enumerate(@iter) - return an enumerate object, iterable, a tuple containing a count (from start which
 # defaults to 0) and the values obtained from iterating over the sequence
 for i, j in enumerate(list_sample, start=1):
     print(i, j)

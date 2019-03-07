@@ -1,4 +1,4 @@
-# we can pass snippets by converting them into str or as a reference to a function
+# We can pass snippets to timeit by converting them into str or as a reference to a callable
 
 import timeit
 
@@ -17,7 +17,7 @@ for i in range(100):
         odds.append(i)
 """
 
-# when passing functions to timeit this way, functions can't take arguments
+# When passing functions to timeit this way, functions can't take arguments
 result_func = timeit.timeit(odds_func, number=1000)
 result_str = timeit.timeit(odds_str, number=1000)
 
@@ -34,7 +34,8 @@ def factorial(n):
         return n * factorial(n - 1)
 
 
-print()
+print('#' * 30)
+
 # import the desired function in the setup parameter and use the called in the snippet
 if __name__ == '__main__':
     print(timeit.timeit('x = factorial(100)', setup='from __main__ import factorial', number=1000))

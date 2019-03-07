@@ -1,5 +1,6 @@
 """
-A dictionary object consist of a key-value pairs - it's a "hash table".
+A dictionary (also refer to as "mapper" or "mapping"
+object consist of a key-value pairs - it's a "hash table".
 Keys are immutable (keys must be "hashable"), whereas values are mutable.
 The items inside a dictionary are ordered (from python version +3.6, before were unordered).
 If the dictionary must be ordered while using older versions, use:
