@@ -1,7 +1,6 @@
 """
 Test fixtures are resources needed by a test.
 """
-
 import unittest
 
 
