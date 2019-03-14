@@ -11,6 +11,7 @@ class NumbersTest(unittest.TestCase):
         for number in self.numbers:
             # Using a subTest, allows execution to continue, displaying
             # normally the result of the subTest as any other test
+            # The parameters passed to subTest will be displayed in the output, just for info
             with self.subTest(number=number):
                 self.assertEqual(number % 2, 0)
 
