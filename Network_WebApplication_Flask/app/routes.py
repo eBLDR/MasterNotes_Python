@@ -115,6 +115,7 @@ def api_response():
 
 # ----- ERRORS -----
 # Decorator for handling different code errors
+# It can only take as argument an Exception type object
 @app.errorhandler(404)  # 404 not found error
 def not_found(error=None):
     message = {
