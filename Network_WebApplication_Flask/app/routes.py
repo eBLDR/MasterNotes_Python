@@ -61,6 +61,11 @@ def redirect_():
 @app.route('/hello')
 def api_hello():
     # Send get parameters using /hello?name=myName&age=myAge
+    # request.args is a dictionary like with all the paremeters
+    print(type(request.args))
+    # If we need to update the dictionary, use
+    print(request.args.to_dict())
+
     if 'name' in request.args and 'age' in request.args:
         return 'Hello ' + request.args['name'] + ', your age is ' + request.args['age']
     else:
