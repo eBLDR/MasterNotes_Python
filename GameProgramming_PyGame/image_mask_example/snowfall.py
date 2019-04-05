@@ -1,5 +1,3 @@
-# -*- encoding: utf-8 -*-
-
 import pygame
 from random import randint
 
@@ -70,11 +68,12 @@ class Tree:
         screen.blit(self.image, self.rect)
 
     def do_collide(self, x, y):
+        # Stop on collision
         x = int(x)
         y = int(y)
 
         x -= self.rect.x
-        y -= self.rect.y        """ Detiene la particula en donde se encuentre."""
+        y -= self.rect.y
 
 
         if 0 <= x < self.w and 0 <= y < self.h:
