@@ -1,5 +1,4 @@
-# HTTP Basic Auth for web services that requires authentication
-
+# HTTP Basic Auth for web services that require authentication
 import requests
 from requests.auth import HTTPBasicAuth
 

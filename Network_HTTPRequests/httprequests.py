@@ -3,7 +3,7 @@ Hypertext Transfer Protocol (HTTP) is an application protocol which is the
 foundation of data communication for the World Wide Web (www).
 
 HTTP communication protocol is synchronous: that means that one request is sent
-at a time and will wait for its response to arrive before continuining.
+at a time and will wait for its response to arrive before continuing.
 
 In the communication between client and server, Uniform Resource Identifier (URI) are used.
 
@@ -53,7 +53,7 @@ r = requests.get('http://httpbin.org/get', params=payload)
 # To return the URL - notice the parameters construction
 print('URL:', r.url)
 
-# Headers containt the type of the response's content
+# Headers contain the type of the response's content
 print('content-type:', r.headers['content-type'])
 
 """

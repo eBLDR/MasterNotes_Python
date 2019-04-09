@@ -3,5 +3,8 @@ __pycache__/
 *.pyc
 *.pyo
 
+# Coverage
+*.coverage
+
 # Code editor
 .idea/
