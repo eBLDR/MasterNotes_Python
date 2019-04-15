@@ -6,10 +6,15 @@ import turtle
 # SETTING SCREEN OBJECT
 window = turtle.Screen()  # initialisation
 window.setup(500, 500, 50, 50)  # the size of the screen (@width, @height, @startX, @startY)
+# For full size screen, use
+# window.setup(width=1.0, height=1.0)
+print(window.screensize())
+
 window.bgcolor('black')  # background color
 # window.colormode(255)  # 2 types: 1 for str color (default), 255 for RGB
 # window.bgcolor(255, 255, 255)  # to specify color, argument can also be like '#A7E30E', white by default
-# window.bgpic("file.gif")  # picture on background, must be gif
+# window.bgpic('file.gif')  # picture on background, must be gif
+
 window.title('Turtle Demo')  # screen title
 # window.delay(5)  # in milliseconds - the time interval between two consecutive canvas updates
 # the longer the drawing delay, the slower the animation
@@ -70,7 +75,7 @@ atlas.forward(150)
 # WRITING TEXT
 # font_style is a tuple with 3 arguments ('name_of_font', size, 'format')
 font_style = ('Console', 40, 'bold')
-atlas.write('TEST!', font=font_style)  # writing function, can take 3 arguments (text, font, align)
+atlas.write('TEST!', font=font_style, align='center')  # writing function, can take 3 arguments (text, font, align)
 # align can be 'center', 'left, 'right'
 
 # RETRIEVING
