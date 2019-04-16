@@ -3,7 +3,7 @@ import inheritance as enemies
 """ Creating a gang of enemies """
 
 
-class Gang(object):
+class Gang:
 
     def __init__(self):
         self.gang = []

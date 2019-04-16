@@ -83,12 +83,12 @@ def draw_face(cursor, x, y, scale_):
 # setting up the screen
 window = turtle.Screen()
 window.setup(500, 500)
-window.bgcolor("white")
-window.title("Random Faces")
+window.bgcolor('white')
+window.title('Random Faces')
 
 # instantiating turtle object
 atlas = turtle.Turtle()
-atlas.speed("fastest")
+atlas.speed('fastest')
 
 num_faces = 10
 
@@ -99,7 +99,7 @@ while num_faces > 0:
     scale = 1.5 * random.random() + 0.5
 
     # setting random color
-    face_color = ("blue", "black", "red", "green", "yellow", "orange")
+    face_color = ('blue', 'black', 'red', 'green', 'yellow', 'orange')
     atlas.pencolor(random.choice(face_color))
 
     # setting random thickness

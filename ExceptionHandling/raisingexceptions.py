@@ -1,10 +1,10 @@
-class Fin(object):
+class Fin:
 
     def swim(self):
         print('I\' gonna eat you')
 
 
-class Shark(object):
+class Shark:
 
     def __init__(self):
         self._fin = Fin()  # Composition
@@ -13,7 +13,7 @@ class Shark(object):
         self._fin.swim()
 
 
-class Intruder(object):
+class Intruder:
     """ Replace all the following methods for pass to test the custom exception """
 
     # pass
@@ -25,7 +25,7 @@ class Intruder(object):
         print('Shhh...! I\'m using a DPV!')
 
 
-class School(object):
+class School:
 
     def __init__(self):
         self.school = []

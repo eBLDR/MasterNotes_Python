@@ -5,103 +5,105 @@ except ImportError:  # python 2
 
 import os  # only for the listbox sake
 
-mainWindow = tkinter.Tk()
-mainWindow.title('ProScreen')
-mainWindow.geometry('640x480-8-200')
+main_window = tkinter.Tk()
+main_window.title('ProScreen')
+main_window.geometry('640x480-8-200')
 
 # adding padding
-mainWindow['padx'] = 8
+main_window['padx'] = 8
 
 # a label
-label = tkinter.Label(mainWindow, text='TkInter Grid Demo')
+label = tkinter.Label(main_window, text='TkInter Grid Demo')
 label.grid(row=0, column=0, columnspan=3)  # columnspan to set how many rows/columns is going to expand
 
 # configuring rows and columns
 # weight is the ratio that increases compared to each other when the screen is resize
-mainWindow.columnconfigure(0, weight=100)
-mainWindow.columnconfigure(1, weight=1)  # scroll bar doesn't need to grow nor shrink
-mainWindow.columnconfigure(2, weight=1000)
-mainWindow.columnconfigure(3, weight=600)
-mainWindow.columnconfigure(4, weight=1000)
-mainWindow.rowconfigure(0, weight=1)
-mainWindow.rowconfigure(1, weight=10)
-mainWindow.rowconfigure(2, weight=1)
-mainWindow.rowconfigure(3, weight=3)
-mainWindow.rowconfigure(4, weight=3)
+main_window.columnconfigure(0, weight=100)
+main_window.columnconfigure(1, weight=1)  # scroll bar doesn't need to grow nor shrink
+main_window.columnconfigure(2, weight=1000)
+main_window.columnconfigure(3, weight=600)
+main_window.columnconfigure(4, weight=1000)
+main_window.rowconfigure(0, weight=1)
+main_window.rowconfigure(1, weight=10)
+main_window.rowconfigure(2, weight=1)
+main_window.rowconfigure(3, weight=3)
+main_window.rowconfigure(4, weight=3)
 
 # list box
-fileList = tkinter.Listbox(mainWindow)
-fileList.grid(row=1, column=0, sticky='nsew', rowspan=2)
-fileList.config(border=2, relief='sunken')
+file_list = tkinter.Listbox(main_window)
+file_list.grid(row=1, column=0, sticky='nsew', rowspan=2)
+file_list.config(border=2, relief='sunken')
 for zone in os.listdir('/Windows/System32'):
-    fileList.insert(tkinter.END, zone)  # .END insert at the end of the list, .0 at the beginning
+    file_list.insert(tkinter.END, zone)  # .END insert at the end of the list, .0 at the beginning
 
 # adding the scrollbar
-listScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=fileList.yview)  # yview for vertical scroll
+list_scroll = tkinter.Scrollbar(main_window, orient=tkinter.VERTICAL, command=file_list.yview)  # yview for vertical scroll
 # command=functionName, no parenthesis, we want to assign it to the command, not to call it when creating the button
-listScroll.grid(row=1, column=1, sticky='nsw', rowspan=2)
-fileList['yscroll'] = listScroll.set  # this is for the scroll to remain in the position
+list_scroll.grid(row=1, column=1, sticky='nsw', rowspan=2)
+file_list['yscroll'] = list_scroll.set  # this is for the scroll to remain in the position
 
 # frame for the radio buttons, works as a relative coordinates too
-optionFrame = tkinter.LabelFrame(mainWindow, text='File Details')
-optionFrame.grid(row=1, column=2, sticky='ne')
+option_frame = tkinter.LabelFrame(main_window, text='File Details')
+option_frame.grid(row=1, column=2, sticky='ne')
 
-rbValue = tkinter.IntVar()  # we need to create the variable that is going to be assigned using the radio buttons
-rbValue.set(3)  # value of the default option
+rb_value = tkinter.IntVar()  # we need to create the variable that is going to be assigned using the radio buttons
+rb_value.set(3)  # value of the default option
 # radio buttons
-radio1 = tkinter.Radiobutton(optionFrame, text='Filename', value=1, variable=rbValue)
-radio2 = tkinter.Radiobutton(optionFrame, text='Path', value=2, variable=rbValue)
-radio3 = tkinter.Radiobutton(optionFrame, text='Timestamp', value=3, variable=rbValue)
+radio1 = tkinter.Radiobutton(option_frame, text='Filename', value=1, variable=rb_value)
+radio2 = tkinter.Radiobutton(option_frame, text='Path', value=2, variable=rb_value)
+radio3 = tkinter.Radiobutton(option_frame, text='Timestamp', value=3, variable=rb_value)
 radio1.grid(row=0, column=0, sticky='w')
 radio2.grid(row=1, column=0, sticky='w')
 radio3.grid(row=2, column=0, sticky='w')
 
 # widget to display the result
-resultLabel = tkinter.Label(mainWindow, text='Result')
-resultLabel.grid(row=2, column=2, sticky='nw')
-result = tkinter.Entry(mainWindow)
+result_label = tkinter.Label(main_window, text='Result')
+result_label.grid(row=2, column=2, sticky='nw')
+result = tkinter.Entry(main_window)
 result.grid(row=2, column=2, sticky='sw')
 
 # frame for the time spinners
-timeFrame = tkinter.LabelFrame(mainWindow, text='Time')
-timeFrame.grid(row=3, column=0, sticky='new')
-timeFrame['padx'] = 36  # adding padding (space) on the x axis
+time_frame = tkinter.LabelFrame(main_window, text='Time')
+time_frame.grid(row=3, column=0, sticky='new')
+time_frame['padx'] = 36  # adding padding (space) on the x axis
+
 # time spinners
-hourSpinner = tkinter.Spinbox(timeFrame, width=2, values=tuple(range(0, 24)))  # either values or from/to
-minuteSpinner = tkinter.Spinbox(timeFrame, width=2, from_=0, to=59)
-secondSpinner = tkinter.Spinbox(timeFrame, width=2, from_=0, to=59)
-hourSpinner.grid(row=0, column=0)
-tkinter.Label(timeFrame, text=': ').grid(row=0, column=1)
-minuteSpinner.grid(row=0, column=2)
-tkinter.Label(timeFrame, text=': ').grid(row=0, column=3)
-secondSpinner.grid(row=0, column=4)
+hour_spinner = tkinter.Spinbox(time_frame, width=2, values=tuple(range(0, 24)))  # either values or from/to
+minute_spinner = tkinter.Spinbox(time_frame, width=2, from_=0, to=59)
+second_spinner = tkinter.Spinbox(time_frame, width=2, from_=0, to=59)
+hour_spinner.grid(row=0, column=0)
+tkinter.Label(time_frame, text=': ').grid(row=0, column=1)
+minute_spinner.grid(row=0, column=2)
+tkinter.Label(time_frame, text=': ').grid(row=0, column=3)
+second_spinner.grid(row=0, column=4)
 
 # frame for the date spinners
-dateFrame = tkinter.Frame(mainWindow)
-dateFrame.grid(row=4, column=0, sticky='new')
+date_frame = tkinter.Frame(main_window)
+date_frame.grid(row=4, column=0, sticky='new')
+
 # date labels
-dayLabel = tkinter.Label(dateFrame, text='Day')
-monthLabel = tkinter.Label(dateFrame, text='Month')
-yearLabel = tkinter.Label(dateFrame, text='Year')
-dayLabel.grid(row=0, column=0, sticky='w')
-monthLabel.grid(row=0, column=1, sticky='w')
-yearLabel.grid(row=0, column=2, sticky='w')
+day_label = tkinter.Label(date_frame, text='Day')
+month_label = tkinter.Label(date_frame, text='Month')
+year_label = tkinter.Label(date_frame, text='Year')
+day_label.grid(row=0, column=0, sticky='w')
+month_label.grid(row=0, column=1, sticky='w')
+year_label.grid(row=0, column=2, sticky='w')
 # date spinners
-daySpin = tkinter.Spinbox(dateFrame, width=5, from_=1, to=31)
-monthSpin = tkinter.Spinbox(dateFrame, width=5, values=('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                                                        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'))
-yearSpin = tkinter.Spinbox(dateFrame, width=5, from_=1, to=31)
-daySpin.grid(row=1, column=0)
-monthSpin.grid(row=1, column=1)
-yearSpin.grid(row=1, column=2)
+day_spin = tkinter.Spinbox(date_frame, width=5, from_=1, to=31)
+month_spin = tkinter.Spinbox(date_frame, width=5, values=('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                                                          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'))
+year_spin = tkinter.Spinbox(date_frame, width=5, from_=1, to=31)
+day_spin.grid(row=1, column=0)
+month_spin.grid(row=1, column=1)
+year_spin.grid(row=1, column=2)
 
 # buttons
-okButton = tkinter.Button(mainWindow, text='OK')
-cancelButton = tkinter.Button(mainWindow, text='Cancel', command=mainWindow.destroy)
-okButton.grid(row=4, column=3, sticky='e')
-cancelButton.grid(row=4, column=4, sticky='w')
+ok_button = tkinter.Button(main_window, text='OK')
+cancel_button = tkinter.Button(main_window, text='Cancel', command=main_window.destroy)
+ok_button.grid(row=4, column=3, sticky='e')
+cancel_button.grid(row=4, column=4, sticky='w')
 
-mainWindow.mainloop()
+main_window.mainloop()
 
 # prints the value of the radio button chosen
-print(rbValue.get())
+print(rb_value.get())

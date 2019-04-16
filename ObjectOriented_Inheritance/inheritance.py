@@ -2,11 +2,10 @@
 SUPER CLASS - is the base class
 SUB CLASS - inherits from a super class
 INHERITANCE - will inherit all the attributes, properties and methods
-MULTIPLE INHERITANCE - is also possible, a sub class inheriting from many super classes
 """
 
 
-class Enemy(object):
+class Enemy:
     """ Super Class """
 
     def __init__(self, name='Enemy', hit_points=0, lives=1):
@@ -20,18 +19,18 @@ class Enemy(object):
         remaining_points = self.hit_points - damage
         if remaining_points > 0:
             self.hit_points = remaining_points
-            print('{0._name} took {1} points damage and have {0._hit_points} left'.format(self, damage))
+            print('{0.name} took {1} points damage and have {0.hit_points} left'.format(self, damage))
         else:
             self.lives -= 1
             if self.lives > 0:
-                print('{0._name} lost a live'.format(self))
+                print('{0.name} lost a live'.format(self))
             else:
-                print('{0._name} is dead'.format(self))
+                print('{0.name} is dead'.format(self))
                 self.hit_points = 0
                 self.alive = False
 
     def __str__(self, annex=''):
-        return ('Name: {0._name}, Lives: {0._lives}, Hit Points: {0._hit_points}' + annex).format(self)
+        return ('Name: {0.name}, Lives: {0.lives}, Hit Points: {0.hit_points}' + annex).format(self)
 
 
 class Troll(Enemy):
@@ -44,16 +43,18 @@ class Troll(Enemy):
         # using Super method
         # super(Troll, self).__init__(name=name, lives=1, hit_points=23)
 
-        # equivalent to
+        # Equivalent to
         super().__init__(name=name, hit_points=23)  # specify parameters, or not for using default
 
-        self._iq = iq  # we can create data attributes only for the subclass
+        print('super().__init__ is: ', super().__init__)
+
+        self.iq = iq  # Create data attributes only for the subclass
 
     def grunt(self):
-        print('Me {0._name}. {0._name} stomp you'.format(self))
+        print('Me {0.name}. {0.name} stomp you!'.format(self))
 
     def __str__(self, annex=None):
-        annex = ', Iq: {0._iq}'
+        annex = ', Iq: {0.iq}'
         return super().__str__(annex)
 
 
@@ -65,7 +66,7 @@ class Vampire(Enemy):
     def dodges(self):
         import random  # just to show that it's possible to import anywhere
         if random.randint(1, 3) == 3:
-            print('*** {0._name} dodges ***'.format(self))
+            print('*** {0.name} dodges ***'.format(self))
             return True
         else:
             return False
@@ -76,6 +77,7 @@ class Vampire(Enemy):
             super().take_damage(damage=damage)  # calling the super method
 
 
+# Multilevel inheritance
 # sub class of Vampire (aka extension of the class Vampire)
 class VampireKing(Vampire):
 
@@ -115,13 +117,6 @@ if __name__ == '__main__':
     while urg_troll.alive:
         urg_troll.take_damage(5)
         print(urg_troll)
-
-    """
-    Overloading methods are used in other languages (such as Java or C++) to use different versions
-    of the method depending on the number and type of arguments that are passed to it.
-    Python doesn't have such a thing, the arguments are assigned by order, by named parameters,
-    or set to default if not specified. (See functions.)
-    """
 
     print('\n--- TESTING METHODS IN SUBCLASS ---\n')
 

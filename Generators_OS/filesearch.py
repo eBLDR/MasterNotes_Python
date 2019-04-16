@@ -4,7 +4,7 @@ import fnmatch  # a module to match names
 
 def find_albums(root, artist_name):
     for path, directories, files in os.walk(root):
-        # print("directories are: {}".format(directories))
+        # print('directories are: {}'.format(directories))
         # for artist in directories:
 
         # using fnmatch to filter results, will return only the directories with a matching name

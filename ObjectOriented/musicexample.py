@@ -104,11 +104,11 @@ class Artist:
         """
         album_found = find_object(name, self.albums)
         if album_found is None:
-            print(name + " not found")
+            print(name + ' not found')
             album_found = Album(name, year, self.name)
             self.add_album(album_found)
         else:
-            print("Found album " + name)
+            print('Found album ' + name)
 
         album_found.add_song(title)
 
@@ -124,12 +124,12 @@ def find_object(field, object_list):
 def load_data():
     artist_list = []
 
-    with open("albums.txt", "r") as albums:
+    with open('albums.txt', 'r') as albums:
         for line in albums:
             # data row should consist of (artist, album, year, song)
             artist_field, album_field, year_field, song_field = tuple(line.strip('\n').split('\t'))
             year_field = int(year_field)
-            print("{}:{}:{}:{}".format(artist_field, album_field, year_field, song_field))
+            print('{}:{}:{}:{}'.format(artist_field, album_field, year_field, song_field))
 
             new_artist = find_object(artist_field, artist_list)
             if new_artist is None:
@@ -143,16 +143,16 @@ def load_data():
 
 def create_checkfile(artist_list):
     """Create a check file from the object data for comparison with the original file"""
-    with open("checkfile.txt", 'w') as checkfile:
+    with open('checkfile.txt', 'w') as checkfile:
         for new_artist in artist_list:
             for new_album in new_artist.albums:
                 for new_song in new_album.tracks:
-                    print("{0.name}\t{1.name}\t{1.year}\t{2.title}".format(new_artist, new_album, new_song),
+                    print('{0.name}\t{1.name}\t{1.year}\t{2.title}'.format(new_artist, new_album, new_song),
                           file=checkfile)
 
 
 if __name__ == '__main__':
     artists = load_data()
-    print("There are {} artists".format(len(artists)))
+    print('There are {} artists'.format(len(artists)))
 
     create_checkfile(artists)

@@ -9,34 +9,34 @@ keys = [[('C', 1), ('CE', 1)],  # text, columnspan
         [('1', 1), ('2', 1), ('3', 1), ('*', 1)],
         [('0', 1), ('=', 1), ('/', 1)]]
 
-mainWindowPadding = 8
-mainWindow = tkinter.Tk()
-mainWindow.title('CALCULATOR')
-mainWindow.geometry('640x480+50+50')
-mainWindow['padx'] = mainWindowPadding
-mainWindow['pady'] = mainWindowPadding
+main_window_padding = 8
+main_window = tkinter.Tk()
+main_window.title('CALCULATOR')
+main_window.geometry('640x480+50+50')
+main_window['padx'] = main_window_padding
+main_window['pady'] = main_window_padding
 
-result = tkinter.Entry(mainWindow)
+result = tkinter.Entry(main_window)
 result.grid(row=0, column=0, sticky='nsew')
 
-keyPad = tkinter.Frame(mainWindow)
-keyPad.grid(row=1, column=0, sticky='nsew')
+key_pad = tkinter.Frame(main_window)
+key_pad.grid(row=1, column=0, sticky='nsew')
 
 row = 0
-for keyRow in keys:
+for key_row in keys:
     col = 0
-    for key in keyRow:
-        tkinter.Button(keyPad, text=key[0]).grid(
+    for key in key_row:
+        tkinter.Button(key_pad, text=key[0]).grid(
             row=row, column=col, columnspan=key[1], sticky=tkinter.E + tkinter.W)  # tkinter.W = 'w'
         col += key[1]
     row += 1
 
-mainWindow.update()  # to create the screen before running it
+main_window.update()  # to create the screen before running it
 # to set the minimum size when resizing
-mainWindow.minsize(keyPad.winfo_width() + mainWindowPadding * 2,
-                   result.winfo_height() + keyPad.winfo_height() + mainWindowPadding * 2)
+main_window.minsize(key_pad.winfo_width() + main_window_padding * 2,
+                    result.winfo_height() + key_pad.winfo_height() + main_window_padding * 2)
 # to set the maximum size when resizing
-mainWindow.maxsize(50 + keyPad.winfo_width() + mainWindowPadding * 2,
-                   50 + result.winfo_height() + keyPad.winfo_height() + mainWindowPadding * 2)
+main_window.maxsize(50 + key_pad.winfo_width() + main_window_padding * 2,
+                    50 + result.winfo_height() + key_pad.winfo_height() + main_window_padding * 2)
 
-mainWindow.mainloop()
+main_window.mainloop()

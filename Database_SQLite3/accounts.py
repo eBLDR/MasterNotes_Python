@@ -11,7 +11,7 @@ db.execute('CREATE TABLE IF NOT EXISTS history (time TIMESTAMP NOT NULL,'
            'account TEXT NOT NULL, amount REAL NOT NULL, PRIMARY KEY (time, account))')
 
 
-class Account(object):
+class Account:
 
     @staticmethod
     def _current_time():

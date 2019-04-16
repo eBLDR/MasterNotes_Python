@@ -1,12 +1,12 @@
 import tkinter
 import math
 
-numberOfItems = 0  # this will be our example global variable
+number_of_items = 0  # this will be our example global variable
 
 
 def parabola(area, size):
-    global numberOfItems
-    numberOfItems += 1
+    global number_of_items
+    number_of_items += 1
     for x in range(size + 1):
         y = x ** 2 / size  # / size to fit more values in the screen
         plot(area, x, y)
@@ -14,8 +14,8 @@ def parabola(area, size):
 
 
 def circle(page, radius, color='red'):
-    global numberOfItems
-    numberOfItems += 1
+    global number_of_items
+    number_of_items += 1
     accuracy = 10  # to plot more points, more defined circle, more time for the CPU. Can be done with a generator
     for x in range((radius * accuracy) + 1):
         x /= accuracy
@@ -42,14 +42,14 @@ def plot(area, x, y, color='red'):
     area.create_line(x, y, x + 1, y + 1, fill=color)
 
 
-mainWindow = tkinter.Tk()
-mainWindow.title('Parabola')
-mainWindow.geometry('640x480')
+main_window = tkinter.Tk()
+main_window.title('Parabola')
+main_window.geometry('640x480')
 
-canvas = tkinter.Canvas(mainWindow, width=320, height=480)
+canvas = tkinter.Canvas(main_window, width=320, height=480)
 canvas.grid(row=0, column=0)
 
-canvas2 = tkinter.Canvas(mainWindow, width=320, height=480)
+canvas2 = tkinter.Canvas(main_window, width=320, height=480)
 canvas2.grid(row=0, column=1)
 
 print(type(canvas))
@@ -62,6 +62,6 @@ parabola(canvas, 100)
 circle(canvas2, 100)
 circle(canvas2, 80, color='blue')
 
-print(numberOfItems)
+print(number_of_items)
 
-mainWindow.mainloop()
+main_window.mainloop()

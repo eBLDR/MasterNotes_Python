@@ -73,9 +73,9 @@ class App(QMainWindow):
     def context_menu_event(self, event):
         c_menu = QMenu(self)
 
-        new_act = c_menu.addAction("New")
-        opn_act = c_menu.addAction("Open")
-        quit_act = c_menu.addAction("Quit")
+        new_act = c_menu.addAction('New')
+        opn_act = c_menu.addAction('Open')
+        quit_act = c_menu.addAction('Quit')
         action = c_menu.exec_(self.mapToGlobal(event.pos()))
 
         if action == quit_act:

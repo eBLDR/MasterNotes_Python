@@ -11,7 +11,7 @@ those objects continue to exist.
 """
 
 
-class Tag(object):
+class Tag:
 
     def __init__(self, name, contents=''):
         self.start_tag = '<{}>'.format(name)
@@ -65,7 +65,7 @@ class Body(Tag):
         super().display(file=file)
 
 
-class HtmlDoc(object):
+class HtmlDoc:
     """ HtmlDoc is composed out of other classes
     Those objects only exists inside Html object """
 

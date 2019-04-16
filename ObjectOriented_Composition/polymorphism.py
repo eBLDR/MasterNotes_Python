@@ -6,7 +6,7 @@ it has inherit the __str__ method from the super class object().
 """
 
 
-class Wing(object):
+class Wing:
 
     def __init__(self, ratio):
         self.ratio = ratio
@@ -20,7 +20,7 @@ class Wing(object):
             print('I think I\'ll just walk')
 
 
-class Duck(object):
+class Duck:
 
     def __init__(self):
         self._wing = Wing(1.8)  # this is composition
