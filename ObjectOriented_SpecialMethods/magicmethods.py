@@ -53,8 +53,8 @@ print('=' * 20)
 x = 1
 y = 3
 
-# The operator '+'...
+# The operator '+' ...
 print('x + y: ', x + y)
 
-# Is calling...
+# ... is calling
 print('x.__add__(y): ', x.__add__(y))
