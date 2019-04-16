@@ -38,7 +38,7 @@ class Point:
     def __str__(self):
         return '({x},{y})'.format(x=self.x, y=self.y)
 
-    # Overwriting the method being called with the "+" operator
+    # Overriding the method being called with the "+" operator
     def __add__(self, other):
         # self refers to the object on the left of the +, and other to the one on the right
         x = self.x + other.x
@@ -47,7 +47,7 @@ class Point:
         # Returns a new instance of itself
         return Point(x, y)
 
-    # Overwriting the method being called with the "-" operator
+    # Overriding the method being called with the "-" operator
     def __sub__(self, other):
         x = self.x - other.x
         y = self.y - other.y
