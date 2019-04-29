@@ -83,3 +83,8 @@ print(happy_text('I', 'am', 'damn', 'happy', sep=' :( '))  # We can specify the 
 # To default
 happy1 = happy_text('Assigning', 'returned', 'values')
 print(happy1)
+
+print('=' * 20)
+
+# To know if a variable is a function, use callable(@arg)
+print('Is \'happy text\' a function?\ncallable(happy_text): {}'.format(callable(happy_text)))

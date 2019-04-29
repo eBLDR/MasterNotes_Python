@@ -1,1 +1,5 @@
 This msg called using print() goes directly to file, it uses stdout.
+Traceback (most recent call last):
+  File "inputoutputpipes.py", line 57, in <module>
+    raise Exception('This error msg goes directly to file, it uses stderr.')
+Exception: This error msg goes directly to file, it uses stderr.
