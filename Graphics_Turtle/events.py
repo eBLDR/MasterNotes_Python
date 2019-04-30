@@ -69,7 +69,7 @@ cursor.onrelease(cursor.unglow)  # binding to release
 
 # binding functions to screen (keys and click) - for keys, exact key symbol must be used, case sensitive (n != N)
 window.onkey(exit_, 'Escape')  # binds to key release - @function, @key_symbol
-# for binding to key press use onkeypress()
+# for binding to key press use onkeypress() - it will allow to send multiple event while pressing
 window.onkey(details, 'n')
 window.onkey(move, 'Up')
 window.onkey(right, 'Right')
