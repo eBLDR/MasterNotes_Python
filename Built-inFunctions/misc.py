@@ -21,15 +21,24 @@ print(repr(dc))
 help(str)  # Help for data type
 help(s.upper)  # equivalent to help(str.upper)
 
+print('#' * 30)
+
 # dir() - return the list of names in the current local scope. With an object as argument,
 # return a list of valid attributes for that object
-print(dir(s))
+print('dir():', dir())
+print('dir(s):', dir(s))
 
-# globals() - return a dictionary representing the current global symbol table
-print(globals())
+# globals() - dictionary representing the current global scope
+print('globals():', globals())
 
-# locals() - update and return a dictionary representing the current local symbol table
-print(locals())
+# locals() - return a dictionary representing the current local scope
+print('locals():', locals())
+
+# vars() - return a dictionary representing the current local scope
+# With an object as argument, will return the dictionary of the object's attributes,
+# calling __dict__ method
+print('vars():', vars())
+print('vars(tuple):', vars(tuple))
 
 # hash() - return the hash value of the object (if it has one)
 print(hash(a))
