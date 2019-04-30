@@ -38,7 +38,7 @@ if __name__ == '__main__':
         print('Usage: server.py <port>')
         sys.exit()
 
-    # Create the server, binding to localhost on port 9999
+    # Create the server, binding to localhost on specific port
     with socketserver.TCPServer((HOST, PORT), MyTCPHandler) as server:
         print('Server is active.')
         # Activate the server; this will keep running until you

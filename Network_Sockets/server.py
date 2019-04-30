@@ -49,7 +49,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
     # LIVE SERVER - a server that will be alive always
     # Create and bind the socket, put it to listen, and then proceed with the code below...
     while True:
-        conn, addr = server.accept()
+        conn, addr = server.accept()  # Accept new incoming connection
         print('Connected with {}.'.format(address))
         data = conn.recv(1024)
 
