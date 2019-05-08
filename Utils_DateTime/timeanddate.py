@@ -74,6 +74,7 @@ print('Day:', now.day)
 print('Hour:', now.hour)
 print('Minute:', now.minute)
 print('Second:', now.second)
+print('Weekday:', now.weekday())
 
 # Using strftime() to convert datetime into str and personalize the format
 datetime_to_str = now.strftime('%I:%M %p')
