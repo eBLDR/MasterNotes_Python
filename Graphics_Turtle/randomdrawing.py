@@ -9,12 +9,12 @@ def random_drawing(cursor):
 
 # creating screen
 window = turtle.Screen()
-window.title('Turtle Threads')
-window.setup(600, 600)
+window.title('Random Drawing')
+window.setup(1000, 1000)
 window.colormode(255)
 
 # creating cursors
-n_of_cursors = 8
+n_of_cursors = 12
 cursors = []  # cursor container
 for i in range(n_of_cursors):
     c = turtle.Turtle()
@@ -24,6 +24,8 @@ for i in range(n_of_cursors):
     cursors.append(c)
 
 # start the motion
-for j in range(30):
+for j in range(60):
     for c in cursors:
         random_drawing(c)
+
+turtle.done()
