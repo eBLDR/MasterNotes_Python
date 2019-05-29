@@ -63,6 +63,12 @@ now = datetime.datetime.now()  # Returns information the local time at the momen
 print(now)
 print(type(now))
 
+print(now.date())  # Date only
+print(now.time())  # Time only
+
+# To combine date and time
+print(datetime.datetime.combine(now.date(), now.time()))  # Merges date and time
+
 print(datetime.datetime.utcnow())  # utc time
 
 print(datetime.date.today())  # Only today's date
