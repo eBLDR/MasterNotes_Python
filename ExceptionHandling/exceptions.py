@@ -3,10 +3,13 @@ There are 2 types of errors we can get:
     - Syntax Error, for example a typo or wrong placement of special characters
     - Exception Error, all the rest
 
-The order of the exceptions matters. Except1 will be assessed before Except2 in case of error.
-Exceptions are (as everything else in Python) objects, all inherit from class called BaseExceptions.
-We can use this to trap all the exceptions that are raised by using: "except BaseExceptions:", which is equivalent
-to: "except:". Is always better to be more specific.
+The order of the exceptions matters. Except1 will be assessed before Except2
+in case of error.
+Exceptions are (as everything else in Python) objects, all inherit from class
+called BaseException.
+We can use this to trap all the exceptions that are raised by using:
+"except BaseException:", which is equivalent to: "except:".
+Is always better to be more specific.
 
 Force the errors to find out the name of the exception
 """
