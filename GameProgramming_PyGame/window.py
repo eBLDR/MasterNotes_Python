@@ -3,7 +3,7 @@ import sys
 from pygame.locals import *
 
 pygame.init()  # at the start of the program
-DISPLAY_SURF = pygame.display.set_mode((400, 300))  # size window
+screen = pygame.display.set_mode((400, 300))  # size window
 pygame.display.set_caption('My First Pygame Window!')  # title window
 
 while True:  # main loop

@@ -5,25 +5,25 @@ from pygame.locals import *
 pygame.init()
 
 FPS = 30
-fpsClock = pygame.time.Clock()  # clock object
+fps_clock = pygame.time.Clock()  # clock object
 
-DISPLAY_SURF = pygame.display.set_mode((400, 300), 0, 32)
+screen = pygame.display.set_mode((400, 300), 0, 32)
 pygame.display.set_caption('Cat Animation')
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 
-catImg = pygame.image.load('catanimation_src/cat.png')  # creates another surface object
+cat_img = pygame.image.load('catanimation_src/cat.png')  # creates another surface object
 cat_x = 10
 cat_y = 10
 direction = 'right'
 
-fontObj = pygame.font.Font('freesansbold.ttf', 32)  # creates a font object
+font_obj = pygame.font.Font('freesansbold.ttf', 32)  # creates a font object
 # creates a surface with text - (@text, @anti-aliasing, @font color, @background color)
-textSurfaceObj = fontObj.render('Epic Cat', True, RED)  # , WHITE)
-textRectObj = textSurfaceObj.get_rect()  # text rectangle, will be automatically adjusted to long text
-textRectObj.center = (200, 150)  # reposition of text rectangle
+text_surface_obj = font_obj.render('Epic Cat', True, RED)  # , WHITE)
+text_rect_obj = text_surface_obj.get_rect()  # text rectangle, will be automatically adjusted to long text
+text_rect_obj.center = (200, 150)  # reposition of text rectangle
 
 """
 # background music
@@ -36,7 +36,7 @@ soundObj = pygame.mixer.Sound('catanimation_src/badswap.wav')
 """
 
 while True:
-    DISPLAY_SURF.fill(BLACK)
+    screen.fill(BLACK)
     if direction == 'right':
         cat_x += 5
         if cat_x == 280:
@@ -58,8 +58,8 @@ while True:
             # soundObj.play()
             direction = 'right'
 
-    DISPLAY_SURF.blit(catImg, (cat_x, cat_y))  # paste the surface object to main surface
-    DISPLAY_SURF.blit(textSurfaceObj, textRectObj)
+    screen.blit(cat_img, (cat_x, cat_y))  # paste the surface object to main surface
+    screen.blit(text_surface_obj, text_rect_obj)
 
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -68,7 +68,7 @@ while True:
             sys.exit()
 
     pygame.display.update()
-    fpsClock.tick(FPS)  # calculates time pause needed based on last call of this method
+    fps_clock.tick(FPS)  # calculates time pause needed based on last call of this method
     # for accomplish assigned frames per second
     # in this case (FPS = 30), each loop runs for at least 33.3ms, that means the
     # program will stop for the rest of time, waiting to accomplish 33.3ms per loop

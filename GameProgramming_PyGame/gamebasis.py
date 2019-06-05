@@ -24,7 +24,7 @@ BLUE = (0, 0, 155)
 YELLOW = (255, 255, 0)
 
 screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)
-fpsClock = pygame.time.Clock()
+fps_clock = pygame.time.Clock()
 pygame.display.set_caption('Game')
 
 
@@ -50,7 +50,7 @@ def main():
 
         blit()
         pygame.display.update()
-        fpsClock.tick(FPS)
+        fps_clock.tick(FPS)
 
 
 # --- EXECUTE

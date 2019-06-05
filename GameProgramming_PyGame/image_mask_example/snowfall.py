@@ -75,7 +75,6 @@ class Tree:
         x -= self.rect.x
         y -= self.rect.y
 
-
         if 0 <= x < self.w and 0 <= y < self.h:
             return self.mask.get_at((x, y))
 
