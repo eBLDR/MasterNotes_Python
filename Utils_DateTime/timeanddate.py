@@ -82,7 +82,8 @@ print('Minute:', now.minute)
 print('Second:', now.second)
 print('Weekday:', now.weekday())
 
-# Using strftime() to convert datetime into str and personalize the format
+# String format datetime
+# Converting datetime object into str and personalize the format
 datetime_to_str = now.strftime('%I:%M %p')
 print(datetime_to_str)
 print(type(datetime_to_str))
@@ -91,7 +92,7 @@ print(type(datetime_to_str))
 print(datetime.datetime.now().isoformat())
 
 """
-Datetime strftime directive
+Datetime strftime/strptime directive
 
 %Y - Year with century, as in '2014'
 %y - Year without century, '00' to '99' (1970 to 2069)
@@ -111,6 +112,7 @@ Datetime strftime directive
 %% - Literal '%' character
 """
 
+# String parse time
 # Converting str into datetime object
 oct_21 = datetime.datetime.strptime('October 21, 2015', '%B %d, %Y')
 print(oct_21)

@@ -10,7 +10,7 @@ Session object states:
 from sqlalchemy import create_engine
 # Session object
 from sqlalchemy.orm import sessionmaker
-# Table sctructures
+# Table structures
 from declarative import Address, Base, Person
 
 engine = create_engine('sqlite:///example.db', echo=False)

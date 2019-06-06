@@ -6,6 +6,17 @@ to GET, PUT, POST and DELETE data.
 API - Application Programming Interface
 REST - Representation State Transfer
 RESTful - refers to web services implementing REST architecture
+
+REST APIs have four types of parameters:
+
+- Header parameters: Parameters included in the request header, usually
+related to authorization.
+- Path parameters: Parameters within the path of the endpoint, before the
+query string (?). These are usually set off within curly braces.
+- Query string parameters: Parameters in the query string of the endpoint,
+after the ?.
+- Request body parameters: Parameters included in the request body. Usually
+submitted as JSON.
 """
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
