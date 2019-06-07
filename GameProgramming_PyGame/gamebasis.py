@@ -1,9 +1,6 @@
-# Created and developed by
-# BLDR, 2015
+import sys
 
 import pygame
-import sys
-from pygame.locals import *
 
 pygame.init()
 
@@ -42,10 +39,10 @@ def main():
         mouse_x, mouse_y = 0, 0
 
         for event in pygame.event.get():
-            if event.type == QUIT:
+            if event.type == pygame.QUIT:
                 exit_game()
 
-            elif event.type == MOUSEBUTTONUP and event.button == MOUSE_LEFT:
+            elif event.type == pygame.MOUSEBUTTONUP and event.button == MOUSE_LEFT:
                 mouse_x, mouse_y = event.pos
 
         draw_screen()

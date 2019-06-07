@@ -1,5 +1,6 @@
-import pygame
 import sys
+
+import pygame
 
 pygame.init()
 
@@ -35,7 +36,6 @@ pygame.mixer.music.play(-1, 0.0)
 
 # Creating sound object
 sound_obj = pygame.mixer.Sound('catanimation_src/badswap.wav')
-
 
 while True:
     screen.fill(BLACK)

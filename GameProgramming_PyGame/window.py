@@ -34,6 +34,5 @@ while run:
     # Updating the screen
     pygame.display.update()
 
-
 # Closing the game
 pygame.quit()
