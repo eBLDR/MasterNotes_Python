@@ -28,7 +28,7 @@ fps_clock = pygame.time.Clock()
 pygame.display.set_caption('Game')
 
 
-def blit():
+def draw_screen():
     screen.fill(WHITE)
 
 
@@ -48,7 +48,7 @@ def main():
             elif event.type == MOUSEBUTTONUP and event.button == MOUSE_LEFT:
                 mouse_x, mouse_y = event.pos
 
-        blit()
+        draw_screen()
         pygame.display.update()
         fps_clock.tick(FPS)
 
