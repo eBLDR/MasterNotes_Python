@@ -14,12 +14,25 @@ BLUE = (0, 0, 255)
 
 screen.fill(WHITE)  # Fill screen with color
 
-# Drawing polygons
+# Drawing shapes - all have @width=0 argument at end, if width is 0, the
+# shape will be filled with solid color
+# Rectangle - @surface, @color_rgb, @rect
+pygame.draw.rect(screen, BLUE, (200, 150, 100, 50), 2)
+
+# Polygon - @surface, @color_rgb, @point_list
 pygame.draw.polygon(screen, GREEN, ((146, 0), (291, 106), (236, 277), (56, 277), (0, 106)))
+
+# Line - @surface, @color_rgb, @start_position, @end_position
 pygame.draw.line(screen, BLUE, (60, 60), (120, 60), 4)
+
+# Arc - @surface, @color_rgb, @rect, @start_angle, @end_angle
+pygame.draw.arc(screen, BLACK, (150, 150, 20, 180), 0, 3)
+
+# Circle - @surface, @color_rgb, @position, @radius
 pygame.draw.circle(screen, RED, (300, 50), 25, 0)
+
+# Ellipse - @surface, @color_rgb, @rect
 pygame.draw.ellipse(screen, RED, (300, 250, 40, 80), 1)
-pygame.draw.rect(screen, BLUE, (200, 150, 100, 50))
 
 # Draw single pixels
 pix_obj = pygame.PixelArray(screen)  # Locks the surface while drawing pixels
@@ -31,7 +44,8 @@ del pix_obj  # Unlocks the surface
 
 # Write text - creating font object
 font = pygame.font.Font('freesansbold.ttf', 32)
-# Creating surface with text - (@text, @anti-aliasing, @font color, @background color)
+# Creating surface with text
+# (@text, @anti-aliasing, @font color, @background color)
 text = font.render('Wasabi', True, BLACK)  # , WHITE)
 
 screen.blit(text, (350, 220))

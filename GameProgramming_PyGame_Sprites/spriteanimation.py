@@ -2,6 +2,22 @@ import pygame
 
 
 class Character:
+    # Array of sprite images
+    img_walk_right = [
+        pygame.image.load('src/R1.png'), pygame.image.load('src/R2.png'),
+        pygame.image.load('src/R3.png'), pygame.image.load('src/R4.png'),
+        pygame.image.load('src/R5.png'), pygame.image.load('src/R6.png'),
+        pygame.image.load('src/R7.png'), pygame.image.load('src/R8.png'),
+        pygame.image.load('src/R9.png')
+    ]
+    img_walk_left = [
+        pygame.image.load('src/L1.png'), pygame.image.load('src/L2.png'),
+        pygame.image.load('src/L3.png'), pygame.image.load('src/L4.png'),
+        pygame.image.load('src/L5.png'), pygame.image.load('src/L6.png'),
+        pygame.image.load('src/L7.png'), pygame.image.load('src/L8.png'),
+        pygame.image.load('src/L9.png')
+    ]
+
     def __init__(self):
         self.x = 200
         self.y = 350
@@ -16,22 +32,6 @@ class Character:
 
         # Animation counter
         self.walk_count = 0
-
-        # Array of sprite images
-        self.img_walk_right = [
-            pygame.image.load('src/R1.png'), pygame.image.load('src/R2.png'),
-            pygame.image.load('src/R3.png'), pygame.image.load('src/R4.png'),
-            pygame.image.load('src/R5.png'), pygame.image.load('src/R6.png'),
-            pygame.image.load('src/R7.png'), pygame.image.load('src/R8.png'),
-            pygame.image.load('src/R9.png')
-        ]
-        self.img_walk_left = [
-            pygame.image.load('src/L1.png'), pygame.image.load('src/L2.png'),
-            pygame.image.load('src/L3.png'), pygame.image.load('src/L4.png'),
-            pygame.image.load('src/L5.png'), pygame.image.load('src/L6.png'),
-            pygame.image.load('src/L7.png'), pygame.image.load('src/L8.png'),
-            pygame.image.load('src/L9.png')
-        ]
 
     def draw(self):
         # Sprite animation, displaying the same image for 3 frames

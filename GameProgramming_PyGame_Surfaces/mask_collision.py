@@ -1,10 +1,14 @@
+"""
+Mask - pixel collision detection
+A mask uses 1 bit per pixel to store which particles collide
+"""
+
 from random import randint
 
 import pygame
 
 
 class Example:
-
     def __init__(self):
         self.screen = pygame.display.set_mode((320, 240))
         self.particles = []
@@ -37,7 +41,7 @@ class Example:
             dt = clock.tick(60)
             dt = dt / 1000.0
 
-            self.screen.fill((100, 100, 100))
+            self.screen.fill((60, 60, 60))
 
             tree.draw(self.screen)
 
@@ -53,16 +57,23 @@ class Example:
 
             pygame.display.flip()
 
-            pygame.display.set_caption('FPS: %d' % (clock.get_fps()))
+            pygame.display.set_caption('FPS: {:2}'.format(round(clock.get_fps())))
 
 
 class Tree:
-
     def __init__(self):
-        self.image = pygame.image.load('tree.png').convert_alpha()
+        self.image = pygame.image.load('src/tree.png').convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.move_ip(110, 120)
-        self.mask = pygame.mask.from_surface(self.image)
+
+        """
+        Makes the transparent parts of the Surface not set, and the opaque
+        parts set.
+        The alpha of each pixel is checked to see if it is greater than the
+        given threshold.
+        If the Surface is color-keyed, then threshold is not used.
+        """
+        self.mask = pygame.mask.from_surface(self.image)  # , treshold=127)
         self.w, self.h = self.image.get_size()
 
     def draw(self, screen):
@@ -77,11 +88,11 @@ class Tree:
         y -= self.rect.y
 
         if 0 <= x < self.w and 0 <= y < self.h:
+            # Returns nonzero if the bit at (x, y) is set
             return self.mask.get_at((x, y))
 
 
 class Particle:
-
     def __init__(self, x, y, speed):
         self.x = x
         self.y = y
