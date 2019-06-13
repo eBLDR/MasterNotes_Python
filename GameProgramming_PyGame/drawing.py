@@ -43,12 +43,21 @@ pix_obj[484][384] = BLACK
 del pix_obj  # Unlocks the surface
 
 # Write text - creating font object
-font = pygame.font.Font('freesansbold.ttf', 32)
-# Creating surface with text
-# (@text, @anti-aliasing, @font color, @background color)
-text = font.render('Wasabi', True, BLACK)  # , WHITE)
+# Using system font (@font, @size, @bold=False, @italic=False)
+sys_font = pygame.font.SysFont('Consolas', 32, bold=True, italic=True)
 
+# Creating surface with text
+# (@text, @anti-aliasing, @font_color, @background_color)
+text = sys_font.render('Wasabi', True, BLACK)  # , WHITE)
 screen.blit(text, (350, 220))
+
+# Space needed for rendering the text
+print(sys_font.size('Wasabi'))
+
+# Using a font file (@file, @size)
+font = pygame.font.Font('freesansbold.ttf', 16)
+text_2 = font.render('Custom Font', True, BLACK)
+screen.blit(text_2, (320, 100))
 
 # Run the loop
 run = True

@@ -8,11 +8,15 @@ import pygame
 pygame.init()
 
 # Window's size ((@width, @height), @flags=0, depth=0)
-screen = pygame.display.set_mode((500, 500))  #, flags=pygame.FULLSCREEN)
+screen = pygame.display.set_mode((500, 500))  # , flags=pygame.FULLSCREEN)
 # Fullscreen - use flag for full screen
 
 # Window's title
 pygame.display.set_caption('My First Pygame Window!')
+
+# Window's icon
+# icon = pygame.image.load('icon.png')
+# pygame.display.set_icon(icon)
 
 run = True
 
