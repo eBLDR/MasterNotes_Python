@@ -50,6 +50,9 @@ while run:
         elif event.type == ADDRECT:
             draw_random_rect(screen)
 
+    # Returns the numbers of fps at the current moment
+    print(fps_clock.get_fps())
+
     pygame.display.update()
 
 pygame.quit()

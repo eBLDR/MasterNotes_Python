@@ -80,6 +80,9 @@ all_sprites = pygame.sprite.Group()
 # Adding player sprite to sprite group
 all_sprites.add(player)
 
+# Checks if group contains sprites
+print(all_sprites.has())
+
 # Custom events
 ADDENEMY = pygame.USEREVENT + 1
 pygame.time.set_timer(ADDENEMY, 250)
@@ -109,6 +112,14 @@ while running:
     # Iterate over the sprite group and render all sprites
     for entity in all_sprites:
         screen.blit(entity.image, entity.rect)
+
+    # Equivalent to
+    # all_sprites.draw(screen)
+
+    # To clear all the sprites drawn on the last Group.draw() call
+    # clear(@destination_surface, @background_surface)
+    # @destination_surface is cleared with @background_surface
+    # all_sprites.clear(screen, background_surface)
 
     # Checking sprite collision
     # spritecollideany(@sprite, @group)

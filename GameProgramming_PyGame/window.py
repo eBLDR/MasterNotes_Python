@@ -34,6 +34,10 @@ while run:
     # Fills the screen with color (@RGB_tuple)
     # screen.fill((0, 0, 0))
 
+    # Makes a copy of the current state of the screen, useful to set
+    # background screen, to improve performance and avoiding redrawing it
+    # screen_copy = screen.copy()
+
     # Updating the screen - @rectangle can be passed, it allows to only update
     # a portion of the screen
     pygame.display.update()
