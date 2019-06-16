@@ -90,5 +90,7 @@ print('=' * 30)
 # Creating a matrix
 row = range(3)
 column = range(5)
-matrix = [[0 for c in column] for r in row]
-print(matrix)
+matrix = [[(c, r) for c in column] for r in row]
+
+for row in matrix:
+    print(row)

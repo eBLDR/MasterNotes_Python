@@ -72,6 +72,7 @@ print(bldr.lives)
 bldr.lives = 5  # And this, calls the setter method
 print(bldr)
 
+# Augmented assignment also works for setters
 bldr.level += 3
 print(bldr)
 

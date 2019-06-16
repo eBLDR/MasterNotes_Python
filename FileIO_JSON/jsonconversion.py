@@ -8,6 +8,17 @@ JSON files are interchangeable between different languages.
 JSON can’t store every kind of Python value. It can contain values of only the following data types:
 strings, integers, floats, Booleans, lists, dictionaries, and NoneType.
 JSON strings MUST use ""
+
+JSON Data Types
+
+Number - double precision floating-point format in JavaScript
+String - double-quoted Unicode with backslash escaping
+Boolean - true or false
+Array - an ordered sequence of values
+Value - it can be a string, a number, true or false, null etc
+Object - an unordered collection of key:value pairs
+Whitespace - can be used between any pair of tokens
+null - empty
 """
 
 import json
