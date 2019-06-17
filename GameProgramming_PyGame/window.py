@@ -11,6 +11,12 @@ pygame.init()
 screen = pygame.display.set_mode((500, 500))  # , flags=pygame.FULLSCREEN)
 # Fullscreen - use flag for full screen
 
+# Screen rectangle
+print('Size:', screen.get_size())
+# get_width(), get_height() methods also available
+
+print('Rectangle:', screen.get_rect())
+
 # Window's title
 pygame.display.set_caption('My First Pygame Window!')
 
@@ -38,7 +44,7 @@ while run:
     # background screen, to improve performance and avoiding redrawing it
     # screen_copy = screen.copy()
 
-    # Updating the screen - @rectangle can be passed, it allows to only update
+    # Updating the display - @rectangle can be passed, it allows to only update
     # a portion of the screen
     pygame.display.update()
 

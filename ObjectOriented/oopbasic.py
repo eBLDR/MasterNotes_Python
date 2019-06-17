@@ -52,7 +52,7 @@ kenwood = Kettle('Kenwood', 8.99)
 print(kenwood.make)
 print(kenwood.price)
 
-kenwood.price = 12.75  # reassigning the variable
+kenwood.price = 12.75  # Reassigning the variable
 print(kenwood.price)
 
 # Creating another instance of Kettle
@@ -63,14 +63,18 @@ print('Models: {} = {}, {} = {}'.format(kenwood.make, kenwood.price, hamilton.ma
 print('Models: {0.make} = {0.price}, {1.make} = {1.price}'.format(kenwood, hamilton))
 
 print('hamilton is on: {}'.format(hamilton.on))
-hamilton.switch_on()  # calling a method
+
+# Calling a method
+hamilton.switch_on()
 print('hamilton is on: {}'.format(hamilton.on))
-
-print('kenwood is on: {}'.format(kenwood.on))
-Kettle.switch_on(kenwood)  # we can also call the method of the class and pass an instance as parameter
 print('kenwood is on: {}'.format(kenwood.on))
 
-# Is also possible to create instance variables (new attributes to one specific instance)
+# We can also call the method of the class and pass an instance as parameter
+Kettle.switch_on(kenwood)
+print('kenwood is on: {}'.format(kenwood.on))
+
+# Is also possible to create instance attributes dynamically (new attributes
+# to one specific instance)
 kenwood.power = 1.5
 
 print('=' * 30)
