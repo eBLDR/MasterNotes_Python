@@ -44,7 +44,10 @@ atlas.shapesize(1, 2)  # resizing shape, perpendicular to orientation: @width st
 # turtle_object.shape(new_shape_name)  # assign the shape to the cursor
 
 # DRAWING
+print('Pen is down:', atlas.isdown())
 atlas.penup()  # it won't draw on move
+print('Pen is down:', atlas.isdown())
+
 atlas.goto(150, 180)  # send the turtle to (x, y) - (0, 0) is the center of the screen - equivalent to setpos()
 atlas.pendown()  # it will draw on move
 atlas.forward(180)  # moves the cursor forward - equivalent to turtle.fd()

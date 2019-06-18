@@ -36,6 +36,10 @@ while run:
     # Delaying the game the given amount of @milliseconds
     # pygame.time.delay(100)
 
+    # Similar to delay, but will share the processor with other programs
+    # instead of holding it, resulting in being slightly less accurate
+    # pygame.time.wait(100)
+
     # Update screen method # 2 - using Clock()
     fps_clock.tick(FPS)
     # Calculates time pause needed based on last call of this method, in oder
