@@ -4,9 +4,9 @@ Uploading files with a POST method.
 
 import os
 
-from flask import Flask, request
+from flask import Flask, request, send_file
 
-# Tool that add security checking if the file can be dangerous
+# Tool that adds security checking if the file can be dangerous
 from werkzeug import secure_filename
 
 app = Flask(__name__)
@@ -30,28 +30,28 @@ def allowed_file(filename):
 
 @app.route('/')
 def index():
-    return 'Go to /upload'
+    return 'Go to /upload or /download'
 
 
+# Upload management
 @app.route('/upload')
 def upload_temp():
+    # Set form action equal to the endpoint
     return """
     <html>
-       <body>
-       
-          <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
-             <input type="file" name="file">
-             <input type="submit">
-          </form>
-          
-       </body>
+        <body>
+            <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <input type="submit">
+            </form>
+        </body>
     </html>
     """
 
 
 @app.route('/uploader', methods=['POST'])
 def upload_file():
-    file = request.files['file']  # Keyword name will depen on the application that making the request
+    file = request.files['file']  # Keyword name will depend on the application that is making the request
 
     # To get the filename
     print(file.filename)
@@ -63,6 +63,31 @@ def upload_file():
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return 'File uploaded successfully to {}'.format(up_folder)
+
+
+# Download management
+@app.route('/download')
+def download_temp():
+    # Set a href equal to the endpoint
+    return """
+    <html>
+        <body>
+            <div align="left">
+                <a href="/downloader" target="blank"><button class='btn btn-default'>Download!</button></a>
+            </div>
+        </body>
+    </html>
+    """
+
+
+@app.route('/downloader')
+def down_file():
+    file_path = 'python_icon.jpeg'
+    try:
+        # send_file(@file_path, @attachment_filename=name_of_file_when_downloaded
+        return send_file(file_path, attachment_filename='python.jpeg')
+    except Exception as e:
+        return str(e)
 
 
 if __name__ == '__main__':
