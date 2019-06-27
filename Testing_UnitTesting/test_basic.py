@@ -49,8 +49,10 @@ class OutcomesTest(unittest.TestCase):
         pass
 
     """
-    @skipIf(condition, reason) decorator will skip the test if condition is True
-    @skipUnless(condition, reason) decorator will skip a test unless the condition is True
+    @skipIf(condition, reason) decorator will skip the test
+    if condition isTrue
+    @skipUnless(condition, reason) decorator will skip a test
+    unless the condition is True
     """
 
     # If failure is expected, use @unittest.expectedFailure decorator

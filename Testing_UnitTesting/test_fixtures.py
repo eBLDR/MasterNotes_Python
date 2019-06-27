@@ -7,12 +7,14 @@ import unittest
 class FixturesTest(unittest.TestCase):
 
     def setUp(self):
-        # This special method is always called prior to every single test, to configure fixtures
+        # This special method is always called prior to every single test,
+        # to configure fixtures
         print('In setUP()')
         self.fixture = range(1, 10)  # Can be any resource
 
     def tearDown(self):
-        # This special method is always called at the end of every single test, to clean up fixtures
+        # This special method is always called at the end of every single test,
+        # to clean up fixtures
         print('In tearDown()')
         # It's good to delete all fixtures, to avoid memory problems
         del self.fixture
