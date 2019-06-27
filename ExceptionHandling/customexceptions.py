@@ -12,6 +12,7 @@ class MyException(Exception):
 
 try:
     raise MyException('Calling custom exception', error_code=112)
+
 except Exception as e:
     print(e.args)  # Attribute containing the message (tuple)
     # Named arguments will NOT appear in e.args

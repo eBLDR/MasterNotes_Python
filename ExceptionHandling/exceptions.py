@@ -18,6 +18,7 @@ Force the errors to find out the name of the exception
 def factorial(n):
     # n! can also be defined as n * (n-1)
     """ Calculates n! recursively """
+    a = 'op' + 9
     if n <= 1:
         return 1
     else:
@@ -25,27 +26,38 @@ def factorial(n):
 
 
 try:
-    # all the code will be executed, if an exception is raised, will skip the rest and jump to 'except'
+    # all the code will be executed, if an exception is raised, will skip the
+    # rest and jump to 'except'
     print(factorial(99))
     # force maximum recursion depth by passing a parameter > 998
 
-except RecursionError:  # we need to specify the error's name
-    # if no exception is raised in 'try', this block won't be executed
+# Specify the error's name
+# If no exception is raised in 'try', this block won't be executed
+except RecursionError:
     print('This program cannot calculate factorials that large')
 
 # try can have as many except clause as needed
 except OverflowError:
     print('This computer cannot work with numbers that large')
-    # note: Python is extremely powerful when dealing with huge integers, so Over Flowing is almost impossible
+    # note: Python is powerful when dealing with huge integers,
+    # so Over Flowing is difficult to reproduce in some computers
 
-# is also possible to combine both exceptions into one except clause
+# General exception to catch any error, storing Exception object as <name>
+except Exception as e:
+    print(type(e))
+    print(e.args)  # Attribute containing the message (tuple)
+
+
+# It is also possible to combine both exceptions into one except clause
 # except (RecursionError, OverflowError):
 
-# after all except clauses but before finally
-else:  # will be executed if no exceptions were raised and the program was not terminated inside the try clause
+# After all except clauses but before finally
+else:  # will be executed if no exceptions were raised and the program was not
+    # terminated inside the try clause
     print('Everything worked fine')
 
-finally:  # finally is executed regardless an exception was raised or not, even if it was raised by force (raise Exception)
+finally:  # finally is executed regardless an exception was raised or not, even
+    # if it was raised by force (raise Exception)
     # even if user tries to crash using Ctrl+D (see eoferror.py)!
     # very useful for tidying tasks before closing
     print('The finally clause always executes')

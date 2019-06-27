@@ -23,7 +23,7 @@ class Wing:
 class Duck:
 
     def __init__(self):
-        self._wing = Wing(1.8)  # this is composition
+        self._wing = Wing(1.8)  # This is composition
 
     @staticmethod
     def quack():
