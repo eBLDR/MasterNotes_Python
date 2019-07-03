@@ -1,17 +1,18 @@
-# Based on PEP8, code lines should be 79 characters length max
-# Docstring or comments should be 72 characters length max
+"""
+Based on PEP8, code lines should be 79 characters length max
+Docstring or comments should be 72 characters length max
+"""
 
 a = 6
 b = 1
 
-# Continuation line
-# Implicit continuation - enclose with parenthesis
+# Continuation line on implicit line join
 if (a == 5 or
         b == 1 or
         a != b):
     print('True')
 
-# Or use the '\' character, when implicit continuation cannot be used
+# Explicit line join when implicit continuation cannot be used
 if a == 5 or \
         b == 1 or \
         a != b:

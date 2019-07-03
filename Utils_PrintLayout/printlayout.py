@@ -1,6 +1,4 @@
 """
-This is a multi-line comment
-
 '\' is the scape character, followed by control character
 \a - ASCII bell (BEL)
 \b - ASCII backspace (BS)
@@ -10,8 +8,6 @@ This is a multi-line comment
 \t - ASCII horizontal tab (TAB)
 \v - ASCII vertical tab (VT)
 """
-
-# This is a single-line comment
 
 text = 'Hello World'
 print(text)
@@ -84,6 +80,7 @@ for i in range(0, up_to + 1):
 print('=' * 20)
 
 # Raw string literals, scape characters have no effect
+# Used for regular expressions
 raw_string = r'this is\na string split\t\tand tabbed'
 print(raw_string)
 

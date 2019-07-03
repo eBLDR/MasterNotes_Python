@@ -1,7 +1,3 @@
-"""
-From python version 3.6+, s = f'{x}' can be used in place of s = '{}'.format(x).
-"""
-
 age = 24
 print('My age is ' + str(age) + ' years')  # Concatenating strings as argument
 
@@ -9,8 +5,11 @@ print('My age is ' + str(age) + ' years')  # Concatenating strings as argument
 # {value : width}
 print('My age is {0} years'.format(age))
 print('There are {0} days in {1} and {2}'.format(31, 'Jan', 'March'))
-# no need for index numbers, but then we cannot reuse them (assigned by order)
+
+# Index numbers are unnecessary, but then it's not possible to reuse them
+# (assigned by order)
 print('There are {} days in {} and {}'.format(31, 'Jan', 'March'))
+
 print("""Jan: {2}
 Feb: {0}
 March: {2}
@@ -20,7 +19,10 @@ June: {1}""".format(28, 30, 31))
 
 # It's also possible to refer arguments using named arguments
 # good for nesting arguments if complex formatting is required
-print('My name is {name} and I am a {species}!'.format(name='Max', species='Sapiens'))
+print('My name is {name} and I am a {species}!'.format(
+    name='Max',
+    species='Sapiens')
+)
 
 # and by index
 coord = (3, 5)
@@ -29,7 +31,10 @@ print('X: {0[0]};  Y: {0[1]}'.format(coord))
 # Referencing attributes from an instance of a class
 # print('Weight in tons {0.attribute}'.format(object_sample))
 
-# if we wish to use curly braces inside the printing line while using format()
+# From python 3.6+, s = f'{x}' can be used in place of s = '{}'.format(x)
+print(f'My age is {age}...')
+
+# If we wish to use curly braces inside the printing line while using format()
 print('\n{{}} I am showing the curly braces! {}'.format(';)'))
 
 print('=' * 30)

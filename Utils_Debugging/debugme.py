@@ -22,7 +22,7 @@ test = True
 filename = __file__
 
 # Next call will enter the debugger in following line - equivalent to breakpoint()
-import pdb;
+import pdb
 
 pdb.set_trace()
 

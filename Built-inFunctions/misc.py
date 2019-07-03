@@ -21,6 +21,9 @@ print(repr(dc))
 help(str)  # Help for data type
 help(s.upper)  # equivalent to help(str.upper)
 
+# help() can also take keyword arguments, as string
+help('return')
+
 print('#' * 30)
 
 # dir() - return the list of names in the current local scope. With an object as argument,
