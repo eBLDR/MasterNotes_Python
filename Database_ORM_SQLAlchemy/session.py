@@ -19,10 +19,17 @@ engine = create_engine('sqlite:///example.db', echo=False)
 # Base.metadata.bind = engine
 
 # Creating a db session class
-DBSession = sessionmaker(bind=engine)  # By default @autoflush=True
+factory = sessionmaker(bind=engine)  # By default @autoflush=True
 
 # Instantiating a session
-session = DBSession()
+session = factory()
+
+"""
+A scoped session could be created using:
+from sqlalchemy.orm import scoped_session
+
+session = scoped_session(factory)
+"""
 
 query = 'SELECT * FROM Person'
 
@@ -52,7 +59,7 @@ print('=' * 30)
 # CREATE OBJECTS
 from sqlalchemy import inspect  # To inspect the object states
 
-session = DBSession()
+session = factory()
 
 # Equivalence to SQL INSERT clause
 new_person = Person(name='new person')  # Using the table created in declarative.py
@@ -85,7 +92,7 @@ print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(ins.
 
 print('=' * 20)
 
-session = DBSession()
+session = factory()
 
 # Insert an Address in the address table
 new_address = Address(post_code='00000', person=new_person)
