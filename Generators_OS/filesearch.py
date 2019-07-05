@@ -1,5 +1,5 @@
 import os
-import fnmatch  # a module to match names
+import fnmatch  # Unix filename pattern matching - a module for matching names
 
 
 def find_albums(root, artist_name):
@@ -7,7 +7,8 @@ def find_albums(root, artist_name):
         # print('directories are: {}'.format(directories))
         # for artist in directories:
 
-        # using fnmatch to filter results, will return only the directories with a matching name
+        # fnmatch(names, pattern) - return the subset of the list of names that match pattern
+        # Using fnmatch to filter results
         for artist in fnmatch.filter(directories, artist_name):
             subdir = os.path.join(path, artist)
             # print('subdir is: {}'.format(subdir))
