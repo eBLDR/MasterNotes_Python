@@ -43,7 +43,8 @@ class Kettle:  # By convention, start with capital letter and use camel case
     # Will override the docstring specified on the class, if desired.
 
     def to_dict(self):
-        # Returns a dictionary of the attributes and stored values, so it's not necessary to access a protected method from outside
+        # Returns a dictionary of the attributes and stored values, so it's
+        # not necessary to access a protected method from outside
         return self.__dict__
 
 
@@ -58,9 +59,14 @@ print(kenwood.price)
 # Creating another instance of Kettle
 hamilton = Kettle('Hamilton', 14.55)
 
-print('Models: {} = {}, {} = {}'.format(kenwood.make, kenwood.price, hamilton.make, hamilton.price))
+print('Models: {} = {}, {} = {}'.format(
+    kenwood.make, kenwood.price, hamilton.make, hamilton.price)
+)
+
 # Replacement fields accept data attributes, pass the instance as a parameter
-print('Models: {0.make} = {0.price}, {1.make} = {1.price}'.format(kenwood, hamilton))
+print('Models: {0.make} = {0.price}, {1.make} = {1.price}'.format(
+    kenwood, hamilton)
+)
 
 print('hamilton is on: {}'.format(hamilton.on))
 
@@ -79,13 +85,16 @@ kenwood.power = 1.5
 
 print('=' * 30)
 
-Kettle.power_source = 'atomic'  # change the class attribute, all the instances are affected
+# change the class attribute, all the instances are affected
+Kettle.power_source = 'atomic'
 print('Static variable "power_source"', Kettle.power_source)
 
-# It tracks down to the class to replace the data attribute, it's not an attribute of the instance
+# It tracks down to the class to replace the data attribute, it's not an
+# attribute of the instance
 print('hamilton power source: {}'.format(hamilton.power_source))
 
-kenwood.power_source = 'gas'  # by declaring this, new data attribute is created for this specific instance
+# by declaring this, new data attribute is created for this specific instance
+kenwood.power_source = 'gas'
 print('kenwood power source: {}'.format(kenwood.power_source))
 
 print('=' * 30)
@@ -116,5 +125,8 @@ print('Kettle.__bases__ is', Kettle.__bases__)
 print('=' * 30)
 
 # Displaying docstrings
-print(Kettle.__doc__)  # to print only the docstring of the class
-print(Kettle.switch_on.__doc__)  # to print only the docstring of a method of the class
+# to print only the docstring of the class
+print(Kettle.__doc__)
+
+# to print only the docstring of a method of the class
+print(Kettle.switch_on.__doc__)

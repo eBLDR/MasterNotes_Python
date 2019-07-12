@@ -40,8 +40,12 @@ class App(QWidget):
 
 if __name__ == '__main__':
     # Creating application object
-    app = QApplication(sys.argv)  # Passing command line arguments, if not, pass an empty list
+    # Passing command line arguments, if not, pass an empty list
+    app = QApplication(sys.argv)
+
     example = App()
     # example.resize(250, 250)  # Resize the window
     # example.move(300, 300)  # Moves the window
-    sys.exit(app.exec_())  # Mainloop - waiting for click event on the screen's closing button to exit
+
+    # Mainloop - waiting for click event on the screen's closing button to exit
+    sys.exit(app.exec_())

@@ -17,7 +17,8 @@ class Example(QtGui.QWidget):
         self.show()
 
     def center(self):
-        qr = self.frameGeometry()  # rectangle specifying geometry of main window
+        # rectangle specifying geometry of main window
+        qr = self.frameGeometry()
         cp = QtGui.QDesktopWidget().availableGeometry().center()  # centre
         qr.moveCenter(cp)
         self.move(qr.topLeft())  # move the top-left point of the application

@@ -32,9 +32,13 @@ class Example(QWidget):
             button = QPushButton(name)
             grid.addWidget(button, *position)  # Unpacked tuple (row, column)
             # Also possible using, last argument is for aligning the widget
-            # grid.addWidget(widgetName, row, column, row_span, column_span, Qt.AlignBottom)
+            # grid.addWidget(
+            #     widgetName, row, column, row_span,
+            #     column_span, Qt.AlignBottom
+            # )
 
-        # Size of the window will be adjusted automatically to the weight of the elements inside
+        # The size of the window will be adjusted automatically to the weight
+        # of the elements inside
         self.move(300, 150)
         self.setWindowTitle('Grid Layout')
         self.show()

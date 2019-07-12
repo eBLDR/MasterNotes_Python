@@ -37,6 +37,9 @@ from sampleimported import superKey
 print('I am ' + __name__)
 print('and I\'m importing ' + sampleimported.__name__)
 
+# Docstring is also available
+print(sampleimported.__doc__)
+
 print(type(sampleimported))
 
 print('My attributes are:')

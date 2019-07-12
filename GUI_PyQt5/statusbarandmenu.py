@@ -49,7 +49,8 @@ class App(QMainWindow):
         view_stat_act = QAction('View status bar', self, checkable=True)
         view_stat_act.setStatusTip('View status bar')
         view_stat_act.setChecked(True)  # Default value
-        view_stat_act.triggered.connect(self.toggle_menu)  # It's passing a boolean to the function on click
+        # Passing a boolean to the function on click
+        view_stat_act.triggered.connect(self.toggle_menu)
 
         view_menu = menu_bar.addMenu('&View')  # New menu on menu bar
         view_menu.addAction(view_stat_act)

@@ -16,14 +16,17 @@ print(sys.prefix)
 print(sys.flags)
 
 # A list of strings that specifies the search path for modules
-# It includes the working directory, all directories in PYTHONPATH and the default Python's installation directory
+# It includes the working directory, all directories in PYTHONPATH and the
+# default Python's installation directory
 print(sys.path)
 
 print('=' * 30)
 
-# sys.argv() - a list of command line arguments passed to the script, argv[0] is the script name
+# sys.argv() - a list of command line arguments passed to the script
+# argv[0] is the script name
 # (it's operating system dependent whether this is a full pathname or not)
-# If the command was executed using the -c command line option to the interpreter, argv[0] is set to the string '-c'
+# If the command was executed using the -c command line option to the
+# interpreter, argv[0] is set to the string '-c'
 
 name_of_file = sys.argv[0]  # Full path and name of file
 

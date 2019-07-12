@@ -3,7 +3,7 @@ from PyQt4 import QtGui
 
 
 def main():
-    app = QtGui.QApplication(sys.argv)  # must create an application obejct
+    app = QtGui.QApplication(sys.argv)  # must create an application object
 
     w = QtGui.QWidget()  # window
     w.resize(250, 150)  # size

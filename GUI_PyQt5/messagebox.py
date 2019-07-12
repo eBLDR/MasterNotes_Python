@@ -20,7 +20,9 @@ class Example(QWidget):
 
         # (@widget, @title, @message, @option1 | @option2, @default_option
         reply = QMessageBox.question(self, 'Message',
-                                     'Are you sure to quit?', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+                                     'Are you sure to quit?',
+                                     QMessageBox.Yes | QMessageBox.No,
+                                     QMessageBox.No)
 
         if reply == QMessageBox.Yes:
             event.accept()

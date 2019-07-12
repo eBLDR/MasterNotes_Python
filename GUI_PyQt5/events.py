@@ -30,7 +30,8 @@ class Example(QWidget):
         # Slide bar
         sld = QSlider(Qt.Horizontal, self)
 
-        # Connect a valueChanged signal of the slider to the display slot of the lcd number
+        # Connect a valueChanged signal of the slider to the display slot
+        # of the lcd number
         sld.valueChanged.connect(lcd.display)
 
         grid.addWidget(lcd, 0, 0)

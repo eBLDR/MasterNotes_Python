@@ -2,9 +2,11 @@
 The event source is the object whose state changes, It generates events.
 The event object (event) encapsulates the state changes in the event source.
 The event target is the object that wants to be notified.
-Event source object delegates the task of handling an event to the event target.
+Event source object delegates the task of handling an event to the event
+target.
 
-The sender is an object that sends a signal. The receiver is the object that receives the signal.
+The sender is an object that sends a signal. The receiver is the object that
+receives the signal.
 The slot is the method that reacts to the signal.
 """
 

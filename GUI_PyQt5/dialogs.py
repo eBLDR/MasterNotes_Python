@@ -1,7 +1,8 @@
 # It divides the space into rows and columns
 # It adjusts automatically to the screen size
 import sys
-from PyQt5.QtWidgets import QWidget, QPushButton, QApplication, QLineEdit, QInputDialog
+from PyQt5.QtWidgets import QWidget, QPushButton, QApplication, QLineEdit,\
+    QInputDialog
 
 
 class Example(QWidget):
@@ -29,7 +30,9 @@ class Example(QWidget):
 
     def show_dialog(self):
         # Returns the text input, and True if something was input
-        text, ok = QInputDialog.getText(self, 'Input Dialog', 'Enter your name:')
+        text, ok = QInputDialog.getText(
+            self, 'Input Dialog', 'Enter your name:'
+        )
 
         if ok:
             # Binds to the line edit, could be anything

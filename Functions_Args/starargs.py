@@ -1,16 +1,18 @@
 """
-Both *args and **kwargs must be the only or the last of the parameters of their type. Example:
+Both *args and **kwargs must be the only or the last of the parameters of
+their type. Example:
 def blabla(word, *args, keyW=None, keyX=False, **kwargs):
-In this case, *args and **kwargs will absorb all the remaining positional arguments/key word
-arguments respectively.
+In this case, *args and **kwargs will absorb all the remaining positional
+arguments/key word arguments respectively.
 """
 # print has a *args (see builtins.py)
 print('Hello', 'planet', 'Earth')
 
 
 # *args can get any number of positional arguments
-# args could be replaced by any valid name (i.e. *sgra), but by convention args is used
-# the function assumes that args is going to be an unpacked tuple
+# args could be replaced by any valid name (i.e. *sgra),
+# conventionally use args
+# the function expects an unpacked tuple in place of args
 def average(*args):
     # *tuple is an UNPACKED tuple
     print(type(args))
@@ -34,45 +36,20 @@ print(average(*numbers))
 print('=' * 30)
 
 
-# kwargs, key word arguments
-# kwargs is a dictionary with all the key word parameters (if any) with its default values
-def dad(n, name='', mode=''):
-    print('This is dad().')
-    print('n is: {}; name is: {}; mode is: {}'.format(n, name, mode))
+# *args can take any number of arguments, passed to the function in a tuple
+def centre_text(*texts, sep_char=' ', end_char='\n', file=None):
+    text = ''
+    for arg in texts:
+        text += str(arg) + sep_char
+    left_margin = (50 - len(text)) // 2
+    print(' ' * left_margin, text, end=end_char, file=file)
 
 
-def child(n, **mykwargs):
-    print('child(), calling dad()...')
-    # **dict is an UNPACKED dictionary
-    print(type(mykwargs))  # Dictionary type
-    print('mykwargs are: {}'.format(mykwargs))
-    mykwargs['mode'] = 'OP'  # Kwargs can be updated like a normal dictionary
-    print('mykwargs are: {}'.format(mykwargs))
-    dad(n, **mykwargs)
-
-
-# Named argument passed in call must exist in the top level function
-print('Calling child()...')
-child(5, name='myName')
-
-# Unpacking can also be used when calling functions
-values = {'name': 'myName', 'cool': False}
-print(child(2, **values))
-
-print('=' * 30)
-
-
-# def print_backwards(*args, file=None): turns into:
-def print_backwards(*args, **kwargs):
-    print('kwargs is {}: '.format(kwargs))
-
-    # The next line is to avoid a potential kwarg duplicate
-    kwargs.pop('end', None)  # Since it's a dictionary we are free to manipulate it
-    for word in args[::-1]:
-        # print(word[::-1], end=' ', file=file) turns into:
-        # When using kwargs there is no need to unpack them
-        print(word[::-1], end=' ', **kwargs)
-
-
-with open('backwards.txt', 'w') as backwards:
-    print_backwards('hello', 'planet', 'earth', 'take', 'me', 'to', 'your', 'leader', end=' ', file=backwards)
+# Saving to a file
+with open('centred.txt', mode='w') as centredFile:
+    centre_text('Twelve', file=centredFile)
+    centre_text('in binary is', file=centredFile)
+    centre_text(1100, file=centredFile)
+    centre_text('or 0000 1100 in 1 byte', file=centredFile)
+    centre_text('or C in hex', file=centredFile)
+    centre_text('it can', 'also take', 'several number of', 'arguments', sep_char='-sep-', file=centredFile)

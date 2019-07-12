@@ -1,0 +1,5 @@
+pydoc is a python standard library module
+that generates documentations for modules.
+
+Use:
+$ pydoc <library/module_name>

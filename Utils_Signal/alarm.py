@@ -12,7 +12,6 @@ def handler(*args):
     for arg in args:
         print(arg)
 
-    # Each signal object has 2 attributes, signalnum (int) and frame (frame)
     signal_num = args[0]
     frame = args[1]
 

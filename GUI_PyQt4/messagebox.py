@@ -20,11 +20,13 @@ class Example(QtGui.QWidget):
     # need to overwrite the closeEvent() event handler.
     def close_event(self, event):
 
-        reply = QtGui.QMessageBox.question(self, 'Message',  # title bar
-                                           'Are you sure to quit?', QtGui.QMessageBox.Yes |  # text displayed
-                                           # third arg is combination of buttons
-                                           QtGui.QMessageBox.No, QtGui.QMessageBox.No)
-        # last parameter is the default button
+        # (@widget, @title, @message, @option1 | @option2, @default_option
+        reply = QtGui.QMessageBox.question(self,
+                                           'Message',
+                                           'Are you sure to quit?',
+                                           QtGui.QMessageBox.Yes |
+                                           QtGui.QMessageBox.No,
+                                           QtGui.QMessageBox.No)
 
         if reply == QtGui.QMessageBox.Yes:
             event.accept()

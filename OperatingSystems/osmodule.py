@@ -1,4 +1,5 @@
 import os
+import signal
 
 # os.system(command) - will run the command in the terminal
 os.system('ls -a')  # Sample command
@@ -14,3 +15,7 @@ print('os.getpid(): {}'.format(os.getpid()))
 
 # os.getppid() - returns the parent's process' id
 print('os.getppid(): {}'.format(os.getppid()))
+
+# os.kill(@process_pid, @signal) - kills a process
+# Using HangUp signal
+os.kill(os.getppid(), signal.SIGHUP)

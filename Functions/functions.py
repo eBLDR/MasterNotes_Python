@@ -11,7 +11,8 @@ Care of the type of the variable.
 
 def test_function():
     """
-    Documentation goes here - also called 'function signature'.
+    Documentation string goes here - also called 'function signature' or
+    'docstring'.
     pep257 talk about the style of docstrings.
     """
     # pass  # A command that does nothing
@@ -19,14 +20,21 @@ def test_function():
     print('I\'m a useless function')
 
 
-print(test_function.__name__)  # To print the name of the function, str
+# To print the name of the function, str
+print(test_function.__name__)
+
+# To print the docstring of the function, str
+print(test_function.__doc__)
 
 # Call the function
 test_function()
-print(test_function())  # To see the returned value
+
+# To see the returned value
+print(test_function())
 
 what = print('A')
-print(what)  # This will print None, since print() does not return anything
+# This will print None, since print() does not return anything
+print(what)
 
 print('=' * 20)
 
@@ -41,8 +49,13 @@ def get_char(prompt: str) -> str:  # -> return Type - hint about the type return
     """
     while True:
         c = input(prompt)
-        return c  # Return will send the variable/s specified, it also stops the execution of the function
-        # return  # Return can also be typed alone, it will break the function and return None
+
+        # Return will send the variable/s specified out of the function,
+        # it also stops the execution of the function
+        return c
+
+        # Return can also be typed alone, it will break the function and return None
+        # return
 
 
 char = get_char('Type something: ')
@@ -51,27 +64,18 @@ print(char)
 print('=' * 20)
 
 
-# *args can take any number of arguments, passed to the function in a tuple
 # Keyword parameters (or named parameters) (i.e.: key_word_par = None)
-def centre_text(*texts, sep_char=' ', end_char='\n', file=None):  # Named parameters are set to default
-    text = ''
-    for arg in texts:
-        text += str(arg) + sep_char
-    left_margin = (50 - len(text)) // 2
-    print(' ' * left_margin, text, end=end_char, file=file)
+# Must be specified after normal parameters and must have a default value
+def say(message, times=1):
+    print(message * times)
 
 
-# Saving to a file
-with open('centred.txt', mode='w') as centredFile:
-    centre_text('Twelve', file=centredFile)
-    centre_text('in binary is', file=centredFile)
-    centre_text(1100, file=centredFile)
-    centre_text('or 0000 1100 in 1 byte', file=centredFile)
-    centre_text('or C in hex', file=centredFile)
-    centre_text('it can', 'also take', 'several number of', 'arguments', sep_char='-sep-', file=centredFile)
+# We can specify the named parameters, if not, they are set by default
+say('Hello')
+say('World', times=5)
 
 
-# Function annotations can also be placed in name arguments
+# Function annotations can also be placed in named arguments
 def happy_text(*texts, sep: str = ' :) '):
     text = ''
     for arg in texts:
@@ -79,12 +83,14 @@ def happy_text(*texts, sep: str = ' :) '):
     return text  # Will return whatever type/variable
 
 
-print(happy_text('I', 'am', 'damn', 'happy', sep=' :( '))  # We can specify the named parameters, if not, they are set
-# To default
-happy1 = happy_text('Assigning', 'returned', 'values')
-print(happy1)
+print(happy_text('I', 'am', 'damn', 'happy', sep=' :( '))
+print(happy_text('Assigning', 'returned', 'values'))
 
 print('=' * 20)
 
 # To know if a variable is a function, use callable(@arg)
-print('Is \'happy text\' a function?\ncallable(happy_text): {}'.format(callable(happy_text)))
+print(
+    'Is \'happy text\' a function?\ncallable(happy_text): {}'.format(
+        callable(happy_text)
+    )
+)

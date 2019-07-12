@@ -1,5 +1,6 @@
 # Definite iteration
-# The for loop on each iteration (looping) is actually calling the next() function in the iterable object.
+# On each iteration (looping) the for loop is actually calling the next()
+# function in the iterable object.
 
 # i is called the "iterator"
 # the range, in this case, is the "iterable" - which can be any sequence type
@@ -40,7 +41,8 @@ Y = list(range(10, 101, 10))
 # print(len(X), len(Y))
 
 if len(X) == len(Y):
-    for x, y in zip(X, Y):  # zip() method to match two iterable objects, there is no need to have the same number
+    for x, y in zip(X, Y):  # zip() method to match two iterable objects,
+        # there is no need to have the same number
         # of items, whichever finishes first, will stop the for loop
         print('{} x {} = {}'.format(x, y, x * y))
 
@@ -58,15 +60,21 @@ for i in range(5):
     if letter:  # To check if letter is not NoneType
         if letter in 'aeiou':
             print('I hate vowels!')
+            # break the loop
             break
+
         elif letter in 'bcdfghjklmnpqrstvwxyz':
             print('I love consonants!')
+
         else:
             print('I ignore everything but not single letters')
-            continue  # continue will move the iterator to the next value immediately
+            # continue will move the iterator to the next value immediately
+            continue
     else:
         print('You input nothing!')
     # continue is executed here at the background
 
-else:  # else is executed when the for loop is finished normally, not because of a break
-    print('Finish successfully')  # also if the for was never started
+# else is executed when the for loop is finished normally,
+# and also if the for was never started, but not because of a break
+else:
+    print('Finish successfully')

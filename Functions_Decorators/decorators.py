@@ -5,7 +5,8 @@ a function, the wrapping one.
 """
 
 
-# Half decorator, can only add extra behaviour before decorated function is called
+# Half decorator
+# can only add extra behaviour before decorated function is called
 def half_decorator(f):
     print('I am half_decorator.')
     return f  # Must return a callable
@@ -24,7 +25,8 @@ decorated()
 print('=' * 30)
 
 
-# Full decorator, can add behaviour both before and after decorated function is called
+# Full decorator
+# can add behaviour both before and after decorated function is called
 def my_decorator(some_function):
     def wrapper():
         print('Before some_function() is executed.')
@@ -75,7 +77,8 @@ from functools import wraps
 def my_decorator_2(some_function):
     # wraps call as a decorator
     @wraps(some_function)
-    def wrapper(*args, **kwargs):  # It is a good practise to always pass arguments, should they exist
+    # It is a good practise to always pass arguments, should they exist
+    def wrapper(*args, **kwargs):
         print('Before some_function() is executed.')
 
         some_function(*args, **kwargs)

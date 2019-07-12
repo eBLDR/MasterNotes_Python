@@ -4,7 +4,8 @@ my_R = range(10)
 print(my_R)
 print(type(my_R))
 
-# right use of ranges does not turn them into lists - waste of memory
+# converting a range into lists - only if the list is needed, otherwise stick
+# to ranges (memory efficient)
 even = list(range(0, 10, 2))
 odd = list(range(1, 10, 2))
 

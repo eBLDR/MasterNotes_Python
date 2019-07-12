@@ -1,9 +1,11 @@
 """
-The programmer specifies the position and the size of each widget in pixels. Limitations:
-- The size and the position of a widget do not change if we resize a window
-- Applications might look different on various platforms
-- Changing fonts in our application might spoil the layout
-- Changing the layout requires to redo the layout, which is tedious and time consuming
+The programmer specifies the position and the size of each widget in pixels.
+Limitations:
+- The size and the position of a widget do not change if we resize a window.
+- Applications might look different on various platforms.
+- Changing fonts in our application might spoil the layout.
+- Changing the layout requires to redo the layout, which is tedious and time
+consuming.
 """
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel

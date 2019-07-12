@@ -1,27 +1,37 @@
 """
 The scope of a variable is where it can be seen or used.
-LOCAL (local namespace) scope variables are the ones declared inside the function, they cannot be seen from outside
-of the function.
 
-GLOBAL (global namespace) scope variables are the ones declared in the main body, outside all functions, they can be
-seen (and used as a comparision) from anywhere, and modified only if the object is mutable,
-if trying to change a immutable object, Python will create a new local variable instead.
-Shadowing a variable means the we are using the same name for a local variable and for a global variable simultaneously,
-it's a bad idea.
+LOCAL (local namespace) scope variables are the ones declared inside the
+function, they cannot be seen from outside of the function.
 
-OUTER scope refers to looking variables declared in the global namespace. ENCLOSING scope refers to the NONLOCAL ones.
-A function should be self-contained, should not make changes to global variables, ideally. If it's necessary, just
-type 'global variableName' in the first line of the function when defining it. When a function changes the value of
-a global variable (or appends/removes items from a list), it's called side effect
+GLOBAL (global namespace) scope variables are the ones declared in the main
+body, outside all functions, they can be seen (and used as a comparision) from
+anywhere, and modified only if the object is mutable, if trying to change a
+immutable object, Python will create a new local variable instead.
+Shadowing a variable means the we are using the same name for a local variable
+and for a global variable simultaneously, it's a bad idea.
 
---- LEGB Scope Rule, order of namespaces used when searching for variable names ---
+OUTER scope refers to looking variables declared in the global namespace.
 
-L, Local — Names assigned in any way within a function (def or lambda), and not declared global in that function.
-E, Enclosing-function locals — Names in the local scope of any and all statically enclosing functions (def or lambda),
-from inner to outer.
-G, Global (module) — Names assigned at the top-level of a module file, or by executing a global statement in a def
-within the file.
-B, Built-in (Python) — Names preassigned in the built-in names module : open,range,SyntaxError,...
+ENCLOSING scope refers to the NONLOCAL ones.
+
+A function should be self-contained, should not make changes to global
+variables, ideally. If it's necessary, just type 'global variableName' in the
+first line of the function when defining it. When a function changes the value
+of a global variable (or appends/removes items from a list), it's called side
+effect.
+
+- LEGB Scope Rule -
+Order of namespaces used when searching for variable names
+
+L, Local — Names assigned in any way within a function (def or lambda), and
+not declared global in that function.
+E, Enclosing-function locals — Names in the local scope of any and all
+statically enclosing functions (def or lambda), from inner to outer.
+G, Global (module) — Names assigned at the top-level of a module file, or by
+executing a global statement in a def within the file.
+B, Built-in (Python) — Names preassigned in the built-in names module,
+i.e.: open, range, SyntaxError,...
 """
 
 
@@ -61,11 +71,14 @@ def add_to_nonlocal():
     print('I am inside add_to_nonlocal(), index is:', index)
 
     def adding():
-        # nonlocal causes the listed identifiers to refer to previously bound variables
-        # in the nearest enclosing scope excluding globals
+        # nonlocal causes the listed identifiers to refer to previously
+        # bound variables in the nearest enclosing scope excluding globals
         nonlocal index
         index += 1
-        print('I am inside adding() nested inside add_to_nonlocal(), index is:', index)
+        print(
+            'I am inside adding() nested inside add_to_nonlocal(), index is:',
+            index
+        )
 
     adding()
 

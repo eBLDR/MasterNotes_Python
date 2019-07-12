@@ -11,11 +11,14 @@ class App(QWidget):
         self.init_ui()
 
     def init_ui(self):
-        QToolTip.setFont(QFont('SansSerif', 10))  # Custom font for tooltip, (@font_name, @pixel_size)
+        # Custom font for tooltip, (@font_name, @pixel_size)
+        QToolTip.setFont(QFont('SansSerif', 10))
 
         # Text accept rich formatting
-        self.setToolTip('This is a <b>QWidget</b> widget')  # Setting tooltip for widget
-        # Tooltips will be displayed after 1 second of hovering on top of the element
+        # Setting tooltip for widget
+        self.setToolTip('This is a <b>QWidget</b> widget')
+        # Tooltips will be displayed after 1 second of hovering on top of the
+        # element
 
         # Button
         btn = QPushButton('Button', self)  # (@name, @parent_widget)
