@@ -1,26 +1,27 @@
 """
-When importing a file, a new namespace is created, and everything in that file is executed
-in that namespace.
+When importing a file, a new namespace is created, and everything in that file
+is executed in that namespace.
 
-Importing only ever loads a module once. Any imports of the same module from different
-files after that simply add it to the current namespace.
+Importing only ever loads a module once. Any imports of the same module from
+different files after that simply add it to the current namespace.
 
 USING UNDERSCORES
 Python does NOT have private or hidden objects.
-_whatever, by convention, means that the object should be protected, so not to be used
-outside of the file where it exists, so when importing file, Python will NOT import
-variables with a name starting with '_'.
+_whatever, by convention, means that the object should be protected, so not to
+be used outside of the file where it exists, so when importing file, Python
+will NOT import variables with a name starting with '_'.
 
-__object__ this should never be touched.
+__object__ this should never be touched - methods or variables that start with
+double underscore (__) are private by convention
 
 Note: is totally fine to import multiple modules in a single line, like so:
 import time, math, random
-Though PEP-8 style guide recommends not to do so, and import every module on its own line:
+Though PEP-8 style guide recommends not to do so, and import every module on
+its own line:
 import time
 from math import pi, sqrt, pow
 import random
 """
-
 import sampleimported  # To import the whole module
 
 # If we wish to change the name to reference to the module

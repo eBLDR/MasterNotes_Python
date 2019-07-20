@@ -25,6 +25,10 @@ Commands:
 
 
 Examples:
-  pip --version
-  pip install <package-name>
-  pip install --upgrade <package-name>
+  $ pip --version
+  $ pip install <package-name>
+  $ pip install --upgrade <package-name>
+
+  Upgrade all packages from environment
+  $ pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+

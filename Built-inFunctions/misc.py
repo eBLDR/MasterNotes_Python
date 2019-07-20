@@ -28,8 +28,11 @@ print('#' * 30)
 
 # dir() - return the list of names in the current local scope. With an object as argument,
 # return a list of valid attributes for that object
-print('dir():', dir())
+print('dir():', dir())  # calling the directory of standard methods
 print('dir(s):', dir(s))
+
+for m in dir(__builtins__):  # to show all the built-in methods
+    print(m)
 
 # globals() - dictionary representing the current global scope
 print('globals():', globals())

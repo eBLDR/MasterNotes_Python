@@ -1,8 +1,8 @@
 """
 Module docstring - cool.
 """
-
-# the __name__ changes depending on either the file is imported (file name) or not (__main__)
+# __name__ changes depending on the way the file is run, either the file is
+# imported (file name) or run directly (__main__)
 print(__name__)  # is type <str>
 print('Why\'r u importin\' me?')
 

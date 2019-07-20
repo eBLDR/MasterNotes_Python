@@ -1,11 +1,18 @@
-print(dir())  # calling the directory of standard methods
-# methods or variables that start with double underscore (__) are private by convention
+"""
+When importing a module, the python interpreter searches for it in the
+directories listed in its sys.path variable. If the module is found, then
+the statements in the body of that module are run and the module is made
+available in the current namespace.
 
-# noinspection PyUnresolvedReferences
-for m in dir(__builtins__):  # to show all the built-in methods
-    print(m)
+sys.path includes the current working directory, among other paths.
 
+Initialization is made only the first time that a module is imported.
+"""
+# Importing a module
 import shelve
 
-help(shelve)  # to call documentation file
-help(shelve.open)  # to call specific documentation of one method
+# Calling module's documentation
+help(shelve)
+
+# Call specific documentation of one method
+help(shelve.open)
