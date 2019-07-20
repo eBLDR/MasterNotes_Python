@@ -5,7 +5,6 @@ They are arranged in lines, each line is called a 'record' and contain
 multiple 'fields' separated by a comma ','.
 We can think of it as an spreadsheet.
 """
-
 import csv
 
 # Reading csv files

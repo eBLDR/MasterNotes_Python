@@ -1,6 +1,7 @@
 """
 Run from terminal.
-When a process 'locks', the other processes will wait until the lock is released.
+When a process 'locks', the other processes will wait until the lock is
+released.
 """
 import os
 import logging

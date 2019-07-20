@@ -14,8 +14,8 @@ class MyABC(metaclass=abc.ABCMETA):
     @abc.abstractmethod
     def my_abstract_method(self):
         """ Using this decorator requires that the class’s metaclass is ABCMeta
-        or is derived from it. A class that has a metaclass derived from ABCMeta
-        cannot be instantiated unless all of its abstract methods and properties
-        are overridden. """
+        or is derived from it. A class that has a metaclass derived from
+        ABCMeta cannot be instantiated unless all of its abstract methods and
+        properties are overridden. """
 
         raise NotImplementedError('Subclass must override this method.')

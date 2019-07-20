@@ -2,7 +2,6 @@
 Mask - pixel collision detection
 A mask uses 1 bit per pixel to store which particles collide
 """
-
 from random import randint
 
 import pygame

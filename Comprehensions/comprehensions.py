@@ -5,7 +5,8 @@
 
 numbers = [1, 2, 3, 4, 5, 6, 6]
 
-# Iterator variable in a for loop overwrite any existing variable with the same name
+# Iterator variable in a for loop overwrite any existing variable with the
+# same name
 number = 0
 print('Number is {}'.format(number))
 squares = []
@@ -40,18 +41,25 @@ print(dict_comp)
 print('=' * 30)
 
 # Conditional comprehensions
-# When using filters, the value will be added to the list if the condition of the filter returns True
-odd_numbers = [i for i in range(1, 20) if i % 2 != 0]  # cannot have and else clause
+# When using filters, the value will be added to the list if the condition of
+# the filter returns True
+odd_numbers = [i for i in range(1, 20) if i % 2 != 0]
+# cannot have and else clause
 print(odd_numbers)
 
 # Adding complexity - each filter starts with if and can have multiple and/or
-even_numbers_no_squares = [i for i in range(1, 30) if i % 2 == 0 or i == 5 if i not in squares]
+even_numbers_no_squares = [
+    i for i in range(1, 30) if i % 2 == 0 or i == 5 if i not in squares
+]
 print(even_numbers_no_squares)
 
 print('=' * 30)
 
 # Using conditional expressions with comprehensions
-fizzbuzz = ['fibbuz' if n % 3 == 0 and n % 5 == 0 else 'fizz' if n % 3 == 0 else 'buzz' if n % 5 == 0 else str(n) for n in range(21)]
+fizzbuzz = [
+    'fibbuz' if n % 3 == 0 and n % 5 == 0 else 'fizz'
+    if n % 3 == 0 else 'buzz' if n % 5 == 0 else str(n) for n in range(21)
+]
 
 print(fizzbuzz)
 

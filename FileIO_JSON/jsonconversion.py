@@ -20,7 +20,6 @@ Object - an unordered collection of key:value pairs
 Whitespace - can be used between any pair of tokens
 null - empty
 """
-
 import json
 
 # load string method - translates json string to a python value

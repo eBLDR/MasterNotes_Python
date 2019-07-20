@@ -24,7 +24,8 @@ print('hasattr(mock, attr_name):', hasattr(mock, attr_name))
 # getattr(obj, attr_name) - returns obj.attr_name
 print('getattr(mock, attr_name):', getattr(mock, attr_name))
 
-# setattr(obj, attr_name, new_value) - updates the value of obj.attr_name, it can set new attributes
+# setattr(obj, attr_name, new_value) - updates the value of obj.attr_name,
+# it can set new attributes
 print('setattr(mock, attr_name, 0)')
 setattr(mock, attr_name, 0)
 print('mock.mock_attr: ', mock.mock_attr)

@@ -11,7 +11,8 @@ print(type(li))
 # id() - shows the object's id - memory location
 print(id(dc), id(li), id(li2))
 
-# is equivalent to using the 'is' keyword, both refer to the memory location of an object
+# 'is' keyword compares the id(@object), refer to the memory location
+# of an object
 print(a is 3, a is li, li is li2)
 
 # repr() - return a string containing a printable representation of an object
@@ -26,8 +27,8 @@ help('return')
 
 print('#' * 30)
 
-# dir() - return the list of names in the current local scope. With an object as argument,
-# return a list of valid attributes for that object
+# dir() - return the list of names in the current local scope. With an object
+# as argument, return a list of valid attributes for that object
 print('dir():', dir())  # calling the directory of standard methods
 print('dir(s):', dir(s))
 
@@ -41,8 +42,8 @@ print('globals():', globals())
 print('locals():', locals())
 
 # vars() - return a dictionary representing the current local scope
-# With an object as argument, will return the dictionary of the object's attributes,
-# calling __dict__ method
+# With an object as argument, will return the dictionary of the object's
+# attributes, calling __dict__ method
 print('vars():', vars())
 print('vars(tuple):', vars(tuple))
 

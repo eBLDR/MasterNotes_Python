@@ -3,7 +3,6 @@ The time it module can time profile the code - that is timing the execution time
 Other processes being executed at the same time can affect the results.
 General consideration: do not include output in the snippets, print() is actually a very slow function.
 """
-
 import timeit
 
 # we're going to compare performance creating the same list using 2 different methods (append vs. comprehension)

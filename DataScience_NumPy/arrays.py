@@ -34,7 +34,8 @@ print(y)
 print('=' * 20)
 
 # indexing arrays and slicing arrays
-# slices return a view object (shallow copy), index return a new object (deep copy)
+# slices return a view object (shallow copy), index return a new object
+# (deep copy)
 print(y[1][1])
 print(y[1][0:2])
 print(y[1:])
@@ -60,7 +61,8 @@ print('=' * 20)
 b_array = x > 1
 print(b_array)
 
-print(x[x > 1])  # returns an array with the elements that satisfy the condition
+# returns an array with the elements that satisfy the condition
+print(x[x > 1])
 
 print('=' * 20)
 

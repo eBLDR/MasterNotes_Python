@@ -4,7 +4,8 @@ for char in string:
     print(char)
 
 # equivalent to
-for char in iter(string):  # iter function creates an iterator at the background
+# iter function creates an iterator at the background
+for char in iter(string):
     print(char)
 
 print('-----')
@@ -17,7 +18,9 @@ print(next(my_iterator))
 print('starting the for loop')
 
 # for just calls the next() function on the iterator passed
-for i in my_iterator:  # because the first two values are already consumed, this loop will start at the third (next)
+# because the first two values are already consumed, this loop will start at
+# the third (next)
+for i in my_iterator:
     print(i)
 
 print('-----')

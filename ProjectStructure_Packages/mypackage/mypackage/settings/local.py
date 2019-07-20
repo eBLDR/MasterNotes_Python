@@ -1,2 +1,1 @@
 SECRET_VAR = 'alpha'
-

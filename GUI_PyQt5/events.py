@@ -7,7 +7,6 @@ Event source object delegates the task of handling an event to the event target.
 The sender is an object that sends a signal. The receiver is the object that receives the signal.
 The slot is the method that reacts to the signal.
 """
-
 import sys
 from PyQt5.QtWidgets import QWidget, QGridLayout, QApplication, QSlider, QLCDNumber
 from PyQt5.QtCore import Qt

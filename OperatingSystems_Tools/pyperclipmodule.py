@@ -1,9 +1,9 @@
 """
-pyperclip module has copy() and paste() functions that can send text to and receive text
-from your computer’s clipboard. Sending the output of your program to the clipboard
-will make it easy to paste it to an email, word processor, or some other software.
+pyperclip module has copy() and paste() functions that can send text to and
+receive text from your computer’s clipboard. Sending the output of your
+program to the clipboard will make it easy to paste it to an email, word
+processor, or some other software.
 """
-
 import pyperclip
 
 input('Copy some text to clipboard . . .')

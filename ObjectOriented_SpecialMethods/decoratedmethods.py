@@ -6,7 +6,8 @@ class BaseClass:
         self.counter = 0
 
     # @item are called DECORATORS
-    # static methods don't have access to the attributes of an instance of a class nor to the attributes of the class
+    # static methods don't have access to the attributes of an instance of a
+    # class nor to the attributes of the class
     @staticmethod
     def add_1(n):
         # Doesn't take self argument
@@ -15,9 +16,10 @@ class BaseClass:
     # Class attribute
     status = 0
 
-    # Class methods have access to the class attributes, not to the instance attributes.
-    # The changes made by a class method will affect all the instances of the class and of the
-    # instances of the subclasses, if any
+    # Class methods have access to the class attributes, not to the instance
+    # attributes.
+    # The changes made by a class method will affect all the instances of the
+    # class and of the instances of the subclasses, if any
     @classmethod
     def upgrade_status(cls):
         # Takes cls instead of self
@@ -44,7 +46,8 @@ print('parent.status:', parent.status)
 print('child_1.status:', child_1.status)
 print('child_2.status:', child_2.status)
 
-# Calling a @classmethod through an instance will affect all other instances of the class and subclasses
+# Calling a @classmethod through an instance will affect all other instances
+# of the class and subclasses
 parent.upgrade_status()
 print('Calling class method parent.upgrade_status()...')
 

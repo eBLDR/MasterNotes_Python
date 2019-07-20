@@ -1,5 +1,6 @@
 """
-MySQL works on a server, it doesn't create a .db file on the working directory like SQLite3 does.
+MySQL works on a server, it doesn't create a .db file on the working directory
+like SQLite3 does.
 
 Before running the python script, MySQL server must be running.
 """
@@ -21,7 +22,9 @@ TABLES = {'users': (
 
 def create_db(cur):
     # Creating database
-    cur.execute("CREATE DATABASE {} DEFAULT CHARACTER SET 'utf8'".format(DB_NAME))
+    cur.execute("CREATE DATABASE {} DEFAULT CHARACTER SET 'utf8'".format(
+        DB_NAME)
+    )
 
 
 # Establishing connection

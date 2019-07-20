@@ -31,7 +31,8 @@ print(b_list)
 a_list.reverse()
 print(a_list)
 
-# sort(key=function, reverse=False) - sorts alphanumerically, see sorted() in built-in
+# sort(key=function, reverse=False) - sorts alphanumerically, see sorted()
+# in built-in
 a_list.sort()
 print(a_list)
 

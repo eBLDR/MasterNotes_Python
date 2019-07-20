@@ -6,7 +6,8 @@ It's a good alternative to try/except/finally
 """
 
 # WITH keyword
-# 'with' can call anything that returns a context manager (like the built-in open() function)
+# 'with' can call anything that returns a context manager (like the built-in
+# open() function)
 with open('example.txt', 'a') as myResource:
     # myResource variable can only be used in this context, outside this
     # indentation it will be closed
@@ -14,7 +15,8 @@ with open('example.txt', 'a') as myResource:
 
     myResource.write('one more line\n')
     # No need to close the resource, it's done automatically
-    # If we force an error during the execution, the resource will be closed before calling raise
+    # If we force an error during the execution, the resource will be closed
+    # before calling raise
 
 
 # Multiple resource usage
@@ -45,7 +47,8 @@ class File:
 
         print('File opened')
 
-        # The value returned from this method will be assigned to the 'as' variable
+        # The value returned from this method will be assigned to the 'as'
+        # variable
         return self
 
     def __exit__(self, *args):
@@ -59,7 +62,8 @@ class File:
         else:
             print('Do B, I failed.')
 
-        # Method called when the 'with' block is finished or when an exception is raised
+        # Method called when the 'with' block is finished or when an exception
+        # is raised
         self.connection.close()
 
         print('File closed')

@@ -1,5 +1,6 @@
 """
-Setting up a headless browser, everything works normally without graphical interface.
+Setting up a headless browser, everything works normally without graphical
+interface.
 """
 
 
@@ -51,10 +52,11 @@ if __name__ == '__main__':
     options = webdriver.ChromeOptions()
 
     # Add different arguments
-    options.add_argument('headless')   # Headless mode
+    options.add_argument('headless')  # Headless mode
     options.add_argument('incognito')  # Incognito mode
 
-    self.driver = webdriver.Chrome('chrome/driver/path', chrome_options=options)
+    self.driver = webdriver.Chrome('chrome/driver/path',
+                                   chrome_options=options)
     """
 
     res = quick_search(browser)

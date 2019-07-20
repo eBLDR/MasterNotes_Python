@@ -22,7 +22,6 @@ DELETE method - deletes the specified resource.
 
 OPTIONS method - describes the communication options for the target resource.
 """
-
 import requests
 
 # GET method

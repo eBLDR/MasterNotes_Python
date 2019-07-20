@@ -3,9 +3,11 @@ Session object states:
 
 - Transient: an instance that's not included in a session and has not
     been persisted to the database.
-- Pending: an instance that has been added to a session but not persisted to a database yet - add()
+- Pending: an instance that has been added to a session but not persisted to a
+    database yet - add()
 - Persistent: an instance that has been persisted to the database - commit()
-- Detached: an instance that has been persisted to the database but not included in any sessions - close() after commit()
+- Detached: an instance that has been persisted to the database but not
+    included in any sessions - close() after commit()
 """
 from sqlalchemy import create_engine
 # Session object
@@ -62,33 +64,43 @@ from sqlalchemy import inspect  # To inspect the object states
 session = factory()
 
 # Equivalence to SQL INSERT clause
-new_person = Person(name='new person')  # Using the table created in declarative.py
+# Using the table created in declarative.py
+new_person = Person(name='new person')
 
 ins = inspect(new_person)  # A reference to the object to be inspected
 print('Object created.')
 
 # Object state
-print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(ins.transient, ins.pending, ins.persistent, ins.detached))
+print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(
+    ins.transient, ins.pending, ins.persistent, ins.detached)
+)
 
 # Adding a record using the table structure - add()
 session.add(new_person)
 print('Object added to session.')
 
 # Object state
-print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(ins.transient, ins.pending, ins.persistent, ins.detached))
+print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(
+    ins.transient, ins.pending, ins.persistent, ins.detached)
+)
 
-# commit() will save the transaction - it will call flush(), which send SQL statements to db
+# commit() will save the transaction - it will call flush(), which send SQL
+# tatements to db
 session.commit()
 print('Session committed.')
 
 # Object state
-print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(ins.transient, ins.pending, ins.persistent, ins.detached))
+print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(
+    ins.transient, ins.pending, ins.persistent, ins.detached)
+)
 
 session.close()
 print('Session closed.')
 
 # Object state
-print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(ins.transient, ins.pending, ins.persistent, ins.detached))
+print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(
+    ins.transient, ins.pending, ins.persistent, ins.detached)
+)
 
 print('=' * 20)
 
@@ -137,26 +149,34 @@ for i in result:
 print('=' * 30)
 
 try:
-    # one(), if only one record is expected - if more than one record is found, it will raise an error
+    # one(), if only one record is expected - if more than one record is found,
+    # it will raise an error
     address = session.query(Address).filter(Address.person == person).one()
     print(address.to_dictionary())
 except:
     print('ERROR: one() - More than one record was found.')
 
-# When using filters, many expressions can be combined using or_ and_ SQLAlchemy keywords
+# When using filters, many expressions can be combined using or_ and_
+# SQLAlchemy keywords
 from sqlalchemy import or_
 
-address = session.query(Address).filter(or_(Address.person == person, Address.post_code == '00000')).first()
+address = session.query(Address).filter(or_(
+    Address.person == person, Address.post_code == '00000'
+)).first()
 print(address.post_code)
 
-# filter_by(@dict) - multiple filters at once, dictionary must have column_name as a key and expression as a value
+# filter_by(@dict) - multiple filters at once, dictionary must have column_name
+# as a key and expression as a value
 filters = {'name': 'new person', 'id': 5}
-person = session.query(Person).filter_by(**filters).first()  # Dictionary must be passed unpacked
+
+# Dictionary must be passed unpacked
+person = session.query(Person).filter_by(**filters).first()
 print(person.id, person.name)
 
 """
-The object returned by session.query also have the methods filter_by(), order_by(), group_by(),
-with the same behaviour as the equivalent SQL statements.
+The object returned by session.query also have the methods filter_by(),
+order_by(), group_by(), with the same behaviour as the equivalent SQL
+statements.
 """
 
 print('=' * 30)
@@ -197,8 +217,9 @@ session.close()
 """
 Normal Session - sessiomaker() vs. Scoped Session - scoped_session()
 
-If we open 2 sessions using sessionmaker(), then it won't be possible to add the same
-object to both sessions at the same time - an object can only be attached at most one unique session object.
+If we open 2 sessions using sessionmaker(), then it won't be possible to add
+the same object to both sessions at the same time - an object can only be
+attached at most one unique session object.
 
 If the session objects are retrieved from a scoped_session object, however,
 then we don't have such an issue since the scoped_session object maintains a

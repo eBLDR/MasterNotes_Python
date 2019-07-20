@@ -23,17 +23,20 @@ for x in range(1, 4):
 
 # Waiting for all threads to end
 for thread in my_threads:
-    # active_count() returns the number of threads currently alive (including the main thread)
+    # active_count() returns the number of threads currently alive (including
+    # the main thread)
     print('Number of threads alive: {}'.format(threading.active_count()))
 
-    # enumerate() returns a list of all the threads currently alive (including daemon threads)
+    # enumerate() returns a list of all the threads currently alive (including
+    # daemon threads)
     print('List of threads alive: {}'.format(threading.enumerate()))
 
     # to get the name of the thread object (Thread-n)
     # equivalent to threading.current_thread().name
     who_is = thread.name
 
-    # is_alive() method returns True if the thread is still executing and False if it has already terminated
+    # is_alive() method returns True if the thread is still executing and
+    # False if it has already terminated
     print('{} is alive: {}'.format(who_is, thread.is_alive()))
 
     # join() method will block/wait until the thread terminates
@@ -42,7 +45,8 @@ for thread in my_threads:
 
     print('{} is alive: {}'.format(who_is, thread.is_alive()))
 
-# From here, nothing will be executed until all the calls of the join() method have terminated
+# From here, nothing will be executed until all the calls of the join() method
+# have terminated
 print('Threads alive: {}'.format(threading.active_count()))
 
 print(threading.main_thread())  # Return the main thread object
@@ -53,14 +57,19 @@ print('\nCounters done.')
 print('\n', '=' * 30, '\n')
 
 # Daemonic threads
-daemon_test = threading.Thread(target=counter, args=(3, 'daemon'), daemon=False)  # Change to True to see difference
-# The entire Python program exits only when daemonic threads are left - it waits for all the
-# non-daemonic threads to terminate. In other words, if 'end of file' is reached and only daemonic threads
-# are left, the main thread will kill them all and finish the execution.
+daemon_test = threading.Thread(
+    target=counter, args=(3, 'daemon'), daemon=False
+)  # Change to True to see difference
+# The entire Python program exits only when daemonic threads are left - it
+# waits for all the non-daemonic threads to terminate. In other words, if
+# 'end of file' is reached and only daemonic threads are left, the main thread
+# will kill them all and finish the execution.
 
 daemon_test.start()
 
-print('Is {} a daemonic thread? {}'.format(daemon_test.name, daemon_test.daemon))
+print('Is {} a daemonic thread? {}'.format(
+    daemon_test.name, daemon_test.daemon)
+)
 
 if daemon_test.daemon:
     print('I am a demon, so the main thread is not waiting for me.')

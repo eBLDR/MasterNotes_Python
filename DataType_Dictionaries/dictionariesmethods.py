@@ -4,15 +4,15 @@ b_dict = {'A': 0, 'D': 11}
 # to clear the dictionary and leave it empty
 # b_dict.clear()
 
-# get(key, None) - to try if the key is in the dictionary, will return value if key exists,
-# print None (by default) if it doesn't
+# get(key, None) - to try if the key is in the dictionary, will return value
+# if key exists, print None (by default) if it doesn't
 value = a_dict.get('Z', 'Wrong key')
 print(value)
 
 print('=' * 30)
 
-# view object are connected to the source (dynamic), they will change accordingly to the changes
-# produced in the object that they refer to
+# view object are connected to the source (dynamic), they will change
+# accordingly to the changes produced in the object that they refer to
 # keys() - returns the keys of the dictionary
 my_keys = a_dict.keys()  # this is a view object (is iterable)
 print(my_keys)
@@ -28,7 +28,8 @@ print(my_values)
 print(type(my_values))
 
 print('=' * 30)
-# items() - returns a view object of the key-value pairs - can be converted into a tuple
+# items() - returns a view object of the key-value pairs - can be converted
+# to a tuple
 my_items = a_dict.items()
 print(my_items)
 print(type(my_items))
@@ -44,8 +45,8 @@ arb = a_dict.popitem()
 print(arb, a_dict)
 
 print('=' * 30)
-# update([other]) - updates the dict with the key-value pairs from other, creating new items
-# or overwriting existing ones
+# update([other]) - updates the dict with the key-value pairs from other,
+# creating new items or overwriting existing ones
 a_dict.update(b_dict)
 print(a_dict)
 
@@ -55,17 +56,19 @@ c_dict = a_dict.copy()
 print(c_dict)
 
 print('=' * 30)
-# setdefault(key[default]) - if key in dict, return its value, if not, inserts key
-# with a value of default and return default
+# setdefault(key[default]) - if key in dict, return its value, if not,
+# inserts key with a value of default and return default
 message = 'I am a Python beast, yes man!'
-count = {}  # we are going to count the number of times each character appears in the message
+count = {}
+# Counting the times that a each character appears
 for char in message:
     count.setdefault(char, 0)  # set = 0 if key 'char' doesn't exist
     count[char] += 1
 print(count)
 
 print('=' * 30)
-# fromkeys(seq, value) - creates a new dictionary with keys from seq and values set to value
+# fromkeys(seq, value) - creates a new dictionary with keys from seq and
+# values set to value
 n_keys = 'B'
 d_dict = a_dict.fromkeys(n_keys, 0)
 print(d_dict)

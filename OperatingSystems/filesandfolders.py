@@ -8,13 +8,15 @@ os.path.isfile(path) - return True if path argument exists and is a file
 os.path.isdir(path) - return True if path argument exists and is a directory
 """
 
-# os.listdir(path=working_directory) - will generate the directories/files in the directory path
+# os.listdir(path=working_directory) - will generate the directories/files in
+# the directory path
 for item in os.listdir(os.path.abspath('./')):
     print(item)
 
 print('=' * 20)
 
-# os.walk() - is a generator that iterates all the directories in the specified path (either relative to cwd or abs)
+# os.walk() - is a generator that iterates all the directories in the specified
+# path (either relative to cwd or abs)
 # each iteration returns a list [path, directories, files]
 for path, directories, files in os.walk('./'):
     print('Path: {}'.format(path))
@@ -30,16 +32,24 @@ print('=' * 20)
 # File properties
 # To get the size of a file
 file_name = 'CommandTest/hello.txt'
-print('Size of {} in bytes: '.format(file_name), os.path.getsize(os.path.join(os.getcwd(), file_name)))
+print('Size of {} in bytes: '.format(
+    file_name), os.path.getsize(os.path.join(os.getcwd(), file_name))
+)
 
 # Getting creation date of file in Windows, last metadata change in Unix
-print('{} was created on'.format(file_name), time.ctime(os.path.getctime(file_name)))
+print('{} was created on'.format(
+    file_name), time.ctime(os.path.getctime(file_name))
+)
 
 # Getting last modification date of file
-print('{} was last modified on'.format(file_name), time.ctime(os.path.getmtime(file_name)))
+print('{} was last modified on'.format(
+    file_name), time.ctime(os.path.getmtime(file_name))
+)
 
 # Getting creation date of file in Windows, last metadata change in Unix
-print('{} was last accessed on'.format(file_name), time.ctime(os.path.getatime(file_name)))
+print('{} was last accessed on'.format(
+    file_name), time.ctime(os.path.getatime(file_name))
+)
 
 # Getting the size of all the contents in a folder
 total_size = 0
@@ -69,7 +79,8 @@ os.unlink('./{}'.format(file_name))
 # rmdir() - permanently deletes a single folder, folder must be empty
 os.rmdir('./03/ABC')
 
-# rmdirs() - applied to the same path above, will delete all ABC, 03 and ./, if both empty
+# rmdirs() - applied to the same path above, will delete all ABC, 03 and ./,
+# if both empty
 print('./03/ABC deleted.')
 
 print('=' * 20)

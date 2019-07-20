@@ -16,15 +16,19 @@ from random import randint
 # Equivalent to @asyncio.coroutine
 async def my_coroutine(id_):
     process_time = randint(1, 5)
-    print('Coroutine {} - Working for {} seconds...'.format(id_, process_time))
+    print('Coroutine {} - Working for {} seconds...'.format(
+        id_, process_time)
+    )
 
     # await - suspends the execution of coroutine on an awaitable object
     # It can only be used inside a coroutine function (async def ...)
     await asyncio.sleep(process_time)
     # Equivalent to yield from asyncio.sleep(delay)
 
-    # asyncio.sleep(@seconds) is an awaitable, it will be triggered after the @seconds
-    # asyncio.wait([@coroutines]) takes an iterable of coroutines tasks, will return 2 sets
+    # asyncio.sleep(@seconds) is an awaitable, it will be triggered after the
+    # @seconds
+    # asyncio.wait([@coroutines]) takes an iterable of coroutines tasks, will
+    # return 2 sets
     # done, pending = yield from asyncio.wait([@coroutines])
 
     print('Coroutine {} - Task completed.'.format(id_))
@@ -45,11 +49,15 @@ async def msg(text):
 
 async def main():
     await msg('Before calling coroutine.')  # Chained to another function
-    # create_task(@coroutine) - schedules the execution of a task, returns a Task() object
-    # create_task() is new in Python3.7, older versions, use ensure_future(@coroutine)
+    # create_task(@coroutine) - schedules the execution of a task, returns a
+    # Task() object
+    # create_task() is new in Python3.7, older versions, use
+    # ensure_future(@coroutine)
     task = asyncio.create_task(my_coroutine(0))
     await msg('After calling coroutine.')
-    value = await task  # Runnig a single task and storing the returned value (if desired)
+
+    # Runnig a single task and storing the returned value(if desired)
+    value = await task
     print('Task finished, value is:', value)
 
 
@@ -65,7 +73,8 @@ async def main_multiple():
     for i in range(1, 8):
         tasks.append(asyncio.create_task(my_coroutine(i)))
 
-    value = await asyncio.gather(*tasks)  # Running multiple tasks - in a sequence
+    # Running multiple tasks - in a sequence
+    value = await asyncio.gather(*tasks)
     print('All tasks finished, value is:', value)
 
 

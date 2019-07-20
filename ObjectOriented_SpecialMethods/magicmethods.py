@@ -9,19 +9,21 @@ the scenes.
 
 class Alpha:
 
-    # __init__ is a magic method, it's invoked at the moment of the instantiation
+    # __init__ is a magic method, it's invoked at the moment of the
+    # instantiation
     def __init__(self, x):
         self.x = x
 
 
-# At the moment of creating the object, the magic method __new__(cls) of Alpha is called,
+# At the moment of creating the object, the magic method __new__(cls) of
+# Alpha is called,
 # __new__ takes the class and the arguments that pass along to __init__.
 # Then, __init__ is called, it is the primary constructor.
 my_alpha = Alpha(1)
 
 
-# Objects can also have the __del__ magic method, which can handle the garbage collection
-# at the moment of deleting the object.
+# Objects can also have the __del__ magic method, which can handle the
+# garbage collection at the moment of deleting the object.
 
 # The __call__ method turns the instances into callable
 class Poly:

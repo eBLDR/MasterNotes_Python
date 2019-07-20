@@ -3,7 +3,6 @@ cmath module - for complex numbers operations.
 For logarithmic and trigonometric functions see math module,
 cmath has the same ones applied to complex numbers.
 """
-
 import cmath
 
 # CONSTANTS
@@ -20,7 +19,8 @@ print(cmath.phase(complex(-1.0, 0.0)))
 # modulus - use abs() built-in function
 print(abs(complex(3, 4)))
 
-# complex to polar coordinates - returns a pair equivalent to (abs(x), phase(x))
+# complex to polar coordinates - returns a pair equivalent to
+# (abs(x), phase(x))
 print(cmath.polar(complex(3, 4)))
 
 # polar coordinates to complex

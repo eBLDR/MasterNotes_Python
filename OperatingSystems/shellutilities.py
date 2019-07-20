@@ -12,7 +12,8 @@ shutil.copy('./magic.txt', './01/moremagic.txt')
 # if we don't specify the name, the file will be copied with the same name:
 # shutil.copy('./magic.txt', './01')
 
-# copytree(source, destination) - copies the entire folder with all the folders and files in it
+# copytree(source, destination) - copies the entire folder with all the
+# folders and files in it
 try:
     shutil.copytree('./01', './01Copy')
 except FileExistsError:
@@ -25,7 +26,8 @@ except FileNotFoundError:
     pass
 
 # to move a folder shutil.move('./file.txt', './newDir/')
-# CAUTION: if newDir doesn't exist, file.txt will be renamed to newDir and extension will be lost
+# CAUTION: if newDir doesn't exist, file.txt will be renamed to newDir and
+# extension will be lost
 # CAUTION2: path must exist, is not going to be created
 # move() can also be used just for renaming the file:
 # shutil.move('./hello.txt', './renamedhello.txt')

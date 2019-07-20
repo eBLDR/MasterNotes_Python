@@ -1,9 +1,10 @@
 """
-The selenium module lets Python directly control the browser by programmatically
-clicking links and filling in login information, almost as a human user
-interacting with the page.
+The selenium module lets Python directly control the browser by
+programmatically clicking links and filling in login information, almost as a
+human user interacting with the page.
 
-selenium needs the driver corresponding to the desired browser in use to be installed.
+selenium needs the driver corresponding to the desired browser in use to be
+installed.
 """
 
 from selenium import webdriver
@@ -35,13 +36,16 @@ browser.*_by_css_selector(selector) - Elements that match the CSS selector
 
 browser.*_by_id(id) - Elements with a matching id attribute value
 
-browser.*_by_link_text(text) - <a> elements that completely match the text provided
+browser.*_by_link_text(text) - <a> elements that completely match the text
+provided
 
-browser.*_by_partial_link_text(text) - <a> elements that contain the text provided
+browser.*_by_partial_link_text(text) - <a> elements that contain the text
+provided
 
 browser.*_by_name(name) - Elements with a matching name attribute value
 
-browser.*_by_tag_name(name) - Elements with a matching tag name (case insensitive)
+browser.*_by_tag_name(name) - Elements with a matching tag name (case
+insensitive)
 
 ### Attr/Method - Description
 
@@ -53,13 +57,17 @@ text - The text within the element, such as 'hello' in <span>hello</span>
 
 clear() - For text field or text area elements, clears the text typed into it
 
-is_displayed() - Returns True if the element is visible; otherwise returns False
+is_displayed() - Returns True if the element is visible; otherwise returns
+False
 
-is_enabled() - For input elements, returns True if the element is enabled; otherwise returns False
+is_enabled() - For input elements, returns True if the element is enabled;
+otherwise returns False
 
-is_selected() - For checkbox or radio button elements, returns True if the element is selected; otherwise returns False
+is_selected() - For checkbox or radio button elements, returns True if the
+element is selected; otherwise returns False
 
-location - A dictionary with keys 'x' and 'y' for the position of the element in the page
+location - A dictionary with keys 'x' and 'y' for the position of the element
+in the page
 """
 
 print('=' * 30)
@@ -105,8 +113,8 @@ except Exception:
 
 """
 Special keys
-DOWN, UP, LEFT, RIGHT, ENTER, RETURN, HOME, END, ESCAPE, BACK_SPACE, DELETE, TAB,
-PAGE_UP, PAGE_DOWN, F1, ..., F12, ... and more.
+DOWN, UP, LEFT, RIGHT, ENTER, RETURN, HOME, END, ESCAPE, BACK_SPACE, DELETE,
+TAB, PAGE_UP, PAGE_DOWN, F1, ..., F12, ... and more.
 """
 # Module containing the keys
 from selenium.webdriver.common.keys import Keys

@@ -40,7 +40,8 @@ class Point:
 
     # Overriding the method being called with the "+" operator
     def __add__(self, other):
-        # self refers to the object on the left of the +, and other to the one on the right
+        # self refers to the object on the left of the +, and other to the
+        # one on the right
         x = self.x + other.x
         y = self.y + other.y
 
@@ -61,8 +62,9 @@ print(p1 + p2)
 print(p1 - p2)
 
 """
-Overloading methods are used in other languages (such as Java or C++) to use different versions
-of the method depending on the number and type of arguments that are passed to it.
-Python doesn't have such a thing, the arguments are assigned by order, by named parameters,
-or set to default if not specified. (See functions.)
+Overloading methods are used in other languages (such as Java or C++) to use
+different versions of the method depending on the number and type of arguments
+that are passed to it.
+Python doesn't have such a thing, the arguments are assigned by order, by
+named parameters, or set to default if not specified. (See functions.)
 """

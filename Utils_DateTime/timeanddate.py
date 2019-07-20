@@ -3,7 +3,6 @@ The time module reads the system's clock.
 The Unix epoch is a time reference commonly used in programming:
 12 AM on January 1, 1970, Coordinated Universal Time (UTC).
 """
-
 import time
 
 print('\nUSING TIME MODULE\n')

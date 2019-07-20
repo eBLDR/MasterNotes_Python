@@ -1,7 +1,6 @@
 """
 Different types of thread objects.
 """
-
 import threading
 import time
 
@@ -11,7 +10,8 @@ def salute():
     print('Ave Caesar!')
 
 
-# timer.object(@seconds, @function) - function will be executed after @seconds from start() call
+# timer.object(@seconds, @function) - function will be executed after @seconds
+# from start() call
 my_timer = threading.Timer(5, salute)
 my_timer.start()  # here is where the timer starts
 

@@ -4,7 +4,8 @@ from dataclasses import dataclass
 
 # Regular method of class declaration
 class InventoryItemRegular:
-    def __init__(self, name: str, unit_price: float, quantity_on_hand: int = 0) -> None:
+    def __init__(self, name: str, unit_price: float,
+                 quantity_on_hand: int = 0) -> None:
         self.name = name
         self.unit_price = unit_price
         self.quantity_on_hand = quantity_on_hand

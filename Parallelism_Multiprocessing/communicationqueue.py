@@ -55,7 +55,8 @@ if __name__ == '__main__':
     sleep(0.001)
     print('Queue is empty: {}'.format(q.empty()))
 
-    # Indicate that no more data will be put on this queue by the current process
+    # Indicate that no more data will be put on this queue by the current
+    # process
     q.close()
 
     # Join the background thread, it blocks until the background thread exits

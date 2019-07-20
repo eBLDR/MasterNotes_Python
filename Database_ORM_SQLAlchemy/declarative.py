@@ -42,11 +42,13 @@ class Person(CustomBase):
     @nullable=True, if False it won't accept NULL value
     @index=False, if True indicates that the column is indexed
     @default=NULL, if <value> value will be taken as a default value
-    @unique=False, if True indicates that the column contains a unique constraint
+    @unique=False, if True indicates that the column contains a unique
+    constraint
     """
 
     id = Column(Integer, primary_key=True)
-    # String can take @encoding as argument, if not specified, it will take the schema's default
+    # String can take @encoding as argument, if not specified, it will take
+    # the schema's default
     name = Column(String(250, u'utf8_unicode_ci'), nullable=False)
 
 

@@ -7,7 +7,11 @@ import mysql.connector
 DB_NAME = 'UsersDb'
 
 # Using database created at creatingdb.py
-cnx = mysql.connector.connect(user='bldr', password='free', host='127.0.0.1', database='{}'.format(DB_NAME))
+cnx = mysql.connector.connect(
+    user='bldr', password='free', host='127.0.0.1', database='{}'.format(
+        DB_NAME
+    )
+)
 
 # Creating a cursor
 cursor = cnx.cursor()
@@ -24,7 +28,8 @@ dll = (
     IN p_Password varchar(50)
     )
     BEGIN
-    if ( select exists (select 1 from tblUser where UserName = p_UserName) ) THEN select 'Username Exists !!';
+    if ( select exists (select 1 from tblUser where UserName = p_UserName) )
+     THEN select 'Username Exists !!';
     ELSE
     insert into tblUser (
     UserName,

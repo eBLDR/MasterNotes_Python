@@ -7,8 +7,8 @@ try:
     cursor = db.cursor()
 
     # Do some statement
-    cursor.execute('''CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY,
-                      name TEXT, phone TEXT, email TEXT unique, password TEXT)''')
+    cursor.execute('CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY, '
+                   'name TEXT, phone TEXT, email TEXT unique, password TEXT)')
 
     # Commit the changes if no errors raised
     db.commit()

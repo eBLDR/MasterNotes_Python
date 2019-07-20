@@ -1,8 +1,8 @@
 """
 Run from terminal.
 Pool represents a pool of worker processes.
-Usually, the pool is run with a while loop inside, connected to a message queue,
-and performing tasks whenever a message is received.
+Usually, the pool is run with a while loop inside, connected to a message
+queue, and performing tasks whenever a message is received.
 """
 from time import time
 from multiprocessing import Pool
@@ -24,7 +24,8 @@ if __name__ == '__main__':
         with Pool(processes=workers) as pool:
             start_time = time()
 
-            # apply_async(f, (args,)) - evaluates f(arg) asynchronously in a single process
+            # apply_async(f, (args,)) - evaluates f(arg) asynchronously in a
+            # single process
             # result is to be yield, not yet computed!
             result = pool.apply_async(costly_function, (2,))  # Result object
 
@@ -32,15 +33,20 @@ if __name__ == '__main__':
             # if timeout expired, raises multiprocessing.TimeoutError
             print('result is: {}'.format(result.get(timeout=5)))
 
-            # map_async(f, iter) - evaluates each item in iter in a single process
-            result_2 = pool.map_async(costly_function, data)  # Returns an iterable result object
-            print('result_2 is: {}'.format(result_2.get()))  # Iterates and computes the result object
+            # map_async(f, iter) - evaluates each item in iter in a single
+            # process
+            # Returns an iterable result object
+            result_2 = pool.map_async(costly_function, data)
 
-            # pool.map(f, iter) returns a list with the results already computed
+            # Iterates and computes the result object
+            print('result_2 is: {}'.format(result_2.get()))
+
+            # pool.map(f, iter) returns a list with the results already
+            # computed
 
             print('\nIt took {} seconds for {} workers to get the job done.\n'
                   .format(time() - start_time, workers))
 
-            # Prevents any more tasks from being submitted to the pool,
-            # once all the tasks have been completed the worker processes will exit
+            # Prevents any more tasks from being submitted to the pool, once
+            # all the tasks have been completed the worker processes will exit
             pool.close()

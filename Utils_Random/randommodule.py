@@ -1,5 +1,4 @@
-""" Basic guide of random module. """
-
+# Basic guide of random module.
 import random
 
 # random float value from [0.0 to 1.0)

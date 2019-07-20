@@ -5,7 +5,8 @@ lambda was considered was dropped from Python 2 when migrating to
 Python 3, but they finally remained.
 
 
-All functions created with lambda operator can also be created using the normal way of defining a function.
+All functions created with lambda operator can also be created using the
+normal way of defining a function.
 """
 
 # lambda operator is a way to create anonymous functions
@@ -17,8 +18,10 @@ print(add(3, 4))
 print('=' * 20)
 
 # lambda with map()
-C = [39.2, 36.5, 37.0, 38.1, 40.3]  # a list with degrees Celsius
-F = list(map(lambda x: x * 9 / 5 + 32, C))  # creating a list with degrees Fahrenheit
+C = [39.2, 36.5, 37.0, 38.1, 40.3]  # A list with degrees Celsius
+
+# Creating a list with degrees Fahrenheit
+F = list(map(lambda x: x * 9 / 5 + 32, C))
 print(F)
 
 

@@ -54,7 +54,8 @@ print('a // b = {}'.format(a // b))
 # Modulo, remainder of a/b
 print('a % b = {}'.format(a % b))
 
-# Operator precedence, default precedence can be overridden by explicit parentheses
+# Operator precedence, default precedence can be overridden by explicit
+# parentheses
 print('a + b * a = {}'.format(a + b * a))
 print('(a + b) * a = {}'.format((a + b) * a))
 

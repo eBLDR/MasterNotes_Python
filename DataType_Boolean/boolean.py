@@ -1,5 +1,7 @@
-""" OR : True if only one of the conditions is True.
-AND : True only if all of the conditions are True. """
+"""
+OR : True if only one of the conditions is True.
+AND : True only if all of the conditions are True.
+"""
 
 # All the following are False
 f = False  # bool
@@ -20,7 +22,10 @@ None:\t\t{1}
 []:\t\t{4}
 ():\t\t{5}
 {{}}:\t\t{6}
-set():\t\t{8}""".format(bool(f), bool(n), bool(v), bool(s), bool(l), bool(t), bool(d), bool(f2), bool(st)))
+set():\t\t{8}""".format(
+    bool(f), bool(n), bool(v), bool(s), bool(l), bool(t),
+    bool(d), bool(f2), bool(st))
+)
 
 print('=' * 25)
 

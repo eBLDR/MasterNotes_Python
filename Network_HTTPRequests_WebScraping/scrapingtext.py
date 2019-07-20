@@ -3,7 +3,6 @@ Web scraping is data scraping used for extracting data from websites.
 requests module lets us easily download files from the Web,
 managing network errors, connection problems and data compression.
 """
-
 import requests
 
 # get() function takes a str of a URL where to download data from,

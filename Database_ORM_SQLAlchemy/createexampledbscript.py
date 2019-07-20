@@ -10,8 +10,9 @@ c.execute('''
           ''')
 c.execute('''
           CREATE TABLE address
-          (id INTEGER PRIMARY KEY ASC, street_name varchar(250), street_number varchar(250),
-           post_code varchar(250) NOT NULL, person_id INTEGER NOT NULL,
+          (id INTEGER PRIMARY KEY ASC, street_name varchar(250),
+           street_number varchar(250), post_code varchar(250) NOT NULL,
+           person_id INTEGER NOT NULL,
            FOREIGN KEY(person_id) REFERENCES person(id))
           ''')
 c.execute('''

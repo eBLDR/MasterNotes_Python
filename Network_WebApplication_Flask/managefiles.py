@@ -1,7 +1,6 @@
 """
 Uploading files with a POST method.
 """
-
 import os
 
 from flask import Flask, request, send_file

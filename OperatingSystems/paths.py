@@ -11,7 +11,8 @@ print('Current path is: {}'.format(current_path))
 os.chdir('CommandTest')
 print('Changed to: {}'.format(os.getcwd()))
 
-# os.path.abspath(path) - will return the absolute path of the directory using proper separators depending
+# os.path.abspath(path) - will return the absolute path of the directory using
+# proper separators depending
 # on the OS used, directory must be in the working directory
 absolute_path = os.path.abspath('./')
 print('Absolute path is: {}'.format(absolute_path))
@@ -33,8 +34,12 @@ print('=' * 20)
 
 # dir name and base name
 my_path = os.path.join(os.getcwd(), 'hello.txt')
-print('Dir name: ' + os.path.dirname(my_path))  # Name of path
-print('Base name: ' + os.path.basename(my_path))  # Name of file or current folder
+
+# Name of path
+print('Dir name: ' + os.path.dirname(my_path))
+
+# Name of file or current folder
+print('Base name: ' + os.path.basename(my_path))
 
 print('=' * 20)
 

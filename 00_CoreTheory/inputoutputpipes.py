@@ -10,7 +10,6 @@ sys.stdin is a file-like object with read-only methods
 
 sys.stdout and sys.stderr are file-like objects with write-only methods
 """
-
 import sys
 
 # Reading from standard input

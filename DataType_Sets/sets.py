@@ -1,6 +1,7 @@
 """
 A set cannot contain duplicates and it's unordered.
-It's hashable, that means that it can contain immutable objects but not mutable.
+It's hashable, that means that it can contain immutable objects but not
+mutable.
 Items in set can be of a different type.
 """
 
@@ -9,16 +10,20 @@ empty_set = set()  # emptySet = {} will create and empty dictionary
 
 print(type(farm_animals))
 
-print(farm_animals)  # sets are unordered and the can't contain duplicates
-print(sorted(farm_animals))  # if we wish to print it sorted, notice that sorted ill return a list!
+# sets are unordered and the can't contain duplicates
+print(farm_animals)
+# if we wish to print it sorted, notice that sorted ill return a list!
+print(sorted(farm_animals))
 
 for i in farm_animals:
     print(i)
 
 sample_text = 'Python is as powerful as a giant python'
-print(set(sample_text))  # will return a set out of a string, char by char, with no duplicates
+# will return a set out of a string, char by char, with no duplicates
+print(set(sample_text))
 
-wild_animals = set(['lion', 'tiger', 'panther'])  # creating a set out of a list, a tuple will work also
+# creating a set out of a list, a tuple will work also
+wild_animals = set(['lion', 'tiger', 'panther'])
 
 even = set(range(0, 30, 2))  # creating a set out of a range
 
@@ -30,18 +35,20 @@ print('-' * 30)
 print(len(even), len(squares))
 
 # - operations -
-# union bemy_Rtween 2 sets - a|b, items in either a or b - returns a new set - |
+# union between 2 sets - a|b, items in either a or b - returns a new set - |
 print('union')
 print(even.union(squares))  # adding them both without repeated numbers
 print(even | squares)  # equivalent operator
 print(len(even.union(squares)))
 
-# intersection between 2 sets - a&b, items in both a and b - returns a new set - &
+# intersection between 2 sets - a&b, items in both a and b - returns a
+# new set - &
 print('intersection')
 print(even.intersection(squares))  # numbers that are present in both sets
 print(even & squares)  # equivalent operator
 
-# difference between 2 sets - a-b, items in a but not in b - returns a new set - -
+# difference between 2 sets - a-b, items in a but not in b - returns a
+# new set - -
 print('difference')
 print('even minus squares')
 print(sorted(even.difference(squares)))
@@ -50,14 +57,17 @@ print(sorted(even - squares))  # equivalent operator
 print('squares minus even')
 print(squares.difference(even))
 
-# symmetric difference - a^b, items in a or b but not in both - returns a new set - ^
+# symmetric difference - a^b, items in a or b but not in both - returns a
+# new set - ^
 print('symmetric difference, returns the opposite of the intersection set')
 print(sorted(even.symmetric_difference(squares)))
 print(sorted(even ^ squares))  # equivalent operator
 
 """
 print('difference_update() method')
-squares.difference_update(even)  # it does not return a new set, it modifies the current one
+# it does not return a new set, it modifies the current one
+squares.difference_update(even)
+
 print(squares)
 
 intersection_update and symmetric_difference_update also exists

@@ -2,7 +2,6 @@
 All pytz's data comes from the IANA (Internet Assigned Numbers Authority)
 Also known as Olser database
 """
-
 import datetime  # datetime is in charge to print the data nicely
 
 import pytz

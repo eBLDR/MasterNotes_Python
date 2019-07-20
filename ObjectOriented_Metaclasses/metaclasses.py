@@ -1,5 +1,6 @@
 """
-A metaclass (sometime referred to as 'class factories') is a class whose instances are classes.
+A metaclass (sometime referred to as 'class factories') is a class whose
+instances are classes.
 type is the metaclass where int, float, list, etc. inherit from.
 Classes are objects too.
 """
@@ -51,7 +52,8 @@ print()
 # Customising metaclasses
 z = Bar()
 z.attr_val()
-# The object creation line calls __call__() method, which invokes __new__() and __init__()
+# The object creation line calls __call__() method, which invokes __new__()
+# and __init__()
 # If those methods are not specified, will be inherited from object's ancestry.
 # Overriding them allows for customized behaviour when instantiating classes.
 
@@ -68,7 +70,8 @@ Bar.__new__ = new  # Overriding __new__ method
 y = Bar()
 print(y.attr)
 
-# type.__new__ = new will raise an Error, python does not allow modification of type metaclass
+# type.__new__ = new will raise an Error, python does not allow modification
+# of type metaclass
 
 print()
 

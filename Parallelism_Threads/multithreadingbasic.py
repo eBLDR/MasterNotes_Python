@@ -1,20 +1,20 @@
 """
 A 'thread' is the execution of the code, line by line.
-A 'single-threaded' program has only one thread of execution;
-is reading and executing only one line at the time.
-A 'multithreaded' program has multiple threads of execution (within one process);
-is reading and executing multiple lines at the same time.
+A 'single-threaded' program has only one thread of execution; is reading and
+executing only one line at the time.
+A 'multithreaded' program has multiple threads of execution (within one
+process); is reading and executing multiple lines at the same time.
 
 The module threading allows to implement this functionality.
 
-With multiple threads, the program (the process) will finish when all of them have reached the
-last line of its respective code. sys.exit() call will ONLY finish the
-thread where the statement is found, not all the threads.
+With multiple threads, the program (the process) will finish when all of them
+have reached the last line of its respective code. sys.exit() call will ONLY
+finish the thread where the statement is found, not all the threads.
 
-In most languages, each thread is assigned to one core, so two threads can run simultaneously,
-but in Python, all threads are assigned to the same core of the process, making them not to run simultaneously.
+In most languages, each thread is assigned to one core, so two threads can
+run simultaneously, but in Python, all threads are assigned to the same core
+of the process, making them not to run simultaneously.
 """
-
 import threading
 import time
 

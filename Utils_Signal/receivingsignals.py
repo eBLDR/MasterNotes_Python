@@ -3,7 +3,6 @@ While this script is running, use
 $ kill -<INT> <PID>
 to send signals to the current script.
 """
-
 import signal
 import os
 from time import sleep

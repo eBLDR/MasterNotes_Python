@@ -1,6 +1,8 @@
 """
 Project skeleton basis.
 
+Packages are just a convenience to organize modules hierarchically.
+
 Because mypackage has a __init__.py file, all the data inside
 the folder can be treated as if it was a single module.
 

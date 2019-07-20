@@ -1,7 +1,9 @@
 # Lists can be nested, that is called matrix
 nested_list = [[0, 1], [10, 11], [100, 111]]
 print(nested_list)
-print(nested_list[0], nested_list[1][1])  # Use multiple index to refer a specific item
+
+# Use multiple index to refer a specific item
+print(nested_list[0], nested_list[1][1])
 
 # Create matrix
 matrix = []

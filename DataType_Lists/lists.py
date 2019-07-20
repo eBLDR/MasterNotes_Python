@@ -32,19 +32,22 @@ del numbers[1]  # Deletes specific index from list
 print(numbers)
 
 # Copying lists
-# Dependent, refers to the same ID - pointing to the same memory location
+# Shallow copy, refers to the same ID - pointing to the same memory location
 another_even_1 = even  # This is called "aliasing"
 print('even is {}'.format(even))
 print('another_even_1 is {}'.format(another_even_1))
 print(id(another_even_1))
 print(id(even))
 
-another_even_1.append(0)  # Changing one of the list will cause both to change - applies also to nested lists
+# Changing one of the list will cause both to change - applies also to nested
+# lists
+another_even_1.append(0)
 print('even is {}'.format(even))
 print('another_even_1 is {}'.format(another_even_1))
 
-another_even_2 = list(even)  # Independent copy - pointing to a new memory location
-another_even_3 = even.copy()  # Also independent copy
+# Deep copy - pointing to a new memory location
+another_even_2 = list(even)
+another_even_3 = even.copy()  # Also deep copy
 another_even_2.append(10)
 print('Even is now {0} and another_even_2 is {1}'.format(even, another_even_2))
 print(id(another_even_2))

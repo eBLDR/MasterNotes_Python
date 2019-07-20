@@ -8,10 +8,13 @@ import matplotlib.pyplot as plt  # For plotting the graphs
 # Path to data file
 file_name = 'iris.data'  # It's a .csv
 # Can also be a url
-# url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+# url = \
+#     'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 
 # Field (column) names
-names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+names = [
+    'sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class'
+]
 # Loading the csv file
 dataset = pandas.read_csv(file_name, names=names)
 
@@ -41,7 +44,9 @@ print(dataset.groupby('class').size())
 
 # UNIVARIATE PLOTS
 # Box and whisker plots
-dataset.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False)
+dataset.plot(
+    kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False
+)
 plt.show()
 
 # Histograms
