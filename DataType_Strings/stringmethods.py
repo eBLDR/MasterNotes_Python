@@ -11,31 +11,47 @@ print('=' * 30)
 # Data type check
 anotherString = input('Enter a string: ')
 
-print('Is digit = {}'.format(anotherString.isdigit()))  # true if str is number (int)
-print('Is alpha = {}'.format(anotherString.isalpha()))  # true if str is alphabetic
-print('Is alnum = {}'.format(anotherString.isalnum()))  # true if str is alphanumeric
-print('Startswith \'a\' = {}'.format(anotherString.startswith('a')))  # true if str starts whit 'char'
-print('Endswith \'a\' = {}'.format(anotherString.endswith('a')))  # true if str ends with 'char'
+# true if str is number (int)
+print('Is digit = {}'.format(anotherString.isdigit()))
+
+# true if str is alphabetic
+print('Is alpha = {}'.format(anotherString.isalpha()))
+
+# true if str is alphanumeric
+print('Is alnum = {}'.format(anotherString.isalnum()))
+
+# true if str starts whit @char
+print('Startswith \'a\' = {}'.format(anotherString.startswith('a')))
+
+# true if str ends with @char
+print('Endswith \'a\' = {}'.format(anotherString.endswith('a')))
 
 print('=' * 30)
 
 # Stripping - default value for stripping is \n
 file_name = 'image.png'
-print(file_name.strip('pg.n'))  # will strip from both sides if matching, order doesn't matter
-print(file_name.rstrip('.png'))  # will strip only from right side if matching
-print(file_name.lstrip('ma'))  # will strip only from left side if matching
+
+# will strip from both sides if matching, order doesn't matter
+print(file_name.strip('pg.n'))
+
+# will strip only from right side if matching
+print(file_name.rstrip('.png'))
+
+# will strip only from left side if matching
+print(file_name.lstrip('ma'))
 
 print('=' * 30)
 
-# str.replace(@old, @new, @count) - replaces @old with @new a maximum of @count times
+# str.replace(@old, @new, @count) - replaces @old with @new a maximum of
+# @count times
 name = 'Epsylon'
 new_name = name.replace('E', 'I')
 print(new_name)
 
 print('=' * 30)
 
-# str.find(@char, @start, @end) - return the lowest index in the str where @char is found
-# return -1 if it is not found
+# str.find(@char, @start, @end) - return the lowest index in the str where
+# @char is found; return -1 if it is not found
 print(name.find('sy'))
 print(name.find('p', 3, 6))
 

@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#!/usr/bin/python3
 """
 A RESTful API is an application program interface (API) that uses HTTP requests
 to GET, PUT, POST and DELETE data.

@@ -22,4 +22,3 @@ ENV NAME mydockerenv
 
 # Run this when the container launches - [application, filename]
 CMD ["python", "app.py"]
-

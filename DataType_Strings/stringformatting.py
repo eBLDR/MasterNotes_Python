@@ -39,7 +39,8 @@ print('\n{{}} I am showing the curly braces! {}'.format(';)'))
 
 print('=' * 30)
 
-# spacing & figures - {0:n.m} - n is the total number of figures, m is the number of decimal figures
+# spacing & figures - {0:n.m} - n is the total number of figures, m is the
+# number of decimal figures
 # .f for float type
 print('\nPi is approximately {0:.10f}\n'.format(22 / 7))
 
@@ -54,18 +55,24 @@ print('{:>15} BLDR'.format(name))  # t justify to right
 
 print('=' * 30)
 
-# Alignment - < for left alignment - > for right alignment (default) - ^ for center alignment
+# Alignment: < for left alignment; > for right alignment (default);
+# ^ for center alignment
 # preceding the alignment character, we can set a filling character
-# the + character indicates that we want to print '+' for positive numbers and '-' for negative
+# the + character indicates that we want to print '+' for positive numbers
+# and '-' for negative
 for i in range(-16, 30, 5):
-    print('No. {0:+3} squared is {1:<6.1f} and cubed is {2:*^+12.2f}'.format(i, i ** 2, i ** 3))
+    print('No. {0:+3} squared is {1:<6.1f} and cubed is {2:*^+12.2f}'.format(
+        i, i ** 2, i ** 3)
+    )
 
 print('=' * 30)
 
 # Converting to different numeral bases
 print('int: {0:d}; hex: {0:x};HEX: {0:X}; oct: {0:o}; bin: {0:b}'.format(42))
 # with 0x, 0o, or 0b as prefix:
-print('int: {0:d}; hex: {0:#x};HEX: {0:#X}; oct: {0:#o}; bin: {0:#b}'.format(42))
+print('int: {0:d}; hex: {0:#x};HEX: {0:#X}; oct: {0:#o}; bin: {0:#b}'.format(
+    42)
+)
 
 print('=' * 30)
 

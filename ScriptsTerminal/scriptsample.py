@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#!/usr/bin/python3
 """
 The first line is the 'shebang' line (see magiclines.txt).
 

@@ -10,10 +10,10 @@ Equivalent format is:
 
 Crossed Platforms:
 
-- Windows, the shebang line is  #! python3
-- OS X, the shebang line is     #! /usr/bin/env python3
-- Linux, the shebang line is    #! /usr/bin/python3 (or OS X)
-- Virtual environments          #! /myvenv/bin/python
+- Windows, the shebang line is  #!python3
+- OS X, the shebang line is     #!/usr/bin/env python3
+- Linux, the shebang line is    #!/usr/bin/python3 (or OS X)
+- Virtual environments          #!/myvenv/bin/python
 
 
 Line 2 is the encoding used on the file, utf-8 is the most common, and the default value, it must be always on the first two lines.

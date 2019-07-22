@@ -36,12 +36,15 @@ print(metallica[0])
 
 print(imelda)
 print(id(imelda))
-imelda = imelda[0], 'Imelda May', imelda[2]  # We're reassigning the values by creating a new list with same name
+
+# We're reassigning the values by creating a new list with same name
+imelda = imelda[0], 'Imelda May', imelda[2]
 print(imelda)
 print(type(imelda))
 print(id(imelda))
 
-# Unpacking the tuple, number of items in tuple have to match with numbers of variables
+# Unpacking the tuple, the number of items in the tuple have to match with the
+# number of variables
 title, artist, year = metallica
 print(title)
 print(artist)

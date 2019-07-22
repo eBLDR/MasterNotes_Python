@@ -2,12 +2,16 @@
 from collections import namedtuple
 
 # Generate the tuple structure - (@type, @[name1, name2, ..., nameN])
-plant = namedtuple('Plant', ['name', 'scientific_name', 'lifecycle', 'plant_type'])
+plant = namedtuple(
+    'Plant',
+    ['name', 'scientific_name', 'lifecycle', 'plant_type']
+)
 
 # Identifiers can also be specified as a comma-separated
 # i.e.: namedtuple('Plant', 'name, scientific_name, lifecycle, plant_type')
 
-# Create the named tuple by specifying the arguments to be put in the corresponding names, by order
+# Create the named tuple by specifying the arguments to be put in the
+# corresponding names, by order
 my_plant = plant('Andro', 'OndraScience', 'Green', 'Fire')
 print(my_plant)
 

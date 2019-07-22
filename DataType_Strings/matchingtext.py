@@ -3,7 +3,8 @@ import random
 import time  # importing time is an optional feature
 
 # valid characters
-possible_characters = string.ascii_letters + string.digits + string.punctuation + ' '
+possible_characters = string.ascii_letters + string.digits + \
+                      string.punctuation + ' '
 
 while True:
     target = input('Enter target text: ')
@@ -13,7 +14,8 @@ while True:
         print('Must be something, anything, but something!')
 
 # setting first combination
-attempt_this = ''.join(random.choice(possible_characters) for i in range(len(target)))
+attempt_this = ''.join(random.choice(possible_characters)
+                       for i in range(len(target)))
 
 generation = 0  # counting number of attempts
 
