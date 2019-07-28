@@ -32,10 +32,10 @@ def check_surface_collision(surface_1, surface_2):
     return surface_1.colliderect(surface_2)
 
 
-def check_mouse_collide(surface, mouse_position):
+def check_mouse_collide(surface, mouse_position, name):
     # Checks if point is inside a rectangle
     if surface.collidepoint(mouse_position):
-        print('Mouse on top!')
+        print('{}: Mouse on top!'.format(name.upper()))
 
 
 pygame.init()
@@ -61,8 +61,8 @@ while run:
 
         elif event.type == pygame.MOUSEMOTION:
             mouse_x, mouse_y = event.pos
-            check_mouse_collide(hawk.get_hit_box(), (mouse_x, mouse_y))
-            check_mouse_collide(falcon.get_hit_box(), (mouse_x, mouse_y))
+            check_mouse_collide(hawk.get_hit_box(), (mouse_x, mouse_y), 'hawk')
+            check_mouse_collide(falcon.get_hit_box(), (mouse_x, mouse_y), 'falcon')
 
     key_state = pygame.key.get_pressed()
 

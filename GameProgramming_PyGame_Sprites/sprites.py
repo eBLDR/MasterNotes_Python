@@ -106,7 +106,7 @@ while running:
 
     player.update(keys)
 
-    # This will call the specified method of all the sprite in the group
+    # This will call the specified method of all the sprites in the group
     enemies.update()
 
     # Iterate over the sprite group and render all sprites
