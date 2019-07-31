@@ -8,9 +8,9 @@ Classes are objects too.
 # Defining a class dynamically using type(@name, @bases, @dct)
 # @name is class' name, __name__
 # @base tuple of the base classes which the class inherits, __bases__
-# @dct is the namespace dict containint attributes, __dict__
+# @dct is the namespace dict containing attributes, __dict__
 
-# Simplest example, empty class - equivalen to class Foo: pass
+# Simplest example, empty class - equivalent to class Foo: pass
 Foo = type('Foo', (), {})
 print(Foo.__name__, Foo.__bases__, Foo.__dict__)
 

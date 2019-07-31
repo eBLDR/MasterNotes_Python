@@ -43,8 +43,9 @@ class Kettle:  # By convention, start with capital letter and use camel case
     # Will override the docstring specified on the class, if desired.
 
     def to_dict(self):
-        # Returns a dictionary of the attributes and stored values, so it's
-        # not necessary to access a protected method from outside
+        # Returns a dictionary of the attributes and stored values (not
+        # including method), so it's not necessary to access a protected
+        # method from outside
         return self.__dict__
 
 

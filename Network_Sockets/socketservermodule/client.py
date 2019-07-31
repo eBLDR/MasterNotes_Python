@@ -1,16 +1,18 @@
 import socket
 import sys
 
+usage_msg = 'Usage: client.py <port> <msg> <msg> ...'
+
 try:
     HOST, PORT = 'localhost', int(sys.argv[1])
 except (IndexError, ValueError):
-    print('Usage: client.py <port> str str...')
+    print(usage_msg)
     sys.exit()
 
 data = ' '.join(sys.argv[2:])
 
 if not data:
-    print('Usage: client.py <port> str str...')
+    print(usage_msg)
     sys.exit()
 
 # Create a socket (SOCK_STREAM means a TCP socket)

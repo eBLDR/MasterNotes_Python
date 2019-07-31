@@ -78,6 +78,7 @@ enemies = pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
 
 # Adding player sprite to sprite group
+# add(*sprites) will add only sprites that are not already members of the Group
 all_sprites.add(player)
 
 # Checks if group contains sprites
@@ -120,6 +121,12 @@ while running:
     # clear(@destination_surface, @background_surface)
     # @destination_surface is cleared with @background_surface
     # all_sprites.clear(screen, background_surface)
+
+    # Removes all sprites from the group
+    # all_sprites.empty()
+
+    # Remove the sprite/s from the group
+    # all_sprites.remove(*sprites)
 
     # Checking sprite collision
     # spritecollideany(@sprite, @group)

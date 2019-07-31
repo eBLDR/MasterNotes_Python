@@ -8,7 +8,8 @@ PORT = 8880  # Arbitrary non-privileged port
 def client_thread(conn, addr):
     # Handles the connection
     print('Connected with {}.'.format(address))
-    conn.send(b'Welcome to the server. Type something and hit enter (EXIT for stop connection)\n')
+    conn.send(b'Welcome to the server. Type something and hit enter '
+              b'(EXIT for stop connection)\n')
     while True:
         # Communication between client and server
         data = conn.recv(1024)
@@ -16,7 +17,8 @@ def client_thread(conn, addr):
             # Received 0 bytes, connection on the other side has closed
             break
         reply = b'ECHO...' + data
-        print('Server has received msg: {} from {}, server is echoing it.'.format(data, addr))
+        print('Server has received msg: {} from {}, '
+              'server is echoing it.'.format(data, addr))
         conn.sendall(reply)
 
     # Close connection when all tasks are done
@@ -41,4 +43,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
         connection, address = server.accept()
 
         # Start the new thread for the connection
-        threading.Thread(target=client_thread, args=(connection, address)).start()
+        threading.Thread(
+            target=client_thread, args=(connection, address)
+        ).start()

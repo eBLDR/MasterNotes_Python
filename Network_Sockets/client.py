@@ -1,8 +1,12 @@
 """
-A network socket is an internal endpoint for sending or receiving data within a node on a computer network.
-An Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
+A network socket is an internal endpoint for sending or receiving data within
+a node on a computer network.
+An Internet Protocol address (IP address) is a numerical label assigned to
+each device connected to a computer network that uses the Internet Protocol
+for communication.
 
-Client, a system that connects to a remote system to fetch data. Client workflow:
+Client, a system that connects to a remote system to fetch data.
+Client workflow:
     1. Create a socket
     2. Connect to remote server
     3. Send some data
@@ -20,7 +24,8 @@ except socket.error as e:
     print('Failed to create socket. Error: {}'.format(e))
     raise e
 
-# CONNECT TO A SERVER - for remote servers, we need IP address and port number to connect to
+# CONNECT TO A SERVER - for remote servers, we need IP address and port number
+# to connect to
 host = 'www.google.com'
 
 # Getting the IP address
@@ -36,7 +41,8 @@ except socket.gaierror:
 port = 80  # Port 80 is the default port for HTTP
 # Port 443 is the default port for HTTPS
 
-my_socket.settimeout(3)  # Timeout (sec) before blocking socket operations, otherwise it may hang if it cannot connect
+my_socket.settimeout(3)  # Timeout (sec) before blocking socket operations,
+# otherwise it may hang if it cannot connect
 
 try:
     # socket.connect((@ip_address, @port_number))
@@ -47,18 +53,22 @@ try:
 
     # A pipe is connecting socket.getsockname() to socket.getpeername()
 
-    # Display the address where the socket is currently connected to - socket endpoint
+    # Display the address where the socket is currently connected to - socket
+    # endpoint
     print('Is connected to address: {}'.format(my_socket.getpeername()))
 
 except socket.error:
     print('Timeout exceeded, cannot connect to remote host.')
     raise
 
-print('Socket connected to {} on IP {} on port {}.'.format(host, remote_ip, port))
+print('Socket connected to {} on IP {} on port {}.'.format(
+    host, remote_ip, port)
+)
 
 # SENDING DATA
 # Message must be bytes type
-msg = b'GET / HTTP/1.1\r\n\r\n'  # HTTP 'command' to fetch the main page of a website
+msg = b'GET / HTTP/1.1\r\n\r\n'  # HTTP 'command' to fetch the main page of a
+# website
 
 try:
     my_socket.sendall(msg)
@@ -76,4 +86,5 @@ print('Response:\n{}'.format(reply))
 
 # Closing the socket
 my_socket.close()
-# It is a good practice to use the context manager (with) when working with sockets
+# It is a good practice to use the context manager (with) when working with
+# sockets
