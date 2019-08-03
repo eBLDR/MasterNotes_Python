@@ -9,19 +9,19 @@ Usage:
   pip <command> [options]
 
 Commands:
-  install             Install packages.
-  download            Download packages.
-  uninstall           Uninstall packages.
-  freeze              Output installed packages in requirements format.
-  list                List installed packages.
-  show                Show information about installed packages.
-  check               Verify installed packages have compatible dependencies.
-  search              Search PyPI for packages.
-  wheel               Build wheels from your requirements.
-  hash                Compute hashes of package archives.
-  completion          A helper command used for command completion.
-  config	      Manage local and global configuration.
-  help                Show help for commands.
+  install           Install packages.
+  download          Download packages.
+  uninstall         Uninstall packages.
+  freeze            Output installed packages in requirements format.
+  list              List installed packages.
+  show              Show information about installed packages.
+  check             Verify installed packages have compatible dependencies.
+  search            Search PyPI for packages.
+  wheel             Build wheels from your requirements.
+  hash              Compute hashes of package archives.
+  completion        A helper command used for command completion.
+  config	        Manage local and global configuration.
+  help              Show help for commands.
 
 
 Examples:
@@ -32,3 +32,8 @@ Examples:
   Upgrade all packages from environment
   $ pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 
+  # Will install all the modules/packages found in the requirements file
+  # The reqs file is usually names requirements.txt by convention, and is
+  # a good practise to pin the dependencies, this is to set them to a fixed
+  # version, i.e.: flask==1.0.1
+  $ pip install --no-cache-dir -r requirements.txt -I
