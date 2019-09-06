@@ -14,7 +14,9 @@ def my_range(n: int):  # Creating a generator
     start = 0
     while start < n:
         print('my_range is returning {}'.format(start))
+        print('### Before yield')
         yield start
+        print('### After yield')
         start += 1
 
 
@@ -41,9 +43,9 @@ for val in big_range:  # what 'for' is actually doing is calling next()
 print('big_list is {} bytes'.format(sys.getsizeof(big_list)))
 
 print('looping again... or not')  # once the iterator is used, it's empty
-for i in big_range:
+print('big_range is already used')
+for i in big_range:  # Empty generator
     print('i is {}'.format(i))
-    print('big_range is already used')
 
 print('Starting a new range')
 for i in my_range(5):  # creating another generator
