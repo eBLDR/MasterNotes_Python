@@ -10,7 +10,8 @@ the scenes.
 class Alpha:
 
     # __init__ is a magic method, it's invoked at the moment of the
-    # instantiation
+    # instantiation. Is called just before the newly created object is
+    # returned for usage.
     def __init__(self, x):
         self.x = x
 
@@ -24,6 +25,7 @@ my_alpha = Alpha(1)
 
 # Objects can also have the __del__ magic method, which can handle the
 # garbage collection at the moment of deleting the object.
+# __del__ method is called ust before the object is destroyed.
 
 # The __call__ method turns the instances into callable
 class Poly:

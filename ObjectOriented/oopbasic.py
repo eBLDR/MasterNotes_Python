@@ -22,7 +22,7 @@ class Kettle:  # By convention, start with capital letter and use camel case
     # Constructor method
     def __init__(self, make, price):
         # Creating the data attributes (a variable bound to a class)
-        # the self is a reference to the instance itself
+        # the self is a reference to the instance itself, called "attribute reference"
         self.make = make
         self.price = price
         self.on = False

@@ -19,7 +19,7 @@ When creating an object, 3 things are happening:
     (this is the = symbol task).
 """
 
-# Identifier assigned/referenced to an object
+# Identifier assigned/referenced to an object - this is called "binding"
 z = 1  # 1 is a literal constant
 
 print('z = 1, z is the identifier (reference name),'

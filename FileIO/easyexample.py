@@ -1,7 +1,8 @@
 """ Multiple modes example.
-Two types of files exist:
+Three broad types of files exist:
     - Plain text files
     - Binary files
+    - Raw files, AKA "unbuffered"
 """
 # type full path ('C:\User\BLDR\Desktop\...') or relative path using \\
 # sometimes we need to use the scape backslash (\\) to avoid unexpected formatting (\n, \t, ...)
@@ -10,7 +11,8 @@ Two types of files exist:
 filename = 'easyexample.txt'
 
 # WRITE - Create file if not found, truncates the file
-my_file = open(filename, 'w', encoding='utf-8')
+# @buffering=0, disable buffering for dealing with raw streams
+my_file = open(filename, 'w', encoding='utf-8')  # , buffering=0)
 # Encoding can specify the file's character encoding
 
 my_file.write('Aloha!\n')  # Adding some text

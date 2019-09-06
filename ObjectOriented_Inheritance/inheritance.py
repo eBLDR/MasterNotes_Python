@@ -1,6 +1,6 @@
 """
 SUPER CLASS - is the base class
-SUB CLASS - inherits from a super class
+SUB CLASS - AKA "derived class", inherits from a super class
 INHERITANCE - will inherit all the attributes, properties and methods
 """
 

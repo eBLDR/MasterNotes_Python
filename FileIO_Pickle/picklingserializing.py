@@ -1,3 +1,9 @@
+"""
+The module pickle allows to store any plain Python object in a file and then
+get it back later.
+This is called storing the object persistently.
+"""
+
 import pickle
 
 a7x = ('Nightmare',
@@ -18,6 +24,7 @@ with open('a7x.pickle', 'wb') as a7x_file:
     pickle.dump(even, a7x_file, protocol=0)
     pickle.dump(odd, a7x_file, protocol=pickle.DEFAULT_PROTOCOL)  # is possible to set different protocols on each code
     pickle.dump(1224, a7x_file, protocol=pickle.HIGHEST_PROTOCOL)  # is also possible to write values in the spot
+
 """
 PROTOCOLS 5 @ the moment of writing
 PROTOCOL 0, first version, easiest human readable
@@ -41,4 +48,4 @@ print(x)
 # loads() method, different code has to be typed depending on the os used
 # del for delete, followed by the name of the file
 # very easy to delete a file using pickle, spywares use techniques like this
-pickle.loads(b"cos\nsystem\n(S'del a7x.pickle'\ntR.")  # for Windows
+# pickle.loads(b"cos\nsystem\n(S'del a7x.pickle'\ntR.")  # for Windows

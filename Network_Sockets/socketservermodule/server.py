@@ -41,5 +41,5 @@ if __name__ == '__main__':
     with socketserver.TCPServer((HOST, PORT), MyTCPHandler) as server:
         print('Server is active.')
         # Activate the server; this will keep it running until you
-        # interrupt the program with Ctrl-C
+        # interrupt the program with Ctrl+C
         server.serve_forever()
