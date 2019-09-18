@@ -7,8 +7,16 @@ x = 12
 expr = 'Twelve' if x == 12 else 'unknown'
 print(expr)
 
+# Useful when checking presence of object
+s = None
+result = len(s) if s else 0
+
+# Equivalent to (as usage of ternary operator)
+result = s and len(s) or 0
+
 # Cannot contain any elif, but can have multiple if/else
 menu = [['eggs', 'bacon'], ['eggs', 'bread'], ['bread', 'bacon'], ['bread']]
+
 for ingredients in menu:
     print(
         ingredients,
