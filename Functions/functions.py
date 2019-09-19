@@ -75,6 +75,15 @@ say('Hello')
 say('World', times=5)
 
 
+# Keyword parameters can be scpefied refering an existing variable
+default = 'whats\'up'
+def speak(text=default):
+    print(text)
+
+
+speak()
+
+
 # Function annotations can also be placed in named arguments
 def happy_text(*texts, sep: str = ' :) '):
     text = ''
