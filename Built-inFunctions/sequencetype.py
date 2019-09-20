@@ -2,7 +2,7 @@
 # (str, list, tuple, range...)
 string_sample = 'I am a sample, yes'  # immutable
 list_sample = ['A', 'ch', 12, True, 'X', 36]  # mutable
-tuple_sample = 4, 12, 0, 100, 1  # immutable
+tuple_sample = 4, 12, -3, 100, 1  # immutable
 set_sample = {1, 5, 45, 55}  # mutable, not indexed
 
 # in keyword - membership - returns True or False to the question: is
@@ -65,10 +65,12 @@ print('=' * 20)
 
 # sorted(key=function, reverse=False) - returns a sorted list, cannot mix
 # digits with alphabetical characters
-# @key will sort by the value returned from passing the item to the
-# function (i.e.: key=len will sort using len())
 sor = sorted(tuple_sample, reverse=False)
 print(sor)
+
+# @key will sort by the value returned from passing the item to the
+# function (i.e.: key=len will sort using len())
+print(sorted(tuple_sample, key=lambda num: num ** 2))
 
 print('=' * 20)
 
