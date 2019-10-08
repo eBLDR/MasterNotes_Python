@@ -1,4 +1,4 @@
-import pygame as pygame
+import pygame
 
 
 class InputBox:
@@ -23,10 +23,11 @@ class InputBox:
 
         if event.type == pygame.KEYDOWN:
             if self.active:
+                text_to_return = None
 
                 # Pressed enter - input is done
                 if event.key == pygame.K_RETURN:
-                    print(self.text)
+                    text_to_return = self.text
                     self.text = ''
 
                 # Delete
@@ -36,8 +37,12 @@ class InputBox:
                 # Add one character
                 else:
                     self.text += event.unicode
+
                 # Re-render the text.
                 self.txt_surface = FONT.render(self.text, True, self.color)
+
+                if text_to_return:
+                    return text_to_return
 
     def update(self):
         # Resize the box if the text is too long.
@@ -63,7 +68,9 @@ def main():
             if event.type == pygame.QUIT:
                 done = True
             for box in input_boxes:
-                box.handle_event(event)
+                input_text = box.handle_event(event)
+                if input_text:
+                    print(input_text)
 
         for box in input_boxes:
             box.update()
