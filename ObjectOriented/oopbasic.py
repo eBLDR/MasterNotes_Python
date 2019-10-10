@@ -39,9 +39,6 @@ class Kettle:  # By convention, start with capital letter and use camel case
         # Specify what's the output when calling print(class_name)
         return 'I\'m an instance from class {}!'.format(Kettle.__name__)
 
-    # def __doc__(self):
-    # Will override the docstring specified on the class, if desired.
-
     def to_dict(self):
         # Returns a dictionary of the attributes and stored values (not
         # including method), so it's not necessary to access a protected
@@ -122,12 +119,3 @@ print(kenwood)
 print('=' * 30)
 
 print('Kettle.__bases__ is', Kettle.__bases__)
-
-print('=' * 30)
-
-# Displaying docstrings
-# to print only the docstring of the class
-print(Kettle.__doc__)
-
-# to print only the docstring of a method of the class
-print(Kettle.switch_on.__doc__)
