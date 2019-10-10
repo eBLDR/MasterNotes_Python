@@ -22,20 +22,21 @@ import time
 from math import pi, sqrt, pow
 import random
 """
-# Importing our own module
+# Importing our own module - using absolute import
+# absolute path in reference to __main__ (PYTHONPATH)
 import sampleimported  # To import the whole module
 
 # If we wish to change the name to reference to the module
 # import sampleimported as <new_name>
 
 # The next statement will import all (*) from the file, except for the methods
-# that start with underscore (_),
-# this is not advised because all the names become part of our namespace and
-# can cause problems with duplicates
+# that start with underscore (_), this is not advised because all the names
+# become part of our namespace and can cause problems with duplicates
 # from sampleimported import *
 
 # We can import specific objects
-from sampleimported import superKey
+# Using relative import - relative path in reference to file
+from .sampleimported import superKey
 
 # __name__ is an attribute of the file
 print('I am ' + __name__)

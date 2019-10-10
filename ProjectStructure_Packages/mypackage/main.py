@@ -12,6 +12,9 @@ module inside the package.
 # Importing the whole module
 from mypackage import demomodule
 
+# This is also an option
+# import mypackage.demomodule
+
 # Specific object import
 from mypackage.demomodule import demo2
 
