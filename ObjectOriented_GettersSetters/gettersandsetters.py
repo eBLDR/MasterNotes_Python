@@ -1,16 +1,11 @@
-# Getters & setters for private data attributes.
-# Using encapsulation for mangling and private attributes.
-# See encapsulation.txt
-
-
 class Player:
-
     def __init__(self, name):
         self.name = name
-        self._lives = 3  # _attribute to show that it should be private
+
+        # Private data attributes
+        self._lives = 3
         self._level = 1
         self._score = 0
-        self.__mangle = None  # Just for the example of name mangling
 
     # Getter, a method that returns the value of an attribute
     def _get_lives(self):  # _ to show that it's private and these methods shouldn't be used
@@ -55,10 +50,6 @@ class Player:
         return 'Name: {0.name}, Lives: {0.lives}, Level: {0.level}, ' \
                'Score: {0.score}'.format(self)
 
-    # Private method - can only be called from inside the class
-    def __private(self):
-        pass
-
 
 bldr = Player('BLDR')
 
@@ -69,7 +60,8 @@ print(bldr.name)  # Printing specific data attribute
 # causes the getter method to be called
 print(bldr.lives)
 
-bldr.lives = 5  # And this, calls the setter method
+# And this, calls the setter method
+bldr.lives = 5
 print(bldr)
 
 # Augmented assignment also works for setters
@@ -79,13 +71,6 @@ print(bldr)
 bldr.level -= 1
 print(bldr)
 
-bldr.score = 500  # Setter method, property created using decorators
+# Setter method, property created using decorators
+bldr.score = 500
 print(bldr)
-
-# Mangling
-bldr.__mangle = 30  # Trying to edit a mangled attribute
-print(bldr.__mangle)
-print(bldr.__dict__)  # Here we can see mangling working, _Player_mangle attribute has been created
-
-# trying to call a private method from outside will raise an error
-# bldr.__private()
