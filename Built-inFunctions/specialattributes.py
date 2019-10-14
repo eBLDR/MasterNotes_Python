@@ -17,7 +17,7 @@ print('type.__name__ is:', type.__name__)
 print('type.__qualname__ is:', type.__qualname__)
 
 # A tuple of classes that are considered when looking for base classes during
-# method resolution
+# method resolution - MRO (Method Resolution Order)
 print('type.__mro__ is:', type.__mro__)
 
 # A list of weak references to its immediate subclasses

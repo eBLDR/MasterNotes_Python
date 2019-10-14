@@ -22,7 +22,7 @@ class Clock(Time, Date):
         # super() will call to the first base class declared
         print('super().__init__ is: ', super().__init__)
 
-        # __init__ calls have to be called manually for each
+        # __init__ calls have to be called manually for each, with self specified
         Time.__init__(self, hour, minute, second)
         Date.__init__(self, year, month, day)
 

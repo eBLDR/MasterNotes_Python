@@ -36,6 +36,7 @@ class Enemy:
 class Troll(Enemy):
     """ Troll is a Sub Class of Enemy, it's inheriting data from Enemy """
 
+    # If __init__ method is not rewritten, it will take super class' one by default
     def __init__(self, name, iq=1):
         # using Super class constructor method
         # Enemy.__init__(self, name=name, lives=1, hit_points=23)
