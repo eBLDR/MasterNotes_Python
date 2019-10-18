@@ -53,3 +53,31 @@ with open('centred.txt', mode='w') as centredFile:
     centre_text('or 0000 1100 in 1 byte', file=centredFile)
     centre_text('or C in hex', file=centredFile)
     centre_text('it can', 'also take', 'several number of', 'arguments', sep_char='-sep-', file=centredFile)
+
+# From Python 3.8+, positional-only and keyword-only argument notation is implemented
+# Failing to call the function in the correct way when specified will raise
+# a TypeError
+# Use of "/" denote that all arguments before it must be specified by position
+"""
+def increment(x, /):
+    return x + 1
+
+
+print(increment(5))
+# print(increment(x=5))  # TypeError
+
+
+# Use of "*" denote that all arguments after it must be specified by keyword
+def to_fahrenheit(*, celsius):
+    return 32 + celsius * 9 / 5
+
+
+print(to_fahrenheit(celsius=40))
+print(to_fahrenheit(40))  # TypeError
+
+
+# A combination of both is possible
+# In this example, @border can be specified both w/ or w/o keyword
+def headline(text, /, border="♦", *, width=50):
+    return f' {text} '.center(width, border)
+"""

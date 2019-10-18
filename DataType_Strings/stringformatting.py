@@ -31,8 +31,12 @@ print('X: {0[0]};  Y: {0[1]}'.format(coord))
 # Referencing attributes from an instance of a class
 # print('Weight in tons {0.attribute}'.format(object_sample))
 
-# From python 3.6+, s = f'{x}' can be used in place of s = '{}'.format(x)
+# From Python 3.6+, s = f'{x}' can be used in place of s = '{}'.format(x)
 print(f'My age is {age}...')
+
+# From Python 3.8+, a simpler way for debugging has been implemented
+# Adding the '=' character, will print the variable name followed by its value
+# print(f'{age=}...')  # Output is: 'age=24'
 
 # If we wish to use curly braces inside the printing line while using format()
 print('\n{{}} I am showing the curly braces! {}'.format(';)'))
