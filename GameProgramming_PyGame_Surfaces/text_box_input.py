@@ -68,6 +68,7 @@ def main():
             if event.type == pygame.QUIT:
                 done = True
             for box in input_boxes:
+                # If any text has been input (enter was pressed), it will be returned here
                 input_text = box.handle_event(event)
                 if input_text:
                     print(input_text)
