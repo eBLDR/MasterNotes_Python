@@ -1,16 +1,3 @@
-"""
-COMPOSITION is the technique of assigning a class to a data attribute of another class.
-So, an object can be made out of different classes (and also attributes of its own).
-i.e.: the Duck object has Wing object, Peak object, Leg object, and so on.
-In simple words, composition works when something HAS something, rather than
-something IS something (which would be inheritance).
-
-AGGREGATION, unlike composition, aggregation uses existing instances of objects to build up another object.
-The composed object doesn't actually own the objects that it's composed of, if it's destroyed,
-those objects continue to exist.
-"""
-
-
 class Tag:
 
     def __init__(self, name, contents=''):
@@ -96,10 +83,10 @@ if __name__ == '__main__':
     # AGGREGATION
     new_body = Body()  # we first create the object that is going to be aggregated
     new_body.add_tag('H1', 'Aggregation')
-    new_body.add_tag('P', "Unlike <strong>composition</strong>, aggregation uses existing instances"
-                          " of objects to build up another object.")
-    new_body.add_tag('P', "The composed object doesn't actually own the objects that it's composed of"
-                          " - if it's destroyed, those objects continue to exist.")
+    new_body.add_tag('P', 'Unlike <strong>composition</strong>, aggregation uses existing instances'
+                          ' of objects to build up another object.')
+    new_body.add_tag('P', 'The composed object doesn\'t actually own the objects that it\'s composed of'
+                          ' - if it\'s destroyed, those objects continue to exist.')
 
     # give our document new content by switching it's body
     my_page._body = new_body  # here we aggregate the object created above to another object
