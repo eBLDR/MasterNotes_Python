@@ -1,5 +1,6 @@
-# CIRCULAR REFERENCES happen when we call C class from B class, B class from A class, and A class from C class
-# may arise problems easily
+# CIRCULAR REFERENCES happen when we call C class from B class,
+# B class from A class, and A class from C class.
+# It may arise problems easily
 
 
 class Song:
@@ -24,13 +25,14 @@ class Song:
 
 
 class Album:
-    """ Class to represent an Album, using it's track list
+    """Class to represent an Album, using it's track list
 
     Attributes:
         name (str): The name of the album.
         year (int): The year was album was released.
-        artist: (str): The name of the artist responsible for the album. If not specified,
-        the artist will default to an artist with the name "Various Artists".
+        artist: (str): The name of the artist responsible for the album. If
+        not specified, the artist will default to an artist with the name
+        "Various Artists".
         tracks (List[Song]):  A list of the songs on the album.
 
     Methods:
@@ -41,7 +43,7 @@ class Album:
         self.name = name
         self.year = year
         if artist is None:
-            self.artist = "Various Artists"
+            self.artist = 'Various Artists'
         else:
             self.artist = artist
 
@@ -87,7 +89,8 @@ class Artist:
 
         Args:
             album (Album): Album object to add to the list.
-                If the album is already present, it will not added again (although this is yet to implemented).
+                If the album is already present, it will not added again
+                (although this is yet to implemented).
         """
         self.albums.append(album)
 
@@ -114,7 +117,8 @@ class Artist:
 
 
 def find_object(field, object_list):
-    """Check 'object_list' to see if an object with a 'name' attribute equal to 'field' exists, return it if so."""
+    """Check 'object_list' to see if an object with a 'name' attribute equal
+    to 'field' exists, return it if so."""
     for item in object_list:
         if item.name == field:
             return item
@@ -127,9 +131,13 @@ def load_data():
     with open('albums.txt', 'r') as albums:
         for line in albums:
             # data row should consist of (artist, album, year, song)
-            artist_field, album_field, year_field, song_field = tuple(line.strip('\n').split('\t'))
+            artist_field, album_field, year_field, song_field = tuple(
+                line.strip('\n').split('\t')
+            )
             year_field = int(year_field)
-            print('{}:{}:{}:{}'.format(artist_field, album_field, year_field, song_field))
+            print('{}:{}:{}:{}'.format(
+                artist_field, album_field, year_field, song_field
+            ))
 
             new_artist = find_object(artist_field, artist_list)
             if new_artist is None:
@@ -142,13 +150,16 @@ def load_data():
 
 
 def create_checkfile(artist_list):
-    """Create a check file from the object data for comparison with the original file"""
+    """Create a check file from the object data for comparison with the
+    original file."""
     with open('checkfile.txt', 'w') as checkfile:
         for new_artist in artist_list:
             for new_album in new_artist.albums:
                 for new_song in new_album.tracks:
-                    print('{0.name}\t{1.name}\t{1.year}\t{2.title}'.format(new_artist, new_album, new_song),
-                          file=checkfile)
+                    print('{0.name}\t{1.name}\t{1.year}\t{2.title}'.format(
+                        new_artist, new_album, new_song
+                    ),
+                        file=checkfile)
 
 
 if __name__ == '__main__':
