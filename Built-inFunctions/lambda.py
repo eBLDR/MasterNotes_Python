@@ -57,3 +57,50 @@ print(reduce(f, [47, 11, 42, 102, 13]))
 
 # Returns the sum of all numbers
 print(reduce(lambda x, y: x + y, range(1, 101)))
+
+print('=' * 20)
+
+
+class StringConversionMethod:
+    """Class for defining string conversion methods."""
+
+    def __init__(self, name, execute_func):
+        self.name = name
+        self.execute_func = execute_func
+
+    def __str__(self):
+        return self.name
+
+    def apply(self, string_to_convert):
+        converted_string = ''
+
+        try:
+            converted_string = self.execute_func(string_to_convert)
+        except Exception as exc:
+            print('Failed to apply conversion: ' + self.name)
+            print(exc)
+
+        return converted_string
+
+
+my_rules = [
+    StringConversionMethod(
+        'Strip everything after 30 characters',
+        (lambda x: x[:30])
+    ),
+    StringConversionMethod(
+        'Add 10 whitespaces before last character',
+        (lambda x: x[:-1] + ' ' * 10 + x[-1])
+    )
+]
+
+my_string = 'This is a test string for conversion purposes. Feel free to ' \
+            'update me if you wish to.'
+
+print('Before conversion: ' + my_string)
+
+for rule in my_rules:
+    print('Applying rule: ' + rule.name + ' ...')
+    my_string = rule.apply(my_string)
+
+print('After conversion: ' + my_string)
