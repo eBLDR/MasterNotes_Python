@@ -7,6 +7,7 @@ restfulapirequeststest.py <url> - will run the test script on the API found in t
 Do NOT ADD slash at the end of the url.
 """
 import sys
+
 import requests
 
 

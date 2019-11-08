@@ -2,7 +2,6 @@
 A string is a sequence of characters.
 Strings are immutable: str[0] = new_value will raise en exception.
 """
-
 # Can contain any character
 s = 'ParRot &8-8*lfj@$sdk'
 print(s)

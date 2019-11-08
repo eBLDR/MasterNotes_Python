@@ -1,5 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QWidget, QMessageBox, QApplication
+
+from PyQt5.QtWidgets import QApplication, QMessageBox, QWidget
 
 
 class Example(QWidget):

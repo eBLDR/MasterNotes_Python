@@ -1,13 +1,15 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QDesktopWidget  # QDesktopWidget only for centering
-# For small windows, QWidget is enough, for bigger structures, use QMainWindow
-from PyQt5.QtGui import QIcon  # If we want to display an icon
-
 """
 The QWidget widget is the base class of all user interface objects in PyQt5.
 We provide the default constructor for QWidget. The default constructor has no parent.
 A widget with no parent is called a window.
 """
+import sys
+
+from PyQt5.QtWidgets import QApplication, QDesktopWidget, QWidget  # QDesktopWidget only for centering
+
+
+# For small windows, QWidget is enough, for bigger structures, use QMainWindow
+# from PyQt5.QtGui import QIcon  # If we want to display an icon
 
 
 class App(QWidget):

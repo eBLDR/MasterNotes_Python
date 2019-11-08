@@ -8,8 +8,9 @@ The sender is an object that sends a signal. The receiver is the object that rec
 The slot is the method that reacts to the signal.
 """
 import sys
-from PyQt5.QtWidgets import QWidget, QGridLayout, QApplication, QSlider, QLCDNumber
+
 from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QGridLayout, QLCDNumber, QSlider, QWidget
 
 
 class Example(QWidget):

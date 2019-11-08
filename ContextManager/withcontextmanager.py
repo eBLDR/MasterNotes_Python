@@ -4,7 +4,6 @@ files, databases, sockets...
 Removes the need of closing the resource each time and also handles errors.
 It's a good alternative to try/except/finally
 """
-
 # WITH keyword
 # 'with' can call anything that returns a context manager (like the built-in
 # open() function)

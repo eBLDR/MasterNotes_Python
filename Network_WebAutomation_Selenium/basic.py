@@ -6,7 +6,6 @@ human user interacting with the page.
 selenium needs the driver corresponding to the desired browser in use to be
 installed.
 """
-
 from selenium import webdriver
 
 # Specific driver import

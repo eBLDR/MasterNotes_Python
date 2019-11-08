@@ -1,7 +1,6 @@
+import matplotlib.pyplot as plt  # For plotting the graphs
 import pandas
 from pandas.plotting import scatter_matrix  # For scatter plot matrix
-
-import matplotlib.pyplot as plt  # For plotting the graphs
 
 # LOAD DATA SET
 

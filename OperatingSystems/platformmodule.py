@@ -1,5 +1,4 @@
 # Access to underlying platform’s identifying data.
-
 import platform
 
 # Queries the given executable for various architecture information.

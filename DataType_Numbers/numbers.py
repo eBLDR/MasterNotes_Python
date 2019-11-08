@@ -4,7 +4,6 @@ Numbers are immutable. They can be:
     - Floating point numbers (or float for short).
     - Complex numbers.
 """
-
 # Integer - equivalent to int(12)
 a = 12
 a2 = 0  # zero integer

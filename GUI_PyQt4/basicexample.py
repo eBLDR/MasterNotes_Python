@@ -1,5 +1,6 @@
-import sys
 import random
+import sys
+
 from PyQt4 import QtGui
 
 

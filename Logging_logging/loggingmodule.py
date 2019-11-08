@@ -13,10 +13,12 @@ import logging
 # @level can set the levels we want to enable (itself and above)
 # i.e.: level=logging.ERROR will only show error and critical
 # @format can be anything we wish, using existing attributes
-logging.basicConfig(filename='my_log.log',
-                    level=logging.DEBUG,
-                    format='%(asctime)s - %(filename)s - %(process)d - %(processName)s - ' \
-                           '%(threadName)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    filename='my_log.log',
+    level=logging.DEBUG,
+    format='%(asctime)s - %(filename)s - %(process)d - %(processName)s - '
+           '%(threadName)s - %(levelname)s - %(message)s'
+)
 
 # logging can also be print onto the screen instead of writing to file,
 # just don't pass any argument for @filename

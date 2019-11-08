@@ -1,5 +1,6 @@
 maxPower = 11
 powers = []
+
 for power in range(maxPower, -1, -1):  # backwards iteration
     powers.append(2 ** power)
 

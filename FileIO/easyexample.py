@@ -1,4 +1,5 @@
-""" Multiple modes example.
+"""
+Multiple modes example.
 Three broad types of files exist:
     - Plain text files
     - Binary files

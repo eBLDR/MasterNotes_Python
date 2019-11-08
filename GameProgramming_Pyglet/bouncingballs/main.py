@@ -1,12 +1,10 @@
 import sys
+from random import randint
 
-import pyglet
 import config
-
+import pyglet
 from entities.ball import Ball
 from entities.component import Component
-
-from random import randint
 
 # Creating a window object
 window = pyglet.window.Window(height=config.window_height,

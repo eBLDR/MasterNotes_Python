@@ -1,7 +1,8 @@
-# A simple drawing program.
-# Click on a color then click on the screen to draw lines of that color.
-# The white color will allow you to move the turtle without drawing.
-
+"""
+A simple drawing program.
+Click on a color then click on the screen to draw lines of that color.
+The white color will allow you to move the turtle without drawing.
+"""
 from turtle import *
 
 screen = Screen()

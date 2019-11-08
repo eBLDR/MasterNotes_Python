@@ -1,5 +1,4 @@
 # pretty print module
-
 import pprint
 
 message = 'I am a Python beast, yes man! 0 and 1 are my friends, keys are my family.'

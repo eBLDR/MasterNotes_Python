@@ -5,8 +5,8 @@ There are two types of datetime objects:
 
 A timezone's offset refers to how many hours the timezone is from UTC.
 """
-import time
 import datetime
+import time
 
 print('USING TIME\n')
 

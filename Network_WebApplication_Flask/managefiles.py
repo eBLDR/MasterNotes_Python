@@ -4,7 +4,6 @@ Uploading files with a POST method.
 import os
 
 from flask import Flask, request, send_file
-
 # Tool that adds security checking if the file can be dangerous
 from werkzeug import secure_filename
 

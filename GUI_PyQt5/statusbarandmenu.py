@@ -1,6 +1,9 @@
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication, QAction, QMenu
-from PyQt5.QtGui import QIcon
+
+from PyQt5.QtWidgets import QAction, QApplication, QMainWindow, QMenu
+
+
+# from PyQt5.QtGui import QIcon
 
 
 class App(QMainWindow):

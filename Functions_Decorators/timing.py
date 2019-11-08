@@ -1,5 +1,5 @@
-from time import time
 from functools import wraps
+from time import time
 
 
 def timing_function(some_function):

@@ -1,9 +1,9 @@
-import sys
-from PyQt4 import QtGui
-
 """
 tooltip = description on mouse hover
 """
+import sys
+
+from PyQt4 import QtGui
 
 
 class Example(QtGui.QWidget):

@@ -1,5 +1,3 @@
-import shelve
-
 """
 Shelve files work similar to a dictionary, most of the methods for dict will work on a shelve item
 Important to notice, while dictionaries accept any kind of immutable variable as a key,
@@ -7,8 +5,9 @@ shelve will only accept a string.
 Shelve files are also pickled (serialised)
 When creating the file, will create several database files.
 """
+import shelve
 
-# creating the file, no need to specify any mode
+# Creating the file, no need to specify any mode
 with shelve.open('ShelfTest') as alphabet:
     alphabet['A'] = 'alpha'
     alphabet['B'] = 'beta'

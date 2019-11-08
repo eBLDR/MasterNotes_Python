@@ -28,7 +28,6 @@ This challenge is intended to practise for loops and if/else statements,
 so although you could use other techniques (such as splitting the string up),
 that's not the approach we're looking for here.
 """
-
 ipAddress = input('Please enter an IP address: ')
 
 segment = 1

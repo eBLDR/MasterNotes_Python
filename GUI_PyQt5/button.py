@@ -1,6 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QToolTip, QPushButton
+
 from PyQt5.QtGui import QFont  # Customized fonts
+from PyQt5.QtWidgets import QApplication, QPushButton, QToolTip, QWidget
 
 
 class App(QWidget):

@@ -1,7 +1,7 @@
-# using a generator to generate a Fibonacci sequence
-
-
 def gen_fibonacci():
+    """
+    Using a generator to generate a Fibonacci sequence
+    """
     # starting numbers
     current, previous = 0, 1
     while True:

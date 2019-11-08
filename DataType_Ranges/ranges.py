@@ -1,4 +1,4 @@
-# generating ranges
+# Generating ranges
 
 my_R = range(10)
 print(my_R)

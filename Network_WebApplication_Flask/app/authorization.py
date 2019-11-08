@@ -1,7 +1,7 @@
 # wraps tool to create decorators
 from functools import wraps
 
-from flask import request, jsonify
+from flask import jsonify, request
 
 USER = 'admin'
 PASSWORD = 'secret'

@@ -1,4 +1,4 @@
-# hexadecimal and octal systems
+# Hexadecimal and octal systems
 for i in range(17):
     print('{0:>2} in hex is {0:>02x}'.format(i))  # hexadecimal
     print('{0:>2} in oct is {0:>02o}'.format(i))  # octal

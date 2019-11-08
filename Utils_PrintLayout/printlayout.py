@@ -8,7 +8,6 @@
 \t - ASCII horizontal tab (TAB)
 \v - ASCII vertical tab (VT)
 """
-
 text = 'Hello World'
 print(text)
 

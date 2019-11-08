@@ -3,6 +3,7 @@ ODM - Object Document Mapper
 Roughly equivalent to SQL ORM.
 """
 import datetime
+
 from mongoengine import *
 
 # Connecting to the running instance of Mongo - redundant default values

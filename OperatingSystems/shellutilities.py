@@ -1,7 +1,8 @@
-# shutil module
-# for copying and moving/renaming stuff and complex deleting
-# to create/delete/rename simple dir/files see os module
-
+"""
+shutil module
+for copying and moving/renaming stuff and complex deleting
+to create/delete/rename simple dir/files see os module
+"""
 import os
 import shutil
 

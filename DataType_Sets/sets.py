@@ -4,7 +4,6 @@ It's hashable, that means that it can contain immutable objects but not
 mutable.
 Items in set can be of a different type.
 """
-
 farm_animals = {'sheep', 'cow', 'hen'}  # create a set
 empty_set = set()  # emptySet = {} will create and empty dictionary
 

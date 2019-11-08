@@ -2,9 +2,9 @@
 Creates a matrix which contains the grey-scale values of the pixels
 of an image and saves it into .csv file.
 """
+import csv
 
 from PIL import Image
-import csv
 
 
 def save_array(name, array):

@@ -2,20 +2,15 @@
 Here we define the different application routes (URL).
 The handler for the app routes are functions, called VIEW FUNCTIONS.
 """
-# Function for rendering HTML templates, redirecting and retrieving url associated to a function
-from flask import render_template, redirect, url_for
-
-from flask import request  # To use requests methods
-
-from flask import Response  # To use responses
-
-from flask import json  # To make data conversion
-
 # From app package import object called app
 from app import app
-
 # Authorizations
 from app.authorization import *
+from flask import Response  # To use responses
+from flask import json  # To make data conversion
+# Function for rendering HTML templates, redirecting and retrieving url associated to a function
+from flask import redirect, render_template, url_for
+from flask import request  # To use requests methods
 
 
 # Different endpoints can ping to the same function

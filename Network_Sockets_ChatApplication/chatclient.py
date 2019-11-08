@@ -8,9 +8,9 @@ Client tasks:
     2. Check user input. If the user types in a message then send it to the
     server.
 """
+import select
 import socket
 import sys
-import select
 
 
 def prompt(conn):

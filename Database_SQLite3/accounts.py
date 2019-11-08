@@ -1,6 +1,7 @@
-import sqlite3
-import pytz
 import datetime
+import sqlite3
+
+import pytz
 
 db = sqlite3.connect('accounts.sqlite')
 db.execute('DROP TABLE IF EXISTS accounts')

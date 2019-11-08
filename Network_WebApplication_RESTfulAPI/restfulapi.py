@@ -18,7 +18,7 @@ after the ?.
 - Request body parameters: Parameters included in the request body. Usually
 submitted as JSON.
 """
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 
 # Creating the flask app

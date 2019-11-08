@@ -2,7 +2,6 @@
 The expression following the 'if' keyword is being assessed by bool() function.
 'if expr:' is actually calling 'if bool(expr):'.
 """
-
 name = input('Name: ')
 age = int(input('Your age, {0}? '.format(name)))
 print(age)

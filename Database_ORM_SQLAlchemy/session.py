@@ -9,11 +9,11 @@ Session object states:
 - Detached: an instance that has been persisted to the database but not
     included in any sessions - close() after commit()
 """
+# Table structures
+from declarative import Address, Person
 from sqlalchemy import create_engine
 # Session object
 from sqlalchemy.orm import sessionmaker
-# Table structures
-from declarative import Address, Base, Person
 
 engine = create_engine('sqlite:///example.db', echo=False)
 

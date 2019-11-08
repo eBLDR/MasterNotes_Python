@@ -1,4 +1,5 @@
 alpha_list = ['alpha', 'beta', 'gamma', 'delta']
+
 for item in alpha_list:
     if item == 'gamma':
         print('I am ignoring ' + item)

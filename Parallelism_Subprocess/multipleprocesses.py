@@ -4,7 +4,6 @@ each of those instances is a separate process of the same program.
 Every process can have multiple threads. Unlike threads,
 a process cannot directly read and write another process’s variables.
 """
-
 # subprocess module allows us to use this functionality
 import subprocess
 

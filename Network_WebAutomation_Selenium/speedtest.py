@@ -1,11 +1,9 @@
 """
 Graphic browser vs. headless browser.
 """
-
 from timeit import timeit
 
 from headless import quick_search
-
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 

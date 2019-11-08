@@ -10,8 +10,8 @@ variables in that function.
 If its necessary to manipulate the same variable from different threads (or
 displaying in the screen), we can use a 'lock' object.
 """
-import threading
 import string
+import threading
 import time
 
 

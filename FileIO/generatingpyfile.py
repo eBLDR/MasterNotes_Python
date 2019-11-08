@@ -1,5 +1,7 @@
-""" Since .py file are just plain text, we can create more .py files
-with write() methods in 'w' mode. """
+"""
+Since .py file are just plain text, we can create more .py files
+with write() methods in 'w' mode.
+"""
 
 cats = [{'name': 'Nanu', 'color': 'orange'},
         {'name': 'Otto', 'color': 'grey'}]

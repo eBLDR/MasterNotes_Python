@@ -1,8 +1,8 @@
 # It divides the space into rows and columns
 # It adjusts automatically to the screen size
 import sys
-from PyQt5.QtWidgets import QWidget, QPushButton, QApplication, QLineEdit,\
-    QInputDialog
+
+from PyQt5.QtWidgets import QApplication, QInputDialog, QLineEdit, QPushButton, QWidget
 
 
 class Example(QWidget):

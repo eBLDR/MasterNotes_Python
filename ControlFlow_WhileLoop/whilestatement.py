@@ -1,4 +1,4 @@
-# Indefinite iteration
+# `while` loop represents an indefinite iteration
 
 # i is the "iterator"
 i = 0

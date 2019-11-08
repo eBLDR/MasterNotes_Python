@@ -4,7 +4,6 @@ instances are classes.
 type is the metaclass where int, float, list, etc. inherit from.
 Classes are objects too.
 """
-
 # Defining a class dynamically using type(@name, @bases, @dct)
 # @name is class' name, __name__
 # @base tuple of the base classes which the class inherits, __bases__

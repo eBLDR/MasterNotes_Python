@@ -1,5 +1,4 @@
 # We can pass snippets to timeit by converting them into str or as a reference to a callable
-
 import timeit
 
 

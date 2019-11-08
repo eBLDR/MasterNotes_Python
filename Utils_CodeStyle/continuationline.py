@@ -2,7 +2,6 @@
 Based on PEP8, code lines should be 79 characters length max
 Docstring or comments should be 72 characters length max
 """
-
 a = 6
 b = 1
 

@@ -1,5 +1,4 @@
 #!/venv/bin/python
-
 """
 This is the main file for running the application.
 

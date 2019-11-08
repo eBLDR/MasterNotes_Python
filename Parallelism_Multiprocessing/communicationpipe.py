@@ -4,7 +4,7 @@ Inter Process communication (IPC).
 """
 import os
 
-from multiprocessing import Process, Pipe
+from multiprocessing import Pipe, Process
 
 
 def f(conn, d):

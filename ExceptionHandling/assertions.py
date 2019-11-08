@@ -1,8 +1,9 @@
-# An assertion is a sanity check, assert is used to detect programmers errors,
-# while exceptions are for user errors (such as non existing files, etc.)
-# Assertions can be disable by passing the -O (upper 'o') option when running
-# the Python script
-
+"""
+An assertion is a sanity check, assert is used to detect programmers errors,
+while exceptions are for user errors (such as non existing files, etc.)
+Assertions can be disable by passing the -O (upper 'o') option when running
+the Python script
+"""
 doorStatus = 'open'
 
 # assert verifies that the variable has the expected value

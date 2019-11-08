@@ -11,7 +11,6 @@ And after app = Flask(__name__) creation
 
 app.register_blueprint(api)
 """
-
 # Class import
 from flask import Blueprint
 from flask import request

@@ -1,5 +1,5 @@
-import os
 import fnmatch
+import os
 
 
 def find_extension(root, extension):

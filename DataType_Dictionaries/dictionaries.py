@@ -8,11 +8,12 @@ If the dictionary must be ordered while using older versions, use:
 from collections import OrderedDict
 ordered_dict = OrderedDict()
 """
-
-my_dict = {'alpha': 1,
-           'beta': 2,
-           'gamma': 3,
-           'epsilon': 5}
+my_dict = {
+    'alpha': 1,
+    'beta': 2,
+    'gamma': 3,
+    'epsilon': 5,  # Trailing commas are optional
+}
 
 print(my_dict['beta'])
 

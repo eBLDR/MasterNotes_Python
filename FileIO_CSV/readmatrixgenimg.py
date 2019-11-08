@@ -1,9 +1,9 @@
 """
 Creates an image from a .csv file that contains grey-scale values (integers from 0 to 255).
 """
-
-from PIL import Image, ImageDraw
 import csv
+
+from PIL import Image
 
 
 def gen_array(file_name):

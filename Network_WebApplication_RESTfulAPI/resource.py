@@ -1,8 +1,6 @@
 from flask import Flask
-
 # reqparse module for parsing arguments
-from flask_restful import Resource, Api, reqparse
-
+from flask_restful import Api, Resource, reqparse
 # Importing flask-mysql connector
 from flaskext.mysql import MySQL
 

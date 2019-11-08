@@ -7,7 +7,6 @@ Instead of returning HTML for a web page it returns data.
 The data is live, different results every refresh.
 The format is (usually) JSON (JavaScript Object Notation).
 """
-
 # import json  # this is the encoder & decoder, it's included in requests module
 import requests
 

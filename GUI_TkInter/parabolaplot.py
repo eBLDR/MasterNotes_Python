@@ -1,5 +1,5 @@
-import tkinter
 import math
+import tkinter
 
 number_of_items = 0  # this will be our example global variable
 

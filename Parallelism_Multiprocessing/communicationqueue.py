@@ -2,10 +2,9 @@
 Run from terminal.
 Inter Process communication (IPC).
 """
-from time import sleep
-
 # Queue class is a near clone to Queue found in queue module
 from multiprocessing import Process, Queue
+from time import sleep
 
 sentinel = -1  # Sentinel value to kill the consumer process
 

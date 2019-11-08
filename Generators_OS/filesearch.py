@@ -1,5 +1,5 @@
-import os
 import fnmatch  # Unix filename pattern matching - a module for matching names
+import os
 
 
 def find_albums(root, artist_name):

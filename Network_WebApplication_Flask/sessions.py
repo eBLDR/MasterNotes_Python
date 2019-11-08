@@ -1,9 +1,8 @@
 """
 Tracking user sessions.
 """
-
 # session is a dictionary like class that keeps track of logged in users
-from flask import Flask, session, redirect, url_for, request
+from flask import Flask, redirect, request, session, url_for
 
 app = Flask(__name__)
 app.secret_key = 'secret key'  # Setting the password

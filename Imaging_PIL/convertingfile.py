@@ -1,6 +1,7 @@
-""" Easy way of changing imaging file format.
-.png and .gif support transparency mask, but not .jpeg. """
-
+"""
+Easy way of changing imaging file format.
+.png and .gif support transparency mask, but not .jpeg.
+"""
 from PIL import Image
 
 filename = 'BASIC_BG.png'

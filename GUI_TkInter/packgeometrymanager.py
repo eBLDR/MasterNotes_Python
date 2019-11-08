@@ -1,5 +1,3 @@
-# GUI (Graphic User Interface)
-
 try:
     import tkinter
 except ImportError:  # python 2

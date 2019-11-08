@@ -8,7 +8,8 @@ Limitations:
 consuming.
 """
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel
+
+from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow
 
 
 class App(QMainWindow):

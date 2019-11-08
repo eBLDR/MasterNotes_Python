@@ -1,6 +1,6 @@
 # zipfile module - creates, reads and unzips folders
-import zipfile
 import os
+import zipfile
 
 os.chdir('Lab')
 

@@ -1,5 +1,4 @@
 # Allows to save the traceback from exceptions raised as string
-
 import traceback
 
 try:

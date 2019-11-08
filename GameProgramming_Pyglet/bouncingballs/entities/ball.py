@@ -1,7 +1,6 @@
 from random import randint, uniform
 
 import config
-
 from entities.component import Component
 from pyglet import image, sprite
 

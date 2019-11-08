@@ -4,8 +4,8 @@ Pool represents a pool of worker processes.
 Usually, the pool is run with a while loop inside, connected to a message
 queue, and performing tasks whenever a message is received.
 """
-from time import time
 from multiprocessing import Pool
+from time import time
 
 
 def costly_function(z):

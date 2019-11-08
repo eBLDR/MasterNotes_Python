@@ -8,7 +8,6 @@ There are 2 kinds of objects:
 - IMMUTABLE objects cannot change its value after they've been created. They do not accept in-place methods,
 methods that modify the value keeping the identity.
 """
-
 # Immutable objects
 a = 1
 b = a  # shallow copy

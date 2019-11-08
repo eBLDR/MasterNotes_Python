@@ -1,5 +1,5 @@
-import string
 import random
+import string
 import time  # importing time is an optional feature
 
 # valid characters

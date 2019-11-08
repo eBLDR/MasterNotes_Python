@@ -3,7 +3,6 @@ The module pickle allows to store any plain Python object in a file and then
 get it back later.
 This is called storing the object persistently.
 """
-
 import pickle
 
 a7x = ('Nightmare',

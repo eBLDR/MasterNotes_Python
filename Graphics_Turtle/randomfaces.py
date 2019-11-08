@@ -1,8 +1,10 @@
-""" Different random size and color faces, in different random positions,
-with different random noses. """
-import turtle as turtle
+"""
+Different random size and color faces, in different random positions,
+with different random noses.
+"""
 import math as math
 import random as random
+import turtle as turtle
 
 
 def eyes(cursor, x, y, scale_):

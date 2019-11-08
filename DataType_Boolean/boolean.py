@@ -2,7 +2,6 @@
 OR : True if only one of the conditions is True.
 AND : True only if all of the conditions are True.
 """
-
 # All the following are False
 f = False  # bool
 f2 = not True

@@ -18,4 +18,3 @@ print('l2 is {}'.format(l2))
 a2, b2 = b2, a2
 print('a2 is {}'.format(a2))
 print('b2 is {}'.format(b2))
-

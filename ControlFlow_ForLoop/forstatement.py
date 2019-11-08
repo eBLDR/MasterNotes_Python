@@ -1,4 +1,4 @@
-# Definite iteration
+# `for` loop represents a definite iteration
 # On each iteration (looping) the for loop is actually calling the next()
 # function in the iterable object.
 
@@ -25,6 +25,7 @@ for i in range(0, 30, 5):
 for i in range(1, 6):
     for j in range(1, 6):
         print('{1} times {0} is {2:2}'.format(i, j, i * j))
+
     print('===========')
 
 print('=' * 30)

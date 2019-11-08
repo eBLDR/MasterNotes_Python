@@ -4,12 +4,12 @@ writing tedious and error-prone raw SQL statements.
 ORM is a programming technique for converting data between incompatible
 type systems in object-oriented programming languages.
 """
+# Data types
+from sqlalchemy import Column, ForeignKey, Integer, String
 # Linking engine
 from sqlalchemy import create_engine
 # ORM mapper
 from sqlalchemy.ext.declarative import declarative_base
-# Data types
-from sqlalchemy import Column, Integer, String, ForeignKey
 # Tool resources
 from sqlalchemy.orm import relationship
 

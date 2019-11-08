@@ -10,7 +10,8 @@ receives the signal.
 The slot is the method that reacts to the signal.
 """
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton
+
+from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow, QPushButton
 
 
 class Example(QMainWindow):

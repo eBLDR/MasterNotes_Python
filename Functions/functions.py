@@ -74,9 +74,10 @@ def say(message, times=1):
 say('Hello')
 say('World', times=5)
 
-
 # Keyword parameters can be scpefied refering an existing variable
 default = 'whats\'up'
+
+
 def speak(text=default):
     print(text)
 

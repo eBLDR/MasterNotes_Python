@@ -1,5 +1,6 @@
-from PIL import Image
 from random import randint
+
+from PIL import Image
 
 
 def random_color():

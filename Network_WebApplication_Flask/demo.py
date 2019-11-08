@@ -7,7 +7,6 @@ http://127.0.0.1:<port>/ is equivalent to localhost:<port>
 
 !! URLs are case sensitive !!
 """
-
 from flask import Flask
 
 # Creating an instance of a web application

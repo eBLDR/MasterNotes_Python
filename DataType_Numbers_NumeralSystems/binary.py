@@ -11,7 +11,6 @@
 
 * NOT is also called "ones' complement"
 """
-
 integer = 12
 
 # Prints the binary representation of an integer

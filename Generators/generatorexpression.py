@@ -1,6 +1,5 @@
 # Written in same format as list-set comprehension, but using () instead
 # increases performance a lot, if we are not interested in reusing the list.
-
 my_gen = ((i, i * j) for j in range(5) for i in range(3))
 print(my_gen)
 print(type(my_gen))
