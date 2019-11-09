@@ -21,15 +21,16 @@ June: {1}""".format(28, 30, 31))
 # good for nesting arguments if complex formatting is required
 print('My name is {name} and I am a {species}!'.format(
     name='Max',
-    species='Sapiens')
-)
+    species='Sapiens'
+))
 
 # and by index
 coord = (3, 5)
 print('X: {0[0]};  Y: {0[1]}'.format(coord))
 
+my_object = type('A', (), dict(attr=12))
 # Referencing attributes from an instance of a class
-# print('Weight in tons {0.attribute}'.format(object_sample))
+print('My attribute is: {0.attr}'.format(my_object))
 
 # From Python 3.6+, s = f'{x}' can be used in place of s = '{}'.format(x)
 print(f'My age is {age}...')
@@ -74,9 +75,7 @@ print('=' * 30)
 # Converting to different numeral bases
 print('int: {0:d}; hex: {0:x};HEX: {0:X}; oct: {0:o}; bin: {0:b}'.format(42))
 # with 0x, 0o, or 0b as prefix:
-print('int: {0:d}; hex: {0:#x};HEX: {0:#X}; oct: {0:#o}; bin: {0:#b}'.format(
-    42)
-)
+print('int: {0:d}; hex: {0:#x};HEX: {0:#X}; oct: {0:#o}; bin: {0:#b}'.format(42))
 
 print('=' * 30)
 
