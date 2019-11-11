@@ -11,7 +11,7 @@ class Ball(Component):
         """
         Creates a sprite using a ball image.
         """
-        super(Ball, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.speed = kwargs.get('speed', 5)
 
         # Loading image file

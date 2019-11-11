@@ -23,7 +23,7 @@ from math import pi, sqrt, pow
 import random
 """
 # Importing our own module - using absolute import
-# absolute path in reference to __main__ (PYTHONPATH)
+# absolute path in reference to __main__ (PYTHONPATH), includes working directory
 import sampleimported  # To import the whole module
 
 # If we wish to change the name to reference to the module

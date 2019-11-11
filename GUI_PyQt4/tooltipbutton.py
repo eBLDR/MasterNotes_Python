@@ -9,7 +9,7 @@ from PyQt4 import QtGui
 class Example(QtGui.QWidget):
 
     def __init__(self):
-        super(Example, self).__init__()
+        super().__init__()
 
         self.init_ui()
 
