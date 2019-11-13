@@ -21,8 +21,9 @@ attr_name = 'mock_attr'
 # hasattr(obj, attr_name) - returns True if obj has attr
 print('hasattr(mock, attr_name):', hasattr(mock, attr_name))
 
-# getattr(obj, attr_name) - returns obj.attr_name
-print('getattr(mock, attr_name):', getattr(mock, attr_name))
+# getattr(obj, attr_name, default) - returns obj.attr_name
+print('getattr(mock, attr_name):', getattr(mock, attr_name, 'Does not exist!'))
+# @default is not specified, an error will be raised
 
 # setattr(obj, attr_name, new_value) - updates the value of obj.attr_name,
 # it can set new attributes
