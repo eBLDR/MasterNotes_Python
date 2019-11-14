@@ -14,7 +14,7 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Any other commands can be typed here, starting with a RUN keyword
 
-# Make port 80 available to the world outside this container
+# Make port available to the world outside this container
 EXPOSE 80
 
 # Define environment variable

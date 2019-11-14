@@ -1,2 +1,1 @@
-Flaskrequi
-Redis
+Flask

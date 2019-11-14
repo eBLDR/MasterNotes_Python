@@ -18,9 +18,9 @@ app = Flask(__name__)
 # When client request a given URL, the corresponding function is executed
 # argument is the route (URL) - which can be anything we want
 @app.route('/')
-@app.route('/index')  # more than one web address can redirect to the same function
+@app.route('/index')  # More than one web address can redirect to the same function
 def index():
-    # function to be executed when the route is accessed
+    # Function to be executed when the route is accessed
 
     # data to be returned - in HTML
     # return "Hello, World!"  # by default <p>'content'</p>
@@ -38,7 +38,8 @@ def index():
 
 
 if __name__ == '__main__':
-    # debug mode to trace possible errors
-    # host and port can also be manually defined, by default host is
+    # @debug mode to trace possible errors
+    # @host and @port can also be manually defined, by default host is
     # localhost and port is 5000 (127.0.0.1:5000)
     app.run(debug=True, host='127.0.0.1', port=5000)
+    # Use host 0.0.0.0 to make app available to local network
