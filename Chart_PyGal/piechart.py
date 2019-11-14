@@ -1,7 +1,7 @@
 import pygal
 
-pieChart = pygal.Pie()
-pieChart.title = 'Favourite Pets'
+pie_chart = pygal.Pie()
+pie_chart.title = 'Favourite Pets'
 
 with open('pets.txt', 'r') as file:
     for line in file.read().splitlines():
@@ -10,6 +10,6 @@ with open('pets.txt', 'r') as file:
         if line:
             # using the desired character to split the line
             label, value = line.split(';')
-            pieChart.add(label, int(value))
+            pie_chart.add(label, int(value))
 
-pieChart.render_to_file('petsChart.svg')
+pie_chart.render_to_file('petsChart.svg')
