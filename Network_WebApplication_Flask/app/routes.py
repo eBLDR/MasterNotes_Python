@@ -103,9 +103,9 @@ def api_response():
 
     js = json.dumps(data)
     # (@data, @status_code (200 by default), @data_type)
-    resp = Response(js, status=200, mimetype='application/json')
+    resp = Response(response=js, status=200, mimetype='application/json')
 
-    # Using jsonify to simplify syntax, returns exactly the same
+    # Using jsonify to simplify syntax, returns exactly the same flask-Response object
     # from flask import jsonify
     # resp = jsonify(data)
     # resp.status_code = 200
