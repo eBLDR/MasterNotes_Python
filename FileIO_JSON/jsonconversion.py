@@ -14,7 +14,7 @@ JSON Data Types
 Number - double precision floating-point format in JavaScript
 String - double-quoted Unicode with backslash escaping
 Boolean - true or false
-Array - an ordered sequence of values
+Array - an ordered collection of values
 Value - it can be a string, a number, true or false, null etc
 Object - an unordered collection of key:value pairs
 Whitespace - can be used between any pair of tokens

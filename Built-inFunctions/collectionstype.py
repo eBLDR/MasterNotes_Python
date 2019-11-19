@@ -1,4 +1,4 @@
-# Functions that work with sequence/iterable type data
+# Functions that work with collections of iterable type data
 # (str, list, tuple, range...)
 string_sample = 'I am a sample, yes'  # immutable
 list_sample = ['A', 'ch', 12, True, 'X', 36]  # mutable
@@ -20,7 +20,7 @@ print(string_sample[-5])
 
 print('=' * 20)
 
-# Slicing technique - breaks the sequence into slice [start:stop:step]
+# Slicing technique - breaks the sequence into a slice [start:stop:step]
 print(string_sample[1:12])
 print(list_sample[:5])
 # the stop number can be out of index, will stop on last
@@ -81,7 +81,7 @@ for i in reversed(tuple_sample):
 print('=' * 20)
 
 # count() - to count the number of times a certain object is found in a
-# sequence
+# collection
 print(string_sample.count('a'))
 
 print('=' * 20)
@@ -95,13 +95,13 @@ print(list_sample.index(True))
 print('=' * 20)
 
 # any() & all()
-# any(@iter) return True if any of the values in the sequence is True,
+# any(@iter) return True if any of the values in the collection is True,
 # False otherwise
 # It does OR between each item, e.g.:
 # bool(iter[0]) or bool(iter[1]) or ... bool(iter[n])
 print('any():', any(tuple_sample))
 
-# all(@iter) return True if all the values in the sequence are True,
+# all(@iter) return True if all the values in the collection are True,
 # False otherwise
 # it does AND between each item, e.g.:
 # bool(iter[0]) and bool(iter[1]) and ... bool(iter[n])
@@ -112,7 +112,7 @@ print('all():', all(tuple_sample))
 print('=' * 20)
 
 # join(@iter) - for joining list/tuple into a string
-# 'delimiter'.join(list/tuple) - sequence must be made of str
+# 'delimiter'.join(@iter) - collection must be made of str
 str_from_list = '-|-'.join(list_sample[:2])
 print(str_from_list)
 
@@ -129,7 +129,7 @@ print(string_sample.split(','))  # breaks using a given character
 print('=' * 20)
 
 # zip(@iter1, @iter2) - returns a zip iterable object, it's a list containing
-# pairs of tuples corresponding to the same indices of the two sequences, len
+# pairs of tuples corresponding to the same indices of the two collections, len
 # is equal to the minimum len of both
 zip_tuple = zip(string_sample, list_sample)
 for i in zip_tuple:
@@ -139,7 +139,7 @@ print('=' * 20)
 
 # enumerate(@iter) - return an enumerate object, iterable, a tuple containing
 # a count (from start which defaults to 0) and the values obtained from
-# iterating over the sequence
+# iterating over the collection
 for i, j in enumerate(list_sample, start=1):
     print(i, j)
 

@@ -82,7 +82,7 @@ print('2 > 5 and 7 > \'string\':\t{}'.format(2 > 5 and 7 > 'string'))
 
 print('=' * 25)
 
-# in keyword, checks item's existence in a sequence
+# in keyword, checks item's existence in a collection
 char1 = 'a'
 char2 = 'z'
 s = 'abc'

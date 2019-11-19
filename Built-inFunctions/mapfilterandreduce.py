@@ -74,8 +74,8 @@ def calc(x, y):
 
 numbers = [2, 3, 5, 8, 13]
 
-# reduce(@function, @sequence) - continually applies the function to the
-# sequence, it returns a single value - i.e.: if list has 4 items:
+# reduce(@function, @collection) - continually applies the function to the
+# collection, it returns a single value - i.e.: if list has 4 items:
 # func(func(func(i1, i2), i3), i4)
 reduced_value = reduce(calc, numbers)
 print(reduced_value)

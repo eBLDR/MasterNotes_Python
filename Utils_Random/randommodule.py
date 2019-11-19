@@ -17,17 +17,17 @@ print(random.uniform(1.0, 3.5))
 
 abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 
-# shuffle(seq) will randomize the order of a sequence
+# shuffle(seq) will randomize the order of a collection
 print(abc)
 print('Shuffling . . .')
 random.shuffle(abc)
 print(abc)
 
-# choice(seq) returns one random element from sequence - supports (almost) any kind of object type
+# choice(seq) returns one random element from a collection - supports (almost) any kind of object type
 string = 'abcdefghijk'
 print(random.choice(abc))
 print(random.choice(string))
 
-# sample(seq, n) will return a list with n random samples from sequence
+# sample(seq, n) will return a list with n random samples from a collection
 ran_sample = random.sample(abc, 3)
 print(ran_sample)

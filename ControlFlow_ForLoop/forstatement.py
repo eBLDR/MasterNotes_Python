@@ -3,7 +3,7 @@
 # function in the iterable object.
 
 # i is called the "iterator"
-# the range, in this case, is the "iterable" - which can be any sequence type
+# the range, in this case, is the "iterable" - which can be any collection type
 for i in range(1, 11):
     print('i is now {:2}'.format(i))
 
