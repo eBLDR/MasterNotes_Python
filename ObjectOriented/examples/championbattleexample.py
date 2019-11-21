@@ -16,26 +16,26 @@ class Stats:
 
 
 class StatsSpartan:
-    hp = 1300
-    dmg = 45
+    hp = 1295
+    dmg = 46
     atk_speed = 1
     crit_chance = 0.25
     crit_factor = 2.5
 
 
 class StatsSamurai:
-    hp = 900
-    dmg = 51
-    atk_speed = 1.3
+    hp = 1000
+    dmg = 42
+    atk_speed = 1.4
     crit_chance = 0.5
     crit_factor = 1.8
 
 
 class StatsCrusader:
     hp = 1700
-    dmg = 60
+    dmg = 63
     atk_speed = 0.7
-    crit_chance = 0.2
+    crit_chance = 0.19
     crit_factor = 1.5
 
 
@@ -196,7 +196,7 @@ if __name__ == '__main__':
 
     EXTENDED_INFO = False
     ROUNDS_PER_BATTLE = 100
-    TIME_ELAPSED_UNIT = 0.1  # In seconds
+    TIME_ELAPSED_UNIT = 0.001  # In seconds
 
     # Init champion container
     CHAMPIONS = []
