@@ -65,4 +65,3 @@ is not	True if operands are not identical
 
 in	True if value/variable is found in the sequence
 not in	True if value/variable is not found in the sequence
-

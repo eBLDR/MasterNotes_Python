@@ -1,8 +1,8 @@
 """
-There is 1 input pipe in Python:
+There is 1 input pipe:
 - Standard input - is used for all interactive input (including calls to input())
 
-There are 2 output pipes in Python:
+There are 2 output pipes:
 - Standard output (stdout) - normal output pipe (print() prints here)
 - Standard error (stderr) - debugging information goes to this pipe (traceback error)
 

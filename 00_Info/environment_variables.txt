@@ -30,4 +30,3 @@ PYTHONCOERCECLOCALE: if this variable is set to 0, it disables the locale
    locale coercion and locale compatibility warnings on stderr.
 
 PYTHONDEVMODE: enable the development mode.
-

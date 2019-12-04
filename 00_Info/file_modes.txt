@@ -25,4 +25,4 @@ wb+ - writing a binary file
 ab+ - opens a file for both appending and reading in binary, the file pointer is at the end of the file if the file exists, the file opens in the append mode.
 
 
-default mode is 'rt' (text reading)
+Default mode is 'rt' (text reading)

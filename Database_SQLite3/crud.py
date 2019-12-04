@@ -62,6 +62,7 @@ cursor.execute(
 users = [('name1', 'phone1', 'email1'),
          ('name2', 'phone2', 'email2'),
          ('name3', 'phone3', 'email3')]
+
 cursor.executemany(
     'INSERT INTO contacts (name, phone, email) VALUES(?,?,?)',
     users
@@ -118,9 +119,9 @@ cursor.execute('SELECT * FROM contacts WHERE id = ?', (user_id,))
 print(cursor.fetchall())
 
 # DELETE
-delete_userid = 2
-cursor.execute('DELETE FROM contacts WHERE id = ?', (delete_userid,))
-print('Contact with id = {} deleted!'.format(delete_userid))
+delete_user_id = 2
+cursor.execute('DELETE FROM contacts WHERE id = ?', (delete_user_id,))
+print('Contact with id = {} deleted!'.format(delete_user_id))
 
 # CLosing cursor connection
 cursor.close()

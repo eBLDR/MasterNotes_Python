@@ -1,10 +1,3 @@
-"""
-CSV - Comma-Separated Values
-.csv files are plain text files, used to store a large number of variables - or data.
-They are arranged in lines, each line is called a 'record' and contain
-multiple 'fields' separated by a comma ','.
-We can think of it as an spreadsheet.
-"""
 import csv
 
 # Reading csv files

@@ -73,4 +73,3 @@ COMMAND LINE OPTIONS
        -      program read from stdin (default; interactive mode if a tty)
 
        arg ...arguments passed to program in sys.argv[1:]
-

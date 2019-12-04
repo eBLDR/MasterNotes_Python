@@ -21,4 +21,3 @@ Line 2 is the encoding used on the file, utf-8 is the most common, and the defau
 Equivalent format is:
 
 # encoding: utf-8
-
