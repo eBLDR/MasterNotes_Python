@@ -1,6 +1,4 @@
-"""
-Different types of thread objects.
-"""
+# Different types of thread objects.
 import threading
 import time
 

@@ -22,15 +22,17 @@ $ source ${VENV_FOLDER}/bin/activate
 # pip upgrade and setuptools (upgrading to last version of pip and setuptools)
 $ pip install --no-cache-dir --upgrade pip setuptools
 
-# pip install required modules/packages (if <file_name.txt> (commonly named requirements.txt) is already existing)
+# pip install required modules/packages (if <file_name.txt> (commonly named
+# requirements.txt) is already existing)
 # Will install all the modules/packages found in the file
 $ pip install --no-cache-dir -r ${REQ_FILE} -I
 
-# To install a specific module/package inside the virtualenv, from virtualenv folder run
-$ pip install <package_name>
+# To install a specific module/package inside the virtualenv, from virtualenv
+# folder run
+# $ pip install <package_name>
 
-# will show the modules/packages used by the virtual environment
+# Show the modules/packages used by the virtual environment
 $ pip freeze
 
-# will save the previous list into a new file
+# Save the previous list into a new file
 $ pip freeze > ${REQ_FILE}

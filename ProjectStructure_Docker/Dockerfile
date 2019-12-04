@@ -1,5 +1,3 @@
-# Dockerfile defines what goes on in the environment inside your container, it must be in the top most level of the project.
-
 # Use an official Python runtime as a parent image
 FROM python:3.6-slim
 

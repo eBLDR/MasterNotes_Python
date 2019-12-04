@@ -19,13 +19,13 @@ def square(n):
 
 
 if __name__ == '__main__':
-    num = [5, 10, 15, 20, 25]
+    numbers = [5, 10, 15, 20, 25]
     processes = []
 
-    for index, n in enumerate(num):
+    for index, number in enumerate(numbers):
         # Creating a process, target is the function to be triggered,
         # args is arguments (tuple)
-        proc = Process(target=square, args=(n,), name='P-{}'.format(
+        proc = Process(target=square, args=(number,), name='P-{}'.format(
             str(index)
         ))
         # Passing a specific @name

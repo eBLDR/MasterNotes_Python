@@ -8,14 +8,14 @@ import multiprocessing
 import os
 
 
-def printer(item, lock):
+def printer(item_, lock_):
     # Locking
-    lock.acquire()
+    lock_.acquire()
     try:
-        print('{} is printing: {}'.format(os.getpid(), item))
+        print('{} is printing: {}'.format(os.getpid(), item_))
     finally:
         # Unlocking
-        lock.release()
+        lock_.release()
 
 
 if __name__ == '__main__':

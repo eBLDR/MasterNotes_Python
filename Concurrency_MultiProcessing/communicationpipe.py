@@ -1,6 +1,6 @@
 """
 Run from terminal.
-Inter Process communication (IPC).
+Inter Process Communication (IPC).
 """
 import os
 

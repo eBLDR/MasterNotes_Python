@@ -20,8 +20,8 @@ def print_abc():
     # the execution until the lock is released
     print_lock.acquire()
     print('\n{} has locked the print_lock'.format(
-        threading.current_thread().name)
-    )
+        threading.current_thread().name
+    ))
 
     # it can also work using a 'with' statement and deleting the acquire()
     # and release() calls
@@ -33,8 +33,8 @@ def print_abc():
     # release() method unlocks the lock object - other threads can now proceed
     print_lock.release()
     print('\n{} has released the print_lock'.format(
-        threading.current_thread().name)
-    )
+        threading.current_thread().name
+    ))
 
 
 # this is the lock object - has two states: unlocked or locked

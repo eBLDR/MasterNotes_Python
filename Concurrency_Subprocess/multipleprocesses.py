@@ -24,8 +24,8 @@ print('\tWaiting for the process to be terminated')
 calc_process.wait()
 
 print('Launched process terminated with exit code: {}'.format(
-    calc_process.poll())
-)
+    calc_process.poll()
+))
 
 """
 It is possible to pass command line arguments to processes launched with
