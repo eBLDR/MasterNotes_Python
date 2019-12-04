@@ -1,0 +1,28 @@
+Nameko - Python framework for building microservices
+[RabbitMQ must running]
+
+Run a Nameko service (it will automatically connect to RabbitMQ):
+$ nameko run <module_name>[:<ServiceClass>]
+
+A config file can be passed to override the default settings:
+$ nameko run --config <config_file>.yaml <module>[:<ServiceClass>]
+
+Run a Nameko interactive shell (regular Python interactive shell) which
+connects to RabbitMQ instance:
+$ nameko shell
+A special object called 'n' is added to the namespace. This object allows for
+dispatching events and doing RPC calls.
+
+By using RPC over AMQP, Nameko implements automatic service discovery. When
+calling an RPC method, Nameko will try to find the corresponding running
+service.
+>>> n.rpc.<target_service>.<target_method>(@args)
+
+The procedure call can be asynchronous by adding 'call_async' method.
+This method is non-blocking.
+>>> n.rpc.<target_service>.<target_method>.call_async(@args)
+
+All procedure calls return a response with a 'result' attribute.
+result() call will be blocked until response is returned.
+>>> res = n.rpc.<target_service>.<target_method>(@args)
+>>> res.result()
