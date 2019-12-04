@@ -12,4 +12,4 @@ with open('pets.txt', 'r') as file:
             label, value = line.split(';')
             pie_chart.add(label, int(value))
 
-pie_chart.render_to_file('petsChart.svg')
+pie_chart.render_to_file('pets_chart.svg')

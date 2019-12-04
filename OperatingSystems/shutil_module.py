@@ -1,5 +1,5 @@
 """
-shutil module
+shutil module - shell utilities
 for copying and moving/renaming stuff and complex deleting
 to create/delete/rename simple dir/files see os module
 """

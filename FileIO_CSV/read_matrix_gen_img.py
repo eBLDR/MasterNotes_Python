@@ -32,7 +32,7 @@ for y in range(len(array_img)):
     for x in range(len(array_img[y])):
         image.putpixel((x, y), array_img[y][x])
 
-image.save('imgfromarray.jpeg', 'JPEG')
+image.save('img_from_array.jpeg', 'JPEG')
 
 print(image)
 

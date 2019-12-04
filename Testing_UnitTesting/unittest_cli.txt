@@ -1,0 +1,15 @@
+To run the test:
+$ python -m unittest <module_name>
+-v (verbose) flag to display extra output.
+
+To run in discover mode, this will search for all the files with a name
+starting with 'test' and run them:
+$ python -m unittest
+
+To list all unittest options:
+$ python -m unittest -h
+
+There are 3 possible outcomes:
+    - ok (.) -> test passed
+    - FAIL (F) -> test failed, raises and AssertionError exception
+    - ERROR (E) -> raises an exception other than AssertionError

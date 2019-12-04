@@ -1,14 +1,14 @@
 import json
 
 try:
-    with open('birthdaysdata.json', 'r') as file:
+    with open('birthdays_data.json', 'r') as file:
         try:
             birthdays = json.load(file)  # to load the data from file
         except json.decoder.JSONDecodeError:
             birthdays = {}  # creating the variable in case the file was empty but existing
 
 except FileNotFoundError:  # creating the file in case it doesn't exist
-    with open('birthdaysdata.json', 'w') as file:
+    with open('birthdays_data.json', 'w') as file:
         birthdays = {}  # creating the variable dictionary
 
 
@@ -16,7 +16,7 @@ def add_entry():
     name = input('New name: ').capitalize()
     date = input('{}\'s birthday: '.format(name))
     birthdays[name] = date
-    with open('birthdaysdata.json', 'w') as file:  # opening in write mode
+    with open('birthdays_data.json', 'w') as file:  # opening in write mode
         json.dump(birthdays, file)  # saving the new dictionary into a file, overriding the existing one
     print('{} added successfully'.format(name))
 

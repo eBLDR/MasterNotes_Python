@@ -2,27 +2,6 @@
 Automated testing framework, unittest, sometimes referred to as 'PyUnit'.
 Each test written must be fully independent, able to run alone, it should
 focus on one bit of functionality.
-
-To run the test from cmd use:
-
-$ python -m unittest <module_name>
-
-The above line will run all files that sta
-Add -v (verbose) flag to display extra output.
-
-To run in discover mode, this will search for all the files with a name
-starting with 'test' and run them:
-
-$ python -m unittest
-
-To list all unittest options use:
-
-$ python -m unittest -h
-
-There are 3 possible outcomes:
-    - ok (.) -> test passed
-    - FAIL (F) -> test failed, raises and AssertionError exception
-    - ERROR (E) -> raises an exception other than AssertionError
 """
 import unittest
 

@@ -10,15 +10,15 @@ __init__.py file will be the first one to be executed when importing any
 module inside the package.
 """
 # Importing the whole module
-from mypackage import demomodule
+from mypackage import demo_module
 
 # This is also an option
-# import mypackage.demomodule
+# import mypackage.demo_module
 
 # Specific object import
-from mypackage.demomodule import demo2
+from mypackage.demo_module import demo2
 
-demomodule.demo()
+demo_module.demo()
 
 demo2()
 

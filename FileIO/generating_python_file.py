@@ -8,7 +8,7 @@ cats = [{'name': 'Nanu', 'color': 'orange'},
 
 print(str(cats))
 
-with open('generatedpyfile.py', 'w') as catFile:
+with open('generated_python_file.py', 'w') as catFile:
     catFile.write('cats = ' + str(cats) + '\n')
 
 import generatedpyfile

@@ -9,7 +9,7 @@ Three broad types of files exist:
 # sometimes we need to use the scape backslash (\\) to avoid unexpected formatting (\n, \t, ...)
 # in UNIX, use / instead, or ./ for parent folder
 
-filename = 'easyexample.txt'
+filename = 'easy_example.txt'
 
 # WRITE - Create file if not found, truncates the file
 # @buffering=0, disable buffering for dealing with raw streams

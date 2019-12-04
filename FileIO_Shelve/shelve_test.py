@@ -8,7 +8,7 @@ When creating the file, will create several database files.
 import shelve
 
 # Creating the file, no need to specify any mode
-with shelve.open('ShelfTest') as alphabet:
+with shelve.open('shelf_test') as alphabet:
     alphabet['A'] = 'alpha'
     alphabet['B'] = 'beta'
     alphabet['C'] = 'charlie'
@@ -37,7 +37,7 @@ with shelve.open('bike') as bike:
 print('-' * 30)
 
 # opening an existing file, also possible to use with statement
-alphabet = shelve.open('ShelfTest')
+alphabet = shelve.open('shelf_test')
 print(alphabet)
 while True:
     letter = input('Enter a letter: ')

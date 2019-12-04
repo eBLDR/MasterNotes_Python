@@ -6,7 +6,7 @@ import subprocess
 # Launching a python script as an independent process - variables won't be shared
 # Popen can accept stdout, stdin, stderr as a communication pipe
 py_script = subprocess.Popen(
-    ['python', 'launchedscript.py'], stdout=subprocess.PIPE
+    ['python', 'launched_script.py'], stdout=subprocess.PIPE
 )  # shell=True), it opens a new python shell
 
 # communicate() return the stdout and stderr pipes from the launched script

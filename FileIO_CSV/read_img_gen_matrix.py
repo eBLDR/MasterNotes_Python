@@ -36,4 +36,4 @@ print(all_pixels[0][0], ',', all_pixels[511][511])
 print(len(all_pixels))
 
 # saving the array
-save_array('arrayfromimg', all_pixels)
+save_array('array_from_img', all_pixels)

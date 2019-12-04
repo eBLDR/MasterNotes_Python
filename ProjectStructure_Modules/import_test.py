@@ -24,37 +24,37 @@ import random
 """
 # Importing our own module - using absolute import
 # absolute path in reference to __main__ (PYTHONPATH), includes working directory
-import sampleimported  # To import the whole module
+import sample_imported  # To import the whole module
 
 # If we wish to change the name to reference to the module
-# import sampleimported as <new_name>
+# import sample_imported as <new_name>
 
 # The next statement will import all (*) from the file, except for the methods
 # that start with underscore (_), this is not advised because all the names
 # become part of our namespace and can cause problems with duplicates
-# from sampleimported import *
+# from sample_imported import *
 
 # We can import specific objects
 # Using relative import - relative path in reference to file
-from .sampleimported import superKey
+from .sample_imported import superKey
 
 # __name__ is an attribute of the file
 print('I am ' + __name__)
-print('and I\'m importing ' + sampleimported.__name__)
+print('and I\'m importing ' + sample_imported.__name__)
 
 # Docstring is also available
-print(sampleimported.__doc__)
+print(sample_imported.__doc__)
 
-print(type(sampleimported))
+print(type(sample_imported))
 
 print('My attributes are:')
-print(dir(sampleimported))  # To show all the data/method attributes in the module
+print(dir(sample_imported))  # To show all the data/method attributes in the module
 
 # Calling a function inside the imported module, module.method()
-sampleimported.hi()
+sample_imported.hi()
 
 # Calling a variable inside the imported module
-print(sampleimported.key)
+print(sample_imported.key)
 
 # It's now part of the namespace of this module - no need to specify the module
 print(superKey)
@@ -82,6 +82,6 @@ print(vars().keys())
 print('=' * 20)
 
 # If the file is not in the same folder, we can specify the path using . as tree structure
-import subfolder.subsampleimported
+import subfolder.sub_sample_imported
 
-print(subfolder.subsampleimported.subkey)
+print(subfolder.sub_sample_imported.subkey)
