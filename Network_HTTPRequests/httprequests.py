@@ -1,27 +1,4 @@
-"""
-Hypertext Transfer Protocol (HTTP) is an application protocol which is the
-foundation of data communication for the World Wide Web (www).
-
-HTTP communication protocol is synchronous: that means that one request is sent
-at a time and will wait for its response to arrive before continuing.
-
-In the communication between client and server, Uniform Resource Identifier (URI) are used.
-
--- Request Methods --
-
-GET method - used to request data from a specified resource.
-
-HEAD method - almost identical to GET, but without the response body.
-
-POST method - used to send data to a server to create/update a resource.
-
-PUT method - used to send data to a server to create/update a resource.
-PUT requests are idempotent.
-
-DELETE method - deletes the specified resource.
-
-OPTIONS method - describes the communication options for the target resource.
-"""
+# HTTP requests
 import requests
 
 # GET method

@@ -1,11 +1,3 @@
-"""
-Server, a system that uses sockets to receive incoming connections and provide them with data. Server workflow:
-    1. Open a socket
-    2. Bind to a address(and port).
-    3. Listen for incoming connections.
-    4. Accept connections
-    5. Read/Send
-"""
 import socket
 
 HOST = ''  # Symbolic name meaning all available interface, it could be any IP

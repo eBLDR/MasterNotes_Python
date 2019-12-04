@@ -1,7 +1,7 @@
 """
 Program that tells us who is in the space right now.
 
-A web service has an address (url) just like a web page does.
+A web service has an address (URL) just like a web page does.
 Instead of returning HTML for a web page it returns data.
 
 The data is live, different results every refresh.

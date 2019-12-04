@@ -1,16 +1,6 @@
 """
 A network socket is an internal endpoint for sending or receiving data within
 a node on a computer network.
-An Internet Protocol address (IP address) is a numerical label assigned to
-each device connected to a computer network that uses the Internet Protocol
-for communication.
-
-Client, a system that connects to a remote system to fetch data.
-Client workflow:
-    1. Create a socket
-    2. Connect to remote server
-    3. Send some data
-    4. Receive a reply
 """
 import socket
 

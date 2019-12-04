@@ -17,7 +17,7 @@ app.config['UPLOAD_FOLDER'] = up_folder
 app.config['MAX_CONTENT_PATH'] = 10 * 1024 * 1024  # 10MB
 
 # It's a good practice to check file's extension before uploading
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 
 def allowed_file(filename):

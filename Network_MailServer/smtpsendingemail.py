@@ -1,12 +1,14 @@
 """
 SMTP - Simple Mail Transfer Protocol
-Dicates how email should be formatted, encrypted and relayed between mail servers.
+Dictates how email should be formatted, encrypted and relayed between mail
+servers.
 
 IMAP - Internet Message Access Protocol
-specifies how to communicate with an email provider’s server to retrieve emails sent to your email address.
+Specifies how to communicate with an email provider’s server to retrieve
+emails sent to your email address.
 
-TLS (port 587) and SSL (port 465) are both types of encryption, to connect to a mail server, we have to
-do it using the right encrypting.
+TLS (port 587) and SSL (port 465) are both types of encryption. To connect to
+a mail server, we have to do it using the right encrypting.
 """
 # SMTP protocol client module
 import smtplib

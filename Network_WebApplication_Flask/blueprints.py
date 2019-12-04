@@ -1,7 +1,8 @@
 """
-A flask blueprint is a way to organize flask app into smaller apis.
+A flask blueprint is a way to organize flask app into smaller APIs.
 It also defines a collection of views, templates and assets.
-All blueprint files should be inside a subdirectory called 'api' inside our flask app directory.
+All blueprint files should be inside a subdirectory called 'api' inside our
+flask app directory.
 
 To use a blueprint, from the main Flask app file, we need to register it:
 
@@ -23,7 +24,8 @@ api = Blueprint('my_api', __name__, url_prefix='/api')
 # Sample route
 
 
-# Since api has a prefix set to /api, the route will be concatenated, being /api/test
+# Since api has a prefix set to /api, the route will be concatenated,
+# being /api/test
 @api.route('/test', methods=['GET', 'POST'])
 def test():
     if request.method == 'POST':
