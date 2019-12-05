@@ -1,6 +1,7 @@
 import json
 
 from nameko.rpc import RpcProxy
+# To use HTTP communication protocol
 from nameko.web.handlers import http
 
 
@@ -9,10 +10,10 @@ class GatewayService:
     The Gateway microservice will receive HTTP requests via a simple REST-like
     API and use RPC to communicate with Airports and Trips.
     """
-    name = 'gateway'
+    name = 'gateway_service'
 
     airports_rpc = RpcProxy('airports_service')
-    trips_rpc = RpcProxy('trips_service')
+    routes_rpc = RpcProxy('routes_service')
 
     @http('GET', '/airport/<string:airport_id>')
     def get_airport(self, request, airport_id):
@@ -37,24 +38,24 @@ class GatewayService:
 
         return self.airports_rpc.create(data['airport'])
 
-    @http('GET', '/trip/<string:trip_id>')
-    def get_trip(self, request, trip_id):
-        trip = self.trips_rpc.get(trip_id)
+    @http('GET', '/route/<string:route_id>')
+    def get_route(self, request, route_id):
+        route = self.routes_rpc.get(route_id)
 
         return json.dumps(
             {
-                'trip': trip,
+                'route': route,
             }
         )
 
-    @http('POST', '/trip')
-    def post_trip(self, request):
+    @http('POST', '/route')
+    def post_route(self, request):
         data = json.loads(request.get_data(as_text=True))
 
         if not data.get('airport_from') or not data.get('airport_to'):
             return 'JSON data is invalid.'
 
-        return self.trips_rpc.create(
+        return self.routes_rpc.create(
             data['airport_from'],
             data['airport_to'],
         )

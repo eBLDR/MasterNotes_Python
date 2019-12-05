@@ -19,4 +19,5 @@ class AirportsService:
     def create(self, airport):
         airport_id = uuid.uuid4().hex
         self.redis.set(airport_id, airport)
+
         return airport_id
