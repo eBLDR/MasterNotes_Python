@@ -1,126 +1,66 @@
-#!/usr/bin/python3
-from flask import Flask, jsonify, request
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, request
+# Extension to build RESTful API at ease
+from flask_restful import Resource, Api, abort
 
-# Creating the flask app
 app = Flask(__name__)
-
-# Path of the database
-DB_PATH = 'testdb.sqlite'
-
-# Setting db's uri
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + DB_PATH
-
-# Disabling track modifications
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-# Binding SQLAlchemy to flask app
-db = SQLAlchemy(app)
+# Declares Api instance using app as argument
+api = Api(app)
 
 
-# ORM - Binding table
-class Asimov(db.Model):
-    # Creating table structure
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(50))
-    year = db.Column(db.String(4))
-
-    def __init__(self, title, year):
-        self.title = title
-        self.year = year
-
-    def to_dictionary(self):
-        tmp = {}
-        for i in self.__table__.columns:
-            tmp[i.name] = getattr(self, i.name)
-        return tmp
+def abort_if_todo_doesnt_exist(todo_id):
+    if todo_id not in TO_DOS:
+        abort(404, message=f'Todo {todo_id} doesn\'t exist')
 
 
-# -- ENDPOINTS --
-"""
-Since all the requests are performed on the same url, one endpoint would be enough:
-@app.route('/', methods=['GET', 'POST', 'PUT', 'DELETE'])
-def ...
-    if request.method == 'GET':
-        ...
-
-But I prefer (for the sake of the notes) to keep them in separate functions.
-"""
-
-
-# Create record
-@app.route('/', methods=['POST'])
-def add_entry():
+# Inherit from Resource - it manages responses and HTTP codes
+class Todo(Resource):
     """
-    Add new record to database.
+    Shows a single item and lets you add and delete an item.
     """
-    new_entry = Asimov(request.json['title'], request.json['year'])
 
-    db.session.add(new_entry)
-    db.session.commit()
+    def get(self, todo_id=''):
+        abort_if_todo_doesnt_exist(todo_id)
 
-    return jsonify(new_entry.to_dictionary())
+        # Return values are: response, http status code, headers
+        # Default HTTP code is 200
+        return {
+                   todo_id: TO_DOS[todo_id],
+               }, 200  # {'Etag': 'some-opaque-string'}
+
+    def post(self, todo_id):
+        TO_DOS[todo_id] = request.json['data']
+
+        return {
+                   todo_id: TO_DOS[todo_id],
+               }, 201
+
+    def put(self, todo_id):
+        TO_DOS[todo_id] = request.form['data']
+
+        return {
+                   todo_id: TO_DOS[todo_id],
+               }, 201
+
+    def delete(self, todo_id):
+        abort_if_todo_doesnt_exist(todo_id)
+        del TO_DOS[todo_id]
+        return '', 204
 
 
-# Read records
-@app.route('/', methods=['GET'])
-def read_entry():
+class TodoList(Resource):
     """
-    Displays records found in the database.
+    Shows a list of all items.
     """
-    if 'id' in request.args:
-        # Display one record found in the db, id matching field
-        entry = Asimov.query.get(request.args['id'])
 
-        return jsonify(entry.to_dictionary())
-
-    else:
-        # Display all
-        all_entries = Asimov.query.all()
-
-        for i in all_entries:
-            i.to_dictionary()
-
-        # Populating data
-        data = {'books': []}
-        for book in all_entries:
-            data['books'].append(book.to_dictionary())
-
-        return jsonify(data)
+    def get(self):
+        return TO_DOS
 
 
-# Update record by id
-@app.route('/', methods=['PUT'])
-def update_entry():
-    """
-    Updates one record found in the database.
-    @id: matching field to update record.
-    """
-    entry = Asimov.query.get(request.json['id'])
-
-    # Updating data
-    entry.title = request.json['title']
-    entry.year = request.json['year']
-
-    db.session.commit()
-
-    return jsonify(entry.to_dictionary())
-
-
-# Delete record by id
-@app.route('/', methods=['DELETE'])
-def delete_entry():
-    """
-    Deletes one record found in the database.
-    @id: matching field to delete record.
-    """
-    entry = Asimov.query.get(request.args['id'])
-
-    db.session.delete(entry)
-    db.session.commit()
-
-    return jsonify(entry.to_dictionary())
-
+# Route the resource to a URI. Many endpoints can be routed to the same
+# resource.
+api.add_resource(TodoList, '/')
+api.add_resource(Todo, '/<string:todo_id>')  # , 'endpoint_2)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5002)
+    TO_DOS = {}
+    app.run(host='127.0.0.1', port=5000, debug=True)

@@ -2,7 +2,7 @@
 """
 Run from terminal
 
-restfulapirequeststest.py <url> - will run the test script on the API found in the <url>.
+restful_api_requests_test.py <url> - will run the test script on the API found in the <url>.
 
 Do NOT ADD slash at the end of the url.
 """
@@ -13,7 +13,7 @@ import requests
 
 def script_usage():
     # Program's usage
-    print('Usage:\n\trestfulapirequeststest.py <url> -'
+    print('Usage:\n\trestful_api_requests_test.py <url> -'
           ' will run the test script on the API found in the <url>.')
 
 
@@ -38,7 +38,10 @@ def request_get(url, id_=None):
 
 def request_post(url):
     try:
-        payload = dict(title='CREATE_TEST', year='1000')
+        payload = {
+            'title': 'CREATE_TEST',
+            'year': '1000',
+        }
         response = requests.post(url, json=payload)
         display_event('POST', 1, response)
 
@@ -48,7 +51,11 @@ def request_post(url):
 
 def request_put(url, id_):
     try:
-        payload = dict(id=id_, title='UPDATE_TEST', year='1500')
+        payload = {
+            'id': id_,
+            'title': 'UPDATE_TEST',
+            'year': '1500',
+        }
         response = requests.put(url, json=payload)
         display_event('PUT', 1, response)
 
