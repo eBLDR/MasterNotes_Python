@@ -1,4 +1,7 @@
+# Nameko - Python framework for building microservices
 import time
+
+# To use RPC communication protocol
 from nameko.rpc import rpc
 
 

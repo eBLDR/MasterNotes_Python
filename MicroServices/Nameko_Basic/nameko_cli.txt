@@ -1,13 +1,12 @@
-Nameko - Python framework for building microservices
-[RabbitMQ must running]
+[RabbitMQ must be running]
 
 Run a Nameko service (it will automatically connect to RabbitMQ):
 $ nameko run <module_name>[:<ServiceClass>]
 
 A config file can be passed to override the default settings:
-$ nameko run --config <config_file>.yaml <module>[:<ServiceClass>]
+$ nameko run --config <config_file>.yml <module>[:<ServiceClass>]
 
-Run a Nameko interactive shell (regular Python interactive shell) which
+Spawn a Nameko interactive shell (regular Python interactive shell) which
 connects to RabbitMQ instance:
 $ nameko shell
 A special object called 'n' is added to the namespace. This object allows for
