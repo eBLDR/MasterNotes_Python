@@ -7,11 +7,12 @@ from time import sleep
 
 import redis
 
-# Instantiating a Redis client - Redis() is the central class
+# Instantiating a Redis client - Redis() is the central class.
 # Redis(@host='localhost', @port=6379, @db=0, @password=None, ...)
-# @db specifies the database number - each DB is independent
+# @db specifies the database number - each DB is independent.
+# Note: do not specify HTTP:// protocol in @host.
 r = redis.Redis()
-# The TCP socket connection and reuse is done behind the scenes
+# The TCP socket connection and reuse is done behind the scenes.
 
 # Test connection
 print(r.ping())
