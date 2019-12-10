@@ -17,9 +17,11 @@ connection = pika.BlockingConnection(
     pika.ConnectionParameters(
         host='127.0.0.1',  # By default
         port=5672,  # By default
+        # virtual_host=virtual_host_name,
     )
 )
 
+# Get connection channel
 channel = connection.channel()
 
 # If a message is sent to a non-existing location, RabbitMQ will just drop the
