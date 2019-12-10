@@ -1,7 +1,7 @@
 """
 MongoDB is a NoSQL database that works on a server.
 It stores data (documents) in JSON like format.
-Before running the python script, Mongo server must be running.
+Before running this python script, Mongo server must be running.
 """
 from pymongo import MongoClient
 

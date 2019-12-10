@@ -1,8 +1,7 @@
 """
 MySQL works on a server, it doesn't create a .db file on the working directory
 like SQLite3 does.
-
-Before running the python script, MySQL server must be running.
+Before running this python script, MySQL server must be running.
 """
 import mysql.connector
 
