@@ -2,8 +2,9 @@
 This is a consumer - receives messages.
 Before running this python script, RabbitMQ server must be running.
 
-To simulate a work queue (aka.: task queue), create few consumers and start
-producing messages.
+In a work queue (aka task queue) each message is delivered to exactly one
+worker. To simulate a work queue, create few consumers and start producing
+messages.
 """
 from time import sleep
 
@@ -64,8 +65,8 @@ channel.basic_qos(prefetch_count=1)
 # Subscribe the callback function to a particular queue - queue must exist.
 channel.basic_consume(
     queue=QUEUE_NAME,
-    # auto_ack=True,  # This disables the manual acknowledgement
-    on_message_callback=callback,  # Subscribe callback function
+    # auto_ack=True,  # This disables the manual acknowledgement.
+    on_message_callback=callback,  # Subscribe callback function.
 )
 
 """

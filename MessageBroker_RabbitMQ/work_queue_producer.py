@@ -9,7 +9,7 @@ import pika
 
 QUEUE_NAME = 'simple_queue'
 
-# Get message from command line
+# Get message from command line.
 msg_body = ' '.join(sys.argv[1:]) or 'All is good.'
 
 # Establishing connection to RabbitMQ
@@ -32,18 +32,18 @@ Setting a queue as "durable" tells the broker to persist message to disk.
 Meaning that, even if the broker crashes, queues and messages are not lost.
 """
 
-# To delete a queue
+# To delete a queue.
 # channel.queue_delete(queue='queue-name')
 
 # Sending a message to a queue. Messages pass first through an exchange.
 channel.basic_publish(
-    exchange='',  # Default special exchange - which allows to specify to which
-    # queue the message should go.
+    exchange='',  # Default nameless exchange - which allows to specify to
+    # which queue the message should be routed to, if it exists.
     routing_key=QUEUE_NAME,
     body=msg_body,
     properties=pika.BasicProperties(
         delivery_mode=2,  # Marks the message as persistent - queue must be
-        # durable for it to work
+        # durable for it to work.
     ),
 )
 
