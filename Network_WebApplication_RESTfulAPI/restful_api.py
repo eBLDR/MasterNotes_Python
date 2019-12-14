@@ -3,7 +3,8 @@ from flask import Flask, request
 from flask_restful import Resource, Api, abort
 
 app = Flask(__name__)
-# Declares Api instance using app as argument
+
+# Declares Api instance using app as argument - it can also take a Blueprint
 api = Api(app)
 
 

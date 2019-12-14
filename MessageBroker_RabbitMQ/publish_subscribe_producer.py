@@ -21,7 +21,10 @@ channel.exchange_declare(
 
 channel.basic_publish(
     exchange=EXCHANGE_NAME,
-    routing_key='',  # @routing_key (mandatory) will be overwritten by exchange
+    routing_key='',  # @routing_key (mandatory) - allows to add a filter to the
+    # messages, enabling the exchange to send messages selectively - empty str
+    # to set it without filters (sending to all bind queues). Selective
+    # message sending requires exchange_type='direct' in exchange_declare().
     body=msg_body,
 )
 

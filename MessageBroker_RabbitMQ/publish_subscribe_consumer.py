@@ -35,6 +35,9 @@ print(f'Queue name is: {queue_name}')
 channel.queue_bind(
     exchange=EXCHANGE_NAME,
     queue=queue_name,
+    # routing_key='my_key',  # Add this binding key to get from exchange ONLY
+    # those messages that have that routing key as well. Requires a "direct"
+    # exchange type.
 )
 
 
