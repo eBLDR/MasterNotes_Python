@@ -11,6 +11,8 @@ import redis
 # Redis(@host='localhost', @port=6379, @db=0, @password=None, ...)
 # @db specifies the database number - each DB is independent.
 # Note: do not specify the protocol in @host.
+# If @decode_responses argument is set to True, all redis values will be
+# decoded using @charset (utf-8 by default).
 r = redis.Redis()
 # The TCP socket connection and reuse is done behind the scenes.
 
@@ -20,12 +22,12 @@ print(r.ping())
 # Set new key-value pair
 r.set('my_key', 'my_value')
 
+# Check if a key exists
+print(r.exists('my_key'))
+
 # Get the value
 v = r.get('my_key')
 print(v, type(v))  # Bytes type
-
-# Check if a key exists
-print(r.exists('my_key'))
 
 # Convert to str if desired
 v = v.decode('utf-8')
