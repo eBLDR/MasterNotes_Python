@@ -1,0 +1,65 @@
+version: '3'
+
+services:
+
+  redis:
+    image: redis:latest
+
+    ports:
+      - 6379:6379
+
+    env_file:
+      - .env
+
+  rabbitmq:
+    image: rabbitmq:latest
+
+    ports:
+      - 5672:5672
+
+    env_file:
+      - .env
+
+  gateway-service:
+    build:
+      context: ./gateway_service
+
+    ports:
+      - 8000:8000
+
+    volumes:
+      - ./gateway_service:/usr/src/app
+
+    env_file:
+      - .env
+
+    depends_on:
+      - rabbitmq
+
+  airports-service:
+    build:
+      context: ./airports_service
+
+    volumes:
+      - ./airports_service:/usr/src/app
+
+    env_file:
+      - .env
+
+    depends_on:
+      - rabbitmq
+      - redis
+
+  routes-service:
+    build:
+      context: ./routes_service
+
+    volumes:
+      - ./routes_service:/usr/src/app
+
+    env_file:
+      - .env
+
+    depends_on:
+      - rabbitmq
+      - redis

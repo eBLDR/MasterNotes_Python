@@ -1,12 +1,5 @@
-FROM python:3.6-slim
+FROM python:3-onbuild
 
-RUN apt-get update && apt-get -y install netcat && apt-get clean
+COPY . /usr/src/app
 
-WORKDIR /app
-COPY . ./app
-
-RUN pip install --no-cache-dir -r requirements.txt
-
-RUN chmod +x ./run.sh
-
-CMD ["./run.sh"]
+CMD ["nameko", "run", "--config", "config.yml", "routes_service"]

@@ -1,23 +1,26 @@
+"""
+Manages the list of routes.
+"""
+import os
 import uuid
 
 from nameko.rpc import rpc
-from nameko_redis import Redis
+from redis import Redis
 
 
 class RoutesService:
     name = 'routes_service'
 
-    redis = Redis('development')
+    redis = Redis(host=os.getenv('REDIS_HOST'), decode_responses=True)
 
     @rpc
     def get(self, route_id):
-        route = self.redis.get(route_id)
-        return route
+        return self.redis.hgetall(route_id)
 
     @rpc
     def create(self, airport_from_id, airport_to_id):
         route_id = uuid.uuid4().hex
-        self.redis.set(
+        self.redis.hmset(
             route_id,
             {
                 'from': airport_from_id,

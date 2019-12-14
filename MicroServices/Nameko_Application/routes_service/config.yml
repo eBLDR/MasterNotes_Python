@@ -1,0 +1,2 @@
+# Point to running service in compose network
+AMQP_URI: 'amqp://guest:guest@rabbitmq'

@@ -1,0 +1,5 @@
+# Point to running service in compose network
+AMQP_URI: 'amqp://guest:guest@rabbitmq'
+
+# Set host:port to be exposed to HTTP requests
+WEB_SERVER_ADDRESS: '0.0.0.0:8000'

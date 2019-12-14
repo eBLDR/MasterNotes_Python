@@ -1,9 +1,5 @@
-FROM python:3.6-slim
+FROM python:3-onbuild
 
-WORKDIR /app
-COPY . ./
+COPY . /usr/src/app
 
-RUN pip install --no-cache-dir -r requirements.txt
-
-#CMD ["nameko", "run", "--config", "config.yml", "airports_service"]
-CMD ["nameko", "run", "airports_service"]
+CMD ["nameko", "run", "--config", "config.yml", "airports_service"]
