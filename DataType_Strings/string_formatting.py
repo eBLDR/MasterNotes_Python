@@ -36,6 +36,11 @@ print('My attribute is: {0.attr}'.format(my_object))
 print(f'My age is {age}...')
 print(f'Calc: {25 ** 2 - 7}; method: {len(str(age))}')
 
+# Quotation can be used:
+print('\n'.join(
+    [f'{"*" * i:>10}*{"*" * i:10}' for i in range(10)]
+))
+
 # From Python 3.8+, a simpler way for debugging has been implemented
 # Adding the '=' character, will print the variable name followed by its value
 # print(f'{age=}...')  # Output is: 'age=24'
@@ -55,7 +60,7 @@ print('=' * 30)
 # Spacing with str
 name = 'Edu'
 print('{:15} BLDR'.format(name))
-print('{:>15} BLDR'.format(name))  # t justify to right
+print('{:>15} BLDR'.format(name))  # justify to right
 # curious fact: {:4} with numbers is right justified by default
 # {:4} with str is left justified by default
 
