@@ -78,7 +78,20 @@ print(nested_dict['nest_1'], nested_dict['nest_2']['A'])
 
 print('=' * 20)
 
-# Merging dictionaries using the unpacked dictionary - **dict
+
+# Unpacking dictionaries - **dict
+def unpack_me(alpha=0, beta=0, gamma=0, zeta=0, **kwargs):
+    print('Passed kwargs:', alpha, beta, gamma, zeta)
+
+    # kwargs not passed will fall here
+    print('Not-passed kwargs:', kwargs)
+
+
+unpack_me(**my_dict)
+
+print('=' * 20)
+
+# Merging dictionaries using the unpacked dictionary
 my_dict_2 = {'omega': 0}
 my_dict_3 = {**my_dict, **my_dict_2}
 print(my_dict_3)

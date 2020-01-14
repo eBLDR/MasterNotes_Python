@@ -30,7 +30,7 @@ print(string_sample[::3])
 print(string_sample[::-1])  # backwards
 print(tuple_sample[::-2])
 
-# slice object can be created
+# Slice object can be created
 my_slice = slice(2, 5, 2)
 print(list_sample[my_slice])
 
@@ -44,6 +44,11 @@ a, b, c, d, e = tuple_sample
 print(d, a)
 a, b, c, d, e, f, g, h, i, j, k, m, l, n, p, q, o, t = string_sample
 print(k, i, o)
+
+print('=' * 20)
+
+# Unpacking for a function call
+print(*list_sample)
 
 print('=' * 20)
 
