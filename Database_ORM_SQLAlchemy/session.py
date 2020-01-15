@@ -84,8 +84,8 @@ print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(
     ins.transient, ins.pending, ins.persistent, ins.detached)
 )
 
-# commit() will save the transaction - it will call flush(), which send SQL
-# tatements to db
+# commit() will save the transaction - it will call flush(), which sends SQL
+# statements to db
 session.commit()
 print('Session committed.')
 
