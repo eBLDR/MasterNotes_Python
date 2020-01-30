@@ -48,11 +48,11 @@ while run:
         # On mouse click release
         elif event.type == pygame.MOUSEBUTTONUP:
             # Different mouse buttons
-            if event.button == 1:
+            if event.button == pygame.BUTTON_LEFT:
                 print('Clicked with left button:', event.pos)
-            elif event.button == 2:
+            elif event.button == pygame.BUTTON_MIDDLE:
                 print('Clicked with wheel:', event.pos)
-            elif event.button == 3:
+            elif event.button == pygame.BUTTON_RIGHT:
                 print('Clicked with right button:', event.pos)
 
         # pygame.MOUSEBUTTONDWON for event in mouse button pressed
