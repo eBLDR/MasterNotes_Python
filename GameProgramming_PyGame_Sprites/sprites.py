@@ -71,6 +71,10 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption('Sprites Class')
 
+# Create the background surface - so sprites can be cleared and background
+# can remain
+background_surface = screen.copy()
+
 player = Player()
 
 # Sprite groups
@@ -92,7 +96,6 @@ running = True
 
 while running:
     pygame.time.delay(50)
-    screen.fill((0, 0, 0))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -110,17 +113,17 @@ while running:
     # This will call the specified method of all the sprites in the group
     enemies.update()
 
-    # Iterate over the sprite group and render all sprites
-    for entity in all_sprites:
-        screen.blit(entity.image, entity.rect)
-
-    # Equivalent to
-    # all_sprites.draw(screen)
-
     # To clear all the sprites drawn on the last Group.draw() call
     # clear(@destination_surface, @background_surface)
     # @destination_surface is cleared with @background_surface
-    # all_sprites.clear(screen, background_surface)
+    all_sprites.clear(screen, background_surface)
+
+    # Iterate over the sprite group and render all sprites
+    all_sprites.draw(screen)
+
+    # Equivalent to
+    # for entity in all_sprites:
+    #     screen.blit(entity.image, entity.rect)
 
     # Removes all sprites from the group
     # all_sprites.empty()
