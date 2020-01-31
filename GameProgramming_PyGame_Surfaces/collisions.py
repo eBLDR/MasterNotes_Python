@@ -26,15 +26,15 @@ class SpaceShip:
         window.blit(self.img, self.get_hit_box())
 
 
-def check_surface_collision(surface_1, surface_2):
-    # Checks collision between 2 surfaces
+def check_surface_collision(rectangle_1, rectangle_2):
+    # Checks collision between 2 rectangles
     # Tests if 2 rectangles overlap
-    return surface_1.colliderect(surface_2)
+    return rectangle_1.colliderect(rectangle_2)
 
 
-def check_mouse_collide(surface, mouse_position, name):
+def check_mouse_collide(rectangle, mouse_position, name):
     # Checks if point is inside a rectangle
-    if surface.collidepoint(mouse_position):
+    if rectangle.collidepoint(mouse_position):
         print('{}: Mouse on top!'.format(name.upper()))
 
 

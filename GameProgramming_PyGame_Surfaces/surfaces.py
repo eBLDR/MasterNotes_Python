@@ -14,7 +14,7 @@ pygame.init()
 screen = pygame.display.set_mode((400, 400))
 pygame.display.set_caption('Surfaces')
 
-# Create basic surface - @rectangle
+# Create basic surface - @size
 my_surface = pygame.Surface((75, 25))
 
 # Changes surface color - @rgb_color
@@ -29,10 +29,18 @@ print('Surface rectangle is:', my_rectangle)
 
 # If @center is specified, it will set the center of the surface to
 # specified position - default is @topleft
-my_rectangle = my_surface.get_rect(center=(50, 50))
+my_rectangle = my_surface.get_rect(center=(150, 50))
 print('Surface centered rectangle is:', my_rectangle)
 print(my_rectangle.top, my_rectangle.bottom,
-      my_rectangle.left, my_rectangle.right)
+      my_rectangle.left, my_rectangle.right,
+      my_rectangle.center)
+
+print(dir(my_surface))
+
+# Rectangles can be moved
+# move_ip(@x, @y) moves the rectangle in place
+my_rectangle.move_ip(10, 10)
+print('Moved surface centered rectangle:', my_rectangle)
 
 # Creates an image surface object
 cat_img = pygame.image.load('src/cat.png')
@@ -66,11 +74,11 @@ while run:
 
     # Paste the surface object to another surface
     # (@surface, @position_tuple)
-    screen.blit(my_surface, (50, 50))
-
     screen.blit(text, (120, 300))
 
     # Rectangle object can also be used as a "blitting" position
+    screen.blit(my_surface, my_rectangle)
+
     screen.blit(cat_img_rotated, cat_rectangle)
 
     pygame.display.update()

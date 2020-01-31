@@ -17,7 +17,11 @@ screen.fill(WHITE)  # Fill screen with color
 # Drawing shapes - all have @width=0 argument at end, if width is 0, the
 # shape will be filled with solid color
 # Rectangle - @surface, @color_rgb, @rect
-pygame.draw.rect(screen, BLUE, (200, 150, 100, 50), 2)
+my_rect = pygame.draw.rect(screen, BLUE, (200, 150, 100, 50), 2)
+
+# Draw calls return a Rect object
+# collidepoint(), for instance, can be called
+print(my_rect.collidepoint((200, 151)))
 
 # Polygon - @surface, @color_rgb, @point_list
 pygame.draw.polygon(screen, GREEN, ((146, 0), (291, 106), (236, 277), (56, 277), (0, 106)))
