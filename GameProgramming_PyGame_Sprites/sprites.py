@@ -11,6 +11,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
 
+        # These two attributes must be named "image" and "rect"
         self.image = pygame.image.load('src/wizard.png').convert()
         self.rect = self.image.get_rect(center=(300, 300))
 

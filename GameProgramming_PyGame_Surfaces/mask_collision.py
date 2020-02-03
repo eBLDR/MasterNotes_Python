@@ -35,6 +35,12 @@ class MyObject:
             # Returns nonzero if the bit at (x, y) is set
             return self.mask.get_at((x, y))
 
+        # This function could be written using:
+        # if self.rect.collidepoint(x, y):
+        #     x -= self.rect.x
+        #     y -= self.rect.y
+        #     return self.mask.get_at((x, y))
+
 
 screen = pygame.display.set_mode((400, 400))
 pygame.display.set_caption('Mask collision')

@@ -26,13 +26,15 @@ print('Surface size:', my_surface.get_size())
 # Retrieving the rectangle object of a surface
 my_rectangle = my_surface.get_rect()
 print('Surface rectangle is:', my_rectangle)
+print(f'rect.x: {my_rectangle.x}, rect.y: {my_rectangle.y}')
 
 # If @center is specified, it will set the center of the surface to
 # specified position - default is @topleft
 my_rectangle = my_surface.get_rect(center=(150, 50))
 print('Surface centered rectangle is:', my_rectangle)
-print(my_rectangle.top, my_rectangle.bottom,
-      my_rectangle.left, my_rectangle.right,
+print(f'rect.x: {my_rectangle.x}, rect.y: {my_rectangle.y}')
+print(my_rectangle.left, my_rectangle.top,
+      my_rectangle.right, my_rectangle.bottom,
       my_rectangle.center)
 
 print(dir(my_surface))
