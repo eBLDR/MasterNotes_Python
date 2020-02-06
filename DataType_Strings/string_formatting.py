@@ -41,6 +41,9 @@ print('\n'.join(
     [f'{"*" * i:>10}*{"*" * i:10}' for i in range(10)]
 ))
 
+# Backslashes are not allowed inside f-strings - a workaround is
+print(f'{chr(0x0A).join(["alpha", "beta", "gamma"])}')
+
 # From Python 3.8+, a simpler way for debugging has been implemented
 # Adding the '=' character, will print the variable name followed by its value
 # print(f'{age=}...')  # Output is: 'age=24'
