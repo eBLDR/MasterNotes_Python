@@ -1,4 +1,4 @@
-# casing format
+# Casing format
 myString = 'I am a machine.'
 print(myString.upper())  # all chars in uppercase
 print(myString.lower())  # all chars in lowercase
@@ -6,38 +6,41 @@ print(myString.title())  # all first chars of words in uppercase
 print(myString.capitalize())  # only first letter of the str in uppercase
 print(myString.swapcase())  # inverts casing
 
+print('a'.isupper())  # True if it is uppercase
+print('a'.islower())  # True if it is lowercase
+
 print('=' * 30)
 
 # Data type check
 anotherString = input('Enter a string: ')
 
-# true if str is number (int)
+# True if str is number (int)
 print('Is digit = {}'.format(anotherString.isdigit()))
 
-# true if str is alphabetic
+# True if str is alphabetic
 print('Is alpha = {}'.format(anotherString.isalpha()))
 
-# true if str is alphanumeric
+# True if str is alphanumeric
 print('Is alnum = {}'.format(anotherString.isalnum()))
 
-# true if str starts whit @char
+# True if str starts whit @char
 print('Startswith \'a\' = {}'.format(anotherString.startswith('a')))
 
-# true if str ends with @char
+# True if str ends with @char
 print('Endswith \'a\' = {}'.format(anotherString.endswith('a')))
 
 print('=' * 30)
 
-# Stripping - default value for stripping is \n
+# Stripping - default value for stripping is "\n"
 file_name = 'image.png'
 
-# will strip from both sides if matching, order doesn't matter
+# Will strip from both sides if matching, order doesn't matter
 print(file_name.strip('pg.n'))
 
-# will strip only from right side if matching
+# Will strip only from right side if matching
 print(file_name.rstrip('.png'))
 
-# will strip only from left side if matching
+# Will strip only from left side if matching
 print(file_name.lstrip('ma'))
 
 print('=' * 30)
