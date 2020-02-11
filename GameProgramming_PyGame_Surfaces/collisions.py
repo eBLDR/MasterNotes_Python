@@ -11,7 +11,7 @@ class SpaceShip:
 
     def get_hit_box(self):
         # Space in which our object is
-        return self.img.get_rect(center=(self.x, self.y))
+        return self.img.get_rect(topleft=(self.x, self.y))
 
     def draw(self, window):
         # Draw hit box
@@ -19,7 +19,7 @@ class SpaceShip:
             window,
             self.color,
             self.get_hit_box(),
-            1
+            1,
         )
 
         # Draw image

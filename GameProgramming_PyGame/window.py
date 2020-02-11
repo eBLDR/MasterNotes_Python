@@ -9,6 +9,7 @@ pygame.init()
 
 # Window's size ((@width, @height), @flags=0, depth=0)
 screen = pygame.display.set_mode((500, 500))  # , flags=pygame.FULLSCREEN)
+# If @size is not passed, screen adjusts to monitor size (?)
 # Fullscreen - use flag for full screen
 
 # Screen rectangle
