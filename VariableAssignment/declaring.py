@@ -9,9 +9,12 @@ myVar = 0  # Camel case - nameOfThisTechnique
 a = set([1, 2, 3])  # Built-in function
 a2 = {1, 2, 3}  # Literal syntax - also called "syntactic sugar"
 
-# From Python 3.6+ variable annotations can be typed
+# From Python 3.6+ variable annotations can be typed, this will show warnings
 # var_name: type = value
 name: str = 'BLDR'
+
+# Multiple types can be specified
+age: (int, None) = None
 
 # Type list of int
 numbers: list[int] = []
