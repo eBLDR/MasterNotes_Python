@@ -35,7 +35,8 @@ print('My attribute is: {0.attr}'.format(my_object))
 # From Python 3.6+, s = f'{x}' can be used in place of s = '{}'.format(x)
 print(f'My age is {age}...')
 print(f'Multiple references: {age, coord, age}...')
-print(f'Calc: {25 ** 2 - 7}; method: {len(str(age))}')
+print(f'Operations: {25 ** 2 - 7}; methods: {len(str(age))}')
+print(f'Expressions: You are {"old" if age > 1 else "young"}')
 
 # Quotation can be used:
 print('\n'.join(
