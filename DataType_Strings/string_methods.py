@@ -1,10 +1,10 @@
 # Casing format
-myString = 'I am a machine.'
-print(myString.upper())  # all chars in uppercase
-print(myString.lower())  # all chars in lowercase
-print(myString.title())  # all first chars of words in uppercase
-print(myString.capitalize())  # only first letter of the str in uppercase
-print(myString.swapcase())  # inverts casing
+my_string = 'I am a machine.'
+print(my_string.upper())  # all chars in uppercase
+print(my_string.lower())  # all chars in lowercase
+print(my_string.title())  # all first chars of words in uppercase
+print(my_string.capitalize())  # only first letter of the str in uppercase
+print(my_string.swapcase())  # inverts casing
 
 print('a'.isupper())  # True if it is uppercase
 print('a'.islower())  # True if it is lowercase
@@ -12,22 +12,22 @@ print('a'.islower())  # True if it is lowercase
 print('=' * 30)
 
 # Data type check
-anotherString = input('Enter a string: ')
+another_string = input('Enter a string: ')
 
 # True if str is number (int)
-print('Is digit = {}'.format(anotherString.isdigit()))
+print('Is digit = {}'.format(another_string.isdigit()))
 
 # True if str is alphabetic
-print('Is alpha = {}'.format(anotherString.isalpha()))
+print('Is alpha = {}'.format(another_string.isalpha()))
 
 # True if str is alphanumeric
-print('Is alnum = {}'.format(anotherString.isalnum()))
+print('Is alnum = {}'.format(another_string.isalnum()))
 
 # True if str starts whit @char
-print('Startswith \'a\' = {}'.format(anotherString.startswith('a')))
+print('Startswith \'a\' = {}'.format(another_string.startswith('a')))
 
 # True if str ends with @char
-print('Endswith \'a\' = {}'.format(anotherString.endswith('a')))
+print('Endswith \'a\' = {}'.format(another_string.endswith('a')))
 
 print('=' * 30)
 

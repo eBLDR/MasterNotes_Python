@@ -30,7 +30,7 @@ print('=' * 20)
 # Mutable objects
 l_1 = [0, 1, 2]
 l_2 = l_1  # shallow copy
-l_3 = l_1[:]  # deep copy
+l_3 = l_1[:]  # deep copy using slicing
 print('L1 = {}, L2 = {}, L3 = {}'.format(l_1, l_2, l_3))
 print('id(L1) is {}, id(L2) is {}, id(L3) is {}'.format(id(l_1), id(l_2), id(l_3)))
 

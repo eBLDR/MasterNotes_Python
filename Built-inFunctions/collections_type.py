@@ -60,6 +60,7 @@ print('=' * 20)
 # min() & max ()
 print(min(tuple_sample))  # returns the minimum value
 print(max(tuple_sample))  # returns the maximum value
+# minx() & max() can also accept *args
 
 print('=' * 20)
 
@@ -68,8 +69,8 @@ print(sum(tuple_sample))  # returns the sum of all the values
 
 print('=' * 20)
 
-# sorted(key=function, reverse=False) - returns a sorted list, cannot mix
-# digits with alphabetical characters
+# sorted(@collection, key=function, reverse=False) - returns a sorted list,
+# cannot mix digits with alphabetical characters
 sor = sorted(tuple_sample, reverse=False)
 print(sor)
 
