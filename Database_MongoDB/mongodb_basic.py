@@ -3,6 +3,9 @@ MongoDB is a NoSQL database that works on a server.
 It stores data (documents) in JSON like format.
 Before running this python script, Mongo server must be running.
 """
+import datetime
+import pprint
+
 from pymongo import MongoClient
 
 # Establishing connection
@@ -14,62 +17,100 @@ client = MongoClient()
 # Equivalent URI
 # client = MongoClient('mongodb://localhost:27017')
 
-# Accessing database - pymongo_test is a mock db
-db = client.pymongo_test
+# Accessing a database - creates new databases implicitly upon their first use
+db = client.my_mongo_db
 print(db)
 print(type(db))
 
 # Equivalent dictionary-style access
-db2 = client['pymongo_test']
+db2 = client['my_mongo_db']
 print(db2)
-
 print(db == db2)
 
+# Display existing collections
+print(f'Existing collections are: {db.list_collection_names()}')
+
 print('=' * 20)
 
-# Creating a new collection - equivalent to SQL tables
-# collection_name = db.collection_name
-posts = db.posts
-print(type(posts))
+# Creating new/accessing a collection
+collection = db.collection
+print(type(collection))
 
-# Inserting documents - equivalent to SQL records
-post_1 = {
+# Equivalent dictionary-style access
+collection2 = db['collection2']
+print(collection2)
+print(collection == collection2)
+
+# Drop a table
+db.posts2.drop()
+
+print('=' * 20)
+
+"""
+Note on the lazy creation of MongoDB:
+Collections and databases are created when the first document is inserted into
+them. So, none of the above commands have actually performed any operations
+on the MongoDB server.
+"""
+
+# Inserting documents - on insert, special key _id is added to the document
+# Many kinds of native python data are allowed
+document_1 = {
     'title': 'Python and MongoDB',
     'content': 'PyMongo is fun, you guys',
-    'author': 'Scott'
+    'author': 'Rambo',
+    'year': 2036,
+    'date': datetime.datetime.utcnow(),
+    'tags': ['wow', 'gotcha', 'epic'],
 }
+# Some native python Python will be automatically converted to and from the
+# appropriate BSON types
 
 # Insert 1 document
-result = posts.insert_one(post_1)
-print('One post: {0}'.format(result.inserted_id))
+result = collection.insert_one(document_1)
+print(f'One post: {result.inserted_id}')
 
 # Insert many documents - an array
-post_2 = {
+document_2 = {
     'title': 'Virtual Environments',
-    'content': 'Use virtual environments, you guys',
-    'author': 'Scott'
-}
-post_3 = {
-    'title': 'Learning Python',
-    'content': 'Learn Python, it is easy',
-    'author': 'Bill'
+    'author': 'Rambo',
+    'year': 2000,
 }
 
-new_result = posts.insert_many([post_2, post_3])
-print('Multiple posts: {0}'.format(new_result.inserted_ids))
+document_3 = {
+    'title': 'Learning Python',
+    'content': 'Learn Python, it is easy',
+    'author': 'Bill',
+    'year': 1
+}
+
+new_result = collection.insert_many([document_2, document_3])
+print(f'Multiple posts: {new_result.inserted_ids}')
 
 print('=' * 20)
 
-# Retrieving documents
-# Using a dictionary with field to match as an argument
-# Retrieves 1 document
-bills_post = posts.find_one({'author': 'Bill'})
-print(bills_post)
+# Retrieving documents - returns the first document
+print(collection.find_one())
 
-# Retrieves all matching documents
-scott_posts = posts.find({'author': 'Scott'})
+# Using a dictionary with field to match as an argument
+print(collection.find_one({'author': 'Bill'}))
+
+# Retrieves all matching documents - filter is optional
+# collection.find() will return all documents in a iterable cursor object
+# cursor modifier .limit(<n>) can be used to set a limit of fetched documents
+scott_posts = collection.find({'author': 'Rambo'})  # .limit(5)
 print(scott_posts)
+print(type(scott_posts))
 
 # It's a cursor object - iterable
 for post in scott_posts:
     print(post)
+
+print('=' * 20)
+
+# Counting documents
+print(collection.count_documents({'year': 1}))
+
+# Sort results
+for document in collection.find().sort('year'):
+    pprint.pprint(document)
