@@ -13,13 +13,25 @@ me.connect('mongoengine_test', host='localhost', port=27017)
 
 # Defining a collection's structure for data validation
 class Post(me.Document):
-    # Document's data
-    # @required=is_required, @max_length=number_of_chars,
-    # @default=default_value, @choices=array_with_valid_values,
-    # @unique=must_be_unique, @db_field=specify_different_field_name
+    """
+    Field types, StringField, IntField, FloatField, BooleanField, ListField,
+    DictField, DateTimeField, DateField ...and many more.
+
+    Fields general keyword arguments
+        @required=is_required
+        @default=default_value
+        @choices=array_with_valid_values
+        @unique=must_be_unique
+        @db_field=specify_different_field_name
+    """
+
+    # StringField(@max_length=number_of_chars
     title = me.StringField(required=True, max_length=200)
-    content = me.StringField(required=True)
+    content = me.StringField()
     author = me.StringField(required=True, max_length=50)
+
+    year = me.IntField(required=True)
+
     published = me.DateTimeField(default=datetime.datetime.utcnow)
 
     # Saving an array
@@ -49,6 +61,7 @@ post_1 = Post(
     title='Sample Post',
     content='Some engaging content',
     author='Mambo',
+    year=1999,
     tags=['cool', 'warm'],
 )
 
@@ -76,6 +89,13 @@ except me.ValidationError as exc:
 print('=' * 20)
 
 # Accessing data
+"""
+Document classes have an objects attribute, which is used for accessing the
+objects in the database associated with the class. The objects attribute is
+a QuerySetManager, which creates and returns a new QuerySet object on access.
+The QuerySet object may be iterated over to fetch documents from the database.
+"""
+print(type(Post))
 print(Post.objects.first())  # Only first document
 
 # All documents
@@ -83,7 +103,7 @@ for post in Post.objects:
     print(post)
     print(post.title)
 
-# Adding filters
+# Adding filters - calling the QuerySet with field lookup keyword arguments
 for post in Post.objects(author='Mambo'):
     print(post.author)
 
@@ -91,10 +111,20 @@ for post in Post.objects(author='Mambo'):
 for post in Post.objects(tags='cool'):
     print(post.tags)
 
+# Raw queries can be added
+for post in Post.objects(__raw__={'year': {'$lt': 2020}}):
+    print(post.year)
+
 # Counting
 print(Post.objects().count())
+
+# Sorting - add `+` or `-` to specify ascending or descending sorting
+print(Post.objects().order_by('-year'))  # , '-author')) It can concatenate orders
 
 # Delete a document
 match = Post.objects(author='Mambo').first()
 print(f'Deleting {match}, {match.title}')
 match.delete()
+
+# Drop entire collection
+# Post.drop_collection()

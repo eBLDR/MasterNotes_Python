@@ -12,7 +12,7 @@ ARITHMETIC OPERATORS
 ====================
 
 COMPARISION OPERATORS - COMPARATORS
-	return True or False
+	return boolean
 
 >	greater than
 <	less than
@@ -24,7 +24,7 @@ COMPARISION OPERATORS - COMPARATORS
 ====================
 
 LOGICAL OPERATORS
-	return True or False
+	return boolean
 
 and	True if both are True
 or	True if either is True
@@ -58,10 +58,28 @@ SPECIAL OPERATORS
 
 - IDENTITY
 
-is	True if operands are identical
+is		True if operands are identical
 is not	True if operands are not identical
 
 - MEMBERSHIP
 
-in	True if value/variable is found in the sequence
-not in	True if value/variable is not found in the sequence
+in		True if object is found in the iterable
+not in	True if object is not found in the iterable
+
+====================
+
+OPERATOR PRECEDENCE
+
+()			Parentheses
+**			Exponent
++x, -x, ~x	Unary plus, Unary minus, Bitwise NOT
+*, /, //, %	Multiplication, Division, Floor division, Modulus
++, -		Addition, Subtraction
+<<, >>		Bitwise shift operators
+&			Bitwise AND
+^			Bitwise XOR
+|			Bitwise OR
+==, !=, >, >=, <, <=, is, is not, in, not in	Comparisions, Identity, Membership operators
+not			Logical NOT
+and			Logical AND
+or			Logical OR
