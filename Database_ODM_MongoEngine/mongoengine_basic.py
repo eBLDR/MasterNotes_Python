@@ -14,15 +14,18 @@ me.connect('mongoengine_test', host='localhost', port=27017)
 # Defining a collection's structure for data validation
 class Post(me.Document):
     """
-    Field types, StringField, IntField, FloatField, BooleanField, ListField,
+    Field types:
+    StringField, IntField, FloatField, BooleanField, ListField,
     DictField, DateTimeField, DateField ...and many more.
 
-    Fields general keyword arguments
+    Fields general keyword parameters:
         @required=is_required
         @default=default_value
         @choices=array_with_valid_values
         @unique=must_be_unique
         @db_field=specify_different_field_name
+
+    Each field can specify further parameters.
     """
 
     # StringField(@max_length=number_of_chars
