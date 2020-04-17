@@ -83,14 +83,24 @@ print(f'First user is: {User.objects.first().email}')
 
 print('=' * 10)
 
-for user in User.objects.all():
+all_users = User.objects.all()
+print(type(all_users))
+
+for user in all_users:
     print(user.first_name, user.email, user.alive)
 
+print('=' * 10)
+
 # Querying with filters - raw accepts all kind of MongoDB's raw query
+alive_users = User.objects.raw({'alive': False})
+print(type(alive_users))
+
+# Methods all(), first(), count(), etc can be applied to any type of QuerySet
+print(type(alive_users.first()))
+
 print('\nM.I.A.:')
-for user in User.objects.raw({'alive': False}):
+for user in alive_users:
     print(user.first_name)
 
 # Delete a document
 first_user.delete()
-
