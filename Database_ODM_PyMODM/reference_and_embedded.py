@@ -23,7 +23,7 @@ class Post(pymodm.MongoModel):
     # Referencing another document from another collection.
     # Storing the _id of the document we want to reference. To reference
     # multiple documents, we can store these ids in a list.
-    # @on_delete: Specify what happens when the referenced object is deleted
+    # @on_delete: Specify what happens when the referenced object is deleted.
     author = fields.ReferenceField(Author, on_delete=fields.ReferenceField.CASCADE)
 
     revised_on = fields.DateTimeField(default=datetime.datetime.utcnow)
@@ -32,6 +32,8 @@ class Post(pymodm.MongoModel):
     # If we don’t need to query the referenced documents outside of our
     # reference structure, we might just embed such documents directly inside
     # the documents that reference them. Either a single one or in a list.
+    # Embedded models WON'T be stored in a new collections, rather as a
+    # property inside the collection where it is embedded.
     comments = fields.EmbeddedDocumentListField(Comment)
 
     # Custom query
