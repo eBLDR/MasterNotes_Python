@@ -1,6 +1,7 @@
 """
 ODM - Object Document Mapper
 Roughly equivalent to SQL ORM.
+Developed by MongoDB team.
 """
 import pymodm
 

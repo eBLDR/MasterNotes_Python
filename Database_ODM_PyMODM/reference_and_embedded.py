@@ -21,10 +21,12 @@ class Post(pymodm.MongoModel):
     published = fields.BooleanField(default=True)
 
     # Referencing another document from another collection.
-    # Storing the _id of the document we want to reference. To reference
-    # multiple documents, we can store these ids in a list.
+    # Storing the _id of the document we want to reference.
     # @on_delete: Specify what happens when the referenced object is deleted.
     author = fields.ReferenceField(Author, on_delete=fields.ReferenceField.CASCADE)
+
+    # Referencing multiple documents is done by using a list of references.
+    authors = fields.ListField(fields.ReferenceField(Author, on_delete=fields.ReferenceField.CASCADE))
 
     revised_on = fields.DateTimeField(default=datetime.datetime.utcnow)
     content = fields.CharField()
@@ -43,26 +45,45 @@ class Post(pymodm.MongoModel):
 
 
 grim = Author(name='Grim').save()
+grom = Author(name='Grom').save()
 
 # Using a document as reference
 wald = Post(title='Wald', author=grim).save()
 
-grom = Author(name='Grom').save()
-grom_comment = Comment(author=grom, content='WWWAaaAaAaRGH!')
+# Multiple reference
+wald_2 = Post(title='Wald 2', authors=[grim, grom]).save()
 
 # Embedding a document
+grom_comment = Comment(author=grom, content='WWWAaaAaAaRGH!')
+
 wald.comments = [grom_comment]
 wald.save()  # Update
+
 
 # Query
 for post in Post.objects.all():
     print(post.title, '-', post.revised_on)
-    print(post.author.name)  # Accessing reference
-    print(post.comments)  # Accessing embedded
+
+    # Accessing individual reference
+    if post.author:
+        print('Single author:')
+        print(post.author.name)
+
+    # Accessing multiple reference
+    if post.authors:
+        print('Multiple authors:')
+        for author in post.authors:
+            print(author.name)
+
+    # Accessing embedded
+    print('Comments:')
+    print(post.comments)
+
+    print('=' * 10)
 
 print('#' * 10)
 
 # Custom Query
 for post in Post.live_posts():
     print(post.title, '-', post.revised_on, post.published)
-    print(post.author.name)
+    print(post.author, post.authors)
