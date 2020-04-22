@@ -26,7 +26,7 @@ class Post(pymodm.MongoModel):
     author = fields.ReferenceField(Author, on_delete=fields.ReferenceField.CASCADE)
 
     # Referencing multiple documents is done by using a list of references.
-    authors = fields.ListField(fields.ReferenceField(Author, on_delete=fields.ReferenceField.CASCADE))
+    authors = fields.ListField(fields.ReferenceField(Author, on_delete=fields.ReferenceField.PULL))
 
     revised_on = fields.DateTimeField(default=datetime.datetime.utcnow)
     content = fields.CharField()
