@@ -74,6 +74,20 @@ User.objects.bulk_create(users)
 first_user.alive = False
 first_user.save()
 
+"""
+Or use update() method
+data = {
+    'field_1': 'new_value',
+    'field_4': 'new_value',
+}
+
+model.objects.raw(
+    {'uuid': uuid},  # Filter to query
+).update(
+    {"$set": data},  # To set the new data
+)
+"""
+
 print('=' * 10)
 
 # Accessing data - using `objects` QuerySet attribute
