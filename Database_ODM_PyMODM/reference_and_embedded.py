@@ -43,6 +43,16 @@ class Post(pymodm.MongoModel):
     def live_posts(cls):
         return cls.objects.raw({'published': True})
 
+    # Querying by reference field's id
+    @classmethod
+    def get_by_author(cls, author_):
+        return cls.objects.raw({'author': author_._id})
+
+    # Querying by reference field's other attributes
+    @classmethod
+    def get_by_author_name(cls, author_name):
+        return cls.objects.raw({'author': {'name': author_name}})
+
 
 grim = Author(name='Grim').save()
 grom = Author(name='Grom').save()
@@ -85,5 +95,17 @@ print('#' * 10)
 
 # Custom Query
 for post in Post.live_posts():
-    print(post.title, '-', post.revised_on, post.published)
-    print(post.author, post.authors)
+    print(post.title, '-', post.revised_on, post.published, post.author, post.authors)
+
+print('#' * 10)
+
+# Query  by reference field's id
+for post in Post.get_by_author(grim):
+    print(post.title, post.author, post.authors)
+
+print('#' * 10)
+
+# Query  by reference field other attributes
+for post in Post.get_by_author_name(grim.name):
+    print(post.title, post.author, post.authors)
+

@@ -40,6 +40,8 @@ class User(pymodm.MongoModel):
     last_name = fields.CharField(required=True)
     email = fields.EmailField()
     alive = fields.BooleanField(default=True)
+    lucky_numbers = fields.ListField()
+    stats = fields.DictField()
 
     # Optional Meta class for manual config
     class Meta:
@@ -57,7 +59,11 @@ class User(pymodm.MongoModel):
 
 # Saving a single instance of data
 first_user = User(
-    last_name='Sponge', first_name='NotBob', email='bob@spon.ge'
+    last_name='Sponge', first_name='NotBob', email='bob@spon.ge',
+    stats={
+        'weight': 36,
+        'height': 124,
+    }
 ).save()
 
 print(type(first_user))
@@ -65,7 +71,7 @@ print(first_user.last_name, first_user._id)  # _id key created automatically
 
 # Saving instances in bulk - it does not save default values!
 users = [
-    User('user@email.com', 'Bob', 'Ross'),
+    User('user@email.com', 'Bob', 'Ross', lucky_numbers=[5, 8, 12]),
     User(email='anotheruser@email.com', first_name='David', last_name='Attenborough')
 ]
 User.objects.bulk_create(users)
@@ -110,10 +116,28 @@ print('=' * 10)
 alive_users = User.objects.raw({'alive': False})
 print(type(alive_users))
 
+print('=' * 10)
+
+# Querying by items in array
+for user in User.objects.raw({'lucky_numbers': 12}):
+    print(user.email, user.lucky_numbers)
+
+print('=' * 10)
+
+# Querying by nested fields - accessed by dot notation
+# for user in User.objects.raw({'stats.weight': 36}):
+# Or using mongo raw query code
+for user in User.objects.raw({'stats.height': {'$lt': 150}}):
+    print(user.email, user.stats)
+
+print('=' * 10)
+
 # Methods all(), first(), count(), etc can be applied to any type of QuerySet
 print(type(alive_users.first()))
 
-print('\nM.I.A.:')
+print('=' * 10)
+
+print('M.I.A.:')
 for user in alive_users:
     print(user.first_name)
 
