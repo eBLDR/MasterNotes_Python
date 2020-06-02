@@ -69,6 +69,13 @@ first_user = User(
 print(type(first_user))
 print(first_user.last_name, first_user._id)  # _id key created automatically
 
+print('=' * 10)
+
+# Converting to dict
+print(first_user.to_son().to_dict())
+
+print('=' * 10)
+
 # Saving instances in bulk - it does not save default values!
 users = [
     User('user@email.com', 'Bob', 'Ross', lucky_numbers=[5, 8, 12]),
