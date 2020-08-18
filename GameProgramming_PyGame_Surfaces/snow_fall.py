@@ -68,15 +68,12 @@ class Tree:
         screen.blit(self.image, self.rect)
 
     def do_collide(self, x, y):
-        # Stop on collision
         x = int(x)
         y = int(y)
 
-        x -= self.rect.x
-        y -= self.rect.y
-
-        if 0 <= x < self.w and 0 <= y < self.h:
-            # Returns nonzero if the bit at (x, y) is set
+        if self.rect.collidepoint(x, y):
+            x -= self.rect.x
+            y -= self.rect.y
             return self.mask.get_at((x, y))
 
 

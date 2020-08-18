@@ -15,9 +15,6 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.image.load('src/wizard.png').convert()
         self.rect = self.image.get_rect(center=(300, 300))
 
-        # If mask collision is intended
-        self.mask = pygame.mask.from_surface(self.image)
-
         self.speed = 10
 
     def update(self, pressed_keys):
@@ -54,9 +51,6 @@ class Enemy(pygame.sprite.Sprite):
         self.image.set_colorkey((255, 255, 255), pygame.RLEACCEL)
 
         self.rect = self.image.get_rect(center=(820, random.randint(0, 600)))
-
-        # If mask collision is intended
-        self.mask = pygame.mask.from_surface(self.image)
 
         self.speed = random.randint(5, 20)
 
@@ -152,11 +146,6 @@ while running:
     pygame.sprite.collide_circle(@sprite_1, @sprite_2)
     Collision detection between two sprites, using circles, by testing to see
     if two circles centered on the sprites overlap.
-    
-    pygame.sprite.collide_mask(@sprite_1, @sprite_2)
-    Collision detection between two sprites, by testing if their bitmasks
-    overlap. Returns first point on the mask where the masks collided, or None
-    if there was no collision.
     """
 
     pygame.display.update()

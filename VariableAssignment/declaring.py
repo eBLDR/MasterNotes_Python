@@ -17,18 +17,18 @@ name: str = 'BLDR'
 age: (int, None) = None
 
 # Type list of int
-numbers: list[int] = []
+# numbers: list[int] = []
 
 # Variable declaration without initial value
 empty: str
 
 # From Python 3.8+, "walrus" notation can be used
 # It will create new variable and assign the value to it
-# print(walrus := True)
-#
-# inputs = list()
-# while (current := input("Write something: ")) != "quit":
-#     inputs.append(current)
+print(walrus := True)
+
+inputs = list()
+while (current := input("Write something: ")) != "quit":
+    inputs.append(current)
 
 """
 # Current usage

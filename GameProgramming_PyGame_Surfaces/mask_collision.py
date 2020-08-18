@@ -12,11 +12,12 @@ class MyObject:
         self.rect.move_ip(150, 150)
 
         """
-        Makes the transparent parts of the Surface not set, and the opaque
-        parts set.
+        A mask makes the transparent parts of the Surface not set, and the
+        opaque parts set.
         The alpha of each pixel is checked to see if it is greater than the
         given threshold.
         If the Surface is color-keyed, then threshold is not used.
+        Mask can be used for mask collision.
         """
         self.mask = pygame.mask.from_surface(self.image)  # , threshold=127)
         self.w, self.h = self.image.get_size()
@@ -35,7 +36,7 @@ class MyObject:
             # Returns nonzero if the bit at (x, y) is set
             return self.mask.get_at((x, y))
 
-        # This function could be written using:
+        # This function could be re-written using:
         # if self.rect.collidepoint(x, y):
         #     x -= self.rect.x
         #     y -= self.rect.y
@@ -67,6 +68,13 @@ while not quit_:
 
     if mouse_x and mouse_y and my_object.is_over(mouse_x, mouse_y):
         print('Mouse is over me!')
+
+    """
+    pygame.sprite.collide_mask(@sprite_1, @sprite_2)
+    Collision detection between two sprites, by testing if their bitmasks
+    overlap. Returns first point on the mask where the masks collided, or None
+    if there was no collision.
+    """
 
     pygame.display.flip()
 
