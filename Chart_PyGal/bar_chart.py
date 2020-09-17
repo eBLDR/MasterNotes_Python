@@ -1,22 +1,42 @@
 import pygal
 
-# if we wish to change the style
+# If we wish to change the style
 from pygal.style import NeonStyle
 
-bar_chart = pygal.Bar(style=NeonStyle)  # create new graph object, type bar
-# specifying the style is not necessary, DefaultStyle by default
+# Config object
+from pygal import Config
 
-# add a title
+config = Config()
+config.show_legend = True
+config.human_readable = True
+config.fill = True
+config.print_values = True
+config.print_labels = True
+config.style = NeonStyle  # DefaultStyle by default
+
+# Create new graph object, type bar
+bar_chart = pygal.Bar(config=config)
+
+# Add a title
 bar_chart.title = 'Remarkable sequences'
 
-# adding labels
+# Adding labels
 bar_chart.x_labels = map(str, range(11))
 
-# add a set of values to the chart ('table name', items)
+# Add a set of values to the chart ('table name', items)
 bar_chart.add('Fibonacci', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
 
-# add another set
-bar_chart.add('Padovan', [1, 1, 1, 2, 2, 3, 4, 5, 7, 9, 12])
+# Add another set
+bar_chart.add('Padovan', [1, 1, 1, 2, 2, 3, 4, 5, 7, 9,
+                          # Value configuration is possible
+                          {
+                              'value': 12,
+                              'label': 'Last Padovan number!',
+                              'color': 'Red',  # Forcing color
+                          }])
 
-# render to a new file .svg
+# Render to new SVG
 bar_chart.render_to_file('bar_chart_example.svg')
+
+# render to new PNG file
+bar_chart.render_to_png('bar_chart_example.png')
