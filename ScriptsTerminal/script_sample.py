@@ -4,10 +4,10 @@ The first line is the 'shebang' line (see magiclines.txt).
 
 --- LINUX & OS X ---
 To run the script from the terminal, go to script directory and type:
-./nameoffile.py
+./<filename>.py
 
 Execution permissions might be required to run the script, if so, type:
-chmod +x nameoffile.py
+chmod +x <filename>.py
 
 To run the script as a command line command, delete the extension from file name and
 add the directory to the PATH. In linux:
