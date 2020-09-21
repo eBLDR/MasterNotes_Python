@@ -1,3 +1,7 @@
+"""
+Factory methods are frequently used to build an instance from
+dictionary-like data.
+"""
 from datetime import date
 
 

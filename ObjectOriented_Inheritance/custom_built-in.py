@@ -1,6 +1,13 @@
 # Inherit from built-in class
-class CustomDict(dict):
+class CustomList(list):
+    def get_values(self, value):
+        """ Filtering objects with a condition. """
+        return [
+            obj for obj in self if obj == value
+        ]
 
+
+class CustomDict(dict):
     def longest_key(self):
         """
         Finds the longest key in the dictionary.
