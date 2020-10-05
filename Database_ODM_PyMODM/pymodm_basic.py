@@ -78,7 +78,7 @@ print('=' * 10)
 
 # Saving instances in bulk - it does not save default values!
 users = [
-    User('user@email.com', 'Bob', 'Ross', lucky_numbers=[5, 8, 12]),
+    User('Bob', 'Ross', 'user@email.com', lucky_numbers=[5, 8, 12]),
     User(email='anotheruser@email.com', first_name='David', last_name='Attenborough')
 ]
 User.objects.bulk_create(users)
@@ -120,8 +120,17 @@ for user in all_users:
 print('=' * 10)
 
 # Querying with filters - raw accepts all kind of MongoDB's raw query
-alive_users = User.objects.raw({'alive': False})
-print(type(alive_users))
+# Multiple filters are used by passing more key-value pairs to the dictionary
+not_alive_users = User.objects.raw({'alive': False})
+print(type(not_alive_users))
+print(len(list(not_alive_users)))
+
+print('=' * 10)
+
+# Queries return a query set object, which accepts further queries
+bob_not_alive = not_alive_users.raw({'first_name': 'Bob'})
+print(type(bob_not_alive))
+print(len(list(bob_not_alive)))
 
 print('=' * 10)
 
@@ -140,12 +149,12 @@ for user in User.objects.raw({'stats.height': {'$lt': 150}}):
 print('=' * 10)
 
 # Methods all(), first(), count(), etc can be applied to any type of QuerySet
-print(type(alive_users.first()))
+print(type(not_alive_users.first()))
 
 print('=' * 10)
 
 print('M.I.A.:')
-for user in alive_users:
+for user in not_alive_users:
     print(user.first_name)
 
 # Delete a document

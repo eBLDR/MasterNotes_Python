@@ -67,7 +67,7 @@ atlas.begin_fill()  # will fill the shape drawn next
 atlas.circle(60, 270)  # draws a circle of @radius, @degrees - it turns counterclockwise
 # If radius is negative, it turns clockwise
 atlas.end_fill()  # fills the shape drawn from last call of begin_fill()
-atlas.setheading(45)  # set the heading angle, 0 is towards right and increases counterclockwise - = to turtle.seth()
+atlas.setheading(45)  # set the heading angle, 0 is towards right and increases counterclockwise, equivalent to turtle.seth()
 
 # SHOW/HIDE SHAPE
 atlas.hideturtle()  # won't show the cursor on screen, but nothing else is affected
