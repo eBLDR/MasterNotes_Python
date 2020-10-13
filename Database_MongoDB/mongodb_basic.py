@@ -17,9 +17,13 @@ client = MongoClient()
 # Equivalent URI
 # client = MongoClient('mongodb://localhost:27017')
 
+# Get a list of the names of all databases on the connected server
+print(f'Databases are: {client.list_database_names()}')
+
 # Accessing a database - creates new databases implicitly upon their first use
 db = client.my_mongo_db
-print(db)
+
+print('Connected to:', db)
 print(type(db))
 
 # Equivalent dictionary-style access
