@@ -37,3 +37,6 @@ Examples:
   # a good practise to pin the dependencies, this is to set them to a fixed
   # version, i.e.: flask==1.0.1
   $ pip install --no-cache-dir -r requirements.txt -I
+
+  # Creates a file with all requirements
+  $ pip freeze > requirements.txt
