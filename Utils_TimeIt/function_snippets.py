@@ -33,7 +33,7 @@ def factorial(n):
         return n * factorial(n - 1)
 
 
-print('#' * 30)
+print('=' * 30)
 
 # import the desired function in the setup parameter and use the called in the snippet
 if __name__ == '__main__':

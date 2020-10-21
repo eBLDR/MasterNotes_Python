@@ -23,7 +23,7 @@ print(my_plant[1])
 # Or access members using dot notation
 print(my_plant.scientific_name)
 
-print('#' * 30)
+print('=' * 30)
 
 plants_list = [
     plant('Andre', 'EndraScience', 'Green', 'Water'),
@@ -42,7 +42,7 @@ for p in plants_list:
     if p.lifecycle == 'Green':
         print(p.name, p.scientific_name)
 
-print('#' * 30)
+print('=' * 30)
 
 # Dictionary to named tuple
 data = '{"name": "John Smith", "hometown": {"name": "New York", "id": 123}}'

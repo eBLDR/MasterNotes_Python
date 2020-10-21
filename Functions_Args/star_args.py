@@ -36,6 +36,19 @@ print(average(*numbers))
 print('=' * 30)
 
 
+def happy_text(*texts, sep=' :) '):
+    text = ''
+    for arg in texts:
+        text += str(arg) + sep
+    return text
+
+
+print(happy_text('I', 'am', 'damn', 'happy', sep=' :( '))
+print(happy_text('Assigning', 'returned', 'values'))
+
+print('=' * 30)
+
+
 # *args can take any number of arguments, passed to the function in a tuple
 def centre_text(*texts, sep_char=' ', end_char='\n', file=None):
     text = ''

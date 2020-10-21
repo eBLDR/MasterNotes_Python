@@ -27,7 +27,7 @@ print(map_words)
 
 print(words == map_words)
 
-print('#' * 30)
+print('=' * 30)
 
 # filter() - it can also be replaced by comprehensions, and comprehensions is
 # way faster
@@ -62,7 +62,7 @@ print(meals_filter)
 
 print(meals == meals_filter)
 
-print('#' * 30)
+print('=' * 30)
 
 # reduce()
 from functools import reduce

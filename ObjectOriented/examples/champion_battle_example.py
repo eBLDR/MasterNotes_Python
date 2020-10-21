@@ -150,7 +150,7 @@ def tournament(champ_1, champ_2):
 
     for round_ in range(1, ROUNDS_PER_BATTLE + 1):
         if EXTENDED_INFO:
-            print('#' * 20)
+            print('=' * 20)
             print('ROUND: {}'.format(round_))
 
         champ_1.respawn()

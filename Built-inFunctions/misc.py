@@ -29,7 +29,7 @@ help('return')
 # quit()
 # exit()
 
-print('#' * 30)
+print('=' * 30)
 
 # dir() - return the list of names in the current local scope. With an object
 # as argument, return a list of valid attributes for that object

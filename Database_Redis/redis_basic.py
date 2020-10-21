@@ -33,7 +33,7 @@ print(v, type(v))  # Bytes type
 v = v.decode('utf-8')
 print(v, type(v))
 
-print('#' * 20)
+print('=' * 20)
 
 # Setting many from dict
 r.mset(
@@ -48,7 +48,7 @@ print(r.mget('key_1', 'non-existing'))
 # Display all keys - !! careful on big DB
 print(r.keys())
 
-print('#' * 20)
+print('=' * 20)
 
 # Add expiry time to a key
 sample_key = 'key_1'

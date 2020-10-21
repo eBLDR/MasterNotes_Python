@@ -77,7 +77,7 @@ class School:
 nemo = Shark()
 nemo.swim()
 
-print('#' * 30)
+print('=' * 30)
 
 school = School()
 

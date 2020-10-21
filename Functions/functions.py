@@ -39,9 +39,7 @@ print(what)
 print('=' * 20)
 
 
-# Function annotations (or type hints), provides info about the type of the parameter expected (are optional)
-# It can also be a customized class
-def get_char(prompt: str) -> str:  # -> return Type - hint about the type returned
+def get_char(prompt):
     """
     Ask to the user to input a character/s using specific prompt.
     :param prompt: text to be displayed :type str
@@ -74,7 +72,9 @@ def say(message, times=1):
 say('Hello')
 say('World', times=5)
 
-# Keyword parameters can be scpefied refering an existing variable
+print('=' * 20)
+
+# Keyword parameters can be specified referring an existing variable
 default = 'whats\'up'
 
 
@@ -84,23 +84,7 @@ def speak(text=default):
 
 speak()
 
-
-# Function annotations can also be placed in named arguments
-def happy_text(*texts, sep: str = ' :) '):
-    text = ''
-    for arg in texts:
-        text += str(arg) + sep
-    return text  # Will return whatever type/variable
-
-
-print(happy_text('I', 'am', 'damn', 'happy', sep=' :( '))
-print(happy_text('Assigning', 'returned', 'values'))
-
 print('=' * 20)
 
-# To know if a variable is a function, use callable(@arg)
-print(
-    'Is \'happy text\' a function?\ncallable(happy_text): {}'.format(
-        callable(happy_text)
-    )
-)
+# callable(@arg) - True if an object is a function/method
+print(f'callable(speak): {callable(speak())}')

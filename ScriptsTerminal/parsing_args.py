@@ -34,7 +34,7 @@ print('Echo_remainder:', args.echo_remainder)
 print('Option:', args.option)
 print('Yes:', args.yes)
 
-print('#' * 30)
+print('=' * 30)
 
 # Help and usage can be manually called
 print('print_usage():')

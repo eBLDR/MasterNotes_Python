@@ -91,19 +91,19 @@ for post in Post.objects.all():
 
     print('=' * 10)
 
-print('#' * 10)
+print('=' * 10)
 
 # Custom Query
 for post in Post.live_posts():
     print(post.title, '-', post.revised_on, post.published, post.author, post.authors)
 
-print('#' * 10)
+print('=' * 10)
 
 # Query  by reference field's id
 for post in Post.get_by_author(grim):
     print(post.title, post.author, post.authors)
 
-print('#' * 10)
+print('=' * 10)
 
 # Query  by reference field other attributes
 for post in Post.get_by_author_name(grim.name):
