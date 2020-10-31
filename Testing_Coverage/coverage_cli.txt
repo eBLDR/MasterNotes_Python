@@ -15,7 +15,7 @@ folder with all the necessary files:
 $ coverage html
 $ coverage xml
 
-Excluding lines - any line with a comment of “# pragma: no cover” is excluded.
+Excluding lines: any line with a comment of “# pragma: no cover” is excluded.
 If that line introduces a clause, for example, an if clause, or a function or
 class definition, then the entire clause is also excluded.
 

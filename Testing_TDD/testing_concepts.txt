@@ -5,6 +5,11 @@ It is consisting of small cycles in which we are writing a unit test, that will
 initially fail, and then implementing the minimum amount of code to pass that
 test. After that code can be refactored to follow some good principles.
 
+Methodology for developing code, 3 essential steps:
+    1) Write a failing test
+    2) Implement the necessary code to pass the test
+    3) Refactor
+
 Pyramid of automated tests:
     1) Unit Tests: a piece of a code that invokes another piece of code (unit)
     and checks if an output of that action is the same as the desired output.
@@ -16,8 +21,3 @@ Pyramid of automated tests:
     functional specification.
     4) Acceptance Tests: tests if the system fulfills expected business and
     contract requirements. It is considering the system as a black box.
-
-Methodology for developing code, 3 essential steps:
-    1) Write a failing test
-    2) Implement the necessary code to pass the test
-    3) Refactor
