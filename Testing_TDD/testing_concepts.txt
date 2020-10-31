@@ -10,14 +10,49 @@ Methodology for developing code, 3 essential steps:
     2) Implement the necessary code to pass the test
     3) Refactor
 
+General concepts:
+- Test Step
+Each of the steps processed during the test.
+
+- Test Assertion
+Comparing the actual result with the expected result.
+
+- Test Fixture
+A test fixture represents the preparation needed to perform one or more tests,
+and any associate cleanup actions. This may involve, for example, creating
+temporary or proxy databases, directories, or starting a server process.
+
+- Test Case
+A test case is the individual unit of testing. It checks for a specific
+response to a particular set of inputs. unittest provides a base class,
+TestCase, which may be used to create new test cases.
+
+- Test Suite
+A test suite is a collection of test cases, test suites, or both.
+It is used to aggregate tests that should be executed together.
+
+- Test Runner
+A test runner is a component which orchestrates the execution of tests and
+provides the outcome to the user. The runner may use a graphical interface,
+a textual interface, or return a special value to indicate the results of
+executing the tests.
+Common test runners: unittest, nose2, pytest
+
+
 Pyramid of automated tests:
-    1) Unit Tests: a piece of a code that invokes another piece of code (unit)
-    and checks if an output of that action is the same as the desired output.
-    2) Integration Tests: tests a unit without full control over all parties in
-    the test. They are using one or more of its outside dependencies, such as a
-    database, threads, network, time, etc.
-    3) Functional Tests: tests a slice of a functionality of the system,
-    observing it as a black box and verifying the output of the system to the
-    functional specification.
-    4) Acceptance Tests: tests if the system fulfills expected business and
-    contract requirements. It is considering the system as a black box.
+- Unit Tests
+Checks a small component in the application. It is a piece of a code that
+invokes another piece of code (unit).
+
+- Integration Tests
+Checks that components in the application operate with each other. They use
+one or more of its outside dependencies, such as a database, threads, network,
+time, etc.
+
+- Functional Tests
+Test a slice of a functionality of the system, observing it as a black box and
+verifying the output of the system to the functional specification.
+
+- Acceptance Tests
+Test if the system fulfills expected business and contract requirements. It is
+considering the system as a black box.

@@ -41,6 +41,10 @@ class OutcomesTest(unittest.TestCase):
     def test_i_am_a_failure(self):
         self.assertEqual(1, 2)
 
+    # Using built-in assert for custom assert expressions
+    def test_with_keyword_assert(self):
+        assert sum([1, 2, 3]) == 6, "Should be 6"
+
 
 # Following is not necessary if the test file is run directly (instead of
 # invoking it through a test runner)

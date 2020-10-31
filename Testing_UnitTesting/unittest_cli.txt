@@ -2,9 +2,12 @@ To run the test:
 $ python -m unittest <module_name>
 -v (verbose) flag to display extra output.
 
-To run in discover mode, this will search for all the files with a name
-starting with 'test' and run them:
-$ python -m unittest
+To run in discover mode, this will search for all the files in the current
+directory with a name starting with 'test' and run them:
+$ python -m unittest discover
+-s <path> flag allows to specify the name of the directory
+The arg `discover` can be removed, it is used by default if path to file was
+not provided
 
 To list all unittest options:
 $ python -m unittest -h
