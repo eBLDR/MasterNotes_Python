@@ -1,0 +1,23 @@
+TDD - Test Driven Development
+
+TDD is an evolutionary approach to building and designing software solutions.
+It is consisting of small cycles in which we are writing a unit test, that will
+initially fail, and then implementing the minimum amount of code to pass that
+test. After that code can be refactored to follow some good principles.
+
+Pyramid of automated tests:
+    1) Unit Tests: a piece of a code that invokes another piece of code (unit)
+    and checks if an output of that action is the same as the desired output.
+    2) Integration Tests: tests a unit without full control over all parties in
+    the test. They are using one or more of its outside dependencies, such as a
+    database, threads, network, time, etc.
+    3) Functional Tests: tests a slice of a functionality of the system,
+    observing it as a black box and verifying the output of the system to the
+    functional specification.
+    4) Acceptance Tests: tests if the system fulfills expected business and
+    contract requirements. It is considering the system as a black box.
+
+Methodology for developing code, 3 essential steps:
+    1) Write a failing test
+    2) Implement the necessary code to pass the test
+    3) Refactor

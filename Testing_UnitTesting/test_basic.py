@@ -2,6 +2,7 @@
 Automated testing framework, unittest, sometimes referred to as 'PyUnit'.
 Each test written must be fully independent, able to run alone, it should
 focus on one bit of functionality.
+unittest will run the tests inside the test case in alphabetical order.
 """
 import unittest
 
@@ -41,6 +42,7 @@ class OutcomesTest(unittest.TestCase):
         self.assertEqual(1, 2)
 
 
-# This is not necessary if running from terminal
+# Following is not necessary if the test file is run directly (instead of
+# invoking it through a test runner)
 if __name__ == '__main__':
     unittest.main()

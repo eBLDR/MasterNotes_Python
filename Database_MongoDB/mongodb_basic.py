@@ -45,8 +45,8 @@ collection2 = db['collection2']
 print(collection2)
 print(collection == collection2)
 
-# Drop a table
-db.posts2.drop()
+# Drop a collection
+db.collection2.drop()
 
 print('=' * 20)
 

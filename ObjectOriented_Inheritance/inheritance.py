@@ -72,7 +72,7 @@ class Vampire(Enemy):
         else:
             return False
 
-    # overriding methods!
+    # Overriding methods! Child methods will always have priority over parent's
     def take_damage(self, damage):
         if not self.dodges():
             super().take_damage(damage=damage)  # calling the super method
