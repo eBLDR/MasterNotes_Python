@@ -76,7 +76,7 @@ print(y.attr)
 print('=' * 20)
 
 
-# Creating own's metaclass
+# Creating own metaclass
 class Meta(type):
     # Using @mcs by convention
     def __new__(mcs, name, bases, dct):

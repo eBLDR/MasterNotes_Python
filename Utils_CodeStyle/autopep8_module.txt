@@ -2,7 +2,7 @@ autopep8 module uses pycodestyle to modify any possible code style violations.
 
 Usage, from terminal:
 
-autopep8 <file_name>
+$ autopep8 <file_name>
 Will output the modified code directly to console for review.
 
 Flags:

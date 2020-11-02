@@ -47,7 +47,7 @@ print('=' * 30)
 
 # str.replace(@old, @new, @count) - replaces @old with @new a maximum of
 # @count times
-name = 'Epsylon'
+name = 'Epsilon'
 new_name = name.replace('E', 'I')
 print(new_name)
 

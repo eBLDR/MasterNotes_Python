@@ -56,7 +56,7 @@ async def main():
     task = asyncio.create_task(my_coroutine(0))
     await msg('After calling coroutine.')
 
-    # Runnig a single task and storing the returned value(if desired)
+    # Running a single task and storing the returned value(if desired)
     value = await task
     print('Task finished, value is:', value)
 

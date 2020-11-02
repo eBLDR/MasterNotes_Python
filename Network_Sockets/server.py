@@ -51,7 +51,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
         print('Connected with {}.'.format(address))
         data = conn.recv(1024)
 
-        # Just to close the server from the client - don'tuse this on real cases
+        # Just to close the server from the client - don't use this on real cases
         if data == b'\r\n':
             print('Got key message. Server is shutting down.')
             break

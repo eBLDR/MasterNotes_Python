@@ -1,5 +1,7 @@
 PEP 8 is the de facto code style guide for Python.
 
-Programming style is a set of rules or guidelines used when writing the source code for a computer program.
-It is often claimed that following a particular programming style will help programmers read and
-understand source code conforming to the style, and help to avoid introducing errors.
+Programming style is a set of rules or guidelines used when writing the source
+code for a computer program.
+It is often claimed that following a particular programming style will help
+programmers read and understand source code conforming to the style, and help
+to avoid introducing errors.

@@ -18,7 +18,7 @@ def save_array(name, array):
 
 img = Image.open('Lenna.jpg')
 
-pixels = img.load()  # this is not a list, nor is it list'able
+pixels = img.load()  # this is not a list, nor is it "listable"
 width, height = img.size
 print(type(pixels))
 

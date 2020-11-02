@@ -12,9 +12,11 @@ def square(n):
     process_id = os.getpid()
     parent_process_id = os.getppid()
     name = current_process().name
-    print('{0}**2 squared to {1} by process id {2} and name {3}, '
-          'parent process is {4}'.format(
-        n, r, process_id, name, parent_process_id)
+    print(
+        '{0}**2 squared to {1} by process id {2} and name {3}, '
+        'parent process is {4}'.format(
+            n, r, process_id, name, parent_process_id,
+        )
     )
 
 
@@ -25,9 +27,7 @@ if __name__ == '__main__':
     for index, number in enumerate(numbers):
         # Creating a process, target is the function to be triggered,
         # args is arguments (tuple)
-        proc = Process(target=square, args=(number,), name='P-{}'.format(
-            str(index)
-        ))
+        proc = Process(target=square, args=(number,), name=f'P-{index}')
         # Passing a specific @name
 
         processes.append(proc)

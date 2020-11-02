@@ -1,5 +1,5 @@
 """
-hashlib can perfom MD5 (RSA type), SHA1, SHA224, SHA256, SHA384 and SHA512 hash algorithms.
+hashlib can perform MD5 (RSA type), SHA1, SHA224, SHA256, SHA384 and SHA512 hash algorithms.
 Hashes usually contain only hexadecimal digits.
 """
 import hashlib

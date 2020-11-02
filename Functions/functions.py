@@ -1,9 +1,11 @@
 """
-Functions are blocks of code that can be reusable. In a process that is called "procedural decomposition".
-All functions RETURN something, if not specified, default = None
+Functions are blocks of code that can be reusable. In a process that is called
+"procedural decomposition".
+All functions RETURN something, if not specified, default = None.
 PARAMETER refers to the variables defined in the function (may have 0).
 ARGUMENT refers to the actual objects used when the function is called.
-LOCAL VARIABLES can be created inside the function, and are deleted when the function is finished.
+LOCAL VARIABLES can be created inside the function, and are deleted when the
+function is finished.
 Ensure to provide documentation.
 Care of the type of the variable.
 """
@@ -11,9 +13,9 @@ Care of the type of the variable.
 
 def test_function():
     """
-    Documentation string goes here - also called 'function signature' or
-    'docstring'.
-    pep257 talk about the style of docstrings.
+    Documentation string, also called 'function signature' or 'docstring',
+    is placed here. By doing so, the string literal will be set to __doc__.
+    PEP257 talks about the style of docstrings.
     """
     # pass  # A command that does nothing
 
@@ -52,7 +54,7 @@ def get_char(prompt):
         # it also stops the execution of the function
         return c
 
-        # Return can also be typed alone, it will break the function and return None
+        # `return` alone will break the function and return `None`
         # return
 
 

@@ -21,7 +21,7 @@ my_file.close()
 
 # APPEND - Appending data at the end of the file, will create the file if not found
 my_file = open(filename, 'a')
-my_file.write('Do you love ukelele?\n')  # Appending more text
+my_file.write('Do you love ukulele?\n')  # Appending more text
 my_file.close()
 
 # READ - 'r' is also default mode
