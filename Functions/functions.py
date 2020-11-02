@@ -12,11 +12,6 @@ Care of the type of the variable.
 
 
 def test_function():
-    """
-    Documentation string, also called 'function signature' or 'docstring',
-    is placed here. By doing so, the string literal will be set to __doc__.
-    PEP257 talks about the style of docstrings.
-    """
     # pass  # A command that does nothing
 
     print('I\'m a useless function')
@@ -24,9 +19,6 @@ def test_function():
 
 # To print the name of the function, str
 print(test_function.__name__)
-
-# To print the docstring of the function, str
-print(test_function.__doc__)
 
 # Call the function
 test_function()
