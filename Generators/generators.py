@@ -1,10 +1,12 @@
 """
-A generator works like an iterator. The difference is that the value is only calculated when requested.
-Yield returns a 'sleeping' value, the function that returns a yielded value
-is actually being called only when iterating, and the function 'remembers' which was the last value sent.
-The values inside the generator are 'consumed' when used. There is no need to consume the range fully.
-A range, contrary, isn't consumed when used.
-Essentially, the list is not created upfront, only one item is created when requested.
+A generator works like an iterator. The difference is that the value is
+only calculated when requested. Yield returns a 'sleeping' value, the
+function that returns a yielded value is actually being called only when
+iterating, and the function 'remembers' which was the last value sent.
+The values inside the generator are 'consumed' when used. There is no need
+to consume the range fully. A range, on the contrary, isn't consumed when used.
+Essentially, the list is not created upfront, only one item is created
+when requested.
 """
 import sys
 
