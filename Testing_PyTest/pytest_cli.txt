@@ -1,0 +1,13 @@
+pytest can be used as test runner for test written using unittest.
+
+To run the tests:
+$ pytest <module_name>
+<module_name> is optional, pytest will discover files starting with "test_"
+that are in or under the current directory.
+-v (verbose) to display extra output, showing the progress in %
+--sw, --stepwise exit on test failure and continue from last failing test next time
+-x, --exitfirst exit instantly on first error or failed test
+--durations=N show N slowest setup/test durations (N=0 for all)
+
+pytest-cov plugin integrates coverage, to see the test coverage report:
+$ pytest --cov
