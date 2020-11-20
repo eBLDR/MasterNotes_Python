@@ -1,3 +1,24 @@
+class Simple:
+    def method(self):
+        return 'Calling instance method:', self
+
+    @classmethod
+    def classmethod(cls):
+        return 'Calling class method:', cls
+
+    @staticmethod
+    def staticmethod():
+        return 'Calling static method'
+
+
+s = Simple()
+print(s.method())
+print(s.classmethod())
+print(s.staticmethod())
+
+print('#' * 30)
+
+
 class BaseClass:
     """ Simple account class with balance. """
 
