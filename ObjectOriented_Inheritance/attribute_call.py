@@ -7,7 +7,6 @@ class Gang:
     def __init__(self):
         self.gang = []
 
-    # Function annotation: type Enemy expected
     def add_enemy(self, enemy: enemies.Enemy) -> None:
 
         # Checking the type is a BAD option to filter parameters

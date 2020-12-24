@@ -57,7 +57,9 @@ them. So, none of the above commands have actually performed any operations
 on the MongoDB server.
 """
 
-# Inserting documents - on insert, special key _id is added to the document
+# Inserting documents
+# _id field can be manually specified, otherwise it will take a random
+# ObjectId value.
 # Many kinds of native python data are allowed
 document_1 = {
     'title': 'Python and MongoDB',
@@ -85,7 +87,7 @@ document_3 = {
     'title': 'Learning Python',
     'content': 'Learn Python, it is easy',
     'author': 'Bill',
-    'year': 1
+    'year': 1,
 }
 
 new_result = collection.insert_many([document_2, document_3])

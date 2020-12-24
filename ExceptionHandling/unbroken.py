@@ -8,10 +8,11 @@ while True:
 
     # Triggered by Ctrl+C
     except KeyboardInterrupt:
-        print('You cancelled the operation... or no.')
+        print('You cancelled the operation... or not.')
 
     else:
         print('You entered {}'.format(text))
 
         if 'exit' in text.lower() and 'please' in text.lower():
+            print(':)')
             break
