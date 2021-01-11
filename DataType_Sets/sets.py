@@ -5,7 +5,7 @@ mutable.
 Items in set can be of a different type.
 """
 farm_animals = {'sheep', 'cow', 'hen'}  # create a set
-empty_set = set()  # emptySet = {} will create and empty dictionary
+empty_set = set()  # empty_set = {} will create and empty dictionary
 
 print(type(farm_animals))
 
