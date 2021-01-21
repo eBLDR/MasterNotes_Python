@@ -73,5 +73,10 @@ async def create_item(item: Item):
     """
     :param item: Model-like data, expected request JSON body's structure
     """
+    # Attributes can be accessed
+    for item_ in data_items:
+        if item.id == item_.id:
+            return {"error": f"already existing id: {item.id}"}
+
     item = crud_add_item(item)
     return {"item": item}
