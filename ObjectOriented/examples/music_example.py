@@ -4,7 +4,6 @@
 
 
 class Song:
-    # Document strings (docstring) sample
     """Class to represent a song
 
     Attributes:

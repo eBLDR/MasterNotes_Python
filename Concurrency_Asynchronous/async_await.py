@@ -11,29 +11,26 @@ import asyncio
 from random import randint
 
 
-# New in Python 3.5 - async / await keywords
+# async / await keywords, python 3.5+
 # async - declaring a coroutine function
 # Equivalent to @asyncio.coroutine
 async def my_coroutine(id_):
     process_time = randint(1, 5)
-    print('Coroutine {} - Working for {} seconds...'.format(
-        id_, process_time)
-    )
+    print(f'Coroutine {id_} - Working for {process_time} seconds...')
 
     # await - suspends the execution of coroutine on an awaitable object
     # It can only be used inside a coroutine function (async def ...)
     await asyncio.sleep(process_time)
     # Equivalent to yield from asyncio.sleep(delay)
 
-    # asyncio.sleep(@seconds) is an awaitable, it will be triggered after the
-    # @seconds
+    # asyncio.sleep(@seconds) is an awaitable, triggered after @seconds
     # asyncio.wait([@coroutines]) takes an iterable of coroutines tasks, will
     # return 2 sets
     # done, pending = yield from asyncio.wait([@coroutines])
 
-    print('Coroutine {} - Task completed.'.format(id_))
+    print(f'Coroutine {id_} - Task completed.')
 
-    return process_time  # Coroutines can also return something
+    return process_time  # Coroutines can also have return value
 
 
 # Creating the event loop - is a programming construct that waits for and
@@ -51,8 +48,7 @@ async def main():
     await msg('Before calling coroutine.')  # Chained to another function
     # create_task(@coroutine) - schedules the execution of a task, returns a
     # Task() object
-    # create_task() is new in Python3.7, older versions, use
-    # ensure_future(@coroutine)
+    # create_task() python3.7- versions use ensure_future(@coroutine)
     task = asyncio.create_task(my_coroutine(0))
     await msg('After calling coroutine.')
 

@@ -27,7 +27,6 @@ class Post(me.Document):
 
     Each field can specify further parameters.
     """
-
     # StringField(@max_length=number_of_chars
     title = me.StringField(required=True, max_length=200)
     content = me.StringField()

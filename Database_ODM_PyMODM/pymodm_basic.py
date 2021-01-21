@@ -59,7 +59,9 @@ class User(pymodm.MongoModel):
 
 # Saving a single instance of data
 first_user = User(
-    last_name='Sponge', first_name='NotBob', email='bob@spon.ge',
+    last_name='Sponge',
+    first_name='NotBob',
+    email='bob@spon.ge',
     stats={
         'weight': 36,
         'height': 124,
@@ -79,7 +81,7 @@ print('=' * 10)
 # Saving instances in bulk - it does not save default values!
 users = [
     User('Bob', 'Ross', 'user@email.com', lucky_numbers=[5, 8, 12]),
-    User(email='anotheruser@email.com', first_name='David', last_name='Attenborough')
+    User(email='anotheruser@email.com', first_name='David', last_name='Attenborough'),
 ]
 User.objects.bulk_create(users)
 
