@@ -6,6 +6,15 @@ parts (coroutines), it's all executed in a single thread.
 Tasks release the CPU during waiting periods so that other tasks can use it,
 when the task is completed, it will interrupt the main execution.
 Asynchronous is used mostly when dealing with HTTP requests.
+
+Asynchronous should be used when we do not need certain value for performing
+other tasks:
+    result = async_func()
+    Do some additional work...
+    data = await result;
+
+It is of not use in the following case:
+    result = await async_func()
 """
 import asyncio
 from random import randint
@@ -52,7 +61,7 @@ async def main():
     task = asyncio.create_task(my_coroutine(0))
     await msg('After calling coroutine.')
 
-    # Running a single task and storing the returned value(if desired)
+    # Running a single task and storing the returned value (if desired)
     value = await task
     print('Task finished, value is:', value)
 
