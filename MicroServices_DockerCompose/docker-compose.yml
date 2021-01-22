@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  database-service:
+    image: redis:latest
+    ports:
+      - 6379:6379
+
+  products-service:
+    build: products
+    volumes:
+      - ./products:/usr/src/app
+    ports:
+      - 5001:80
+    depends_on:
+      - database-service
+
+  website-service:
+    build: website
+    volumes:
+      - ./website:/usr/src/app
+    ports:
+      - 5002:80
+
+networks:
+  default:
+    name: my_network
