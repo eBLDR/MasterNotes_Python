@@ -55,6 +55,7 @@ async def msg(text):
 
 async def main():
     await msg('Before calling coroutine.')  # Chained to another function
+
     # create_task(@coroutine) - schedules the execution of a task, returns a
     # Task() object
     # create_task() python3.7- versions use ensure_future(@coroutine)

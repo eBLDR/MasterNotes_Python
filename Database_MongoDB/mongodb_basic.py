@@ -26,7 +26,7 @@ db = client.my_mongo_db
 print('Connected to:', db)
 print(type(db))
 
-# Equivalent dictionary-style access
+# Equivalent dictionary-style access, or client.get_database(<db_name>)
 db2 = client['my_mongo_db']
 print(db2)
 print(db == db2)
@@ -40,7 +40,7 @@ print('=' * 20)
 collection = db.collection
 print(type(collection))
 
-# Equivalent dictionary-style access
+# Equivalent dictionary-style access, or db.get_collection(<collection_name>)
 collection2 = db['collection2']
 print(collection2)
 print(collection == collection2)
