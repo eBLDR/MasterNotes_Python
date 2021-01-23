@@ -19,7 +19,8 @@ parser.add_argument('echo_remainder', help='All for me', nargs='*')
 
 # Optional arguments - if name starts with '--' or '-', argument is expected
 # The order of arguments does not matter
-D
+parser.add_argument('--option', help='Custom help msg for --option', default=None)
+
 # Mode - uses the @action arg, no extra argument is expected
 # @action='store_true' will store the value True to the arg if the flag is used
 parser.add_argument('-y', '--yes', help='Custom help msg for --yes', action='store_true')

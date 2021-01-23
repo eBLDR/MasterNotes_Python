@@ -15,6 +15,9 @@ class User(BaseModel):
     # Static values
     alive = True
 
+    # Using custom classes
+    # custom_class = CustomClass
+
 
 external_data = {
     'id': '123',
