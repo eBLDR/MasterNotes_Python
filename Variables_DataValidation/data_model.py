@@ -8,8 +8,8 @@ class User(BaseModel):
     id: int
     name: str
 
-    # Optional: it's either the specified type or `None`
-    signup_ts: Optional[datetime] = None
+    # Optional: it's either the specified type or `None` by default
+    signup_ts: Optional[datetime]  # = default_value
     friends: List[int] = []
 
     # Static values
@@ -22,7 +22,7 @@ class User(BaseModel):
 external_data = {
     'id': '123',
     'name': 'John Doe',
-    'signup_ts': '2019-06-01 12:22',
+    # 'signup_ts': '2019-06-01 12:22',
     'friends': [1, 2, '3'],  # Types are converted if possible
 }
 
