@@ -68,7 +68,8 @@ async def read_items(q: Optional[str] = None):
     return {"items": items, "q": q}
 
 
-@app.post("/items")
+# Specifying model for response with @response_model
+@app.post("/items", response_model=Item)
 async def create_item(item: Item):
     """
     :param item: Model-like data, expected request JSON body's structure
@@ -79,4 +80,4 @@ async def create_item(item: Item):
             return {"error": f"already existing id: {item.id}"}
 
     item = crud_add_item(item)
-    return {"item": item}
+    return item
