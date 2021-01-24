@@ -37,3 +37,8 @@ def test_format_data(example_data):
         "Crud: Senior Software Engineer",
         "Stake: Project Manager",
     ]
+
+
+# Accessing data declared in conftest.py
+def test_conftest(some_stuff):
+    print(some_stuff)
