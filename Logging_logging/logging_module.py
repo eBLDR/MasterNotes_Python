@@ -16,9 +16,10 @@ import logging
 logging.basicConfig(
     filename='my_log.log',
     level=logging.DEBUG,
-    format='%(asctime)s - %(filename)s - %(process)d - %(processName)s - '
+    format='%(asctime)s - %(name)s - %(filename)s - %(process)d - %(processName)s - '
            '%(threadName)s - %(levelname)s - %(message)s'
 )
+# Default format is: "%(levelname)s:%(name)s:%(message)s"
 
 # logging can also be print onto the screen instead of writing to file,
 # just don't pass any argument for @filename
