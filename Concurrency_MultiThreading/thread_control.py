@@ -72,7 +72,7 @@ print('Is {} a daemonic thread? {}'.format(
 )
 
 if daemon_test.daemon:
-    print('I am a demon, so the main thread is not waiting for me.')
+    print('I am a daemon, so the main thread is not waiting for me.')
 else:
     print('I am not a daemon, the main thread IS waiting for me to end...')
 

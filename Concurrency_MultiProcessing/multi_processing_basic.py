@@ -32,8 +32,8 @@ if __name__ == '__main__':
 
         processes.append(proc)
 
-        # Daemon process - parent process will finish when ONLY non-daemon
-        # processes are alive
+        # Daemon process - parent process will finish when all non-daemon
+        # processes have terminated
         proc.daemon = True  # It's False by default
 
         # Start the execution of the process
