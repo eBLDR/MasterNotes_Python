@@ -31,6 +31,9 @@ db2 = client['my_mongo_db']
 print(db2)
 print(db == db2)
 
+# Drop database
+# client.drop_database(db_name)
+
 # Display existing collections
 print(f'Existing collections are: {db.list_collection_names()}')
 
@@ -69,8 +72,6 @@ document_1 = {
     'date': datetime.datetime.utcnow(),
     'tags': ['wow', 'gotcha', 'epic'],
 }
-# Some native python Python will be automatically converted to and from the
-# appropriate BSON types
 
 # Insert 1 document
 result = collection.insert_one(document_1)
