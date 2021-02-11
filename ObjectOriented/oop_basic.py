@@ -10,7 +10,7 @@ METHOD: a function defined in a class that modifies the data attributes (it has 
 
 
 # Example for class
-class Kettle:  # By convention, start with capital letter and use camel case
+class Kettle:  # By convention, class names are PascalCased
     """ Class docstring. """
     # Kettle inherits form class 'object', a built-in class in Python 3 (new style class), there is no need to specify
     # i.e.: class Kettle:
