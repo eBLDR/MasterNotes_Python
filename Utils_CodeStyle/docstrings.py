@@ -27,7 +27,7 @@ print(one_line_docstring.__doc__)
 
 print('#' * 30)
 
-"""pydan
+"""
 Multi-lined docstrings are used to further elaborate on the object
 beyond the summary. All multi-lined docstrings have the following parts:
     - A one-line summary line
