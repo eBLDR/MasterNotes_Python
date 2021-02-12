@@ -1,8 +1,3 @@
-# CIRCULAR REFERENCES happen when we call C class from B class,
-# B class from A class, and A class from C class.
-# It may arise problems easily
-
-
 class Song:
     """Class to represent a song
 

@@ -12,3 +12,11 @@ from flask_sqlalchemy import SQLAlchemy
 # Local application imports
 from local_module import local_class
 from local_package import local_function
+
+# Is totally fine to import multiple modules in a single line, like so:
+import math, random, time
+# Though PEP-8 style guide recommends not to do so, and import every module in
+# its own line:
+import random
+import time
+from math import pi, pow, sqrt

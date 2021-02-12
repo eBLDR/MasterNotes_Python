@@ -16,7 +16,7 @@ def hi():
 
 
 key = bin(24)
-superKey = hex(100)
+super_key = hex(100)
 
 if __name__ == '__main__':
     print('You\'ll only see me when I\'m not being imported')

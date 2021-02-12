@@ -14,17 +14,19 @@ will NOT import variables with a name starting with '_'.
 __object__ this should never be touched - methods or variables that start with
 double underscore (__) are private by convention
 
-Note: is totally fine to import multiple modules in a single line, like so:
-import time, math, random
-Though PEP-8 style guide recommends not to do so, and import every module on
-its own line:
-import time
-from math import pi, sqrt, pow
-import random
+CIRCULAR IMPORTS
+A kind of circular dependency that happens when module A is imported from
+module B, and module B is in turn imported by module A.
+It may arise problems easily.
 """
+import sys
+
 # Importing our own module - using absolute import
 # absolute path in reference to __main__ (PYTHONPATH), includes working directory
 import sample_imported  # To import the whole module
+
+# imported modules can be seen at:
+print(sys.modules)
 
 # If we wish to change the name to reference to the module
 # import sample_imported as <new_name>
@@ -36,7 +38,9 @@ import sample_imported  # To import the whole module
 
 # We can import specific objects
 # Using relative import - relative path in reference to file
-from .sample_imported import superKey
+# Relatives imports are specific by `.` (current directory) and `..` (parent
+# directory)
+from .sample_imported import super_key
 
 # __name__ is an attribute of the file
 print('I am ' + __name__)
@@ -57,11 +61,11 @@ sample_imported.hi()
 print(sample_imported.key)
 
 # It's now part of the namespace of this module - no need to specify the module
-print(superKey)
+print(super_key)
 
 print('=' * 20)
 
-# Show global variables in this module, notice superKey from the imported module!!!
+# Show global variables in this module, notice super_key from the imported module!!!
 g = sorted(globals())
 print('globals() are:')
 for x in g:
