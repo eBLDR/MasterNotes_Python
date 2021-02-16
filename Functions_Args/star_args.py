@@ -9,9 +9,8 @@ arguments/key word arguments respectively.
 print('Hello', 'planet', 'Earth')
 
 
-# *args can get any number of positional arguments
-# args could be replaced by any valid name (i.e. *sgra),
-# conventionally use args
+# *args can get any number of positional arguments, from 0 to n
+# args can be replaced by any valid name (i.e. *sgra), conventionally use args
 # the function expects an unpacked tuple in place of args
 def average(*args):
     # *tuple is an UNPACKED tuple
