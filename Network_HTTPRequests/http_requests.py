@@ -38,8 +38,9 @@ text/plain for plain text
 application/json for json
 application/octet-stream for binary
 
-Headers can be sent in a GET request using:
+Headers can be sent in a request using:
 r = requests.get(url, headers=headers)
+headers is type dict
 """
 
 print(type(r.content))

@@ -6,6 +6,7 @@ import hashlib
 
 # Must be encoded as a byte string
 password = b'mysecurepassword'
+print(password)
 
 # Will return a md5 hash object
 hashed_md5 = hashlib.md5(password)
@@ -24,3 +25,4 @@ m.update(b'never ever')
 
 m_hashed = m.hexdigest()
 print(m_hashed)
+print(len(m_hashed))  # Always 32 chars
