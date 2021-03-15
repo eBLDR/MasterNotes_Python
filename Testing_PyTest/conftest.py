@@ -6,6 +6,6 @@ import pytest
 
 
 # Fixtures and objects are accessed by other tests by name
-@pytest.fixture()
+@pytest.fixture
 def some_stuff():
     return 'some stuff'
