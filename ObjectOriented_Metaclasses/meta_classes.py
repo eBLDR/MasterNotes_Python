@@ -26,7 +26,7 @@ Bar = type(
     'Bar',
     (Foo,),
     {'attr': 100,
-     'attr_val': lambda x: x.attr}
+     'attr_val': lambda x: x.attr},
 )
 
 print(Bar.__name__, Bar.__bases__, Bar.__dict__)
@@ -43,13 +43,14 @@ Bar = type(
     'Bar',
     (Foo,),
     {'attr': 100,
-     'attr_val': f})
+     'attr_val': f},
+)
 
 print(Bar.__name__, Bar.__bases__, Bar.__dict__)
 
 print('=' * 20)
 
-# Customising metaclasses
+# Customising meta classes
 z = Bar()
 z.attr_val()
 # The object creation line calls __call__() method, which invokes __new__()
