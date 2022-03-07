@@ -9,6 +9,7 @@ class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
+        self.populated = False
 
     # Using a class method as a factory
     @classmethod
@@ -20,10 +21,15 @@ class Person:
         new_instance = cls(name, age)
         print(type(new_instance))
 
+        new_instance.populate()
+
         return new_instance
 
     def display(self):
-        print(self.name + "'s age is: " + str(self.age))
+        print(f"{self.name}'s age is: {self.age}. Populated: {self.populated}")
+
+    def populate(self):
+        self.populated = True
 
 
 person = Person('Tom', 36)
