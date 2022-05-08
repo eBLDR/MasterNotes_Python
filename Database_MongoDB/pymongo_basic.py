@@ -103,7 +103,7 @@ print(collection.find_one())
 print(collection.find_one({'author': 'Bill'}))
 
 # Retrieves all matching documents - filter is optional
-# collection.find() will return all documents in a iterable cursor object
+# collection.find() will return all documents in an iterable cursor object
 # cursor modifier .limit(<n>) can be used to set a limit of fetched documents
 scott_posts = collection.find({'author': 'Rambo'})  # .limit(5)
 print(scott_posts)

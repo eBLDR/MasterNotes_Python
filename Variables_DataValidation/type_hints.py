@@ -20,8 +20,8 @@ print('=' * 20)
 print('=' * 20)
 
 # Declaring sequences and their internal types
-# Import of typing only necessary for python 3.9-
-from typing import List, Dict
+# Import of typing only necessary for python <3.9
+from typing import Dict, List
 
 numbers = List[int]
 
@@ -42,6 +42,7 @@ def get_name(first_name: str, second_name: str) -> str:  # -> hint about the typ
 
 
 print(get_name('simon', 'will'))
+print(f"__annotations__: {get_name.__annotations__}")
 
 
 # Function annotations can also be placed in named arguments
@@ -53,8 +54,12 @@ print(some_calculation(5, 7))
 
 print('=' * 20)
 
+# Multiple types
+from typing import Optional, Union
 
-def say_hi(name: (str, None) = None):
+
+# Optional defines the type as declared or None
+def say_hi(name: Optional[str] = None):
     if name is not None:
         print(f'Hey {name}!')
     else:
@@ -62,6 +67,15 @@ def say_hi(name: (str, None) = None):
 
 
 say_hi()
+
+
+# Union makes a list of possible types
+# Only for python <3.10 (3.10 adds operator |)
+def add_one(number: Union[int, float]):
+    print(number + 1)
+
+
+add_one(3)
 
 print('=' * 20)
 
