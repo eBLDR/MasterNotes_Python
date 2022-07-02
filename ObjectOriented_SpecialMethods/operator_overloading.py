@@ -1,7 +1,6 @@
 """
-Operator overloading allows the same operator to
-behave differently according to the context.
-It can be overwritten.
+Operator overloading allows the same operator to behave differently according
+to the context. It can be overwritten.
 
 OPERATOR            EXPRESSION	    INTERNALLY
 
@@ -26,7 +25,6 @@ Not equal to	    p1 != p2	    p1.__ne__(p2)
 Greater than	    p1 > p2	        p1.__gt__(p2)
 Greater than or
     equal to	    p1 >= p2	    p1.__ge__(p2)
-
 """
 
 
@@ -68,3 +66,12 @@ that are passed to it.
 Python doesn't have such a thing, the arguments are assigned by order, by
 named parameters, or set to default if not specified. (See functions.)
 """
+
+
+class LazyObject:
+    def __add__(self, other):
+        print(f"I could do something with + {other}, but I refuse.")
+
+
+lazy_object = LazyObject()
+lazy_object + 1

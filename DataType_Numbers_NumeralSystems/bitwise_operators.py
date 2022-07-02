@@ -1,4 +1,3 @@
-# Python can work with decimal, binary, hexadecimal, octal
 """
 - Bitwise operators-
 
@@ -11,24 +10,10 @@
 
 * NOT is also called "ones' complement"
 """
-integer = 12
-
-# Binary representation of an integer
-print(bin(integer))
-
-# Number of bits necessary to represent the number in binary
-print(integer.bit_length())
-
-for i in range(17):
-    print(f"{i:>2} in binary is {i:>05b}")
-
-# To declare variables in binary
 a = 0b1001
 b = 0b0111
 
-print(f"\t{a}\t\t{bin(a)}")
-print(f"\t{b}\t\t{bin(b)}")
-print(type(a), type(bin(a)))  # int, str
+print(f"a: {a}, b: {b}")
 
 # Operators
 print(f"NOT a: {bin(~ a)}")  # ~x is equivalent to -(x-1)
