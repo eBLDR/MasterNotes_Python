@@ -13,44 +13,32 @@
 """
 integer = 12
 
-# Prints the binary representation of an integer
+# Binary representation of an integer
 print(bin(integer))
 
-# Prints the number of bits necessary to print the int in binary
+# Number of bits necessary to represent the number in binary
 print(integer.bit_length())
 
 for i in range(17):
-    print('{0:>2} in binary is {0:>05b}'.format(i))
+    print(f"{i:>2} in binary is {i:>05b}")
 
 # To declare variables in binary
 a = 0b1001
 b = 0b0111
-print('\t{}\t\t{}'.format(a, bin(a)))
-print('\t{}\t\t{}'.format(b, bin(b)))
-print(type(a), type(bin(a)))  # types are int, str
 
-# not operator - equivalent -(x-1)
-not_a = ~ a
+print(f"\t{a}\t\t{bin(a)}")
+print(f"\t{b}\t\t{bin(b)}")
+print(type(a), type(bin(a)))  # int, str
 
-# and operator
-a_and_b = a & b
-
-# or operator
-a_or_b = a | b
-
-# or exclusive operator
-a_xor_b = a ^ b
-
-print('NOT a is {}'.format(bin(not_a)))
-print('a AND b is {}'.format(bin(a_and_b)))
-print('a OR b is {}'.format(bin(a_or_b)))
-print('a XOR b is {}'.format(bin(a_xor_b)))
+# Operators
+print(f"NOT a: {bin(~ a)}")  # ~x is equivalent to -(x-1)
+print(f"a AND b: {bin(a & b)}")
+print(f"a OR b: {bin(a | b)}")
+print(f"a XOR b: {bin(a ^ b)}")
 
 # Bit shifts
 # Left shift, moves the bits to the left and places new 0 on the right
-print(bin(a << 1))
-# x << y is equivalent to x * 2**y
+print(f"Left shift: {bin(a << 1)}")  # x << y is equivalent to x * 2**y
 
 # Right shift, moves the bits to the right
-print(bin(a >> 1))
-# x >> y is equivalent to x // 2**y
+print(f"Right shift: {bin(a >> 1)}")  # x >> y is equivalent to x // 2**y
