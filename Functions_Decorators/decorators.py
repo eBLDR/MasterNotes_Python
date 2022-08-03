@@ -1,20 +1,20 @@
 """
+Decorators provide syntax for calling higher-order functions.
 Decorators wrap a function, modifying its behaviour.
-Decorators take a function as an argument, and return also
-a function, the wrapping one.
+Decorators take a function as an argument and return also a function.
 """
 
 
 # Half decorator
-# can only add extra behaviour before decorated function is called
+# Can only add extra behaviour before decorated function is called
 def half_decorator(f):
     print('I am half_decorator.')
     return f  # Must return a callable
 
 
-# Pie syntax
+# Pie syntax, syntactic sugar
 # @half_decorator is equivalent of saying:
-# decorated = @half_decorator(decorated)
+# decorated = half_decorator(decorated)
 @half_decorator
 def decorated():
     print('I am decorated.')
@@ -26,7 +26,7 @@ print('=' * 30)
 
 
 # Full decorator
-# can add behaviour both before and after decorated function is called
+# Can add behaviour both before and after decorated function is called
 def my_decorator(some_function):
     def wrapper():
         print('Before some_function() is executed.')
@@ -97,6 +97,7 @@ def just_some_function_3(*args):
 
 print(just_some_function_3.__name__)
 print(just_some_function_3.__doc__)
+
 # Passing arguments
 just_some_function_3('1', '2')
 
