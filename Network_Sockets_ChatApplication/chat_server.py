@@ -19,26 +19,25 @@ def client_thread(conn, addr):
             client_disconnected(conn, addr)
             break
         else:
-            msg = '\r<{}> {}'.format(
-                str(conn.getpeername()),
-                data.decode(ENCODING)
-            ).replace('\n', '')
+            msg = (
+                f"\r<{conn.getpeername()}> {data.decode(ENCODING)}"
+            ).replace("\n", "")
             broadcast_data(conn, msg)
 
 
 def client_connected(conn, addr):
     CONNECTION_LIST_LOCK.acquire()
     CONNECTION_LIST.append(conn)
-    print('Client {} connected.'.format(addr))
-    broadcast_data(conn, '\rUser {} has entered the room.'.format(addr))
+    print(f"Client {addr} connected.")
+    broadcast_data(conn, f"\rUser {addr} has entered the room.")
     CONNECTION_LIST_LOCK.release()
 
 
 def client_disconnected(conn, addr=''):
     CONNECTION_LIST_LOCK.acquire()
     CONNECTION_LIST.remove(conn)
-    print('Client {} disconnected.'.format(addr))
-    broadcast_data(conn, '\rUser {} has left the room.'.format(addr))
+    print(f"Client {addr} disconnected.")
+    broadcast_data(conn, f"\rUser {addr} has left the room.")
     conn.close()
     CONNECTION_LIST_LOCK.release()
 
@@ -56,12 +55,12 @@ def broadcast_data(producer_socket, msg):
                 raise
 
 
-if __name__ == '__main__':
-    HOST = '127.0.0.1'  # Localhost
+if __name__ == "__main__":
+    HOST = "127.0.0.1"  # Localhost
     PORT = 5000
     MAX_CLIENTS = 10
     RECV_BUFFER = 4096
-    ENCODING = 'utf-8'
+    ENCODING = "utf-8"
 
     CONNECTION_LIST = []
     CONNECTION_LIST_LOCK = threading.Lock()  # To avoid concurrency issues
@@ -72,17 +71,18 @@ if __name__ == '__main__':
         try:
             server_socket.bind((HOST, PORT))
         except socket.error as e:
-            print('Bind failed. Error: {}'.format(e))
+            print(f"Bind failed. Error: {e}")
             raise e
 
         server_socket.listen(MAX_CLIENTS)
 
         CONNECTION_LIST.append(server_socket)
 
-        print('Chat server started on {}.'.format(server_socket.getsockname()))
+        print(f"Chat server started on {server_socket.getsockname()}.")
 
         while True:
             connection, address = server_socket.accept()
             threading.Thread(
-                target=client_thread, args=(connection, address)
+                target=client_thread,
+                args=(connection, address),
             ).start()

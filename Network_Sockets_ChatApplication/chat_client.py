@@ -14,7 +14,7 @@ import sys
 
 
 def prompt(conn):
-    sys.stdout.write('<You> '.format(conn.getsockname()))
+    sys.stdout.write(f"<You> {conn.getsockname()}: ")
     sys.stdout.flush()
 
 
@@ -22,13 +22,13 @@ def incoming_message(conn):
     # Incoming messages from remote host
     data = conn.recv(4096)
     if data:
-        print(data.decode('utf-8'))
+        print(data.decode("utf-8"))
         prompt(conn)
 
 
 def send_message(conn):
     # Sending messages to remote host
-    data = sys.stdin.readline().encode('utf-8')
+    data = sys.stdin.readline().encode("utf-8")
     conn.sendall(data)
     if b'/exit' in data:
         # Exiting keyword
@@ -37,10 +37,10 @@ def send_message(conn):
     prompt(conn)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     if len(sys.argv) < 3 or not sys.argv[2].isdigit():
-        print('Usage: python chatclient.py hostname port')
+        print("Usage: python chatclient.py hostname port")
         sys.exit()
 
     host, port = sys.argv[1], int(sys.argv[2])
@@ -50,20 +50,22 @@ if __name__ == '__main__':
 
         try:
             client_socket.connect((host, port))
-            print('Connected to remote host.')
+            print("Connected to remote host.")
             prompt(client_socket)
         except socket.error:
-            print('Unable to connect to {}:{}.'.format(host, port))
+            print(f"Unable to connect to {host}:{port}.")
             raise
 
         while True:
             socket_list = [sys.stdin, client_socket]
             ready_to_read, ready_to_write, in_error = select.select(
-                socket_list, [], []
+                socket_list,
+                [],
+                [],
             )
             """
             select.select(@rlist, @wlist, @xlist[, @timeout]) takes three
-            sequences of 'waitable objects' as arguments:
+            sequences of `waitable objects` as arguments:
                 @rlist, wait until ready for reading
                 @wlist: wait until ready for writing
                 @xlist: wait for an 'exceptional condition'
