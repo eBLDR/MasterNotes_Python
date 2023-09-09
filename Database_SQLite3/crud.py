@@ -26,7 +26,7 @@ cursor.execute('DROP TABLE contacts')
 cursor.execute("""CREATE TABLE IF NOT EXISTS contacts (id INTEGER PRIMARY KEY,
                   name TEXT NOT NULL, phone INTEGER, email TEXT)""")
 # FOREIGN KEY(column_name_in_new_table) REFERENCES table(column_name)
-# IF NOT EXISTS will create the table only if it doesn't exists
+# IF NOT EXISTS will create the table only if it doesn't exist
 # PRIMARY KEY provides and autoincrementing integer number, it's unique
 # NOT NULL will not accept null values in that column
 # FOREIGN KEY / REFERENCES will link the new column in the new table to the

@@ -2,13 +2,13 @@
 The scope of a variable is where it can be seen or used.
 
 LOCAL (local namespace) scope variables are the ones declared inside the
-function, they cannot be seen from outside of the function.
+function, they cannot be seen from outside the function.
 
 GLOBAL (global namespace) scope variables are the ones declared in the main
 body, outside all functions, they can be seen (and used as a comparison) from
-anywhere, and modified only if the object is mutable, if trying to change a
+anywhere, and modified only if the object is mutable, if trying to change an
 immutable object, Python will create a new local variable instead.
-Shadowing a variable means the we are using the same name for a local variable
+Shadowing a variable means that we are using the same name for a local variable
 and for a global variable simultaneously, it's a bad idea.
 
 OUTER scope refers to looking variables declared in the global namespace.

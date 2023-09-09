@@ -1,6 +1,6 @@
 # `while` loop represents an indefinite iteration
 
-# i is the "iterator"
+# `i` is the "iterator"
 i = 0
 while i < 10:  # while needs a expression - assessed as bool(expression)
     print('i is now {}'.format(i))

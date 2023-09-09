@@ -51,9 +51,9 @@ for i in range(5):
 
 print('=' * 20)
 
-# Each built-in class has it's own set of magic methods.
+# Each built-in class has its own set of magic methods.
 # For example all int and float have __add__, __sub__, __mul__, etc.
-# This methods are linked to certain characters (operators)
+# These methods are linked to certain characters (operators)
 x = 1
 y = 3
 

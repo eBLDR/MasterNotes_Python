@@ -2,7 +2,7 @@
 # On each iteration (looping) the for loop is actually calling the next()
 # function in the iterable object.
 
-# i is called the "iterator"
+# `i` is called the "iterator"
 # the range, in this case, is the "iterable" - which can be any collection type
 for i in range(1, 11):
     print('i is now {:2}'.format(i))
@@ -78,4 +78,4 @@ for i in range(5):
 # else is executed when the for loop is finished normally,
 # and also if the for was never started, but not because of a break
 else:
-    print('Finish successfully')
+    print('Finished successfully')

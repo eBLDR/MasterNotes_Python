@@ -1,5 +1,5 @@
 """
-Ellipsis notation is tripe consecutive dots: `...`
+Ellipsis notation is triple consecutive dots: `...`
 """
 e = ...
 

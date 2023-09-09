@@ -6,7 +6,7 @@ name = input('Name: ')
 age = int(input('Your age, {0}? '.format(name)))
 print(age)
 
-# Starting with a if statement
+# Starting with an `if` statement
 # all equivalent
 # if age >= 18 and age <= 65:
 # if 18 <= age <= 65:

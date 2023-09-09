@@ -2,7 +2,7 @@
 The word POLYMORPHISM means that objects in Python can behave as multiple types. That is because they inherit their
 attributes from the base class object(), and Python is a dynamically typed language.
 For example, a type int can behave as a str when it's printed, because
-it has inherit the __str__ method from the super class object().
+it has inherited the __str__ method from the super class object().
 """
 
 
