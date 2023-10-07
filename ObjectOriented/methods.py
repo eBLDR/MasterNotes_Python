@@ -23,7 +23,7 @@ class Point:
     # Method taking another instance of same class
     def calculate_distance(self, other_point):
         """
-        Calculate the euclidean distance from one point to another.
+        Calculate the Euclidean distance from one point to another.
         :param other_point: <Point>
         :return: <float>
         """

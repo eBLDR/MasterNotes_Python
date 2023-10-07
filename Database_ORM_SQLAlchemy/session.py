@@ -72,8 +72,8 @@ print('Object created.')
 
 # Object state
 print('Transient: {0}; Pending: {1}; Persistent: {2}; Detached: {3}'.format(
-    ins.transient, ins.pending, ins.persistent, ins.detached)
-)
+    ins.transient, ins.pending, ins.persistent, ins.detached
+))
 
 # Adding a record using the table structure - add()
 session.add(new_person)
@@ -115,7 +115,7 @@ print(new_address.id)
 
 session.commit()
 
-# Id already assigned
+# The id is already assigned
 print(new_address.id)
 
 # If we want to add a collection of objects, use session.add_all(@seq) function

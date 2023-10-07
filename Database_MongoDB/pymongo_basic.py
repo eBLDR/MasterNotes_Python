@@ -20,7 +20,7 @@ client = MongoClient()
 # Get a list of the names of all databases on the connected server
 print(f'Databases are: {client.list_database_names()}')
 
-# Accessing a database - creates new databases implicitly upon their first use
+# Accessing a database - creates new database implicitly upon first use
 db = client.my_mongo_db
 
 print('Connected to:', db)
@@ -109,6 +109,14 @@ scott_posts = collection.find({'author': 'Rambo'})  # .limit(5)
 print(scott_posts)
 print(type(scott_posts))
 
+# To find by ObjectId
+from bson import ObjectId
+
+print(collection.find({'_id': ObjectId(result.inserted_id)}))
+
+# Using MongoDB filters
+print(collection.find({'year': {'$gt': 1900}}))
+
 # It's a cursor object - iterable
 for post in scott_posts:
     print(post)
@@ -121,3 +129,22 @@ print(collection.count_documents({'year': 1}))
 # Sort results
 for document in collection.find().sort('year'):
     pprint.pprint(document)
+
+# Update
+collection.update_one(
+    {'_id': ObjectId(result.inserted_id)},
+    {'$set': {'year': 3000}},
+)
+
+# Delete
+# collection.delete_many(filters)
+
+# Aggregation pipeline
+pipeline = [
+    {}
+]
+
+results = collection.aggregate(pipeline)
+
+for result in results:
+    print(result)

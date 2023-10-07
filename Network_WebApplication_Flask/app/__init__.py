@@ -7,5 +7,5 @@ app = Flask(__name__, template_folder='templates')
 # @template_folder refers to the folder that contains the templates that should be used
 # by the application. Defaults to 'templates' folder in the root path of the app
 
-# Import at at the bottom to avoid circular imports
+# Import at the bottom to avoid circular imports
 from app import routes

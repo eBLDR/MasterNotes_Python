@@ -57,7 +57,7 @@ class ImagePost(Post):
 
 
 # Saving a document - If the document already exists in the database,
-# then all of the changes will be made on the atomic level to the existing
+# then all the changes will be made on the atomic level to the existing
 # document. If it does not exist, however, then it will be created.
 post_1 = Post(
     title='Sample Post',
