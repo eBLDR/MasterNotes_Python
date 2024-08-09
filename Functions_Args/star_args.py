@@ -13,7 +13,7 @@ print('Hello', 'planet', 'Earth')
 # args can be replaced by any valid name (i.e. *sgra), conventionally use args
 # the function expects an unpacked tuple in place of args
 def average(*args):
-    # *tuple is an UNPACKED tuple
+    # *tuple is an unpacked tuple
     print(type(args))
     print('args is {}: '.format(args))
     print('*args is: ', *args)
@@ -70,7 +70,6 @@ with open('centred.txt', mode='w') as centredFile:
 # Failing to call the function in the correct way when specified will raise
 # a TypeError
 # Use of "/" denote that all arguments before it must be specified by position
-"""
 def increment(x, /):
     return x + 1
 
@@ -92,4 +91,3 @@ print(to_fahrenheit(40))  # TypeError
 # In this example, @border can be specified both w/ or w/o keyword
 def headline(text, /, border="♦", *, width=50):
     return f' {text} '.center(width, border)
-"""

@@ -1,8 +1,8 @@
 """
 map() and filter() work usually together with lambda functions.
 
-lambda was considered was dropped from Python 2 when migrating to
-Python 3, but they finally remained.
+lambda was considered to be dropped from when migrating to
+Python 3, but it finally remained.
 
 
 All functions created with lambda operator can also be created using the

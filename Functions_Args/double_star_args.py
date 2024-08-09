@@ -12,8 +12,8 @@ def dad(n, name='', mode='', cool=True):
 
 def child(n, **mykwargs):
     print('child(), calling dad()...')
-    # **dict is an UNPACKED dictionary
-    print(type(mykwargs))  # Dictionary type
+    # **dict is an unpacked dictionary
+    print(type(mykwargs))  # dict type
     print('mykwargs are: {}'.format(mykwargs))
     mykwargs['mode'] = 'OP'  # Kwargs can be updated like a normal dictionary
     print('mykwargs are: {}'.format(mykwargs))

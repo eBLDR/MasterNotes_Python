@@ -37,9 +37,9 @@ print(big_range)
 
 big_list = []
 
-_ = input('line 36 - press <enter>')  # Using _ as a unnecessary variable name (placeholder)
+_ = input('about to begin for loop - press <enter>')  # Using _ as an unnecessary variable name (placeholder)
 for val in big_range:  # what 'for' is actually doing is calling next()
-    _ = input('line 38 - inside loop')
+    _ = input('inside for loop')
     big_list.append(val)
 
 print('big_list is {} bytes'.format(sys.getsizeof(big_list)))

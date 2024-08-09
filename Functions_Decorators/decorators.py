@@ -125,3 +125,12 @@ def motivate(*names):
 
 
 motivate('Me', 'You', 'All')
+
+
+def my_log(func):
+    def wrapper():
+        print("Alpha")
+        func()
+        print("Omega")
+
+    return wrapper
