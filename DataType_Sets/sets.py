@@ -9,7 +9,7 @@ empty_set = set()  # empty_set = {} will create and empty dictionary
 
 print(type(farm_animals))
 
-# sets are unordered and the can't contain duplicates
+# sets are unordered and they can't contain duplicates
 print(farm_animals)
 # if we wish to print it sorted, notice that sorted ill return a list!
 print(sorted(farm_animals))
